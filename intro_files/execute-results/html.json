@@ -1,0 +1,18 @@
+{
+  "hash": "6605af9f499fa27e700e714741dd7a36",
+  "result": {
+    "markdown": "# Introdução\n\nA Iniciativa Vale do Lítio é um projeto concebido pela Invest Minas `(https://www.investminas.mg.gov.br/)` com a missão de impulsionar o desenvolvimento das regiões Nordeste e Norte do estado de Minas Gerais em torno da crescente cadeia produtiva do lítio.\n\nEsse Vale do Lítio abrange um conjunto de 14 municípios que se destacam por possuírem as maiores reservas nacionais de lítio. Fazem parte os municípios Araçuaí, Capelinha, Coronel Murta, Itaobim, Itinga, Malacacheta, Medina, Minas Novas, Pedra Azul, Virgem da Lapa, Teófilo Otoni e Turmalina, localizados na região Nordeste de Minas, além de Rubelita e Salinas, situados na região Norte do estado. Vale ressaltar que o lítio desempenha um papel essencial em diversas aplicações, como a fabricação de ligas metálicas, dispositivos médicos e a produção de fármacos.\n\nContudo, seu uso mais proeminente é na produção de baterias de alta durabilidade, as quais alimentam veículos elétricos e dispositivos eletroeletrônicos, representando uma peça fundamental na transição para fontes de energia mais limpas e na revolução tecnológica em curso.\n\nMapa 1: Municípios do Vale do Lítio\n\n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"site_libs/htmlwidgets-1.6.2/htmlwidgets.js\"></script>\r\n<script src=\"site_libs/jquery-3.6.0/jquery-3.6.0.min.js\"></script>\r\n<link href=\"site_libs/leaflet-1.3.1/leaflet.css\" rel=\"stylesheet\" />\r\n<script src=\"site_libs/leaflet-1.3.1/leaflet.js\"></script>\r\n<link href=\"site_libs/leafletfix-1.0.0/leafletfix.css\" rel=\"stylesheet\" />\r\n<script src=\"site_libs/proj4-2.6.2/proj4.min.js\"></script>\r\n<script src=\"site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js\"></script>\r\n<link href=\"site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css\" rel=\"stylesheet\" />\r\n<script src=\"site_libs/leaflet-binding-2.2.0/leaflet.js\"></script>\r\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

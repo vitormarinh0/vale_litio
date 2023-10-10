@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.1.189">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>vale_litio - 1&nbsp; Introdução</title>
+<title> Vale do Lítio - 1&nbsp; Introdução</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./demografia.html" rel="next">
+<link href="./Demografia.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -49,17 +49,26 @@ ul.task-list li input[type="checkbox"] {
   "type": "textbox",
   "limit": 20,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar"
   }
 }</script>
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-binding-2.2.0/leaflet.js"></script>
 
 
 </head>
@@ -83,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">vale_litio</a> 
+      <a href="./"><img src="img/logo_fjp.png" alt="Logo" style="vertical-align: middle; width:180px"> Vale do Lítio</a> 
     </div>
       </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
@@ -95,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefácio</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -105,7 +114,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./demografia.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Demografia</span></a>
+  <a href="./Demografia.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Demografia</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Economia.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">econômicas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Social.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">sociais</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -118,13 +137,7 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#vídeos" id="toc-vídeos" class="nav-link active" data-scroll-target="#vídeos"><span class="toc-section-number">1.0.1</span>  Vídeos</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -145,24 +158,12 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>A Iniciativa Vale do Lítio é um projeto concebido pela [Invest Minas](https://www.investminas.mg.gov.br/) com a missão de impulsionar o desenvolvimento das regiões Nordeste e Norte do estado de Minas Gerais em torno da crescente cadeia produtiva do lítio.</p>
+<p>A Iniciativa Vale do Lítio é um projeto concebido pela Invest Minas <code>(https://www.investminas.mg.gov.br/)</code> com a missão de impulsionar o desenvolvimento das regiões Nordeste e Norte do estado de Minas Gerais em torno da crescente cadeia produtiva do lítio.</p>
 <p>Esse Vale do Lítio abrange um conjunto de 14 municípios que se destacam por possuírem as maiores reservas nacionais de lítio. Fazem parte os municípios Araçuaí, Capelinha, Coronel Murta, Itaobim, Itinga, Malacacheta, Medina, Minas Novas, Pedra Azul, Virgem da Lapa, Teófilo Otoni e Turmalina, localizados na região Nordeste de Minas, além de Rubelita e Salinas, situados na região Norte do estado. Vale ressaltar que o lítio desempenha um papel essencial em diversas aplicações, como a fabricação de ligas metálicas, dispositivos médicos e a produção de fármacos.</p>
 <p>Contudo, seu uso mais proeminente é na produção de baterias de alta durabilidade, as quais alimentam veículos elétricos e dispositivos eletroeletrônicos, representando uma peça fundamental na transição para fontes de energia mais limpas e na revolução tecnológica em curso.</p>
 <p>Mapa 1: Municípios do Vale do Lítio</p>
-<p>[Inserir mapa]</p>
-<section id="vídeos" class="level3" data-number="1.0.1">
-<h3 data-number="1.0.1" class="anchored" data-anchor-id="vídeos"><span class="header-section-number">1.0.1</span> Vídeos</h3>
-<p>Onde fica e qual o potencial do Vale do Lítio em Minas Gerais?:</p>
-<p><a href="https://www.youtube.com/watch?v=D4uRvDvcvB8" class="uri">https://www.youtube.com/watch?v=D4uRvDvcvB8</a></p>
-<p>Fala Gabeira - 48º Episódio (O Vale do Jequitinhonha e o Lítio):</p>
-<p><a href="https://www.youtube.com/watch?v=D4uRvDvcvB8" class="uri">https://www.youtube.com/watch?v=D4uRvDvcvB8</a></p>
-<p>Saiba como o Brasil está explorando o lítio | Jornal Nacional:</p>
-<p><a href="https://www.youtube.com/watch?v=nlq4qMYifRs" class="uri">https://www.youtube.com/watch?v=nlq4qMYifRs</a></p>
-<p>Lítio: com Zema, mineração é recorde no Vale do Jequitinhonha:</p>
-<p><a href="https://www.youtube.com/watch?v=JfqHqkNBmLI" class="uri">https://www.youtube.com/watch?v=JfqHqkNBmLI</a></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -205,7 +206,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiada");
     setTimeout(function() {
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
@@ -266,11 +267,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prefácio</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./demografia.html" class="pagination-link">
+      <a href="./Demografia.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Demografia</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -279,25 +280,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-&gt;
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="/demografia.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Demografia</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
- <!-- /content -->
-
-
-
-</body></html>ontent -->
-
-</body>
-
-</html>
+</body></html>

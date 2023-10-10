@@ -2,22 +2,30 @@ project:
   type: book
 
 book:
-  title: "vale_litio"
-  author: "Jane Doe"
-  date: "10/10/2023"
+  title: "<img src='img/logo_fjp.png' alt='Logo' style='vertical-align: middle; width:180px'> Vale do Lítio"
+  author:
+    - name: "[Caio Gonçalves]"
+      affiliation: Fundação João Pinheiro
+      affiliation_url: https://fjp.mg.gov.br/
+    - name: "[Vitor Marinho](https://github.com/vitor-marinho-fjp)"
+      affiliation: Fundação João Pinheiro
+      affiliation_url: https://fjp.mg.gov.br/
+  date: "10/4/2023"
   chapters:
     - index.qmd
     - intro.qmd
-    - demografia.qmd
+    - Demografia.qmd
+    - Economia.qmd
+    - Social.qmd
     - references.qmd
 
 bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: Sandstone
   pdf:
     documentclass: scrreprt
-
+lang: pt
 editor: visual
 

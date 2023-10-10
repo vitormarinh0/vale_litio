@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "vale_litio",
+    "title": " Vale do Lítio",
     "section": "",
     "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2"
   },
@@ -11,21 +11,7 @@
     "href": "intro.html",
     "title": "1  Introdução",
     "section": "",
-    "text": "Esse Vale do Lítio abrange um conjunto de 14 municípios que se destacam por possuírem as maiores reservas nacionais de lítio. Fazem parte os municípios Araçuaí, Capelinha, Coronel Murta, Itaobim, Itinga, Malacacheta, Medina, Minas Novas, Pedra Azul, Virgem da Lapa, Teófilo Otoni e Turmalina, localizados na região Nordeste de Minas, além de Rubelita e Salinas, situados na região Norte do estado. Vale ressaltar que o lítio desempenha um papel essencial em diversas aplicações, como a fabricação de ligas metálicas, dispositivos médicos e a produção de fármacos.\nContudo, seu uso mais proeminente é na produção de baterias de alta durabilidade, as quais alimentam veículos elétricos e dispositivos eletroeletrônicos, representando uma peça fundamental na transição para fontes de energia mais limpas e na revolução tecnológica em curso.\nMapa 1: Municípios do Vale do Lítio\n[Inserir mapa]\n\n1.0.1 Vídeos\nOnde fica e qual o potencial do Vale do Lítio em Minas Gerais?:\nhttps://www.youtube.com/watch?v=D4uRvDvcvB8\nFala Gabeira - 48º Episódio (O Vale do Jequitinhonha e o Lítio):\nhttps://www.youtube.com/watch?v=D4uRvDvcvB8\nSaiba como o Brasil está explorando o lítio | Jornal Nacional:\nhttps://www.youtube.com/watch?v=nlq4qMYifRs\nLítio: com Zema, mineração é recorde no Vale do Jequitinhonha:\nhttps://www.youtube.com/watch?v=JfqHqkNBmLI"
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "Esse Vale do Lítio abrange um conjunto de 14 municípios que se destacam por possuírem as maiores reservas nacionais de lítio. Fazem parte os municípios Araçuaí, Capelinha, Coronel Murta, Itaobim, Itinga, Malacacheta, Medina, Minas Novas, Pedra Azul, Virgem da Lapa, Teófilo Otoni e Turmalina, localizados na região Nordeste de Minas, além de Rubelita e Salinas, situados na região Norte do estado. Vale ressaltar que o lítio desempenha um papel essencial em diversas aplicações, como a fabricação de ligas metálicas, dispositivos médicos e a produção de fármacos.\nContudo, seu uso mais proeminente é na produção de baterias de alta durabilidade, as quais alimentam veículos elétricos e dispositivos eletroeletrônicos, representando uma peça fundamental na transição para fontes de energia mais limpas e na revolução tecnológica em curso.\nMapa 1: Municípios do Vale do Lítio"
   },
   {
     "objectID": "demografia.html",
