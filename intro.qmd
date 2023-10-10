@@ -1,9 +1,29 @@
-# Introduction
+# Introdução
 
-This is a book created from markdown and executable code.
+A Iniciativa Vale do Lítio é um projeto concebido pela \[Invest Minas\](https://www.investminas.mg.gov.br/) com a missão de impulsionar o desenvolvimento das regiões Nordeste e Norte do estado de Minas Gerais em torno da crescente cadeia produtiva do lítio.
 
-See @knuth84 for additional discussion of literate programming.
+Esse Vale do Lítio abrange um conjunto de 14 municípios que se destacam por possuírem as maiores reservas nacionais de lítio. Fazem parte os municípios Araçuaí, Capelinha, Coronel Murta, Itaobim, Itinga, Malacacheta, Medina, Minas Novas, Pedra Azul, Virgem da Lapa, Teófilo Otoni e Turmalina, localizados na região Nordeste de Minas, além de Rubelita e Salinas, situados na região Norte do estado. Vale ressaltar que o lítio desempenha um papel essencial em diversas aplicações, como a fabricação de ligas metálicas, dispositivos médicos e a produção de fármacos.
 
-```{r}
-1 + 1
-```
+Contudo, seu uso mais proeminente é na produção de baterias de alta durabilidade, as quais alimentam veículos elétricos e dispositivos eletroeletrônicos, representando uma peça fundamental na transição para fontes de energia mais limpas e na revolução tecnológica em curso.
+
+Mapa 1: Municípios do Vale do Lítio
+
+\[Inserir mapa\]
+
+###  Vídeos
+
+Onde fica e qual o potencial do Vale do Lítio em Minas Gerais?:
+
+<https://www.youtube.com/watch?v=D4uRvDvcvB8>
+
+Fala Gabeira - 48º Episódio (O Vale do Jequitinhonha e o Lítio):
+
+<https://www.youtube.com/watch?v=D4uRvDvcvB8>
+
+Saiba como o Brasil está explorando o lítio \| Jornal Nacional:
+
+<https://www.youtube.com/watch?v=nlq4qMYifRs>
+
+Lítio: com Zema, mineração é recorde no Vale do Jequitinhonha:
+
+<https://www.youtube.com/watch?v=JfqHqkNBmLI>
