@@ -13,10 +13,10 @@ book:
   date: "10/4/2023"
   chapters:
     - index.qmd
-    - intro.qmd
-    - Demografia.qmd
-    - Economia.qmd
-    - Social.qmd
+    - 0_intro.qmd
+    - 1_Economia.qmd
+    - 2_Demografia.qmd
+    - 3_Social.qmd
     - references.qmd
 
 bibliography: references.bib

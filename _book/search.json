@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": " Vale do Lítio",
     "section": "",
-    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2"
+    "text": "Prefácio"
   },
   {
     "objectID": "intro.html",
@@ -19,5 +19,47 @@
     "title": "2  Demografia",
     "section": "",
     "text": "Total populacional 2000/2010/2022\n\n\nOs povos indígenas e comunidades tradicionais\nTotal populacional 2000/2010/2022\n\n\n\nTotal populacional 2022"
+  },
+  {
+    "objectID": "0_intro.html",
+    "href": "0_intro.html",
+    "title": "1  Introdução",
+    "section": "",
+    "text": "A Iniciativa Vale do Lítio é um projeto concebido pela Invest Minas https://www.investminas.mg.gov.br/ com a missão de impulsionar o desenvolvimento das regiões Nordeste e Norte do estado de Minas Gerais em torno da crescente cadeia produtiva do lítio.\nEsse Vale do Lítio abrange um conjunto de 14 municípios que se destacam por possuírem as maiores reservas nacionais de lítio. Fazem parte os municípios Araçuaí, Capelinha, Coronel Murta, Itaobim, Itinga, Malacacheta, Medina, Minas Novas, Pedra Azul, Virgem da Lapa, Teófilo Otoni e Turmalina, localizados na região Nordeste de Minas, além de Rubelita e Salinas, situados na região Norte do estado. Vale ressaltar que o lítio desempenha um papel essencial em diversas aplicações, como a fabricação de ligas metálicas, dispositivos médicos e a produção de fármacos.\nContudo, seu uso mais proeminente é na produção de baterias de alta durabilidade, as quais alimentam veículos elétricos e dispositivos eletroeletrônicos, representando uma peça fundamental na transição para fontes de energia mais limpas e na revolução tecnológica em curso.\nMapa 1: Municípios do Vale do Lítio"
+  },
+  {
+    "objectID": "1_Economia.html",
+    "href": "1_Economia.html",
+    "title": "2  econômicas",
+    "section": "",
+    "text": "3 Econômicas"
+  },
+  {
+    "objectID": "2_Demografia.html",
+    "href": "2_Demografia.html",
+    "title": "3  Demografia",
+    "section": "",
+    "text": "4 População\nTotal populacional 2000/2010/2022"
+  },
+  {
+    "objectID": "2_Demografia.html#povos-indígenas",
+    "href": "2_Demografia.html#povos-indígenas",
+    "title": "3  Demografia",
+    "section": "4.1 ## Povos indígenas",
+    "text": "4.1 ## Povos indígenas\nOs povos indígenas e comunidades tradicionais\nTotal populacional 2000/2010/2022"
+  },
+  {
+    "objectID": "2_Demografia.html#população-quilombola",
+    "href": "2_Demografia.html#população-quilombola",
+    "title": "3  Demografia",
+    "section": "4.2 População quilombola",
+    "text": "4.2 População quilombola\nTotal populacional 2022"
+  },
+  {
+    "objectID": "3_Social.html",
+    "href": "3_Social.html",
+    "title": "4  Social",
+    "section": "",
+    "text": "5 Sociais"
   }
 ]

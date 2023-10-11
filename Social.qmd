@@ -1,6 +1,0 @@
----
-title: "sociais"
-editor: visual
----
-
-# Sociais
