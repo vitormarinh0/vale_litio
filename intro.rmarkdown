@@ -1,74 +1,131 @@
-# Introdução
-
-A Iniciativa Vale do Lítio é um projeto concebido pela Invest Minas `https://www.investminas.mg.gov.br/` com a missão de impulsionar o desenvolvimento das regiões Nordeste e Norte do estado de Minas Gerais em torno da crescente cadeia produtiva do lítio.
-
-Esse Vale do Lítio abrange um conjunto de 14 municípios que se destacam por possuírem as maiores reservas nacionais de lítio. Fazem parte os municípios Araçuaí, Capelinha, Coronel Murta, Itaobim, Itinga, Malacacheta, Medina, Minas Novas, Pedra Azul, Virgem da Lapa, Teófilo Otoni e Turmalina, localizados na região Nordeste de Minas, além de Rubelita e Salinas, situados na região Norte do estado. Vale ressaltar que o lítio desempenha um papel essencial em diversas aplicações, como a fabricação de ligas metálicas, dispositivos médicos e a produção de fármacos.
-
-Contudo, seu uso mais proeminente é na produção de baterias de alta durabilidade, as quais alimentam veículos elétricos e dispositivos eletroeletrônicos, representando uma peça fundamental na transição para fontes de energia mais limpas e na revolução tecnológica em curso.
-
-Mapa 1: Municípios do Vale do Lítio
-
+# Introdução
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
-# Carregue as bibliotecas necessárias
-library(leaflet)
-library(sf)
-library(dplyr)
-library(geobr)
-
-municipios <- read_municipality(code_muni = "MG", year = 2010)
-
-```
+A Iniciativa Vale do Lítio é um projeto concebido pela Invest Minas `https://www.investminas.mg.gov.br/` com a missão de impulsionar o desenvolvimento das regiões Nordeste e Norte do estado de Minas Gerais em torno da crescente cadeia produtiva do lítio.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-
-
-municipios_ibge <- c(
-  3103405,  # Araçuaí
-  3112307,  # Capelinha
-  3119500,  # Coronel Murta
-  3133303,  # Itaobim
-  3134004,  # Itinga
-  3139201,  # Malacacheta
-  3141405,  # Medina
-  3141801,  # Minas Novas
-  3148707,  # Pedra Azul
-  3168606,  # Teófilo Otoni
-  3169703,  # Turmalina
-  3156502,  # Rubelita
-  3171600,  # Virgem da Lapa
-  3157005  # Salinas
-)
-
-# Criar uma coluna de dummy
-municipios$dummy <- ifelse(municipios$code_muni %in% municipios_ibge, 1, 0)
-
-# Crie um objeto sf com seus dados
-dados_sf <- st_as_sf(municipios, crs = "+proj=longlat +datum=WGS84")
-
-# Filtrar os municípios onde dummy é igual a 1
-dados_sf_filtrados <- dados_sf %>%
-  filter(dummy == 1)
-
-# Crie um mapa Leaflet
-mapa <- leaflet() %>%
-  addTiles() %>%
-  addPolygons(data = dados_sf, 
-              fillColor = "green", 
-              fillOpacity = 0, 
-              color = "black", 
-              stroke = TRUE, 
-              weight = 1) %>%
-  addPolygons(data = dados_sf_filtrados, 
-              fillColor = "red",  # Cor dos polígonos 
-              fillOpacity = 0.4, 
-              color = "black", 
-              stroke = TRUE, 
-              weight = 1)
-
-
-# Visualize o mapa
-mapa
-
-```
+Esse Vale do Lítio abrange um conjunto de 14 municípios que se destacam por possuírem as maiores reservas nacionais de lítio. Fazem parte os municípios Araçuaí, Capelinha, Coronel Murta, Itaobim, Itinga, Malacacheta, Medina, Minas Novas, Pedra Azul, Virgem da Lapa, Teófilo Otoni e Turmalina, localizados na região Nordeste de Minas, além de Rubelita e Salinas, situados na região Norte do estado. Vale ressaltar que o lítio desempenha um papel essencial em diversas aplicações, como a fabricação de ligas metálicas, dispositivos médicos e a produção de fármacos.
 
+Contudo, seu uso mais proeminente é na produção de baterias de alta durabilidade, as quais alimentam veículos elétricos e dispositivos eletroeletrônicos, representando uma peça fundamental na transição para fontes de energia mais limpas e na revolução tecnológica em curso.
+
+Mapa 1: Municípios do Vale do Lítio
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+
+# Carregue as bibliotecas necessárias
+
+library(leaflet)
+
+library(sf)
+
+library(dplyr)
+
+library(geobr)
+
+
+
+municipios <- read_municipality(code_muni = "MG", year = 2010)
+
+
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+
+
+
+
+municipios_ibge <- c(
+
+  3103405,  # Araçuaí
+
+  3112307,  # Capelinha
+
+  3119500,  # Coronel Murta
+
+  3133303,  # Itaobim
+
+  3134004,  # Itinga
+
+  3139201,  # Malacacheta
+
+  3141405,  # Medina
+
+  3141801,  # Minas Novas
+
+  3148707,  # Pedra Azul
+
+  3168606,  # Teófilo Otoni
+
+  3169703,  # Turmalina
+
+  3156502,  # Rubelita
+
+  3171600,  # Virgem da Lapa
+
+  3157005  # Salinas
+
+)
+
+
+
+# Criar uma coluna de dummy
+
+municipios$dummy <- ifelse(municipios$code_muni %in% municipios_ibge, 1, 0)
+
+
+
+# Crie um objeto sf com seus dados
+
+dados_sf <- st_as_sf(municipios, crs = "+proj=longlat +datum=WGS84")
+
+
+
+# Filtrar os municípios onde dummy é igual a 1
+
+dados_sf_filtrados <- dados_sf %>%
+
+  filter(dummy == 1)
+
+
+
+# Crie um mapa Leaflet
+
+mapa <- leaflet() %>%
+
+  addTiles() %>%
+
+  addPolygons(data = dados_sf, 
+
+              fillColor = "green", 
+
+              fillOpacity = 0, 
+
+              color = "black", 
+
+              stroke = TRUE, 
+
+              weight = 1) %>%
+
+  addPolygons(data = dados_sf_filtrados, 
+
+              fillColor = "red",  # Cor dos polígonos 
+
+              fillOpacity = 0.4, 
+
+              color = "black", 
+
+              stroke = TRUE, 
+
+              weight = 1)
+
+
+
+
+
+# Visualize o mapa
+
+mapa
+
+
+
+```
