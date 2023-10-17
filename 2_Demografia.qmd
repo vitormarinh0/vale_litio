@@ -3,16 +3,62 @@ title: "Demografia"
 editor: visual
 ---
 
-# População
+# Quais as características da população residente?
 
-Total populacional 2000/2010/2022
+\[Comentário Tabela 1 - Caio\] Minas Gerais xxx, os 14 municípios representam xx % dessa população.
 
-## \## Povos indígenas
+\[Tabela 1 - Vitor\] - Inserir uma tabela com as seguintes colunas:
+
+-   Município
+
+-   Total da População 2010
+
+-   Total da População 2022
+
+-   Taxa de crescimento média geométrica 2022/2010
+
+-   Posição ranking populacional 2010
+
+-   Posição ranking populacional 2022
+
+\[Comentário Tabela 2 - Caio\]
+
+\[Tabela 2 - Vitor\] - Inserir uma tabela com as seguintes colunas:
+
+-   Município
+
+-   Razão de dependência
+
+-   Índice de envelhecimento
+
+-   Percentual da população com 65 anos ou mais de idade
+
+-   Taxa de urbanização
+
+\[Comentário Gráfico 1 - Caio\]
+
+\[Gráfico 1 - Vitor\] - Inserir pirâmides etárias
+
+\[Pensar na apresentação é possível as pirâmides passando?\]
+
+\[Comentário Tabela 3 - Caio\]
+
+\[Tabela 3 - Vitor\] - Inserir uma tabela com as seguintes colunas:
+
+Título: Indicadores da dinâmica demográfica selecionados - municípios do Vale do Lítio
+
+-   Município
+
+-   Esperança de vida ao nascer
+
+-   Mortalidade infantil
+
+-   Taxa de fecundidade total
+
+-   Taxa líquida migratória
+
+## Povos indígenas
 
 Os povos indígenas e comunidades tradicionais
 
-Total populacional 2000/2010/2022
-
 ## População quilombola
-
-Total populacional 2022
