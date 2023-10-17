@@ -1,0 +1,260 @@
+---
+title: "Demografia"
+editor: visual
+---
+
+# Quais as características da população residente?
+
+\[Comentário Tabela 1 - Caio\] Minas Gerais xxx, os 14 municípios representam xx % dessa população.
+
+\[Tabela 1 - Vitor\] - Inserir uma tabela com as seguintes colunas:
+
+-   Município
+
+-   Total da População 2010
+
+-   Total da População 2022
+
+-   Taxa de crescimento média geométrica 2022/2010
+
+-   Posição ranking populacional 2010
+
+-   Posição ranking populacional 2022
+
+```{r}
+
+library(tidyverse)
+library(gt)
+tabela01Demo <- readRDS("E:/Drives compartilhados/Vale do Lítio/r_project/tabelas/tabela01Demo.rds")
+
+# Crie um DataFrame com as colunas "Municipio" e "IBGE7"
+df_nome <- data.frame(
+  Municipio = c(
+    "Araçuaí",
+    "Capelinha",
+    "Coronel Murta",
+    "Itaobim",
+    "Itinga",
+    "Malacacheta",
+    "Medina",
+    "Minas Novas",
+    "Pedra Azul",
+    "Teófilo Otoni",
+    "Turmalina",
+    "Rubelita",
+    "Virgem da Lapa",
+    "Salinas"
+  ),
+  IBGE7 = c(
+    3103405,
+    3112307,
+    3119500,
+    3133303,
+    3134004,
+    3139201,
+    3141405,
+    3141801,
+    3148707,
+    3168606,
+    3169703,
+    3156502,
+    3171600,
+    3157005
+  )
+)
+
+tabela01<- left_join(tabela01Demo, df_nome) %>% select(-IBGE7) %>% 
+  select(Municipio, everything()) 
+
+
+
+#criar tabela 
+tabela01 %>% gt() %>% tab_header(
+    title = "Características Demográficas ",
+    subtitle = md("Vale do Lítio")
+  )%>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = md("Region and <br />IAP Type")) %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  )  %>% #rótulo
+  opt_table_font(font = google_font(name = "Karla")) %>% 
+  tab_options(data_row.padding = px(6),
+              heading.align = 'left',
+              column_labels.background.color = 'dodgerblue4',
+              heading.title.font.size = px(26)) %>% 
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>% 
+  tab_style(
+    style = cell_fill(color = 'grey90'),
+    locations = cells_body(rows = seq(1, nrow(tabela01Demo), 2))
+  ) %>%
+  cols_label(D_POPT = "População total",
+             tx_cresc= 'Taxa de crescimento da População',
+             Ranking_Populacao = 'Raking do Município') %>% 
+  fmt_number(
+    columns = 'Ranking_Populacao',
+    decimals = 0  # Número de casas decimais desejado
+  ) %>% 
+   fmt_number(
+    columns = 'tx_cresc',
+    decimals = 4  # Número de casas decimais desejado
+  )
+
+```
+
+\[Comentário Tabela 2 - Caio\]
+
+\[Tabela 2 - Vitor\] - Inserir uma tabela com as seguintes colunas:
+
+-   Município
+
+-   Razão de dependência
+
+-   Índice de envelhecimento
+
+-   Percentual da população com 65 anos ou mais de idade
+
+-   Taxa de urbanização
+
+```{r}
+
+tabela02Demo <- readRDS("E:/Drives compartilhados/Vale do Lítio/r_project/tabelas/tabela02Demo.rds")
+
+
+tabela02<- left_join(tabela02Demo, df_nome) %>% select(-IBGE7, -D_POPT) %>% 
+  select(Municipio, everything()) 
+
+ 
+tabela02 %>% gt() %>% tab_header(
+    title = "Características Demográficas ",
+    subtitle = md("Vale do Lítio")
+  )%>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = md("Region and <br />IAP Type")) %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  )  %>% #rótulo
+  opt_table_font(font = google_font(name = "Karla")) %>% 
+  tab_options(data_row.padding = px(6),
+              heading.align = 'left',
+              column_labels.background.color = 'dodgerblue4',
+              heading.title.font.size = px(26)) %>% 
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>% 
+  tab_style(
+    style = cell_fill(color = 'grey90'),
+    locations = cells_body(rows = seq(1, nrow(tabela02Demo), 2))
+  ) %>%
+  cols_label(
+             D_RDEPP= 'Razão de dependência total',
+             D_INDENVE = 'Índice de envelhecimento',
+             D_PROPP65M = 'População de 65 a 69 anos de idade',
+             D_POPPURB = 'Taxa de urbanização')
+
+
+```
+
+\[Comentário Gráfico 1 - Caio\]
+
+\[Gráfico 1 - Vitor\] - Inserir pirâmides etárias
+
+\[Pensar na apresentação é possível as pirâmides passando?\]
+
+\[Comentário Tabela 3 - Caio\]
+
+\[Tabela 3 - Vitor\] - Inserir uma tabela com as seguintes colunas:
+
+Título: Indicadores da dinâmica demográfica selecionados - municípios do Vale do Lítio
+
+```{r}
+
+municipios_vale <- c(
+  3103405,  # Araçuaí
+  3112307,  # Capelinha
+  3119500,  # Coronel Murta
+  3133303,  # Itaobim
+  3134004,  # Itinga
+  3139201,  # Malacacheta
+  3141405,  # Medina
+  3141801,  # Minas Novas
+  3148707,  # Pedra Azul
+  3168606,  # Teófilo Otoni
+  3169703,  # Turmalina
+  3156502,  # Rubelita
+  3171600,  # Virgem da Lapa
+  3157005  # Salinas
+)
+
+ df_demografia <- readRDS("E:/Drives compartilhados/Vale do Lítio/r_project/df_demografia.rds")
+
+tabela03<- left_join(df_demografia, df_nome) %>%
+  select(Municipio, everything()) 
+
+
+tabela03 %>% 
+filter(IBGE7 %in% municipios_vale, ANO %in% c(2010, 2021)) %>% 
+  select(IBGE7, ANO,D_TMI,D_ESPVIDA,D_TFT,D_TLM)%>% gt() %>%
+  tab_header(
+    title = " Indicadores da dinâmica demográfica selecionados ",
+    subtitle = md("Vale do Lítio")
+  )%>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = md("Region and <br />IAP Type")) %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  )  %>% #rótulo
+  opt_table_font(font = google_font(name = "Karla")) %>% 
+  tab_options(data_row.padding = px(6),
+              heading.align = 'left',
+              column_labels.background.color = 'dodgerblue4',
+              heading.title.font.size = px(26)) %>% 
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>% 
+  tab_style(
+    style = cell_fill(color = 'grey90'),
+    locations = cells_body(rows = seq(1, nrow(tabela02Demo), 2))
+  ) %>%
+  cols_label(D_TMI = "Esperança de vida ao nascer",
+             D_ESPVIDA= 'Esperança de vida ao nascer',
+             D_TFT = 'Taxa de fecundidade total',
+             D_TLM = 'Taxa líquida migratória')
+
+```
+
+-   Município
+
+-   Esperança de vida ao nascer
+
+-   Mortalidade infantil
+
+-   Taxa de fecundidade total
+
+-   Taxa líquida migratória
+
+## Povos indígenas
+
+Os povos indígenas e comunidades tradicionais
+
+## População quilombola
