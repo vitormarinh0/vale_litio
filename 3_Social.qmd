@@ -11,3 +11,67 @@ usethis::use_git_config(user.name = "Vitor Marinho", # Seu nome
 
 usethis::browse_github_token()
 ```
+
+**Sociais**
+
+Tabela: Município/ IDHM, Ranking IDHM e componentes do IDHM (3 colunas com IDHM longevidade, educação e renda). 2010
+
+\- Educação
+
+*Única tabela*
+
+Taxa de atendimento da educação básica 2021-- Ranking 2021
+
+Taxa de distorção idade séries nos anos finais do ensino fundamental 2021-- Ranking 2021
+
+Taxa de distorção idade séries nos anos finais do ensino médio- 2021-- Ranking 2021
+
+Índice de Qualidade Geral da Educação 2021 -- Ranking 2021 (ou último ano disponível)
+
+\- Saúde
+
+*Única tabela*
+
+Taxa de mortalidade por doenças crônicas não transmissíveis 2021 -- Ranking 2021
+
+Cobertura vacinal de pentavalente em menores de 1 ano 2021 -- Ranking 2021
+
+Proporção de óbitos por causas mal definidas 2021 -- Ranking 2021
+
+Internações hospitalares por condições sensíveis à atenção primária 2021 -- Ranking 2021
+
+Infraestrutura para assistência à saúde - 2021 -- Ranking 2021
+
+\- Vulnerabilidade
+
+*Única tabela*
+
+Percentual da população de Sete Lagoas registrada no Cadastro Único 2021 -- Ranking
+
+Percentual da população pobre e extremamente pobre do Cadastro Único 2021
+
+Percentual das pessoas de 18 a 64 anos inscritas no CadÚnico sem ocupação 2021
+
+Percentual da população de 16 a 64 anos empregada no setor formal 2021
+
+\- Segurança
+
+*Única tabela*
+
+Taxa de ocorrência de homicídios dolosos -- ranking 2021 -- Ranking 2021
+
+Taxa de crimes violentos contra o patrimônio -- ranking 2021 -- Ranking 2021
+
+Número de habitantes por policial militar -- ranking 2021 -- Ranking 2021
+
+\- Saneamento
+
+*Única tabela*
+
+Percentual da população urbana residente em domicílios ligados à rede geral de abastecimento de água -- ranking 2021 -- Ranking 2021
+
+Percentual da população urbana residente em domicílios ligados à rede de esgoto -- ranking 2021 -- Ranking 2021
+
+Destinação final do lixo -- ranking 2021 -- Ranking 2021
+
+Índice de Esforço de Gestão das Políticas de Saneamento Básico -- ranking 2021 -- Ranking 2021
