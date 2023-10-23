@@ -64,9 +64,6 @@ mapa <- leaflet() %>%
               color = "black", 
               stroke = TRUE, 
               weight = 1)
-
-
-# Visualize o mapa
+#visualizar
 mapa
-
 ```

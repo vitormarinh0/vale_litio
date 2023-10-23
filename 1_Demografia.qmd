@@ -21,11 +21,11 @@ editor: visual
 
 -   Posição ranking populacional 2022
 
-```{r}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
 library(tidyverse)
 library(gt)
-tabela01Demo <- readRDS("E:/Drives compartilhados/Vale do Lítio/r_project/tabelas/tabela01Demo.rds")
+tabela01Demo <- readRDS("~/Desktop/versão_git/dados/tabela01Demo.rds")
 
 # Crie um DataFrame com as colunas "Municipio" e "IBGE7"
 df_nome <- data.frame(
@@ -66,10 +66,8 @@ df_nome <- data.frame(
 tabela01<- left_join(tabela01Demo, df_nome) %>% select(-IBGE7) %>% 
   select(Municipio, everything()) 
 
-
-
 #criar tabela 
-tabela01 %>% gt() %>% tab_header(
+tabela01 %>% group_by(Municipio)%>% gt() %>% tab_header(
     title = "Características Demográficas ",
     subtitle = md("Vale do Lítio")
   )%>%
@@ -98,14 +96,14 @@ tabela01 %>% gt() %>% tab_header(
   ) %>%
   cols_label(D_POPT = "População total",
              tx_cresc= 'Taxa de crescimento da População',
-             Ranking_Populacao = 'Raking do Município') %>% 
+             Ranking_Populacao = 'Ranking Populacional') %>% 
   fmt_number(
     columns = 'Ranking_Populacao',
     decimals = 0  # Número de casas decimais desejado
   ) %>% 
    fmt_number(
     columns = 'tx_cresc',
-    decimals = 4  # Número de casas decimais desejado
+    decimals = 2  # Número de casas decimais desejado
   )
 
 ```
@@ -124,16 +122,17 @@ tabela01 %>% gt() %>% tab_header(
 
 -   Taxa de urbanização
 
-```{r}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
-tabela02Demo <- readRDS("E:/Drives compartilhados/Vale do Lítio/r_project/tabelas/tabela02Demo.rds")
+tabela02Demo <- readRDS("~/Desktop/versão_git/dados/tabela02Demo.rds")
 
 
 tabela02<- left_join(tabela02Demo, df_nome) %>% select(-IBGE7, -D_POPT) %>% 
   select(Municipio, everything()) 
 
  
-tabela02 %>% gt() %>% tab_header(
+tabela02 %>%  group_by(Municipio) %>% gt() %>% 
+  tab_header(
     title = "Características Demográficas ",
     subtitle = md("Vale do Lítio")
   )%>%
@@ -164,7 +163,11 @@ tabela02 %>% gt() %>% tab_header(
              D_RDEPP= 'Razão de dependência total',
              D_INDENVE = 'Índice de envelhecimento',
              D_PROPP65M = 'População de 65 a 69 anos de idade',
-             D_POPPURB = 'Taxa de urbanização')
+             D_POPPURB = 'Taxa de urbanização') %>% 
+  fmt_number(
+    columns = 4:7,  # Seleciona todas as colunas
+    decimals = 2)  # Define 2 casas decimais para a coluna "Valor"
+  
 
 
 ```
@@ -181,7 +184,7 @@ tabela02 %>% gt() %>% tab_header(
 
 Título: Indicadores da dinâmica demográfica selecionados - municípios do Vale do Lítio
 
-```{r}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
 municipios_vale <- c(
   3103405,  # Araçuaí
@@ -200,17 +203,18 @@ municipios_vale <- c(
   3157005  # Salinas
 )
 
- df_demografia <- readRDS("E:/Drives compartilhados/Vale do Lítio/r_project/df_demografia.rds")
+tabela03Demo <- readRDS("~/Desktop/versão_git/dados/tabela03Demo.rds")
 
-tabela03<- left_join(df_demografia, df_nome) %>%
-  select(Municipio, everything()) 
+tabela03<- left_join(tabela03Demo, df_nome) %>%
+  select(Municipio, everything())
 
 
-tabela03 %>% 
-filter(IBGE7 %in% municipios_vale, ANO %in% c(2010, 2021)) %>% 
-  select(IBGE7, ANO,D_TMI,D_ESPVIDA,D_TFT,D_TLM)%>% gt() %>%
+
+tabela03 %>% filter(ANO == '2010')  %>% group_by(Municipio) %>% 
+  select(Municipio,D_TMI,D_ESPVIDA,D_TFT,D_TLM) %>% 
+  gt() %>%
   tab_header(
-    title = " Indicadores da dinâmica demográfica selecionados ",
+    title = " Indicadores da dinâmica demográfica",
     subtitle = md("Vale do Lítio")
   )%>%
   opt_align_table_header(align = "left") %>%
@@ -230,12 +234,7 @@ filter(IBGE7 %in% municipios_vale, ANO %in% c(2010, 2021)) %>%
       weight = 'bold', 
       font = google_font('Merriweather')
     ),
-    locations = cells_title(groups = 'title')
-  ) %>% 
-  tab_style(
-    style = cell_fill(color = 'grey90'),
-    locations = cells_body(rows = seq(1, nrow(tabela02Demo), 2))
-  ) %>%
+    locations = cells_title(groups = 'title')) %>%
   cols_label(D_TMI = "Esperança de vida ao nascer",
              D_ESPVIDA= 'Esperança de vida ao nascer',
              D_TFT = 'Taxa de fecundidade total',

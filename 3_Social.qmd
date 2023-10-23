@@ -6,8 +6,5 @@ editor: visual
 # Sociais
 
 ```{r}
-usethis::use_git_config(user.name = "Vitor Marinho", # Seu nome
-                        user.email = "vitormarinho102@gmail.com") # Seu email
 
-usethis::browse_github_token()
 ```
