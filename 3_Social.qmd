@@ -17,7 +17,7 @@ Taxa de distorção idade séries nos anos finais do ensino médio- 2021-- Ranki
 
 Índice de Qualidade Geral da Educação 2021 -- Ranking 2021 (ou último ano disponível) - E_IQE
 
-```{r}
+```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 ##----------- Dev tabela 01 educação
 library(readxl)
 library(tidyverse)
@@ -64,7 +64,7 @@ educ <- read_excel("dados/educ.xlsx", col_types = c("numeric",
 
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
 municipios_vale <- c(
   3103405,  # Araçuaí
@@ -90,9 +90,11 @@ tabela01_social<- educ %>%  left_join(df_nome) %>% select(Municipio, IBGE7, ANO,
 saveRDS(tabela01_social,'tabela01_social.rds')
 ```
 
-```{r}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(gt)
 
-tabela01_social <- readRDS("~/Desktop/versão_git/dados/tabela01_social.rds")
+tabela01_social <- readRDS("dados/tabela01_social.rds")
 
 tabela01_social  %>% 
   gt() %>% 
@@ -144,7 +146,7 @@ Internações hospitalares por condições sensíveis à atenção primária 202
 
 Infraestrutura para assistência à saúde - 2021 -- Ranking 2021
 
-```{r}
+```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
 library(readxl)
 saude <- read_excel("dados/IMRS_BASE_SAUDE_2000-2021_2022_novembro.xlsx", 
@@ -170,10 +172,9 @@ tabel02_social<- saude %>% left_join(df_nome) %>% select(Municipio, IBGE7, ANO,S
 saveRDS(tabel02_social, 'tabela02_social.rds')
 ```
 
-```{r}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
-
-tabela02_social <- readRDS("~/Desktop/versão_git/dados/tabela02_social.rds")
+tabela02_social <- readRDS("dados/tabela02_social.rds")
 
 
 tabela02_social  %>% 
@@ -223,7 +224,7 @@ Percentual das pessoas de 18 a 64 anos inscritas no CadÚnico sem ocupação 202
 
 Percentual da população de 16 a 64 anos empregada no setor formal 2021
 
-```{r}
+```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
 library(readxl)
 ass_social <- read_excel("dados/ass_social.xlsx", 
@@ -260,18 +261,21 @@ ass_social <- read_excel("dados/ass_social.xlsx",
 
 ```
 
-```{r}
+```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
 tabela03_social<- ass_social%>% left_join(df_nome) %>% select(Municipio, IBGE7, ANO,B_POPCADUNICO, B_POPPOBEXTRCAD, B_POPIDCADSPOP)  %>% filter(IBGE7 %in% municipios_vale & ANO== 2021) %>% 
   select(Municipio, everything())  
 
 ```
 
-```{r}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+tabela03_social <- readRDS("dados/tabela03_social.rds")
+
 tabela03_social  %>% 
   gt() %>% 
   tab_header(
-    title = "Assistência Social",
+    title = "Vulnerabilidade",
   )%>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = md("Region and <br />IAP Type")) %>%
@@ -298,6 +302,169 @@ tabela03_social  %>%
     B_POPIDCADSPOP = 'Percentual das pessoas de 18 a 64 anos inscritas no CadÚnico sem ocupação'
   )  %>% 
   fmt_number(
-    columns = 3:6,  # Seleciona colunas
+    columns = 4:6,  # Seleciona colunas
     decimals = 2)  # Definir 2 casas decimais 
+```
+
+\- Segurança
+
+Única tabela
+
+Taxa de ocorrência de homicídios dolosos -- ranking 2021 -- Ranking 2021 - P_HOM_TX
+
+Taxa de crimes violentos contra o patrimônio -- ranking 2021 -- Ranking 2021 - P_CVPA
+
+Número de habitantes por policial militar -- ranking 2021 -- Ranking 2021
+
+```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(readxl)
+
+library(readxl)
+seg_pub <- read_excel("seg_pub.xlsx", col_types = c("text", 
+    "numeric", "numeric", "numeric", "numeric", 
+    "numeric", "numeric", "numeric", "numeric", 
+    "numeric", "numeric", "numeric", "numeric", 
+    "numeric", "numeric", "numeric", "numeric", 
+    "numeric", "numeric", "numeric", "numeric", 
+    "numeric", "numeric", "numeric", "numeric", 
+    "numeric", "numeric", "numeric", "numeric", 
+    "numeric", "numeric", "numeric", "numeric", 
+    "numeric", "numeric", "numeric", "numeric", 
+    "numeric", "text", "numeric", "numeric", 
+    "numeric", "numeric", "numeric", "numeric", 
+    "numeric"))
+
+
+tabela04_social<-  seg_pub %>%  left_join(df_nome)  %>%   select(Municipio, IBGE7, ANO,P_HOM_TX, P_CVPA,P_PM) %>%filter(IBGE7 %in% municipios_vale & ANO== 2021) %>% 
+  select(Municipio, everything())  
+
+saveRDS(tabela04_social, 'dados/tabela04_social.rds')
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(tidyverse)
+library(gt)
+
+tabela04_social <- readRDS("dados/tabela04_social.rds")
+
+tabela04_social  %>% 
+  gt() %>% 
+  tab_header(
+    title = "Segurança Social",
+  )%>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = md("Region and <br />IAP Type")) %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  )  %>% #rótulo
+  opt_table_font(font = google_font(name = "Karla")) %>% 
+  tab_options(data_row.padding = px(6),
+              heading.align = 'left',
+              column_labels.background.color = 'dodgerblue4',
+              heading.title.font.size = px(26)) %>% 
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>%
+  cols_label(
+    P_HOM_TX = 'Taxa de ocorrência de homicídios dolosos',
+    P_CVPA = 'Taxa de crimes violentos contra o patrimônio',
+    P_PM = 'Número de habitantes por policial militar'
+  )  %>% 
+  fmt_number(
+    columns = 4:6,  # Seleciona colunas
+    decimals = 2)  # Definir 2 casas decimais 
+
+
+```
+
+\- Saneamento
+
+Única tabela
+
+Percentual da população urbana residente em domicílios ligados à rede geral de
+
+abastecimento de água -- ranking 2021 -- Ranking 2021 - N_COBAGUA
+
+Destinação final do lixo -- ranking 2021 -- Ranking 2021- N_DISPOSLIXO
+
+Índice de Esforço de Gestão das Políticas de Saneamento Básico -- ranking 2021 -- Ranking 2021 N_GESTÃO
+
+```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
+
+
+library(readxl)
+saneamento <- read_excel("bases/11 - SANEAMENTO E HABITAÇÃO/IMRS - 2022/Base Plataforma 2022 (Nova)/BASE SANEAMENTO E HABITAÇÃO  2000 a 2021 igor.xlsx", 
+    col_types = c("numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric"))
+
+tabela05_social<-  saneamento %>%  left_join(df_nome)  %>%   select(Municipio, IBGE7, ANO,N_COBAGUA,N_DISPOSLIXO,N_GESTÃO) %>%filter(IBGE7 %in% municipios_vale & ANO== 2021) %>% select(Municipio, everything())  
+
+
+
+saveRDS(tabela05_social, 'dados/tabela05_social.rds')
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(tidyverse)
+library(gt)
+
+tabela05_social <- readRDS("dados/tabela05_social.rds")
+
+tabela05_social  %>% 
+  gt() %>% 
+  tab_header(
+    title = "Segurança Social",
+  )%>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = md("Region and <br />IAP Type")) %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  )  %>% #rótulo
+  opt_table_font(font = google_font(name = "Karla")) %>% 
+  tab_options(data_row.padding = px(6),
+              heading.align = 'left',
+              column_labels.background.color = 'dodgerblue4',
+              heading.title.font.size = px(26)) %>% 
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>%
+  cols_label(
+    N_COBAGUA = 'Percentual da população urbana residente em domicílios ligados à rede geral de abastecimento de água',
+    N_DISPOSLIXO = 'Destinação final do lixo',
+    N_GESTÃO = 'Índice de Esforço de Gestão das Políticas de Saneamento Básico'
+  )  %>% 
+  fmt_number(
+    columns = 4:6,  # Seleciona colunas
+    decimals = 2)  # Definir 2 casas decimais 
+
 ```

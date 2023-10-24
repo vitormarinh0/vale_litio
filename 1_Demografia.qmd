@@ -25,7 +25,7 @@ editor: visual
 
 library(tidyverse)
 library(gt)
-tabela01Demo <- readRDS("~/Desktop/versão_git/dados/tabela01Demo.rds")
+tabela01Demo <- readRDS("dados/tabela01Demo.rds")
 
 # Crie um DataFrame com as colunas "Municipio" e "IBGE7"
 df_nome <- data.frame(
@@ -124,7 +124,7 @@ tabela01 %>% group_by(Municipio)%>% gt() %>% tab_header(
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
-tabela02Demo <- readRDS("~/Desktop/versão_git/dados/tabela02Demo.rds")
+tabela02Demo <- readRDS("dados/tabela02Demo.rds")
 
 
 tabela02<- left_join(tabela02Demo, df_nome) %>% select(-IBGE7, -D_POPT) %>% 
@@ -203,7 +203,7 @@ municipios_vale <- c(
   3157005  # Salinas
 )
 
-tabela03Demo <- readRDS("~/Desktop/versão_git/dados/tabela03Demo.rds")
+tabela03Demo <- readRDS("dados/tabela03Demo.rds")
 
 tabela03<- left_join(tabela03Demo, df_nome) %>%
   select(Municipio, everything())
