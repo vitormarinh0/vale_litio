@@ -61,7 +61,8 @@ municipios_vale <- c(
   3171600,  # Virgem da Lapa
   3157005  # Salinas
 )
-tabela01_economia <- readRDS("~/Desktop/versão_git/dados/tabela01_economia.rds")
+
+ tabela01_economia <- readRDS("dados/tabela01_economia.rds")
 
 tabela01_economia %>% gt() %>%
   tab_header(
@@ -143,7 +144,7 @@ saveRDS(tabela02_economia, 'tabela02_economia.rds')
 # Defina as opções para evitar notação científica
 options(scipen = 999)
 
-tabela02_economia <- readRDS("~/Desktop/versão_git/dados/tabela02_economia.rds")
+tabela02_economia <- readRDS("dados/tabela02_economia.rds")
 
 
 # Selecione apenas as colunas relevantes (atividades) e reformule os dados
@@ -195,7 +196,7 @@ saveRDS(tabela03_economia, 'tabela03_economia.rds')
 
 #----------------------tabela03economia
 
-tabela03_economia <- readRDS("~/Desktop/versão_git/dados/tabela03_economia.rds")
+tabela03_economia <- readRDS("dados/tabela03_economia.rds")
 
 tabela03_economia  %>% select(-R_EMPRSFIC) %>% 
   mutate(tx_emp_ext = R_EMPRSFMI/R_EMPRSF) %>% 
@@ -256,7 +257,7 @@ saveRDS(tabela04_economia, 'tabela4_economia.rds')
 
 library(patchwork)
 #---------------------tabela04economia
-tabela4_economia <- readRDS("~/Desktop/versão_git/dados/tabela4_economia.rds")
+tabela4_economia <- readRDS("dados/tabela4_economia.rds")
 # Filtrar os dados para o período de 2010 a 2021
 dados_filtrados <- tabela4_economia %>%
   filter(ANO >= 2010 & ANO <= 2021)
