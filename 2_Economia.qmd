@@ -15,7 +15,7 @@ editor: visual
 #PIB
 pib_municipal <- read_excel("dados/pib_municipal.xls")
 # População
-pop<- read_excel("E:/Drives compartilhados/Vale do Lítio/bases/0 - POPULAÇÃO REFERÊNCIA/IMRS - 2022 (População Referência)/IMRS2022 - BASE POPULACAO REFERENCIA.xlsx") %>% select(IBGE7, ANO, D_POPT) %>% filter(ANO==c('2010', '2020'))
+pop<- read_excel("bases/0 - POPULAÇÃO REFERÊNCIA/IMRS - 2022 (População Referência)/IMRS2022 - BASE POPULACAO REFERENCIA.xlsx") %>% select(IBGE7, ANO, D_POPT) %>% filter(ANO==c('2010', '2020'))
 
 
 ####---------------------------------------------------------
