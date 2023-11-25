@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,72 +17,9 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -120,7 +57,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-matches-text": "mais correspondências neste documento",
     "search-clear-button-title": "Limpar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar"
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
   }
 }</script>
 
@@ -131,11 +69,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Demografia</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_Demografia.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Demografia</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -143,62 +86,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./"><img src="img/logo_fjp.png" alt="Logo" style="vertical-align: middle; width:180px"> Vale do Lítio</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Procurar"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefácio</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefácio</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></a>
+  <a href="./0_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1_Demografia.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Demografia</span></a>
+  <a href="./1_Demografia.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Demografia</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_Economia.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Economia</span></a>
+  <a href="./2_Economia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Economia</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3_Social.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Social</span></a>
+  <a href="./3_Social.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Social</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./4_Ambiental.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ambiental</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#quais-as-características-da-população-residente" id="toc-quais-as-características-da-população-residente" class="nav-link active" data-scroll-target="#quais-as-características-da-população-residente"><span class="toc-section-number">3</span>  Quais as características da população residente?</a>
+  <li><a href="#quais-as-características-da-população-residente" id="toc-quais-as-características-da-população-residente" class="nav-link active" data-scroll-target="#quais-as-características-da-população-residente"><span class="header-section-number">3</span> Quais as características da população residente?</a>
   <ul class="collapse">
-  <li><a href="#povos-indígenas" id="toc-povos-indígenas" class="nav-link" data-scroll-target="#povos-indígenas"><span class="toc-section-number">3.1</span>  Povos indígenas</a></li>
-  <li><a href="#população-quilombola" id="toc-população-quilombola" class="nav-link" data-scroll-target="#população-quilombola"><span class="toc-section-number">3.2</span>  População quilombola</a></li>
+  <li><a href="#povos-indígenas" id="toc-povos-indígenas" class="nav-link" data-scroll-target="#povos-indígenas"><span class="header-section-number">3.1</span> Povos indígenas</a></li>
+  <li><a href="#população-quilombola" id="toc-população-quilombola" class="nav-link" data-scroll-target="#população-quilombola"><span class="header-section-number">3.2</span> População quilombola</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -208,7 +164,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Demografia</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Demografia</span></h1>
 </div>
 
 
@@ -216,6 +172,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -224,143 +181,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="quais-as-características-da-população-residente" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Quais as características da população residente?</h1>
-<p>[Comentário Tabela 1 - Caio] Minas Gerais xxx, os 14 municípios representam xx % dessa população.</p>
-<p>[Tabela 1 - Vitor] - Inserir uma tabela com as seguintes colunas:</p>
-<ul>
-<li><p>Município</p></li>
-<li><p>Total da População 2010</p></li>
-<li><p>Total da População 2022</p></li>
-<li><p>Taxa de crescimento média geométrica 2022/2010</p></li>
-<li><p>Posição ranking populacional 2010</p></li>
-<li><p>Posição ranking populacional 2022</p></li>
-</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.3.1</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'lubridate' was built under R version 4.3.1</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.2     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.3     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.0
-✔ purrr     1.0.1     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'gt' was built under R version 4.3.1</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tabela01Demo <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"E:/Drives compartilhados/Vale do Lítio/r_project/tabelas/tabela01Demo.rds"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Crie um DataFrame com as colunas "Municipio" e "IBGE7"</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>df_nome <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Municipio =</span> <span class="fu">c</span>(</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Araçuaí"</span>,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Capelinha"</span>,</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Coronel Murta"</span>,</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Itaobim"</span>,</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Itinga"</span>,</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Malacacheta"</span>,</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Medina"</span>,</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Minas Novas"</span>,</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pedra Azul"</span>,</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Teófilo Otoni"</span>,</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Turmalina"</span>,</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Rubelita"</span>,</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Virgem da Lapa"</span>,</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Salinas"</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">IBGE7 =</span> <span class="fu">c</span>(</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3103405</span>,</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3112307</span>,</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3119500</span>,</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3133303</span>,</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3134004</span>,</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3139201</span>,</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3141405</span>,</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3141801</span>,</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3148707</span>,</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3168606</span>,</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3169703</span>,</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3156502</span>,</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3171600</span>,</span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    <span class="dv">3157005</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>tabela01<span class="ot">&lt;-</span> <span class="fu">left_join</span>(tabela01Demo, df_nome) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>IBGE7) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Municipio, <span class="fu">everything</span>()) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(IBGE7)`</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#criar tabela </span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>tabela01 <span class="sc">%&gt;%</span> <span class="fu">gt</span>() <span class="sc">%&gt;%</span> <span class="fu">tab_header</span>(</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Características Demográficas "</span>,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">md</span>(<span class="st">"Vale do Lítio"</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">%&gt;%</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"left"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stubhead</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"Region and &lt;br /&gt;IAP Type"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">size =</span> <span class="st">"smaller"</span>),</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>()</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  )  <span class="sc">%&gt;%</span> <span class="co">#rótulo</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_table_font</span>(<span class="at">font =</span> <span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"Karla"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">6</span>),</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>              <span class="at">heading.align =</span> <span class="st">'left'</span>,</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">column_labels.background.color =</span> <span class="st">'dodgerblue4'</span>,</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>              <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">26</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">'dodgerblue4'</span>, </span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">'bold'</span>, </span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="fu">google_font</span>(<span class="st">'Merriweather'</span>)</span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="at">groups =</span> <span class="st">'title'</span>)</span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">'grey90'</span>),</span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">rows =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(tabela01Demo), <span class="dv">2</span>))</span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">D_POPT =</span> <span class="st">"População total"</span>,</span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>             <span class="at">tx_cresc=</span> <span class="st">'Taxa de crescimento da População'</span>,</span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>             <span class="at">Ranking_Populacao =</span> <span class="st">'Raking do Município'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="st">'Ranking_Populacao'</span>,</span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">0</span>  <span class="co"># Número de casas decimais desejado</span></span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>   <span class="fu">fmt_number</span>(</span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="st">'tx_cresc'</span>,</span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">4</span>  <span class="co"># Número de casas decimais desejado</span></span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="bcybzbcbok" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="peqjntiyvd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#bcybzbcbok table {
+#peqjntiyvd table {
   font-family: Karla, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bcybzbcbok thead, #bcybzbcbok tbody, #bcybzbcbok tfoot, #bcybzbcbok tr, #bcybzbcbok td, #bcybzbcbok th {
+#peqjntiyvd thead, #peqjntiyvd tbody, #peqjntiyvd tfoot, #peqjntiyvd tr, #peqjntiyvd td, #peqjntiyvd th {
   border-style: none;
 }
 
-#bcybzbcbok p {
+#peqjntiyvd p {
   margin: 0;
   padding: 0;
 }
 
-#bcybzbcbok .gt_table {
+#peqjntiyvd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -386,12 +228,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#bcybzbcbok .gt_caption {
+#peqjntiyvd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bcybzbcbok .gt_title {
+#peqjntiyvd .gt_title {
   color: #333333;
   font-size: 26px;
   font-weight: initial;
@@ -403,7 +245,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#bcybzbcbok .gt_subtitle {
+#peqjntiyvd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -415,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#bcybzbcbok .gt_heading {
+#peqjntiyvd .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -427,13 +269,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#bcybzbcbok .gt_bottom_border {
+#peqjntiyvd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bcybzbcbok .gt_col_headings {
+#peqjntiyvd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -448,7 +290,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#bcybzbcbok .gt_col_heading {
+#peqjntiyvd .gt_col_heading {
   color: #FFFFFF;
   background-color: #104E8B;
   font-size: 100%;
@@ -468,7 +310,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#bcybzbcbok .gt_column_spanner_outer {
+#peqjntiyvd .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #104E8B;
   font-size: 100%;
@@ -480,15 +322,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#bcybzbcbok .gt_column_spanner_outer:first-child {
+#peqjntiyvd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bcybzbcbok .gt_column_spanner_outer:last-child {
+#peqjntiyvd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bcybzbcbok .gt_column_spanner {
+#peqjntiyvd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -500,11 +342,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#bcybzbcbok .gt_spanner_row {
+#peqjntiyvd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bcybzbcbok .gt_group_heading {
+#peqjntiyvd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -530,7 +372,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-#bcybzbcbok .gt_empty_group_heading {
+#peqjntiyvd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -545,15 +387,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#bcybzbcbok .gt_from_md > :first-child {
+#peqjntiyvd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bcybzbcbok .gt_from_md > :last-child {
+#peqjntiyvd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bcybzbcbok .gt_row {
+#peqjntiyvd .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -572,7 +414,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#bcybzbcbok .gt_stub {
+#peqjntiyvd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -585,7 +427,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#bcybzbcbok .gt_stub_row_group {
+#peqjntiyvd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -599,15 +441,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#bcybzbcbok .gt_row_group_first td {
+#peqjntiyvd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bcybzbcbok .gt_row_group_first th {
+#peqjntiyvd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bcybzbcbok .gt_summary_row {
+#peqjntiyvd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -617,16 +459,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#bcybzbcbok .gt_first_summary_row {
+#peqjntiyvd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bcybzbcbok .gt_first_summary_row.thick {
+#peqjntiyvd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bcybzbcbok .gt_last_summary_row {
+#peqjntiyvd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -636,7 +478,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#bcybzbcbok .gt_grand_summary_row {
+#peqjntiyvd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -646,7 +488,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#bcybzbcbok .gt_first_grand_summary_row {
+#peqjntiyvd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -656,7 +498,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#bcybzbcbok .gt_last_grand_summary_row_top {
+#peqjntiyvd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -666,11 +508,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#bcybzbcbok .gt_striped {
+#peqjntiyvd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bcybzbcbok .gt_table_body {
+#peqjntiyvd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -679,7 +521,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#bcybzbcbok .gt_footnotes {
+#peqjntiyvd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -693,7 +535,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#bcybzbcbok .gt_footnote {
+#peqjntiyvd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -702,7 +544,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#bcybzbcbok .gt_sourcenotes {
+#peqjntiyvd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -716,7 +558,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#bcybzbcbok .gt_sourcenote {
+#peqjntiyvd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -724,223 +566,236 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#bcybzbcbok .gt_left {
+#peqjntiyvd .gt_left {
   text-align: left;
 }
 
-#bcybzbcbok .gt_center {
+#peqjntiyvd .gt_center {
   text-align: center;
 }
 
-#bcybzbcbok .gt_right {
+#peqjntiyvd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bcybzbcbok .gt_font_normal {
+#peqjntiyvd .gt_font_normal {
   font-weight: normal;
 }
 
-#bcybzbcbok .gt_font_bold {
+#peqjntiyvd .gt_font_bold {
   font-weight: bold;
 }
 
-#bcybzbcbok .gt_font_italic {
+#peqjntiyvd .gt_font_italic {
   font-style: italic;
 }
 
-#bcybzbcbok .gt_super {
+#peqjntiyvd .gt_super {
   font-size: 65%;
 }
 
-#bcybzbcbok .gt_footnote_marks {
+#peqjntiyvd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bcybzbcbok .gt_asterisk {
+#peqjntiyvd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bcybzbcbok .gt_indent_1 {
+#peqjntiyvd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bcybzbcbok .gt_indent_2 {
+#peqjntiyvd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bcybzbcbok .gt_indent_3 {
+#peqjntiyvd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bcybzbcbok .gt_indent_4 {
+#peqjntiyvd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bcybzbcbok .gt_indent_5 {
+#peqjntiyvd .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
     <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_title gt_font_normal" style="color: #104E8B; font-family: Merriweather; font-weight: bold;">Características Demográficas </td>
+      <td colspan="4" class="gt_heading gt_title gt_font_normal" style="color: #104E8B; font-family: Merriweather; font-weight: bold;">Características Demográficas </td>
     </tr>
     <tr class="gt_heading">
-      <td colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Vale do Lítio</td>
+      <td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Vale do Lítio</td>
     </tr>
     <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Municipio">Municipio</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ANO">ANO</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="População total">População total</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa de crescimento da População">Taxa de crescimento da População</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Raking do Município">Raking do Município</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Ranking Populacional">Ranking Populacional</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Araçuaí</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">36041</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.0093</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">90</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Araçuaí</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">36715</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.0093</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">99</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Capelinha</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">34796</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.0494</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">94</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Capelinha</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">38321</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.0494</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">96</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Coronel Murta</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9209</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.0050</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">395</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Coronel Murta</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">9117</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.0050</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">383</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Itaobim</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">20997</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.0001</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">176</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Itaobim</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">21001</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">−0.0001</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">170</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Itinga</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">14407</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.0222</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">247</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Itinga</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">15053</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.0222</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">256</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Malacacheta</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18787</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.0062</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">191</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Malacacheta</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">18556</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">−0.0062</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">206</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Medina</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">20701</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.0080</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">180</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Medina</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">21037</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">−0.0080</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">169</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Minas Novas</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">31509</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.0114</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">118</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Minas Novas</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">30803</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.0114</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">109</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Pedra Azul</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">23843</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.0102</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">145</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Pedra Azul</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">24333</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.0102</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">153</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Rubelita</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">7777</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.1507</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">437</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Rubelita</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">5609</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">−0.1507</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">567</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Salinas</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">41864</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.0337</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">85</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Salinas</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">39182</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.0337</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">81</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Teófilo Otoni</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">141269</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.0240</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Teófilo Otoni</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">134733</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.0240</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">17</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Turmalina</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18046</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.0601</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">200</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Turmalina</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">20280</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.0601</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">186</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Virgem da Lapa</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">13625</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.0038</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">274</td></tr>
-    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Virgem da Lapa</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_POPT" class="gt_row gt_right" style="font-size: smaller;">13729</td>
-<td headers="tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.0038</td>
-<td headers="Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">278</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Araçuaí">Araçuaí</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Araçuaí  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Araçuaí  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">36041</td>
+<td headers="Araçuaí  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.93</td>
+<td headers="Araçuaí  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">90</td></tr>
+    <tr><td headers="Araçuaí  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Araçuaí  D_POPT" class="gt_row gt_right" style="font-size: smaller;">36715</td>
+<td headers="Araçuaí  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.93</td>
+<td headers="Araçuaí  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">99</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Capelinha">Capelinha</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Capelinha  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Capelinha  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">34796</td>
+<td headers="Capelinha  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">4.94</td>
+<td headers="Capelinha  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">94</td></tr>
+    <tr><td headers="Capelinha  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Capelinha  D_POPT" class="gt_row gt_right" style="font-size: smaller;">38321</td>
+<td headers="Capelinha  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">4.94</td>
+<td headers="Capelinha  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">96</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Coronel Murta">Coronel Murta</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Coronel Murta  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
+<td headers="Coronel Murta  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9209</td>
+<td headers="Coronel Murta  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.50</td>
+<td headers="Coronel Murta  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">395</td></tr>
+    <tr><td headers="Coronel Murta  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
+<td headers="Coronel Murta  D_POPT" class="gt_row gt_right" style="font-size: smaller;">9117</td>
+<td headers="Coronel Murta  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.50</td>
+<td headers="Coronel Murta  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">383</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Itaobim">Itaobim</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Itaobim  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
+<td headers="Itaobim  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">20997</td>
+<td headers="Itaobim  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.01</td>
+<td headers="Itaobim  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">176</td></tr>
+    <tr><td headers="Itaobim  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
+<td headers="Itaobim  D_POPT" class="gt_row gt_right" style="font-size: smaller;">21001</td>
+<td headers="Itaobim  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">−0.01</td>
+<td headers="Itaobim  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">170</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Itinga">Itinga</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Itinga  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Itinga  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">14407</td>
+<td headers="Itinga  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2.22</td>
+<td headers="Itinga  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">247</td></tr>
+    <tr><td headers="Itinga  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Itinga  D_POPT" class="gt_row gt_right" style="font-size: smaller;">15053</td>
+<td headers="Itinga  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">2.22</td>
+<td headers="Itinga  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">256</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Malacacheta">Malacacheta</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Malacacheta  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Malacacheta  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18787</td>
+<td headers="Malacacheta  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.62</td>
+<td headers="Malacacheta  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">191</td></tr>
+    <tr><td headers="Malacacheta  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Malacacheta  D_POPT" class="gt_row gt_right" style="font-size: smaller;">18556</td>
+<td headers="Malacacheta  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">−0.62</td>
+<td headers="Malacacheta  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">206</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Medina">Medina</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Medina  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
+<td headers="Medina  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">20701</td>
+<td headers="Medina  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.80</td>
+<td headers="Medina  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">180</td></tr>
+    <tr><td headers="Medina  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
+<td headers="Medina  D_POPT" class="gt_row gt_right" style="font-size: smaller;">21037</td>
+<td headers="Medina  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">−0.80</td>
+<td headers="Medina  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">169</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Minas Novas">Minas Novas</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Minas Novas  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
+<td headers="Minas Novas  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">31509</td>
+<td headers="Minas Novas  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">1.14</td>
+<td headers="Minas Novas  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">118</td></tr>
+    <tr><td headers="Minas Novas  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
+<td headers="Minas Novas  D_POPT" class="gt_row gt_right" style="font-size: smaller;">30803</td>
+<td headers="Minas Novas  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">1.14</td>
+<td headers="Minas Novas  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">109</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Pedra Azul">Pedra Azul</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Pedra Azul  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Pedra Azul  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">23843</td>
+<td headers="Pedra Azul  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">1.02</td>
+<td headers="Pedra Azul  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">145</td></tr>
+    <tr><td headers="Pedra Azul  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Pedra Azul  D_POPT" class="gt_row gt_right" style="font-size: smaller;">24333</td>
+<td headers="Pedra Azul  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">1.02</td>
+<td headers="Pedra Azul  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">153</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Rubelita">Rubelita</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Rubelita  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Rubelita  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">7777</td>
+<td headers="Rubelita  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−15.07</td>
+<td headers="Rubelita  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">437</td></tr>
+    <tr><td headers="Rubelita  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Rubelita  D_POPT" class="gt_row gt_right" style="font-size: smaller;">5609</td>
+<td headers="Rubelita  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">−15.07</td>
+<td headers="Rubelita  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">567</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Salinas">Salinas</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Salinas  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
+<td headers="Salinas  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">41864</td>
+<td headers="Salinas  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3.37</td>
+<td headers="Salinas  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">85</td></tr>
+    <tr><td headers="Salinas  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
+<td headers="Salinas  D_POPT" class="gt_row gt_right" style="font-size: smaller;">39182</td>
+<td headers="Salinas  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">3.37</td>
+<td headers="Salinas  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">81</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Teófilo Otoni">Teófilo Otoni</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Teófilo Otoni  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
+<td headers="Teófilo Otoni  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">141269</td>
+<td headers="Teófilo Otoni  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2.40</td>
+<td headers="Teófilo Otoni  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18</td></tr>
+    <tr><td headers="Teófilo Otoni  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
+<td headers="Teófilo Otoni  D_POPT" class="gt_row gt_right" style="font-size: smaller;">134733</td>
+<td headers="Teófilo Otoni  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">2.40</td>
+<td headers="Teófilo Otoni  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">17</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Turmalina">Turmalina</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Turmalina  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Turmalina  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18046</td>
+<td headers="Turmalina  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">6.01</td>
+<td headers="Turmalina  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">200</td></tr>
+    <tr><td headers="Turmalina  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Turmalina  D_POPT" class="gt_row gt_right" style="font-size: smaller;">20280</td>
+<td headers="Turmalina  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">6.01</td>
+<td headers="Turmalina  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">186</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Virgem da Lapa">Virgem da Lapa</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Virgem da Lapa  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Virgem da Lapa  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">13625</td>
+<td headers="Virgem da Lapa  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.38</td>
+<td headers="Virgem da Lapa  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">274</td></tr>
+    <tr><td headers="Virgem da Lapa  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Virgem da Lapa  D_POPT" class="gt_row gt_right" style="font-size: smaller;">13729</td>
+<td headers="Virgem da Lapa  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.38</td>
+<td headers="Virgem da Lapa  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">278</td></tr>
   </tbody>
   
   
@@ -958,68 +813,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Taxa de urbanização</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>tabela02Demo <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"E:/Drives compartilhados/Vale do Lítio/r_project/tabelas/tabela02Demo.rds"</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>tabela02<span class="ot">&lt;-</span> <span class="fu">left_join</span>(tabela02Demo, df_nome) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>IBGE7, <span class="sc">-</span>D_POPT) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Municipio, <span class="fu">everything</span>()) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(Municipio, IBGE7)`
-Adding missing grouping variables: `IBGE7`</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>tabela02 <span class="sc">%&gt;%</span> <span class="fu">gt</span>() <span class="sc">%&gt;%</span> <span class="fu">tab_header</span>(</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Características Demográficas "</span>,</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">md</span>(<span class="st">"Vale do Lítio"</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">%&gt;%</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"left"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stubhead</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"Region and &lt;br /&gt;IAP Type"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">size =</span> <span class="st">"smaller"</span>),</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>()</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  )  <span class="sc">%&gt;%</span> <span class="co">#rótulo</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_table_font</span>(<span class="at">font =</span> <span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"Karla"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">6</span>),</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">heading.align =</span> <span class="st">'left'</span>,</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>              <span class="at">column_labels.background.color =</span> <span class="st">'dodgerblue4'</span>,</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">26</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">'dodgerblue4'</span>, </span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">'bold'</span>, </span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="fu">google_font</span>(<span class="st">'Merriweather'</span>)</span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="at">groups =</span> <span class="st">'title'</span>)</span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">'grey90'</span>),</span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">rows =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(tabela02Demo), <span class="dv">2</span>))</span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>             <span class="at">D_RDEPP=</span> <span class="st">'Razão de dependência total'</span>,</span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>             <span class="at">D_INDENVE =</span> <span class="st">'Índice de envelhecimento'</span>,</span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>             <span class="at">D_PROPP65M =</span> <span class="st">'População de 65 a 69 anos de idade'</span>,</span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>             <span class="at">D_POPPURB =</span> <span class="st">'Taxa de urbanização'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="rlfqvgemmu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="dxhuagqhrh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#rlfqvgemmu table {
+#dxhuagqhrh table {
   font-family: Karla, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rlfqvgemmu thead, #rlfqvgemmu tbody, #rlfqvgemmu tfoot, #rlfqvgemmu tr, #rlfqvgemmu td, #rlfqvgemmu th {
+#dxhuagqhrh thead, #dxhuagqhrh tbody, #dxhuagqhrh tfoot, #dxhuagqhrh tr, #dxhuagqhrh td, #dxhuagqhrh th {
   border-style: none;
 }
 
-#rlfqvgemmu p {
+#dxhuagqhrh p {
   margin: 0;
   padding: 0;
 }
 
-#rlfqvgemmu .gt_table {
+#dxhuagqhrh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1045,12 +859,12 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#rlfqvgemmu .gt_caption {
+#dxhuagqhrh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rlfqvgemmu .gt_title {
+#dxhuagqhrh .gt_title {
   color: #333333;
   font-size: 26px;
   font-weight: initial;
@@ -1062,7 +876,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-bottom-width: 0;
 }
 
-#rlfqvgemmu .gt_subtitle {
+#dxhuagqhrh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1074,7 +888,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-top-width: 0;
 }
 
-#rlfqvgemmu .gt_heading {
+#dxhuagqhrh .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1086,13 +900,13 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rlfqvgemmu .gt_bottom_border {
+#dxhuagqhrh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rlfqvgemmu .gt_col_headings {
+#dxhuagqhrh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1107,7 +921,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rlfqvgemmu .gt_col_heading {
+#dxhuagqhrh .gt_col_heading {
   color: #FFFFFF;
   background-color: #104E8B;
   font-size: 100%;
@@ -1127,7 +941,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   overflow-x: hidden;
 }
 
-#rlfqvgemmu .gt_column_spanner_outer {
+#dxhuagqhrh .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #104E8B;
   font-size: 100%;
@@ -1139,15 +953,15 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   padding-right: 4px;
 }
 
-#rlfqvgemmu .gt_column_spanner_outer:first-child {
+#dxhuagqhrh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rlfqvgemmu .gt_column_spanner_outer:last-child {
+#dxhuagqhrh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rlfqvgemmu .gt_column_spanner {
+#dxhuagqhrh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1159,11 +973,11 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   width: 100%;
 }
 
-#rlfqvgemmu .gt_spanner_row {
+#dxhuagqhrh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rlfqvgemmu .gt_group_heading {
+#dxhuagqhrh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1189,7 +1003,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   text-align: left;
 }
 
-#rlfqvgemmu .gt_empty_group_heading {
+#dxhuagqhrh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1204,15 +1018,15 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   vertical-align: middle;
 }
 
-#rlfqvgemmu .gt_from_md > :first-child {
+#dxhuagqhrh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rlfqvgemmu .gt_from_md > :last-child {
+#dxhuagqhrh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rlfqvgemmu .gt_row {
+#dxhuagqhrh .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -1231,7 +1045,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   overflow-x: hidden;
 }
 
-#rlfqvgemmu .gt_stub {
+#dxhuagqhrh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1244,7 +1058,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   padding-right: 5px;
 }
 
-#rlfqvgemmu .gt_stub_row_group {
+#dxhuagqhrh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1258,15 +1072,15 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   vertical-align: top;
 }
 
-#rlfqvgemmu .gt_row_group_first td {
+#dxhuagqhrh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rlfqvgemmu .gt_row_group_first th {
+#dxhuagqhrh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rlfqvgemmu .gt_summary_row {
+#dxhuagqhrh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1276,16 +1090,16 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   padding-right: 5px;
 }
 
-#rlfqvgemmu .gt_first_summary_row {
+#dxhuagqhrh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rlfqvgemmu .gt_first_summary_row.thick {
+#dxhuagqhrh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rlfqvgemmu .gt_last_summary_row {
+#dxhuagqhrh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1295,7 +1109,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#rlfqvgemmu .gt_grand_summary_row {
+#dxhuagqhrh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1305,7 +1119,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   padding-right: 5px;
 }
 
-#rlfqvgemmu .gt_first_grand_summary_row {
+#dxhuagqhrh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1315,7 +1129,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#rlfqvgemmu .gt_last_grand_summary_row_top {
+#dxhuagqhrh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1325,11 +1139,11 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#rlfqvgemmu .gt_striped {
+#dxhuagqhrh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rlfqvgemmu .gt_table_body {
+#dxhuagqhrh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1338,7 +1152,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#rlfqvgemmu .gt_footnotes {
+#dxhuagqhrh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1352,7 +1166,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rlfqvgemmu .gt_footnote {
+#dxhuagqhrh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1361,7 +1175,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   padding-right: 5px;
 }
 
-#rlfqvgemmu .gt_sourcenotes {
+#dxhuagqhrh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1375,7 +1189,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rlfqvgemmu .gt_sourcenote {
+#dxhuagqhrh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1383,63 +1197,63 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   padding-right: 5px;
 }
 
-#rlfqvgemmu .gt_left {
+#dxhuagqhrh .gt_left {
   text-align: left;
 }
 
-#rlfqvgemmu .gt_center {
+#dxhuagqhrh .gt_center {
   text-align: center;
 }
 
-#rlfqvgemmu .gt_right {
+#dxhuagqhrh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rlfqvgemmu .gt_font_normal {
+#dxhuagqhrh .gt_font_normal {
   font-weight: normal;
 }
 
-#rlfqvgemmu .gt_font_bold {
+#dxhuagqhrh .gt_font_bold {
   font-weight: bold;
 }
 
-#rlfqvgemmu .gt_font_italic {
+#dxhuagqhrh .gt_font_italic {
   font-style: italic;
 }
 
-#rlfqvgemmu .gt_super {
+#dxhuagqhrh .gt_super {
   font-size: 65%;
 }
 
-#rlfqvgemmu .gt_footnote_marks {
+#dxhuagqhrh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rlfqvgemmu .gt_asterisk {
+#dxhuagqhrh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rlfqvgemmu .gt_indent_1 {
+#dxhuagqhrh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rlfqvgemmu .gt_indent_2 {
+#dxhuagqhrh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rlfqvgemmu .gt_indent_3 {
+#dxhuagqhrh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rlfqvgemmu .gt_indent_4 {
+#dxhuagqhrh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rlfqvgemmu .gt_indent_5 {
+#dxhuagqhrh .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1452,7 +1266,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
       <td colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Vale do Lítio</td>
     </tr>
     <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Municipio">Municipio</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="IBGE7">IBGE7</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ANO">ANO</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Razão de dependência total">Razão de dependência total</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Índice de envelhecimento">Índice de envelhecimento</th>
@@ -1462,215 +1276,215 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   </thead>
   <tbody class="gt_table_body">
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3103405">3103405</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Araçuaí">Araçuaí</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3103405  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Araçuaí</td>
-<td headers="3103405  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="3103405  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">53.17000</td>
-<td headers="3103405  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">36.96000</td>
-<td headers="3103405  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9.37000</td>
-<td headers="3103405  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">65.07000</td></tr>
-    <tr><td headers="3103405  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Araçuaí</td>
-<td headers="3103405  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="3103405  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.58012</td>
-<td headers="3103405  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">58.26648</td>
-<td headers="3103405  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">11.24657</td>
-<td headers="3103405  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">71.97714</td></tr>
+    <tr class="gt_row_group_first"><td headers="Araçuaí  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3103405</td>
+<td headers="Araçuaí  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Araçuaí  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">53.17</td>
+<td headers="Araçuaí  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">36.96</td>
+<td headers="Araçuaí  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9.37</td>
+<td headers="Araçuaí  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">65.07</td></tr>
+    <tr><td headers="Araçuaí  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3103405</td>
+<td headers="Araçuaí  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
+<td headers="Araçuaí  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.58</td>
+<td headers="Araçuaí  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">58.27</td>
+<td headers="Araçuaí  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">11.25</td>
+<td headers="Araçuaí  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">71.98</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3112307">3112307</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Capelinha">Capelinha</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3112307  Municipio" class="gt_row gt_left" style="font-size: smaller;">Capelinha</td>
-<td headers="3112307  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="3112307  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">53.49000</td>
-<td headers="3112307  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">18.99000</td>
-<td headers="3112307  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">5.56000</td>
-<td headers="3112307  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">71.12000</td></tr>
-    <tr><td headers="3112307  Municipio" class="gt_row gt_left" style="font-size: smaller;">Capelinha</td>
-<td headers="3112307  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="3112307  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">41.27080</td>
-<td headers="3112307  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">56.17093</td>
-<td headers="3112307  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">11.11434</td>
-<td headers="3112307  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">77.22478</td></tr>
+    <tr class="gt_row_group_first"><td headers="Capelinha  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3112307</td>
+<td headers="Capelinha  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
+<td headers="Capelinha  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">53.49</td>
+<td headers="Capelinha  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">18.99</td>
+<td headers="Capelinha  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">5.56</td>
+<td headers="Capelinha  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">71.12</td></tr>
+    <tr><td headers="Capelinha  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3112307</td>
+<td headers="Capelinha  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Capelinha  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">41.27</td>
+<td headers="Capelinha  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">56.17</td>
+<td headers="Capelinha  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">11.11</td>
+<td headers="Capelinha  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">77.22</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3119500">3119500</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Coronel Murta">Coronel Murta</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3119500  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Coronel Murta</td>
-<td headers="3119500  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="3119500  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">53.60000</td>
-<td headers="3119500  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.21000</td>
-<td headers="3119500  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">10.01000</td>
-<td headers="3119500  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">73.41000</td></tr>
-    <tr><td headers="3119500  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Coronel Murta</td>
-<td headers="3119500  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="3119500  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">42.44830</td>
-<td headers="3119500  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">64.79353</td>
-<td headers="3119500  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">12.42460</td>
-<td headers="3119500  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">74.98480</td></tr>
+    <tr class="gt_row_group_first"><td headers="Coronel Murta  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3119500</td>
+<td headers="Coronel Murta  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Coronel Murta  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">53.60</td>
+<td headers="Coronel Murta  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.21</td>
+<td headers="Coronel Murta  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">10.01</td>
+<td headers="Coronel Murta  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">73.41</td></tr>
+    <tr><td headers="Coronel Murta  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3119500</td>
+<td headers="Coronel Murta  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
+<td headers="Coronel Murta  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">42.45</td>
+<td headers="Coronel Murta  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">64.79</td>
+<td headers="Coronel Murta  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">12.42</td>
+<td headers="Coronel Murta  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">74.98</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3133303">3133303</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Itaobim">Itaobim</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3133303  Municipio" class="gt_row gt_left" style="font-size: smaller;">Itaobim</td>
-<td headers="3133303  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="3133303  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">55.76000</td>
-<td headers="3133303  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">37.96000</td>
-<td headers="3133303  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">9.85000</td>
-<td headers="3133303  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">75.13000</td></tr>
-    <tr><td headers="3133303  Municipio" class="gt_row gt_left" style="font-size: smaller;">Itaobim</td>
-<td headers="3133303  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="3133303  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">40.54499</td>
-<td headers="3133303  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">63.32119</td>
-<td headers="3133303  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">11.85108</td>
-<td headers="3133303  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">72.25942</td></tr>
+    <tr class="gt_row_group_first"><td headers="Itaobim  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3133303</td>
+<td headers="Itaobim  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
+<td headers="Itaobim  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">55.76</td>
+<td headers="Itaobim  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">37.96</td>
+<td headers="Itaobim  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">9.85</td>
+<td headers="Itaobim  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">75.13</td></tr>
+    <tr><td headers="Itaobim  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3133303</td>
+<td headers="Itaobim  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Itaobim  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">40.54</td>
+<td headers="Itaobim  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">63.32</td>
+<td headers="Itaobim  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">11.85</td>
+<td headers="Itaobim  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">72.26</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3134004">3134004</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Itinga">Itinga</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3134004  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Itinga</td>
-<td headers="3134004  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="3134004  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">62.05000</td>
-<td headers="3134004  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">35.31000</td>
-<td headers="3134004  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9.99000</td>
-<td headers="3134004  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">45.49000</td></tr>
-    <tr><td headers="3134004  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Itinga</td>
-<td headers="3134004  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="3134004  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">42.33719</td>
-<td headers="3134004  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">65.83452</td>
-<td headers="3134004  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">12.52481</td>
-<td headers="3134004  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">78.29463</td></tr>
+    <tr class="gt_row_group_first"><td headers="Itinga  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3134004</td>
+<td headers="Itinga  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Itinga  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">62.05</td>
+<td headers="Itinga  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">35.31</td>
+<td headers="Itinga  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9.99</td>
+<td headers="Itinga  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">45.49</td></tr>
+    <tr><td headers="Itinga  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3134004</td>
+<td headers="Itinga  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
+<td headers="Itinga  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">42.34</td>
+<td headers="Itinga  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">65.83</td>
+<td headers="Itinga  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">12.52</td>
+<td headers="Itinga  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">78.29</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3139201">3139201</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Malacacheta">Malacacheta</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3139201  Municipio" class="gt_row gt_left" style="font-size: smaller;">Malacacheta</td>
-<td headers="3139201  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="3139201  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">57.83000</td>
-<td headers="3139201  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">35.77000</td>
-<td headers="3139201  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">9.65000</td>
-<td headers="3139201  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">62.94000</td></tr>
-    <tr><td headers="3139201  Municipio" class="gt_row gt_left" style="font-size: smaller;">Malacacheta</td>
-<td headers="3139201  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="3139201  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">42.49343</td>
-<td headers="3139201  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">65.91574</td>
-<td headers="3139201  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">12.57401</td>
-<td headers="3139201  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">70.77354</td></tr>
+    <tr class="gt_row_group_first"><td headers="Malacacheta  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3139201</td>
+<td headers="Malacacheta  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
+<td headers="Malacacheta  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">57.83</td>
+<td headers="Malacacheta  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">35.77</td>
+<td headers="Malacacheta  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">9.65</td>
+<td headers="Malacacheta  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">62.94</td></tr>
+    <tr><td headers="Malacacheta  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3139201</td>
+<td headers="Malacacheta  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Malacacheta  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">42.49</td>
+<td headers="Malacacheta  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">65.92</td>
+<td headers="Malacacheta  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">12.57</td>
+<td headers="Malacacheta  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">70.77</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3141405">3141405</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Medina">Medina</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3141405  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Medina</td>
-<td headers="3141405  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="3141405  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">57.37000</td>
-<td headers="3141405  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">37.61000</td>
-<td headers="3141405  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9.96000</td>
-<td headers="3141405  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">71.78000</td></tr>
-    <tr><td headers="3141405  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Medina</td>
-<td headers="3141405  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="3141405  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.74329</td>
-<td headers="3141405  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">62.86383</td>
-<td headers="3141405  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">11.83650</td>
-<td headers="3141405  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">74.10035</td></tr>
+    <tr class="gt_row_group_first"><td headers="Medina  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3141405</td>
+<td headers="Medina  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Medina  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">57.37</td>
+<td headers="Medina  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">37.61</td>
+<td headers="Medina  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9.96</td>
+<td headers="Medina  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">71.78</td></tr>
+    <tr><td headers="Medina  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3141405</td>
+<td headers="Medina  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
+<td headers="Medina  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.74</td>
+<td headers="Medina  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">62.86</td>
+<td headers="Medina  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">11.84</td>
+<td headers="Medina  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">74.10</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3141801">3141801</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Minas Novas">Minas Novas</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3141801  Municipio" class="gt_row gt_left" style="font-size: smaller;">Minas Novas</td>
-<td headers="3141801  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="3141801  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">54.41000</td>
-<td headers="3141801  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">21.11000</td>
-<td headers="3141801  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">6.14000</td>
-<td headers="3141801  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">40.87000</td></tr>
-    <tr><td headers="3141801  Municipio" class="gt_row gt_left" style="font-size: smaller;">Minas Novas</td>
-<td headers="3141801  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="3141801  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">40.70937</td>
-<td headers="3141801  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">57.99205</td>
-<td headers="3141801  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">11.23198</td>
-<td headers="3141801  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">66.43084</td></tr>
+    <tr class="gt_row_group_first"><td headers="Minas Novas  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141801</td>
+<td headers="Minas Novas  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
+<td headers="Minas Novas  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">54.41</td>
+<td headers="Minas Novas  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">21.11</td>
+<td headers="Minas Novas  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">6.14</td>
+<td headers="Minas Novas  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">40.87</td></tr>
+    <tr><td headers="Minas Novas  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141801</td>
+<td headers="Minas Novas  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Minas Novas  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">40.71</td>
+<td headers="Minas Novas  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">57.99</td>
+<td headers="Minas Novas  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">11.23</td>
+<td headers="Minas Novas  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">66.43</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3148707">3148707</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Pedra Azul">Pedra Azul</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3148707  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Pedra Azul</td>
-<td headers="3148707  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="3148707  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">57.08000</td>
-<td headers="3148707  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">30.65000</td>
-<td headers="3148707  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">8.53000</td>
-<td headers="3148707  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">88.12000</td></tr>
-    <tr><td headers="3148707  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Pedra Azul</td>
-<td headers="3148707  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="3148707  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.90912</td>
-<td headers="3148707  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">62.21651</td>
-<td headers="3148707  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">11.79946</td>
-<td headers="3148707  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">92.52303</td></tr>
+    <tr class="gt_row_group_first"><td headers="Pedra Azul  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3148707</td>
+<td headers="Pedra Azul  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Pedra Azul  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">57.08</td>
+<td headers="Pedra Azul  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">30.65</td>
+<td headers="Pedra Azul  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">8.53</td>
+<td headers="Pedra Azul  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">88.12</td></tr>
+    <tr><td headers="Pedra Azul  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3148707</td>
+<td headers="Pedra Azul  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
+<td headers="Pedra Azul  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.91</td>
+<td headers="Pedra Azul  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">62.22</td>
+<td headers="Pedra Azul  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">11.80</td>
+<td headers="Pedra Azul  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">92.52</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3156502">3156502</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Rubelita">Rubelita</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3156502  Municipio" class="gt_row gt_left" style="font-size: smaller;">Rubelita</td>
-<td headers="3156502  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="3156502  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">59.15000</td>
-<td headers="3156502  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">37.01000</td>
-<td headers="3156502  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">10.04000</td>
-<td headers="3156502  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">32.37000</td></tr>
-    <tr><td headers="3156502  Municipio" class="gt_row gt_left" style="font-size: smaller;">Rubelita</td>
-<td headers="3156502  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="3156502  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">42.33629</td>
-<td headers="3156502  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">71.15766</td>
-<td headers="3156502  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">13.09979</td>
-<td headers="3156502  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">53.26394</td></tr>
+    <tr class="gt_row_group_first"><td headers="Rubelita  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3156502</td>
+<td headers="Rubelita  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
+<td headers="Rubelita  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">59.15</td>
+<td headers="Rubelita  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">37.01</td>
+<td headers="Rubelita  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">10.04</td>
+<td headers="Rubelita  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">32.37</td></tr>
+    <tr><td headers="Rubelita  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3156502</td>
+<td headers="Rubelita  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Rubelita  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">42.34</td>
+<td headers="Rubelita  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">71.16</td>
+<td headers="Rubelita  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">13.10</td>
+<td headers="Rubelita  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">53.26</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3157005">3157005</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Salinas">Salinas</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3157005  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Salinas</td>
-<td headers="3157005  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="3157005  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">49.04000</td>
-<td headers="3157005  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">41.25000</td>
-<td headers="3157005  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9.61000</td>
-<td headers="3157005  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">78.40000</td></tr>
-    <tr><td headers="3157005  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Salinas</td>
-<td headers="3157005  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="3157005  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.86020</td>
-<td headers="3157005  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">57.35628</td>
-<td headers="3157005  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">11.18565</td>
-<td headers="3157005  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">81.40577</td></tr>
+    <tr class="gt_row_group_first"><td headers="Salinas  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3157005</td>
+<td headers="Salinas  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Salinas  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">49.04</td>
+<td headers="Salinas  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">41.25</td>
+<td headers="Salinas  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9.61</td>
+<td headers="Salinas  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">78.40</td></tr>
+    <tr><td headers="Salinas  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3157005</td>
+<td headers="Salinas  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
+<td headers="Salinas  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.86</td>
+<td headers="Salinas  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">57.36</td>
+<td headers="Salinas  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">11.19</td>
+<td headers="Salinas  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">81.41</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3168606">3168606</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Teófilo Otoni">Teófilo Otoni</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3168606  Municipio" class="gt_row gt_left" style="font-size: smaller;">Teófilo Otoni</td>
-<td headers="3168606  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="3168606  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">48.42000</td>
-<td headers="3168606  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">39.18000</td>
-<td headers="3168606  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">9.18000</td>
-<td headers="3168606  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">81.69000</td></tr>
-    <tr><td headers="3168606  Municipio" class="gt_row gt_left" style="font-size: smaller;">Teófilo Otoni</td>
-<td headers="3168606  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="3168606  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">37.10496</td>
-<td headers="3168606  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">57.86612</td>
-<td headers="3168606  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">10.44690</td>
-<td headers="3168606  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">89.28117</td></tr>
+    <tr class="gt_row_group_first"><td headers="Teófilo Otoni  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3168606</td>
+<td headers="Teófilo Otoni  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
+<td headers="Teófilo Otoni  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">48.42</td>
+<td headers="Teófilo Otoni  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">39.18</td>
+<td headers="Teófilo Otoni  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">9.18</td>
+<td headers="Teófilo Otoni  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">81.69</td></tr>
+    <tr><td headers="Teófilo Otoni  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3168606</td>
+<td headers="Teófilo Otoni  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Teófilo Otoni  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">37.10</td>
+<td headers="Teófilo Otoni  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">57.87</td>
+<td headers="Teófilo Otoni  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">10.45</td>
+<td headers="Teófilo Otoni  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">89.28</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3169703">3169703</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Turmalina">Turmalina</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3169703  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Turmalina</td>
-<td headers="3169703  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="3169703  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">47.66000</td>
-<td headers="3169703  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">24.65000</td>
-<td headers="3169703  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">6.38000</td>
-<td headers="3169703  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">71.59000</td></tr>
-    <tr><td headers="3169703  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Turmalina</td>
-<td headers="3169703  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="3169703  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">43.44225</td>
-<td headers="3169703  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">62.45595</td>
-<td headers="3169703  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">12.35110</td>
-<td headers="3169703  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">77.51881</td></tr>
+    <tr class="gt_row_group_first"><td headers="Turmalina  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3169703</td>
+<td headers="Turmalina  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
+<td headers="Turmalina  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">47.66</td>
+<td headers="Turmalina  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">24.65</td>
+<td headers="Turmalina  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">6.38</td>
+<td headers="Turmalina  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">71.59</td></tr>
+    <tr><td headers="Turmalina  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3169703</td>
+<td headers="Turmalina  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
+<td headers="Turmalina  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">43.44</td>
+<td headers="Turmalina  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">62.46</td>
+<td headers="Turmalina  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">12.35</td>
+<td headers="Turmalina  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">77.52</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="3171600">3171600</th>
+      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Virgem da Lapa">Virgem da Lapa</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="3171600  Municipio" class="gt_row gt_left" style="font-size: smaller;">Virgem da Lapa</td>
-<td headers="3171600  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="3171600  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">50.94000</td>
-<td headers="3171600  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">41.88000</td>
-<td headers="3171600  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">9.96000</td>
-<td headers="3171600  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">50.22000</td></tr>
-    <tr><td headers="3171600  Municipio" class="gt_row gt_left" style="font-size: smaller;">Virgem da Lapa</td>
-<td headers="3171600  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="3171600  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">42.41807</td>
-<td headers="3171600  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">66.13646</td>
-<td headers="3171600  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">12.55877</td>
-<td headers="3171600  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">66.41467</td></tr>
+    <tr class="gt_row_group_first"><td headers="Virgem da Lapa  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3171600</td>
+<td headers="Virgem da Lapa  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
+<td headers="Virgem da Lapa  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">50.94</td>
+<td headers="Virgem da Lapa  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">41.88</td>
+<td headers="Virgem da Lapa  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">9.96</td>
+<td headers="Virgem da Lapa  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">50.22</td></tr>
+    <tr><td headers="Virgem da Lapa  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3171600</td>
+<td headers="Virgem da Lapa  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="Virgem da Lapa  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">42.42</td>
+<td headers="Virgem da Lapa  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">66.14</td>
+<td headers="Virgem da Lapa  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">12.56</td>
+<td headers="Virgem da Lapa  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">66.41</td></tr>
   </tbody>
   
   
@@ -1685,85 +1499,27 @@ Adding missing grouping variables: `IBGE7`</code></pre>
 <p>[Tabela 3 - Vitor] - Inserir uma tabela com as seguintes colunas:</p>
 <p>Título: Indicadores da dinâmica demográfica selecionados - municípios do Vale do Lítio</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>municipios_vale <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3103405</span>,  <span class="co"># Araçuaí</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3112307</span>,  <span class="co"># Capelinha</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3119500</span>,  <span class="co"># Coronel Murta</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3133303</span>,  <span class="co"># Itaobim</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3134004</span>,  <span class="co"># Itinga</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3139201</span>,  <span class="co"># Malacacheta</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3141405</span>,  <span class="co"># Medina</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3141801</span>,  <span class="co"># Minas Novas</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3148707</span>,  <span class="co"># Pedra Azul</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3168606</span>,  <span class="co"># Teófilo Otoni</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3169703</span>,  <span class="co"># Turmalina</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3156502</span>,  <span class="co"># Rubelita</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3171600</span>,  <span class="co"># Virgem da Lapa</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="dv">3157005</span>  <span class="co"># Salinas</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a> df_demografia <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"E:/Drives compartilhados/Vale do Lítio/r_project/df_demografia.rds"</span>)</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>tabela03<span class="ot">&lt;-</span> <span class="fu">left_join</span>(df_demografia, df_nome) <span class="sc">%&gt;%</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Municipio, <span class="fu">everything</span>()) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(IBGE7)`</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tabela03 <span class="sc">%&gt;%</span> </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(IBGE7 <span class="sc">%in%</span> municipios_vale, ANO <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span>, <span class="dv">2021</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(IBGE7, ANO,D_TMI,D_ESPVIDA,D_TFT,D_TLM)<span class="sc">%&gt;%</span> <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">" Indicadores da dinâmica demográfica selecionados "</span>,</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">md</span>(<span class="st">"Vale do Lítio"</span>)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">%&gt;%</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_align_table_header</span>(<span class="at">align =</span> <span class="st">"left"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stubhead</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"Region and &lt;br /&gt;IAP Type"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">size =</span> <span class="st">"smaller"</span>),</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>()</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  )  <span class="sc">%&gt;%</span> <span class="co">#rótulo</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_table_font</span>(<span class="at">font =</span> <span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"Karla"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">6</span>),</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>              <span class="at">heading.align =</span> <span class="st">'left'</span>,</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">column_labels.background.color =</span> <span class="st">'dodgerblue4'</span>,</span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>              <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">26</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">'dodgerblue4'</span>, </span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">'bold'</span>, </span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> <span class="fu">google_font</span>(<span class="st">'Merriweather'</span>)</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="at">groups =</span> <span class="st">'title'</span>)</span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">'grey90'</span>),</span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">rows =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(tabela02Demo), <span class="dv">2</span>))</span>
-<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">D_TMI =</span> <span class="st">"Esperança de vida ao nascer"</span>,</span>
-<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>             <span class="at">D_ESPVIDA=</span> <span class="st">'Esperança de vida ao nascer'</span>,</span>
-<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>             <span class="at">D_TFT =</span> <span class="st">'Taxa de fecundidade total'</span>,</span>
-<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>             <span class="at">D_TLM =</span> <span class="st">'Taxa líquida migratória'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="ijbdcvfbis" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="zwxssykldy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#ijbdcvfbis table {
+#zwxssykldy table {
   font-family: Karla, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ijbdcvfbis thead, #ijbdcvfbis tbody, #ijbdcvfbis tfoot, #ijbdcvfbis tr, #ijbdcvfbis td, #ijbdcvfbis th {
+#zwxssykldy thead, #zwxssykldy tbody, #zwxssykldy tfoot, #zwxssykldy tr, #zwxssykldy td, #zwxssykldy th {
   border-style: none;
 }
 
-#ijbdcvfbis p {
+#zwxssykldy p {
   margin: 0;
   padding: 0;
 }
 
-#ijbdcvfbis .gt_table {
+#zwxssykldy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1789,12 +1545,12 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#ijbdcvfbis .gt_caption {
+#zwxssykldy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ijbdcvfbis .gt_title {
+#zwxssykldy .gt_title {
   color: #333333;
   font-size: 26px;
   font-weight: initial;
@@ -1806,7 +1562,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-bottom-width: 0;
 }
 
-#ijbdcvfbis .gt_subtitle {
+#zwxssykldy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1818,7 +1574,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-top-width: 0;
 }
 
-#ijbdcvfbis .gt_heading {
+#zwxssykldy .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1830,13 +1586,13 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ijbdcvfbis .gt_bottom_border {
+#zwxssykldy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ijbdcvfbis .gt_col_headings {
+#zwxssykldy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1851,7 +1607,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ijbdcvfbis .gt_col_heading {
+#zwxssykldy .gt_col_heading {
   color: #FFFFFF;
   background-color: #104E8B;
   font-size: 100%;
@@ -1871,7 +1627,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   overflow-x: hidden;
 }
 
-#ijbdcvfbis .gt_column_spanner_outer {
+#zwxssykldy .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #104E8B;
   font-size: 100%;
@@ -1883,15 +1639,15 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   padding-right: 4px;
 }
 
-#ijbdcvfbis .gt_column_spanner_outer:first-child {
+#zwxssykldy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ijbdcvfbis .gt_column_spanner_outer:last-child {
+#zwxssykldy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ijbdcvfbis .gt_column_spanner {
+#zwxssykldy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1903,11 +1659,11 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   width: 100%;
 }
 
-#ijbdcvfbis .gt_spanner_row {
+#zwxssykldy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ijbdcvfbis .gt_group_heading {
+#zwxssykldy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1933,7 +1689,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   text-align: left;
 }
 
-#ijbdcvfbis .gt_empty_group_heading {
+#zwxssykldy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1948,15 +1704,15 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   vertical-align: middle;
 }
 
-#ijbdcvfbis .gt_from_md > :first-child {
+#zwxssykldy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ijbdcvfbis .gt_from_md > :last-child {
+#zwxssykldy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ijbdcvfbis .gt_row {
+#zwxssykldy .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -1975,7 +1731,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   overflow-x: hidden;
 }
 
-#ijbdcvfbis .gt_stub {
+#zwxssykldy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1988,7 +1744,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   padding-right: 5px;
 }
 
-#ijbdcvfbis .gt_stub_row_group {
+#zwxssykldy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2002,15 +1758,15 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   vertical-align: top;
 }
 
-#ijbdcvfbis .gt_row_group_first td {
+#zwxssykldy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ijbdcvfbis .gt_row_group_first th {
+#zwxssykldy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ijbdcvfbis .gt_summary_row {
+#zwxssykldy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2020,16 +1776,16 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   padding-right: 5px;
 }
 
-#ijbdcvfbis .gt_first_summary_row {
+#zwxssykldy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ijbdcvfbis .gt_first_summary_row.thick {
+#zwxssykldy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ijbdcvfbis .gt_last_summary_row {
+#zwxssykldy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2039,7 +1795,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ijbdcvfbis .gt_grand_summary_row {
+#zwxssykldy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2049,7 +1805,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   padding-right: 5px;
 }
 
-#ijbdcvfbis .gt_first_grand_summary_row {
+#zwxssykldy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2059,7 +1815,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#ijbdcvfbis .gt_last_grand_summary_row_top {
+#zwxssykldy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2069,11 +1825,11 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ijbdcvfbis .gt_striped {
+#zwxssykldy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ijbdcvfbis .gt_table_body {
+#zwxssykldy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2082,7 +1838,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ijbdcvfbis .gt_footnotes {
+#zwxssykldy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2096,7 +1852,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ijbdcvfbis .gt_footnote {
+#zwxssykldy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2105,7 +1861,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   padding-right: 5px;
 }
 
-#ijbdcvfbis .gt_sourcenotes {
+#zwxssykldy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2119,7 +1875,7 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ijbdcvfbis .gt_sourcenote {
+#zwxssykldy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2127,252 +1883,180 @@ Adding missing grouping variables: `IBGE7`</code></pre>
   padding-right: 5px;
 }
 
-#ijbdcvfbis .gt_left {
+#zwxssykldy .gt_left {
   text-align: left;
 }
 
-#ijbdcvfbis .gt_center {
+#zwxssykldy .gt_center {
   text-align: center;
 }
 
-#ijbdcvfbis .gt_right {
+#zwxssykldy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ijbdcvfbis .gt_font_normal {
+#zwxssykldy .gt_font_normal {
   font-weight: normal;
 }
 
-#ijbdcvfbis .gt_font_bold {
+#zwxssykldy .gt_font_bold {
   font-weight: bold;
 }
 
-#ijbdcvfbis .gt_font_italic {
+#zwxssykldy .gt_font_italic {
   font-style: italic;
 }
 
-#ijbdcvfbis .gt_super {
+#zwxssykldy .gt_super {
   font-size: 65%;
 }
 
-#ijbdcvfbis .gt_footnote_marks {
+#zwxssykldy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ijbdcvfbis .gt_asterisk {
+#zwxssykldy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ijbdcvfbis .gt_indent_1 {
+#zwxssykldy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ijbdcvfbis .gt_indent_2 {
+#zwxssykldy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ijbdcvfbis .gt_indent_3 {
+#zwxssykldy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ijbdcvfbis .gt_indent_4 {
+#zwxssykldy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ijbdcvfbis .gt_indent_5 {
+#zwxssykldy .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
     <tr class="gt_heading">
-      <td colspan="6" class="gt_heading gt_title gt_font_normal" style="color: #104E8B; font-family: Merriweather; font-weight: bold;"> Indicadores da dinâmica demográfica selecionados </td>
+      <td colspan="4" class="gt_heading gt_title gt_font_normal" style="color: #104E8B; font-family: Merriweather; font-weight: bold;"> Indicadores da dinâmica demográfica</td>
     </tr>
     <tr class="gt_heading">
-      <td colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Vale do Lítio</td>
+      <td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Vale do Lítio</td>
     </tr>
     <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="IBGE7">IBGE7</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ANO">ANO</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Esperança de vida ao nascer">Esperança de vida ao nascer</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Esperança de vida ao nascer">Esperança de vida ao nascer</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa de fecundidade total">Taxa de fecundidade total</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Taxa líquida migratória">Taxa líquida migratória</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa líquida migratória">Taxa líquida migratória</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3103405</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">16.5</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">74.27</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">1.89</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">TRUE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3112307</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">16.3</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">74.41</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.35</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">TRUE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3119500</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">20.3</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">72.05</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2.16</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">TRUE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3133303</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">20.0</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">72.19</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">1.90</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">TRUE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3134004</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18.9</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">72.83</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2.25</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">TRUE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3139201</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">22.2</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">71.05</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.25</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">TRUE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3141405</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">16.5</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">74.27</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2.25</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">TRUE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141801</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">18.4</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">73.14</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.35</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">TRUE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3148707</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">19.0</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">72.79</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2.29</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">TRUE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3156502</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">17.8</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">73.46</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">1.92</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">TRUE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3157005</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">17.1</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">73.90</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">1.71</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">TRUE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3168606</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">16.2</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">74.45</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.09</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">TRUE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3169703</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">17.0</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">73.98</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2.22</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">FALSE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3171600</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">18.9</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">72.83</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">1.72</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">TRUE</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3103405</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">NA</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3112307</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">NA</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3119500</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">NA</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3133303</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">NA</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3134004</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">NA</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3139201</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">NA</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3141405</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">NA</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141801</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">NA</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3148707</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">NA</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3156502</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">NA</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3157005</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">NA</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3168606</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">NA</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3169703</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller; background-color: #E5E5E5;">NA</td></tr>
-    <tr><td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3171600</td>
-<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="D_TMI" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TFT" class="gt_row gt_right" style="font-size: smaller;">NA</td>
-<td headers="D_TLM" class="gt_row gt_center" style="font-size: smaller;">NA</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Araçuaí">Araçuaí</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Araçuaí  D_TMI" class="gt_row gt_right" style="font-size: smaller;">16.5</td>
+<td headers="Araçuaí  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">74.27</td>
+<td headers="Araçuaí  D_TFT" class="gt_row gt_right" style="font-size: smaller;">1.89</td>
+<td headers="Araçuaí  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-8.89</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Capelinha">Capelinha</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Capelinha  D_TMI" class="gt_row gt_right" style="font-size: smaller;">16.3</td>
+<td headers="Capelinha  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">74.41</td>
+<td headers="Capelinha  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.35</td>
+<td headers="Capelinha  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-3.98</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Coronel Murta">Coronel Murta</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Coronel Murta  D_TMI" class="gt_row gt_right" style="font-size: smaller;">20.3</td>
+<td headers="Coronel Murta  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">72.05</td>
+<td headers="Coronel Murta  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.16</td>
+<td headers="Coronel Murta  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-11.32</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Itaobim">Itaobim</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Itaobim  D_TMI" class="gt_row gt_right" style="font-size: smaller;">20.0</td>
+<td headers="Itaobim  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">72.19</td>
+<td headers="Itaobim  D_TFT" class="gt_row gt_right" style="font-size: smaller;">1.90</td>
+<td headers="Itaobim  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-6.04</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Itinga">Itinga</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Itinga  D_TMI" class="gt_row gt_right" style="font-size: smaller;">18.9</td>
+<td headers="Itinga  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">72.83</td>
+<td headers="Itinga  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.25</td>
+<td headers="Itinga  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-9.36</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Malacacheta">Malacacheta</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Malacacheta  D_TMI" class="gt_row gt_right" style="font-size: smaller;">22.2</td>
+<td headers="Malacacheta  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">71.05</td>
+<td headers="Malacacheta  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.25</td>
+<td headers="Malacacheta  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-19.72</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Medina">Medina</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Medina  D_TMI" class="gt_row gt_right" style="font-size: smaller;">16.5</td>
+<td headers="Medina  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">74.27</td>
+<td headers="Medina  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.25</td>
+<td headers="Medina  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-16.06</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Minas Novas">Minas Novas</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Minas Novas  D_TMI" class="gt_row gt_right" style="font-size: smaller;">18.4</td>
+<td headers="Minas Novas  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">73.14</td>
+<td headers="Minas Novas  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.35</td>
+<td headers="Minas Novas  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-18.08</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Pedra Azul">Pedra Azul</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Pedra Azul  D_TMI" class="gt_row gt_right" style="font-size: smaller;">19.0</td>
+<td headers="Pedra Azul  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">72.79</td>
+<td headers="Pedra Azul  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.29</td>
+<td headers="Pedra Azul  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-15.53</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Rubelita">Rubelita</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Rubelita  D_TMI" class="gt_row gt_right" style="font-size: smaller;">17.8</td>
+<td headers="Rubelita  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">73.46</td>
+<td headers="Rubelita  D_TFT" class="gt_row gt_right" style="font-size: smaller;">1.92</td>
+<td headers="Rubelita  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-24.38</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Salinas">Salinas</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Salinas  D_TMI" class="gt_row gt_right" style="font-size: smaller;">17.1</td>
+<td headers="Salinas  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">73.90</td>
+<td headers="Salinas  D_TFT" class="gt_row gt_right" style="font-size: smaller;">1.71</td>
+<td headers="Salinas  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-7.32</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Teófilo Otoni">Teófilo Otoni</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Teófilo Otoni  D_TMI" class="gt_row gt_right" style="font-size: smaller;">16.2</td>
+<td headers="Teófilo Otoni  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">74.45</td>
+<td headers="Teófilo Otoni  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.09</td>
+<td headers="Teófilo Otoni  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-6.15</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Turmalina">Turmalina</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Turmalina  D_TMI" class="gt_row gt_right" style="font-size: smaller;">17.0</td>
+<td headers="Turmalina  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">73.98</td>
+<td headers="Turmalina  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.22</td>
+<td headers="Turmalina  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-0.64</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Virgem da Lapa">Virgem da Lapa</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Virgem da Lapa  D_TMI" class="gt_row gt_right" style="font-size: smaller;">18.9</td>
+<td headers="Virgem da Lapa  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">72.83</td>
+<td headers="Virgem da Lapa  D_TFT" class="gt_row gt_right" style="font-size: smaller;">1.72</td>
+<td headers="Virgem da Lapa  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-8.27</td></tr>
   </tbody>
   
   
@@ -2426,9 +2110,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -2440,7 +2138,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copiada");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiada");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -2476,24 +2191,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

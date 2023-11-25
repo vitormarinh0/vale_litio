@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./2_Demografia.html" rel="prev">
+<link href="./4_Ambiental.html" rel="next">
+<link href="./2_Economia.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -57,7 +57,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "mais correspondências neste documento",
     "search-clear-button-title": "Limpar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar"
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
   }
 }</script>
 
@@ -68,11 +69,16 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Social</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3_Social.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Social</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -80,59 +86,72 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./"><img src="img/logo_fjp.png" alt="Logo" style="vertical-align: middle; width:180px"> Vale do Lítio</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Procurar"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefácio</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefácio</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./0_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></a>
+  <a href="./0_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1_Economia.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Economia</span></a>
+  <a href="./1_Demografia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Demografia</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_Demografia.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Demografia</span></a>
+  <a href="./2_Economia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Economia</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3_Social.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Social</span></a>
+  <a href="./3_Social.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Social</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./4_Ambiental.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ambiental</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#sociais" id="toc-sociais" class="nav-link active" data-scroll-target="#sociais"><span class="toc-section-number">5</span>  Sociais</a></li>
+  <li><a href="#sociais" id="toc-sociais" class="nav-link active" data-scroll-target="#sociais"><span class="header-section-number">5</span> Sociais</a></li>
   </ul>
 </nav>
     </div>
@@ -141,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Social</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Social</span></h1>
 </div>
 
 
@@ -158,6 +177,2826 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="sociais" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Sociais</h1>
+<p>- Educação</p>
+<p><em>Única tabela</em></p>
+<p>Taxa de atendimento da educação básica 2021– Ranking 2021 - E_TXATBASICA</p>
+<p>Taxa de distorção idade séries nos anos finais do ensino fundamental 2021– Ranking 2021 - E_DISTEF</p>
+<p>Taxa de distorção idade séries nos anos finais do ensino médio- 2021– Ranking 2021 - E_DISTEFAF</p>
+<p>Índice de Qualidade Geral da Educação 2021 – Ranking 2021 (ou último ano disponível) - E_IQE</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="itecicuevk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#itecicuevk table {
+  font-family: Karla, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#itecicuevk thead, #itecicuevk tbody, #itecicuevk tfoot, #itecicuevk tr, #itecicuevk td, #itecicuevk th {
+  border-style: none;
+}
+
+#itecicuevk p {
+  margin: 0;
+  padding: 0;
+}
+
+#itecicuevk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#itecicuevk .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#itecicuevk .gt_title {
+  color: #333333;
+  font-size: 26px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#itecicuevk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#itecicuevk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#itecicuevk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#itecicuevk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#itecicuevk .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #104E8B;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#itecicuevk .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #104E8B;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#itecicuevk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#itecicuevk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#itecicuevk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#itecicuevk .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#itecicuevk .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#itecicuevk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#itecicuevk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#itecicuevk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#itecicuevk .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#itecicuevk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#itecicuevk .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#itecicuevk .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#itecicuevk .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#itecicuevk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#itecicuevk .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#itecicuevk .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#itecicuevk .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#itecicuevk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#itecicuevk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#itecicuevk .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#itecicuevk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#itecicuevk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#itecicuevk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#itecicuevk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#itecicuevk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#itecicuevk .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#itecicuevk .gt_left {
+  text-align: left;
+}
+
+#itecicuevk .gt_center {
+  text-align: center;
+}
+
+#itecicuevk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#itecicuevk .gt_font_normal {
+  font-weight: normal;
+}
+
+#itecicuevk .gt_font_bold {
+  font-weight: bold;
+}
+
+#itecicuevk .gt_font_italic {
+  font-style: italic;
+}
+
+#itecicuevk .gt_super {
+  font-size: 65%;
+}
+
+#itecicuevk .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#itecicuevk .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#itecicuevk .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#itecicuevk .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#itecicuevk .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#itecicuevk .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#itecicuevk .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="color: #104E8B; font-family: Merriweather; font-weight: bold;">Educação</td>
+    </tr>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Municipio">Municipio</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="IBGE7">IBGE7</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ANO">ANO</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa de atendimento da educação básica">Taxa de atendimento da educação básica</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa de distorção idade séries nos anos finais do ensino fundamental">Taxa de distorção idade séries nos anos finais do ensino fundamental</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa de distorção idade séries nos anos finais do ensino médio">Taxa de distorção idade séries nos anos finais do ensino médio</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Índice de Qualidade Geral da Educação ">Índice de Qualidade Geral da Educação </th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Araçuaí</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3103405</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">92.40</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">8.10</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">14.50</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.30</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Capelinha</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3112307</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">100.00</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">3.70</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">7.00</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.39</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Coronel Murta</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3119500</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">84.49</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">7.40</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">12.80</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.30</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Itaobim</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3133303</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">94.27</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">11.10</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">20.60</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.29</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Itinga</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3134004</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">89.90</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">12.10</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">22.10</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.28</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Malacacheta</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3139201</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">91.94</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">11.70</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">20.30</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.31</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Medina</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141405</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">94.47</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">9.40</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">17.10</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.29</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Minas Novas</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141801</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">85.98</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">7.70</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">13.90</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.33</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Pedra Azul</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3148707</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">92.01</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">8.20</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">12.70</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.25</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Rubelita</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3156502</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">100.00</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">9.00</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">15.40</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.28</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Salinas</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3157005</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">92.53</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">4.70</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">9.40</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.34</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Teófilo Otoni</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3168606</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">98.87</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">11.80</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">21.30</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.34</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Turmalina</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3169703</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">93.48</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">7.40</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">14.40</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.38</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Virgem da Lapa</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3171600</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="E_TXATBASICA" class="gt_row gt_right" style="font-size: smaller;">80.60</td>
+<td headers="E_DISTEF" class="gt_row gt_right" style="font-size: smaller;">6.70</td>
+<td headers="E_DISTEFAF" class="gt_row gt_right" style="font-size: smaller;">11.60</td>
+<td headers="E_IQE" class="gt_row gt_right" style="font-size: smaller;">0.30</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<p>- Saúde</p>
+<p><em>Única tabela</em></p>
+<p>Taxa de mortalidade por doenças crônicas não transmissíveis 2021 – Ranking 2021</p>
+<p>Cobertura vacinal de pentavalente em menores de 1 ano 2021 – Ranking 2021</p>
+<p>Proporção de óbitos por causas mal definidas 2021 – Ranking 2021</p>
+<p>Internações hospitalares por condições sensíveis à atenção primária 2021 – Ranking 2021</p>
+<p>Infraestrutura para assistência à saúde - 2021 – Ranking 2021</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="nrykunxdap" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#nrykunxdap table {
+  font-family: Karla, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#nrykunxdap thead, #nrykunxdap tbody, #nrykunxdap tfoot, #nrykunxdap tr, #nrykunxdap td, #nrykunxdap th {
+  border-style: none;
+}
+
+#nrykunxdap p {
+  margin: 0;
+  padding: 0;
+}
+
+#nrykunxdap .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#nrykunxdap .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#nrykunxdap .gt_title {
+  color: #333333;
+  font-size: 26px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#nrykunxdap .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#nrykunxdap .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nrykunxdap .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nrykunxdap .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nrykunxdap .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #104E8B;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#nrykunxdap .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #104E8B;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#nrykunxdap .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#nrykunxdap .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#nrykunxdap .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#nrykunxdap .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#nrykunxdap .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#nrykunxdap .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nrykunxdap .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#nrykunxdap .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#nrykunxdap .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#nrykunxdap .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nrykunxdap .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#nrykunxdap .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#nrykunxdap .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#nrykunxdap .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nrykunxdap .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#nrykunxdap .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#nrykunxdap .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nrykunxdap .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nrykunxdap .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#nrykunxdap .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nrykunxdap .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#nrykunxdap .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nrykunxdap .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nrykunxdap .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nrykunxdap .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nrykunxdap .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nrykunxdap .gt_left {
+  text-align: left;
+}
+
+#nrykunxdap .gt_center {
+  text-align: center;
+}
+
+#nrykunxdap .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#nrykunxdap .gt_font_normal {
+  font-weight: normal;
+}
+
+#nrykunxdap .gt_font_bold {
+  font-weight: bold;
+}
+
+#nrykunxdap .gt_font_italic {
+  font-style: italic;
+}
+
+#nrykunxdap .gt_super {
+  font-size: 65%;
+}
+
+#nrykunxdap .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#nrykunxdap .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#nrykunxdap .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#nrykunxdap .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#nrykunxdap .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#nrykunxdap .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#nrykunxdap .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="color: #104E8B; font-family: Merriweather; font-weight: bold;">Saúde</td>
+    </tr>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Municipio">Municipio</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="IBGE7">IBGE7</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ANO">ANO</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa de mortalidade por doenças crônicas não transmissíveis ">Taxa de mortalidade por doenças crônicas não transmissíveis </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Cobertura vacinal de pentavalente em menores de 1 ano ">Cobertura vacinal de pentavalente em menores de 1 ano </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Proporção de óbitos por causas mal definidas">Proporção de óbitos por causas mal definidas</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Internações hospitalares por condições sensíveis à atenção primária ">Internações hospitalares por condições sensíveis à atenção primária </th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Araçuaí</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3103405</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">203.00</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">81.68</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">16.60</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">22.68</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Capelinha</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3112307</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">237.78</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">101.71</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">9.01</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">14.05</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Coronel Murta</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3119500</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">173.83</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">79.41</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">18.37</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">17.38</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Itaobim</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3133303</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">216.10</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">46.56</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">9.63</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">14.60</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Itinga</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3134004</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">264.26</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">88.15</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">3.00</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">16.92</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Malacacheta</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3139201</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">258.56</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">97.22</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">6.29</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">26.59</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Medina</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141405</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">305.38</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">99.60</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">21.14</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">26.57</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Minas Novas</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141801</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">147.15</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">71.01</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">21.56</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">22.29</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Pedra Azul</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3148707</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">260.18</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">72.70</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">2.94</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">16.30</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Rubelita</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3156502</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">355.72</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">37.93</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">13.46</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">24.30</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Salinas</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3157005</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">226.62</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">60.62</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">16.80</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">20.90</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Teófilo Otoni</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3168606</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">222.24</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">69.24</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">23.07</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">7.66</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Turmalina</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3169703</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">208.50</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">86.40</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">10.66</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">25.31</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Virgem da Lapa</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3171600</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="S_TXMODCNT30A69" class="gt_row gt_right" style="font-size: smaller;">304.22</td>
+<td headers="S_PENTA" class="gt_row gt_right" style="font-size: smaller;">89.60</td>
+<td headers="S_OBMALDEF" class="gt_row gt_right" style="font-size: smaller;">2.08</td>
+<td headers="S_INTERSAP" class="gt_row gt_right" style="font-size: smaller;">21.29</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<p>- Vulnerabilidade</p>
+<p><em>Única tabela</em></p>
+<p>Percentual da população de Sete Lagoas registrada no Cadastro Único 2021 – Ranking</p>
+<p>Percentual da população pobre e extremamente pobre do Cadastro Único 2021</p>
+<p>Percentual das pessoas de 18 a 64 anos inscritas no CadÚnico sem ocupação 2021</p>
+<p>Percentual da população de 16 a 64 anos empregada no setor formal 2021</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="vxcktgblvh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#vxcktgblvh table {
+  font-family: Karla, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#vxcktgblvh thead, #vxcktgblvh tbody, #vxcktgblvh tfoot, #vxcktgblvh tr, #vxcktgblvh td, #vxcktgblvh th {
+  border-style: none;
+}
+
+#vxcktgblvh p {
+  margin: 0;
+  padding: 0;
+}
+
+#vxcktgblvh .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vxcktgblvh .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#vxcktgblvh .gt_title {
+  color: #333333;
+  font-size: 26px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vxcktgblvh .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vxcktgblvh .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vxcktgblvh .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vxcktgblvh .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vxcktgblvh .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #104E8B;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vxcktgblvh .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #104E8B;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vxcktgblvh .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vxcktgblvh .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vxcktgblvh .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vxcktgblvh .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#vxcktgblvh .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#vxcktgblvh .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vxcktgblvh .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#vxcktgblvh .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#vxcktgblvh .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vxcktgblvh .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vxcktgblvh .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#vxcktgblvh .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#vxcktgblvh .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#vxcktgblvh .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vxcktgblvh .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#vxcktgblvh .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#vxcktgblvh .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vxcktgblvh .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vxcktgblvh .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vxcktgblvh .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vxcktgblvh .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vxcktgblvh .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vxcktgblvh .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vxcktgblvh .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vxcktgblvh .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vxcktgblvh .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vxcktgblvh .gt_left {
+  text-align: left;
+}
+
+#vxcktgblvh .gt_center {
+  text-align: center;
+}
+
+#vxcktgblvh .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vxcktgblvh .gt_font_normal {
+  font-weight: normal;
+}
+
+#vxcktgblvh .gt_font_bold {
+  font-weight: bold;
+}
+
+#vxcktgblvh .gt_font_italic {
+  font-style: italic;
+}
+
+#vxcktgblvh .gt_super {
+  font-size: 65%;
+}
+
+#vxcktgblvh .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#vxcktgblvh .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#vxcktgblvh .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#vxcktgblvh .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#vxcktgblvh .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#vxcktgblvh .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#vxcktgblvh .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="6" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="color: #104E8B; font-family: Merriweather; font-weight: bold;">Vulnerabilidade</td>
+    </tr>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Municipio">Municipio</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="IBGE7">IBGE7</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ANO">ANO</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percentual da população registrada no Cadastro Único ">Percentual da população registrada no Cadastro Único </th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percentual da população pobre e extremamente pobre do Cadastro Único">Percentual da população pobre e extremamente pobre do Cadastro Único</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percentual das pessoas de 18 a 64 anos inscritas no CadÚnico sem ocupação">Percentual das pessoas de 18 a 64 anos inscritas no CadÚnico sem ocupação</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Araçuaí</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3103405</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">60.14</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">55.37</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">45.60</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Capelinha</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3112307</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">64.52</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">45.77</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">39.69</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Coronel Murta</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3119500</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">69.71</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">58.83</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">48.44</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Itaobim</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3133303</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">53.21</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">60.98</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">41.59</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Itinga</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3134004</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">62.54</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">67.69</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">51.49</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Malacacheta</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3139201</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">48.37</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">60.64</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">27.94</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Medina</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141405</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">62.53</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">55.32</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">36.08</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Minas Novas</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141801</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">49.50</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">59.89</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">26.02</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Pedra Azul</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3148707</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">65.29</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">70.35</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">40.12</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Rubelita</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3156502</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">74.34</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">71.85</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">43.87</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Salinas</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3157005</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">57.06</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">48.41</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">34.28</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Teófilo Otoni</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3168606</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">38.54</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">52.02</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">21.83</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Turmalina</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3169703</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">55.54</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">51.19</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">36.67</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Virgem da Lapa</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3171600</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="B_POPCADUNICO" class="gt_row gt_right" style="font-size: smaller;">64.94</td>
+<td headers="B_POPPOBEXTRCAD" class="gt_row gt_right" style="font-size: smaller;">47.23</td>
+<td headers="B_POPIDCADSPOP" class="gt_row gt_right" style="font-size: smaller;">40.65</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<p>- Segurança</p>
+<p>Única tabela</p>
+<p>Taxa de ocorrência de homicídios dolosos – ranking 2021 – Ranking 2021 - P_HOM_TX</p>
+<p>Taxa de crimes violentos contra o patrimônio – ranking 2021 – Ranking 2021 - P_CVPA</p>
+<p>Número de habitantes por policial militar – ranking 2021 – Ranking 2021</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="iramyiusfk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#iramyiusfk table {
+  font-family: Karla, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#iramyiusfk thead, #iramyiusfk tbody, #iramyiusfk tfoot, #iramyiusfk tr, #iramyiusfk td, #iramyiusfk th {
+  border-style: none;
+}
+
+#iramyiusfk p {
+  margin: 0;
+  padding: 0;
+}
+
+#iramyiusfk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#iramyiusfk .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#iramyiusfk .gt_title {
+  color: #333333;
+  font-size: 26px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#iramyiusfk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#iramyiusfk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#iramyiusfk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iramyiusfk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#iramyiusfk .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #104E8B;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#iramyiusfk .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #104E8B;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#iramyiusfk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#iramyiusfk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#iramyiusfk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#iramyiusfk .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#iramyiusfk .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#iramyiusfk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#iramyiusfk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#iramyiusfk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#iramyiusfk .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#iramyiusfk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iramyiusfk .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#iramyiusfk .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#iramyiusfk .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#iramyiusfk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iramyiusfk .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#iramyiusfk .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#iramyiusfk .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iramyiusfk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iramyiusfk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#iramyiusfk .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iramyiusfk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#iramyiusfk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iramyiusfk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#iramyiusfk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iramyiusfk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#iramyiusfk .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iramyiusfk .gt_left {
+  text-align: left;
+}
+
+#iramyiusfk .gt_center {
+  text-align: center;
+}
+
+#iramyiusfk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#iramyiusfk .gt_font_normal {
+  font-weight: normal;
+}
+
+#iramyiusfk .gt_font_bold {
+  font-weight: bold;
+}
+
+#iramyiusfk .gt_font_italic {
+  font-style: italic;
+}
+
+#iramyiusfk .gt_super {
+  font-size: 65%;
+}
+
+#iramyiusfk .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#iramyiusfk .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#iramyiusfk .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#iramyiusfk .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#iramyiusfk .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#iramyiusfk .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#iramyiusfk .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="6" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="color: #104E8B; font-family: Merriweather; font-weight: bold;">Segurança Social</td>
+    </tr>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Municipio">Municipio</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="IBGE7">IBGE7</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ANO">ANO</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa de ocorrência de homicídios dolosos">Taxa de ocorrência de homicídios dolosos</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa de crimes violentos contra o patrimônio">Taxa de crimes violentos contra o patrimônio</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Número de habitantes por policial militar">Número de habitantes por policial militar</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Araçuaí</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3103405</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">13.62</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">59.92</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">622.29</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Capelinha</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3112307</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">13.05</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">86.11</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">532.24</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Coronel Murta</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3119500</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">0.00</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">32.58</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">837.18</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Itaobim</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3133303</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">4.76</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">95.25</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">428.51</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Itinga</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3134004</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">39.86</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">26.57</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">836.28</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Malacacheta</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3139201</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">0.00</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">26.95</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">806.78</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Medina</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141405</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">28.98</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">159.41</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">766.70</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Minas Novas</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141801</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">6.35</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">12.69</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">750.21</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Pedra Azul</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3148707</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">28.77</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">131.51</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">784.94</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Rubelita</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3156502</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">0.00</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">142.63</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">560.90</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Salinas</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3157005</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">4.78</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">52.55</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">747.57</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Teófilo Otoni</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3168606</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">5.66</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">48.84</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">274.31</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Turmalina</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3169703</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">0.00</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">59.17</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">845.00</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Virgem da Lapa</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3171600</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="P_HOM_TX" class="gt_row gt_right" style="font-size: smaller;">0.00</td>
+<td headers="P_CVPA" class="gt_row gt_right" style="font-size: smaller;">0.00</td>
+<td headers="P_PM" class="gt_row gt_right" style="font-size: smaller;">807.59</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<p>- Saneamento</p>
+<p>Única tabela</p>
+<p>Percentual da população urbana residente em domicílios ligados à rede geral de</p>
+<p>abastecimento de água – ranking 2021 – Ranking 2021 - N_COBAGUA</p>
+<p>Destinação final do lixo – ranking 2021 – Ranking 2021- N_DISPOSLIXO</p>
+<p>Índice de Esforço de Gestão das Políticas de Saneamento Básico – ranking 2021 – Ranking 2021 N_GESTÃO</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="avmryslaiq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#avmryslaiq table {
+  font-family: Karla, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#avmryslaiq thead, #avmryslaiq tbody, #avmryslaiq tfoot, #avmryslaiq tr, #avmryslaiq td, #avmryslaiq th {
+  border-style: none;
+}
+
+#avmryslaiq p {
+  margin: 0;
+  padding: 0;
+}
+
+#avmryslaiq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#avmryslaiq .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#avmryslaiq .gt_title {
+  color: #333333;
+  font-size: 26px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#avmryslaiq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#avmryslaiq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#avmryslaiq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#avmryslaiq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#avmryslaiq .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #104E8B;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#avmryslaiq .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #104E8B;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#avmryslaiq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#avmryslaiq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#avmryslaiq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#avmryslaiq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#avmryslaiq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#avmryslaiq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#avmryslaiq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#avmryslaiq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#avmryslaiq .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#avmryslaiq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#avmryslaiq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#avmryslaiq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#avmryslaiq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#avmryslaiq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#avmryslaiq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#avmryslaiq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#avmryslaiq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#avmryslaiq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#avmryslaiq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#avmryslaiq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#avmryslaiq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#avmryslaiq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#avmryslaiq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#avmryslaiq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#avmryslaiq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#avmryslaiq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#avmryslaiq .gt_left {
+  text-align: left;
+}
+
+#avmryslaiq .gt_center {
+  text-align: center;
+}
+
+#avmryslaiq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#avmryslaiq .gt_font_normal {
+  font-weight: normal;
+}
+
+#avmryslaiq .gt_font_bold {
+  font-weight: bold;
+}
+
+#avmryslaiq .gt_font_italic {
+  font-style: italic;
+}
+
+#avmryslaiq .gt_super {
+  font-size: 65%;
+}
+
+#avmryslaiq .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#avmryslaiq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#avmryslaiq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#avmryslaiq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#avmryslaiq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#avmryslaiq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#avmryslaiq .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="6" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="color: #104E8B; font-family: Merriweather; font-weight: bold;">Segurança Social</td>
+    </tr>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Municipio">Municipio</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="IBGE7">IBGE7</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ANO">ANO</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Percentual da população urbana residente em domicílios ligados à rede geral de abastecimento de água">Percentual da população urbana residente em domicílios ligados à rede geral de abastecimento de água</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Destinação final do lixo">Destinação final do lixo</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Índice de Esforço de Gestão das Políticas de Saneamento Básico">Índice de Esforço de Gestão das Políticas de Saneamento Básico</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Araçuaí</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3103405</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">100.00</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">0.40</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Capelinha</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3112307</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">100.00</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">1.00</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Coronel Murta</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3119500</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">95.30</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">0.00</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Itaobim</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3133303</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">92.70</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">0.07</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Itinga</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3134004</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">91.70</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">0.07</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Malacacheta</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3139201</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">88.90</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">0.66</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Medina</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141405</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">91.10</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">0.00</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Minas Novas</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141801</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">90.90</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">0.00</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Pedra Azul</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3148707</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">82.20</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">1.00</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Rubelita</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3156502</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">100.00</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">0.60</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Salinas</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3157005</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">100.00</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">1.00</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Teófilo Otoni</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3168606</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">85.70</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">1.00</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Turmalina</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3169703</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">97.40</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">0.40</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Virgem da Lapa</td>
+<td headers="IBGE7" class="gt_row gt_right" style="font-size: smaller;">3171600</td>
+<td headers="ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
+<td headers="N_COBAGUA" class="gt_row gt_right" style="font-size: smaller;">100.00</td>
+<td headers="N_DISPOSLIXO" class="gt_row gt_right" style="font-size: smaller;">NA</td>
+<td headers="N_GESTÃO" class="gt_row gt_right" style="font-size: smaller;">0.33</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -190,9 +3029,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -257,6 +3110,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -298,13 +3237,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./2_Demografia.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Demografia</span></span>
+      <a href="./2_Economia.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Economia</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./4_Ambiental.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ambiental</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

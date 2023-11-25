@@ -5,22 +5,6 @@ editor: visual
 
 # Quais as características da população residente?
 
-\[Comentário Tabela 1 - Caio\] Minas Gerais xxx, os 14 municípios representam xx % dessa população.
-
-\[Tabela 1 - Vitor\] - Inserir uma tabela com as seguintes colunas:
-
--   Município
-
--   Total da População 2010
-
--   Total da População 2022
-
--   Taxa de crescimento média geométrica 2022/2010
-
--   Posição ranking populacional 2010
-
--   Posição ranking populacional 2022
-
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
 library(tidyverse)
@@ -63,7 +47,8 @@ df_nome <- data.frame(
   )
 )
 
-tabela01<- left_join(tabela01Demo, df_nome) %>% select(-IBGE7) %>% 
+tabela01<- left_join(tabela01Demo, df_nome) %>%  mutate(tx_cresc = tx_cresc*100) %>%
+  select(-IBGE7) %>% 
   select(Municipio, everything()) 
 
 #criar tabela 
