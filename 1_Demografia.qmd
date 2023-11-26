@@ -3,13 +3,36 @@ title: "Demografia"
 editor: visual
 ---
 
-# Quais as características da população residente?
+## Quantas pessoas residem nos municípios do Vale do Lítio? Como essa população evoluiu nos últimos 12 anos?
+
+Segundo os resultados do Censo Demográfico do IBGE, Teófilo Otoni é o maior município com mais de 137 mil pessoas, ocupando a 18ª posição no estado de Minas Gerais em 2022. Salinas, Capelinha e Araçuaí registraram entre 34 a 40 mil habitantes. Já o municípios de Pedra Azul, Minas Novas, Medina, Turmalina, Itaobim e Malacacheta foram recenseados entre 17 a 24 mil habitantes em 2022. Itinga, Virgem da Lapa, Coronel Murta e Rubelita possuem populações menores que 15 mil habitantes, sendo Rubelita o município com o menor contigente populacional, 5.679 residentes em 2022. Assim, classifica-se em termos de tamanho populacional:
+
+-   **Grupo 1**. Teófilo Otoni
+
+-   **Grupo 2**. Salinas, Capelinha e Araçuaí
+
+-   **Grupo 3**. Pedra Azul, Minas Novas, Medina, Turmalina, Itaobim e Malacacheta
+
+-   **Grupo 4**. Itinga, Virgem da Lapa, Coronel Murta e Rubelita
+
+Em termos do crescimento populacional entre 2022 e 2010, destacaram-se:
+
+1.  a estabilidade da população de Teófilo Otoni (**Grupo 1**);
+
+2.  a estabilidade da população de Salinas, crescimento em Capelinha e decrescimento populacional em Araçuaí (**Grupo 2**);
+
+3.  a redução populacional de todos os menores municípios (**Grupos 3 e 4**), com exceção de Turmalina e Pedra Azul.
+
+No cenário de desaceleração do crescimento populacional experimentado pelo país, é notável que a diminuição da população, antes mais proeminente nos municípios menores, está se tornando progressivamente perceptível também nos municípios de maior porte [@ibge2023_primeiros].
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
 library(tidyverse)
 library(gt)
-tabela01Demo <- readRDS("dados/tabela01Demo.rds")
+library(readxl)
+
+# Leia a base de dados mais recente de população com Censo Demográfico 2022
+df_pop <- read_excel("bases/0 - POPULAÇÃO REFERÊNCIA/2023.10.31_A População total e taxas cresc - Munic. 2000, 2010 e 2022.xlsx")
 
 # Crie um DataFrame com as colunas "Municipio" e "IBGE7"
 df_nome <- data.frame(
@@ -44,163 +67,148 @@ df_nome <- data.frame(
     3156502,
     3171600,
     3157005
-  )
+  ),
+  vale_do_litio = rep(1,14)
 )
 
-tabela01<- left_join(tabela01Demo, df_nome) %>%  mutate(tx_cresc = tx_cresc*100) %>%
-  select(-IBGE7) %>% 
-  select(Municipio, everything()) 
+tabela01 <- left_join(df_pop, df_nome) %>%  
+  mutate( ranking2000 = rank(-pop_2000),
+          ranking2010 = rank(-pop_2010),
+          ranking2022 = rank(-pop_2022)) %>% 
+  filter(vale_do_litio==1) %>% 
+  select(-IBGE7, -vale_do_litio, - ranking2000, -pop_2000) %>% 
+  arrange(ranking2022)
 
 #criar tabela 
-tabela01 %>% group_by(Municipio)%>% gt() %>% tab_header(
-    title = "Características Demográficas ",
-    subtitle = md("Vale do Lítio")
-  )%>%
+tabela01 %>%  gt() %>% tab_header(
+    title = "População residente, taxa média geométrica de crescimento anual e ranking populacional",
+    subtitle = md("Municípios do Vale do Lítio - 2010 e 2022")
+   ) %>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = md("Region and <br />IAP Type")) %>%
   tab_style(
     style = cell_text(size = "smaller"),
     locations = cells_body()
   )  %>% #rótulo
-  opt_table_font(font = google_font(name = "Karla")) %>% 
+  opt_table_font(font = google_font(name = "Karla")) %>%
   tab_options(data_row.padding = px(6),
               heading.align = 'left',
               column_labels.background.color = 'dodgerblue4',
-              heading.title.font.size = px(26)) %>% 
+              heading.title.font.size = px(20)) %>%
   tab_style(
     style = cell_text(
-      color = 'dodgerblue4', 
-      weight = 'bold', 
+      color = 'dodgerblue4',
+      weight = 'bold',
       font = google_font('Merriweather')
     ),
     locations = cells_title(groups = 'title')
-  ) %>% 
+  ) %>%
   tab_style(
     style = cell_fill(color = 'grey90'),
-    locations = cells_body(rows = seq(1, nrow(tabela01Demo), 2))
+    locations = cells_body(rows = seq(1, nrow(tabela01), 2))
   ) %>%
-  cols_label(D_POPT = "População total",
-             tx_cresc= 'Taxa de crescimento da População',
-             Ranking_Populacao = 'Ranking Populacional') %>% 
+  cols_label(Municipio = "Município",
+             # pop_2000 = "População 2000",
+             pop_2010 = "População residente 2010 (pessoas)",
+             pop_2022 = "População residente 2022 (pessoas)",
+             tx_2000_2010 = "Taxa de crescimento 2010/2000 (%)",
+             tx_2010_2022 = "Taxa de crescimento 2022/2010 (%)",
+             # ranking2000 = "Ranking 2000",
+             ranking2010 = "Ranking 2010",
+             ranking2022 = "Ranking 2022")   %>% 
   fmt_number(
-    columns = 'Ranking_Populacao',
-    decimals = 0  # Número de casas decimais desejado
-  ) %>% 
-   fmt_number(
-    columns = 'tx_cresc',
-    decimals = 2  # Número de casas decimais desejado
-  )
-
-```
-
-\[Comentário Tabela 2 - Caio\]
-
-\[Tabela 2 - Vitor\] - Inserir uma tabela com as seguintes colunas:
-
--   Município
-
--   Razão de dependência
-
--   Índice de envelhecimento
-
--   Percentual da população com 65 anos ou mais de idade
-
--   Taxa de urbanização
-
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-
-tabela02Demo <- readRDS("dados/tabela02Demo.rds")
-
-
-tabela02<- left_join(tabela02Demo, df_nome) %>% select(-IBGE7, -D_POPT) %>% 
-  select(Municipio, everything()) 
-
- 
-tabela02 %>%  group_by(Municipio) %>% gt() %>% 
-  tab_header(
-    title = "Características Demográficas ",
-    subtitle = md("Vale do Lítio")
-  )%>%
-  opt_align_table_header(align = "left") %>%
-  tab_stubhead(label = md("Region and <br />IAP Type")) %>%
-  tab_style(
-    style = cell_text(size = "smaller"),
-    locations = cells_body()
-  )  %>% #rótulo
-  opt_table_font(font = google_font(name = "Karla")) %>% 
-  tab_options(data_row.padding = px(6),
-              heading.align = 'left',
-              column_labels.background.color = 'dodgerblue4',
-              heading.title.font.size = px(26)) %>% 
-  tab_style(
-    style = cell_text(
-      color = 'dodgerblue4', 
-      weight = 'bold', 
-      font = google_font('Merriweather')
-    ),
-    locations = cells_title(groups = 'title')
-  ) %>% 
-  tab_style(
-    style = cell_fill(color = 'grey90'),
-    locations = cells_body(rows = seq(1, nrow(tabela02Demo), 2))
-  ) %>%
-  cols_label(
-             D_RDEPP= 'Razão de dependência total',
-             D_INDENVE = 'Índice de envelhecimento',
-             D_PROPP65M = 'População de 65 a 69 anos de idade',
-             D_POPPURB = 'Taxa de urbanização') %>% 
-  fmt_number(
-    columns = 4:7,  # Seleciona todas as colunas
+    columns = 4:5,  # Seleciona todas as colunas
     decimals = 2)  # Define 2 casas decimais para a coluna "Valor"
-  
-
 
 ```
 
-\[Comentário Gráfico 1 - Caio\]
+Fonte: IBGE/Censo Demográficos 2000-2010-2022. Elaboração: FJP/Diretoria de Estatística e Informações
 
-\[Gráfico 1 - Vitor\] - Inserir pirâmides etárias
+## Qual a estrutura etária atual dos municípios do Vale do Lítio? É uma população jovem ou envelhecida?
 
-\[Pensar na apresentação é possível as pirâmides passando?\]
+A análise da distribuição da população em diferentes faixas etárias oferece *insights* sobre as relações entre esses grupos, suas proporções em relação à população total e possibilita acompanhar a evolução da dinâmica demográfica ao longo do tempo.
 
-\[Comentário Tabela 3 - Caio\]
+Os dados do Censo Demográfico de 2022 apontam para a continuidade do processo de envelhecimento da população brasileira. Isso se manifesta na diminuição das proporções dos grupos mais jovens em relação aos grupos de adultos e idosos. Esse fenômeno é impulsionado principalmente pela queda significativa do número médio de filhos por mulher, um declínio progressivo e veloz observado no Brasil desde o final da década de 1960. Em menor escala, contribui para essa dinâmica a redução da mortalidade em todas as faixas etárias, incluindo os idosos [@ibge2023_idade].
 
-\[Tabela 3 - Vitor\] - Inserir uma tabela com as seguintes colunas:
+Em 2022, o município de Teófilo Otoni apresentou uma proporção de população de 0 a 14 anos 18,7%, de 15 a 64 anos 68,6% e de 65 anos ou mais 12,7%. A título de comparação, Minas Gerais registrou 18,1%, 69,6% e 12,4%, respectivamente. Assim, em termos médios, Teófilo Otoni estrutura similar a Minas Gerais. A razão de dependência total[^1_demografia-1] registrou 45,8%, o que significa dizer que existem 45,8 crianças e idosos para cada 100 em idade ativa. Já o índice de envelhecimento[^1_demografia-2] foi de 68%, que significa que há 68 pessoas com mais de 65 anos para cada 100 pessoas na faixa etária entre 0 e 14 anos. Quanto maior o valor do indicador, mais envelhecida é a população. Minas Gerais registrou 68,6 idosos para cada 100 crianças.
 
-Título: Indicadores da dinâmica demográfica selecionados - municípios do Vale do Lítio
+[^1_demografia-1]: A razão de dependência total (RD) representa a soma da razão de dependência jovem e da razão de dependência adulta. Ela indica a carga de dependência total sobre a população em idade ativa. Pode ser determinado pela seguinte fórmula:
+
+    RD = ( P0-14 + P65+ )/ P15-64 x 100
+
+    onde P0-14 é a população de 0 a 14 anos, P15-64 a população de 15 a 64 anos e P65+ representando a população de 65 anos ou mais de idade.
+
+[^1_demografia-2]: O Índice de envelhecimento (IE) representa o número de pessoas com 65 anos e mais de idade em relação a um grupo de 100 crianças de zero a 14 anos. É determinado pela seguinte fórmula:
+
+    IE = (P65+ / P0-14) x 100
+
+    onde P0-14 é a população de 0 a 14 anos e P65+ representando a população de 65 anos ou mais de idade.
+
+Outros destaques foram:
+
+1.  Capelinha (**Grupo 2**) é tem o mais baixo índice de envelhecimento entre os municípios do Vale do Lítio, seguidos de Trumalina e Minas Novas (**Grupo 3**);
+
+2.  Todos os municípios pequenos (**Grupo 4**) são mais envelhidos que a Minas Gerais, com destaque para Rubelita que o número de idosos já superou o número de crianças;
+
+3.  Os municípios de Itaobim, Malacacheta e Medina (**Grupo 3**) também são mais envelhecidos que a média de Minas Gerais.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Leia a base de dados mais recente de população por faixa de idade do Censo Demográfico 2022
+df_idade <- read_excel("bases/0 - POPULAÇÃO REFERÊNCIA/2023.10.31_População por FAIXAS ETÁRIAS_ Totais - Homens e Mulheres 2022.xlsx")
+colnames(df_idade)[4:24] <- c("pop_00_04",
+                              "pop_05_09",
+                              "pop_10_14",
+                              "pop_15_19",
+                              "pop_20_24",
+                              "pop_25_29",
+                              "pop_30_34",
+                              "pop_35_39",
+                              "pop_40_44",
+                              "pop_45_49",
+                              "pop_50_54",
+                              "pop_55_59",
+                              "pop_60_64",
+                              "pop_65_69",
+                              "pop_70_74",
+                              "pop_75_79",
+                              "pop_80_84",
+                              "pop_85_89",
+                              "pop_90_94",
+                              "pop_95_99",
+                              "pop_100_mais")
 
-municipios_vale <- c(
-  3103405,  # Araçuaí
-  3112307,  # Capelinha
-  3119500,  # Coronel Murta
-  3133303,  # Itaobim
-  3134004,  # Itinga
-  3139201,  # Malacacheta
-  3141405,  # Medina
-  3141801,  # Minas Novas
-  3148707,  # Pedra Azul
-  3168606,  # Teófilo Otoni
-  3169703,  # Turmalina
-  3156502,  # Rubelita
-  3171600,  # Virgem da Lapa
-  3157005  # Salinas
-)
-
-tabela03Demo <- readRDS("dados/tabela03Demo.rds")
-
-tabela03<- left_join(tabela03Demo, df_nome) %>%
-  select(Municipio, everything())
-
-
-
-tabela03 %>% filter(ANO == '2010')  %>% group_by(Municipio) %>% 
-  select(Municipio,D_TMI,D_ESPVIDA,D_TFT,D_TLM) %>% 
-  gt() %>%
+tabela02 <- left_join(df_idade, df_nome) %>%  
+  mutate( Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4"),
+          pop_00_14 = pop_00_04 + pop_05_09 + pop_10_14,
+          pop_15_64 = pop_15_19 + pop_20_24 + pop_25_29 + pop_30_34 + 
+                      pop_35_39 + pop_40_44 + pop_45_49 + pop_50_54 + 
+                      pop_55_59 + pop_60_64,
+          pop_65_mais = pop_2022 - pop_00_14 - pop_15_64,
+          p.pop_00_14 = pop_00_14/pop_2022 *100,
+          p.pop_15_64 = pop_15_64/pop_2022 *100,
+          p.pop_65_mais = pop_65_mais/pop_2022 *100,
+          ranking00_14 = rank(-p.pop_00_14),
+          ranking15_64 = rank(-p.pop_15_64),
+          ranking65_mais = rank(-p.pop_65_mais),
+          rd.criancas = pop_00_14/pop_15_64*100,
+          rd.idosos = pop_65_mais/pop_15_64*100,
+          rd.total = (pop_00_14+pop_65_mais)/pop_15_64*100,
+          ind.envelhec = pop_65_mais/pop_00_14*100) %>% 
+  filter(vale_do_litio==1) %>% 
+  select(Grupo, Municipio, p.pop_00_14, p.pop_15_64, p.pop_65_mais, ranking00_14, ranking15_64,ranking65_mais,
+         rd.total, ind.envelhec) %>% 
+  arrange(Grupo)
+ 
+tabela02 %>%  group_by(Grupo) %>% gt() %>% 
   tab_header(
-    title = " Indicadores da dinâmica demográfica",
-    subtitle = md("Vale do Lítio")
+    title = "Proporção da população por grupos etários, ranking da proporção, taxa de dependência total e índice de envelhecimento",
+    subtitle = md("Municípios do Vale do Lítio - 2010 e 2022")
   )%>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = md("Region and <br />IAP Type")) %>%
@@ -212,33 +220,34 @@ tabela03 %>% filter(ANO == '2010')  %>% group_by(Municipio) %>%
   tab_options(data_row.padding = px(6),
               heading.align = 'left',
               column_labels.background.color = 'dodgerblue4',
-              heading.title.font.size = px(26)) %>% 
+              heading.title.font.size = px(20)) %>% 
   tab_style(
     style = cell_text(
       color = 'dodgerblue4', 
       weight = 'bold', 
       font = google_font('Merriweather')
     ),
-    locations = cells_title(groups = 'title')) %>%
-  cols_label(D_TMI = "Esperança de vida ao nascer",
-             D_ESPVIDA= 'Esperança de vida ao nascer',
-             D_TFT = 'Taxa de fecundidade total',
-             D_TLM = 'Taxa líquida migratória')
-
+    locations = cells_title(groups = 'title')
+  ) %>% 
+  tab_style(
+    style = cell_fill(color = 'grey90'),
+    locations = cells_body(rows = seq(1, nrow(tabela02), 2))
+  ) %>%
+  cols_label(Municipio = "Município",
+             p.pop_00_14 = "Proporção população 0 a 14 anos (%)", 
+             p.pop_15_64 = "Proporção população 15 a 64 anos (%)",
+             p.pop_65_mais = "Proporção população 65 anos ou mais (%)",
+             ranking00_14 = "Ranking prop. pop. 0 a 14 anos", 
+             ranking15_64 = "Ranking prop. pop. 15 a 64 anos", 
+             ranking65_mais = "Ranking prop. pop. 65 anos ou mais",
+             rd.total = "Razão de dependência total (%)", 
+             ind.envelhec = "IE (%)") %>% 
+  fmt_number(
+    columns = c(3:5,9:10),  # Seleciona todas as colunas
+    decimals = 1)  # Define 2 casas decimais para a coluna "Valor"
+  
 ```
 
--   Município
+Fonte: IBGE/Censo Demográfico 2022. Elaboração: FJP/Diretoria de Estatística e Informações. Nota: IE = Índice de Envelhecimento.
 
--   Esperança de vida ao nascer
-
--   Mortalidade infantil
-
--   Taxa de fecundidade total
-
--   Taxa líquida migratória
-
-## Povos indígenas
-
-Os povos indígenas e comunidades tradicionais
-
-## População quilombola
+<!-- ## Há registros de povos tradicionais nos municípios do Vale do Lítio? -->

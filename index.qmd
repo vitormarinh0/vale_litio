@@ -1,1 +1,8 @@
 # Prefácio {.unnumbered}
+
+O objetivo desse documento é apresentar característicvas sociais dos municípios pertencentes ao Vale do Lítio em uma forma sintetiza e dinâmica. O documento conta com informações sobre a população, renda, emprego e outros aspectos.
+
+Os dados utilizados estão disponíveis na Plataforma do [IMRS](https://imrs.fjp.mg.gov.br/) onde perfis municipais individuais podem ser visulizados [aqui](https://imrs.fjp.mg.gov.br/Perfil).
+
+
+Citar as fontes de dados

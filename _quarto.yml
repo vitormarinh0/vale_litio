@@ -2,7 +2,8 @@ project:
   type: book
 
 book:
-  title: "<img src='img/logo_fjp.png' alt='Logo' style='vertical-align: middle; width:180px'> Características sociais dos municípios do Vale do Lítio"
+  title: "<img src='img/logo_fjp.png' alt='Logo' style='vertical-align: middle; width:180px'> Vale do Lítio"
+  subtitle: "Características Sociais dos Municípios"
   author:
     - name: "[Caio Gonçalves](https://github.com/ccsgonc)"
       affiliation: Fundação João Pinheiro

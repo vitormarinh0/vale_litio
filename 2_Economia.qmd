@@ -3,11 +3,18 @@ title: "Economia"
 editor: visual
 ---
 
-# Quais as características econômicas dos municípios?
+## Em termos da importância econômica das atividades econômicas presentes nos municípios do Vale do Lítio, o que os dados dos PIB revelam?
 
-\[Comentário Tabela 1 - Caio\]
+Ao analisar os dados do PIB dos municípios tem-se que:
 
-\[Tabela 1 - Vitor\] - Inserir uma tabela com as seguintes colunas:
+1.   Todos os municípios possuem destaque para as atividades relacionadas aos serviços públicos (Administração, defesa, educação e saúde públicas e seguridade social) e o agrupamento que inclui todos os outros serviços, exceto comércio;
+2.   Na composição de atividades mais importantes, a indústria extrativa aparece em terceiro para Medina e Pedra Azul (**Grupo 3**) e Itinga e Coronel Murta (**Grupo 4**);
+3.   Produção florestal, pesca e aquicultura é de primeira importância para a economia de Turmalina e terceira para Capelinha, Minas Novas e Rubelita;
+4. As atividades comerciais são importantes para as economias de Virgem da Lapa, Malacacheta, Itaobim, Salina e Téofilo Otoni (61ª maior economia do estado de Minas Gerais e 18º em termos populacionais);
+5. A construção civil é terceira atividade mais importante de Aracuaí, que apesar de ser um município com um contigente populacional maior que os demais do **Grupo 3**, contribuiu menos para a economia mineira em 2021, ficando atrás dos municípios menores de Turmalina, Pedra Azul e Malacacheta.
+
+
+Em termos de PIB per capita, Turmalina, Capelinha e Salinas possuem os maiores valores entre todos os 14 municípios incluídos no Vale do Lítio. Em contrapartida, Rubelita, Virgem da Mapa e Itinga possuem os menores valores.
 
 ```{r, eval = FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -20,20 +27,19 @@ pop<- read_excel("bases/0 - POPULAÇÃO REFERÊNCIA/IMRS - 2022 (População Ref
 
 ####---------------------------------------------------------
 
-pib_municipal$IBGE7<- as.character(pib_municipal$IBGE7)
 
 pib_mg<- left_join(pop, pib_municipal,by = c('ANO', 'IBGE7')) %>% 
   select(MUNICIPIO, everything()) %>% janitor::clean_names() 
 
 pib_mg<- pib_mg %>% 
-  mutate(ranking_uf = rank(pib_mg$produto_interno_bruto_a_precos_correntes_r_1_000))
+  mutate(ranking_uf = rank(-pib_mg$produto_interno_bruto_a_precos_correntes_r_1_000))
 
 
 
 tabela01_economia <- pib_mg %>% janitor::clean_names() %>%   select(ibge7,municipio,produto_interno_bruto_a_precos_correntes_r_1_000, produto_interno_bruto_per_capita_a_precos_correntes_r_1_00, ranking_uf, atividade_com_maior_valor_adicionado_bruto, atividade_com_segundo_maior_valor_adicionado_bruto, atividade_com_terceiro_maior_valor_adicionado_bruto) %>% 
   filter(ibge7 %in% municipios_vale) 
 
-saveRDS(tabela01_economia, 'tabela01_economia.rds')
+saveRDS(tabela01_economia, 'dados/tabela01_economia.rds')
 
 ```
 
@@ -62,12 +68,19 @@ municipios_vale <- c(
   3157005  # Salinas
 )
 
- tabela01_economia <- readRDS("dados/tabela01_economia.rds")
+ tabela01_economia <- readRDS("dados/tabela01_economia.rds") %>% 
+   mutate(Grupo = case_when(
+    municipio == "Teófilo Otoni" ~ "Grupo 1",
+    municipio == "Salinas" | municipio == "Capelinha" | municipio == "Araçuaí" ~ "Grupo 2",
+    municipio == "Pedra Azul" | municipio == "Minas Novas" | municipio == "Medina" |
+    municipio == "Turmalina" | municipio == "Itaobim" | municipio == "Malacacheta" ~ "Grupo 3",
+    municipio == "Itinga" | municipio == "Virgem da Lapa" | municipio == "Coronel Murta" |
+    municipio == "Rubelita" ~ "Grupo 4")) %>% arrange(Grupo) %>% select(-ibge7)
 
-tabela01_economia %>% gt() %>%
+tabela01_economia %>% group_by(Grupo) %>% gt() %>%
   tab_header(
-    title = " Indicadores Econômicos",
-    subtitle = md("Vale do Lítio")
+    title = "Produto Interno Bruto, ranking do PIB, PIB per capita e atividades econômicas mais importantes",
+    subtitle = md("Municípios do Vale do Lítio - 2021")
   )%>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = md("Region and <br />IAP Type")) %>%
@@ -79,7 +92,7 @@ tabela01_economia %>% gt() %>%
   tab_options(data_row.padding = px(6),
               heading.align = 'left',
               column_labels.background.color = 'dodgerblue4',
-              heading.title.font.size = px(26)) %>% 
+              heading.title.font.size = px(20)) %>% 
   tab_style(
     style = cell_text(
       color = 'dodgerblue4', 
@@ -89,10 +102,9 @@ tabela01_economia %>% gt() %>%
     locations = cells_title(groups = 'title')
   ) %>%
   cols_label(
-    ibge7 = "Código IBGE",
     municipio = 'Município',
-    produto_interno_bruto_a_precos_correntes_r_1_000 = 'PIB',
-    produto_interno_bruto_per_capita_a_precos_correntes_r_1_00 = 'PIB per capita',
+    produto_interno_bruto_a_precos_correntes_r_1_000 = 'PIB (R$)',
+    produto_interno_bruto_per_capita_a_precos_correntes_r_1_00 = 'PIB per capita (R$)',
     ranking_uf = 'Ranking Estadual',
     atividade_com_maior_valor_adicionado_bruto = 'Primeira atividade mais importante',
     atividade_com_segundo_maior_valor_adicionado_bruto = 'Segunda atividade mais importante',
@@ -101,25 +113,10 @@ tabela01_economia %>% gt() %>%
 
 ```
 
--   Município
+Fonte: IBGE/Contas Regionais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
 
--   PIB 2020
 
--   PIB per capita 2020
-
--   Posição ranking PIB 2020
-
--   Primeira atividade mais importante
-
--   Segunda atividade mais importante
-
--   Terceira atividade mais importante
-
-\[Comentario Gráfico 1 - Caio\]
-
-\[Gráfico 1 - Vitor\] - Inserir gráfico de barras com distribuição das atividades (va agropecuária, industria, serviços e administração pública) 2010 e 2020
-
--   Município
+Em termos da distribuição do Valor Adicionado das atividades de agropecuária, indústria, serviços e administração pública
 
 ```{r, eval = FALSE,echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -144,20 +141,21 @@ saveRDS(tabela02_economia, 'tabela02_economia.rds')
 # Defina as opções para evitar notação científica
 options(scipen = 999)
 
-tabela02_economia <- readRDS("dados/tabela02_economia.rds")
+tabela02_economia <- readRDS("dados/tabela02_economia.rds") %>% arrange(pib)
 
 
 # Selecione apenas as colunas relevantes (atividades) e reformule os dados
 dados_plot <- tabela02_economia %>%   filter(IBGE7 %in% municipios_vale) %>% 
   select(ANO, MUNICIPIO, va_agro, va_ind, va_serv, va_adm) %>%
-  pivot_longer(cols = starts_with("va_"), names_to = "Atividade", values_to = "Valor")
+  pivot_longer(cols = starts_with("VA_"), names_to = "Atividade", values_to = "Valor")
 
 # Crie o gráfico empilhado
 grafico <- ggplot(dados_plot, aes(x = MUNICIPIO, y = Valor, fill = Atividade)) +
   geom_bar(stat = "identity") +
-  labs(title = "Distribuição das Atividades por Município e Ano",
+  labs(title = "Distribuição do Valor Adicionado por Atividades",
+    subtitle = md("Municípios do Vale do Lítio - 2021"),
        x = "Município",
-       y = "Valor") +
+       y = "R$") +
   scale_fill_brewer(palette = "Set1") +  # Escolha uma paleta de cores
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
@@ -167,26 +165,19 @@ print(grafico)
 
 
 ```
+Fonte: IBGE/Contas Regionais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
 
-\[Tabela 2- Vitor\] - Inserir uma tabela com as seguintes colunas:
 
--   Município
+## Qual a importância da indústria extrativa para a geração de empregos formais nos municípios do Vale do Lítio?
 
--   Empregaodos no setor formal
-
--   Empregados no setor formal - extrativa mineral
-
--   Percentual de empregados na indústria extrativa
-
--   indústria da construção
 
 ```{r, eval = FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
 ##dev_version
-tabela03_economia<- emp_renda %>%  filter(IBGE7 %in% municipios_vale) %>% left_join( df_nome) %>%
-  select(IBGE7, Municipio, everything())
-
-saveRDS(tabela03_economia, 'tabela03_economia.rds')
+# tabela03_economia<- emp_renda %>%  filter(IBGE7 %in% municipios_vale) %>% left_join( df_nome) %>%
+#   select(IBGE7, Municipio, everything())
+# 
+# saveRDS(tabela03_economia, 'tabela03_economia.rds')
 
 
 ```
@@ -199,7 +190,8 @@ saveRDS(tabela03_economia, 'tabela03_economia.rds')
 tabela03_economia <- readRDS("dados/tabela03_economia.rds")
 
 tabela03_economia  %>% select(-R_EMPRSFIC) %>% 
-  mutate(tx_emp_ext = R_EMPRSFMI/R_EMPRSF) %>% 
+  mutate(tx_emp_ext = R_EMPRSFMI/R_EMPRSF*100) %>% 
+  select(-ANO, -IBGE7) %>% 
   gt() %>% 
   tab_header(
     title = "Composição do Emprego",
@@ -229,8 +221,8 @@ tabela03_economia  %>% select(-R_EMPRSFIC) %>%
     tx_emp_ext = 'Percentual de empregados na indústria extrativa'
   )  %>% 
   fmt_number(
-    columns = 6,  # Seleciona colunas
-    decimals = 2)  # Definir 2 casas decimais 
+    columns = 4,  # Seleciona colunas
+    decimals = 1)  # Definir 2 casas decimais 
   
 
 
@@ -246,11 +238,11 @@ tabela03_economia  %>% select(-R_EMPRSFIC) %>%
 ```{r, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
 ##dev_version
-tabela04_economia <- emp_renda <- readRDS("E:/Drives compartilhados/Vale do Lítio/r_project/versão_git/dados/emp_renda.rds") %>% 
+tabela04_economia <- emp_renda <- readRDS("dados/emp_renda.rds") %>% 
   select(IBGE7,ANO,R_EMPRSFMI) %>% 
   filter(IBGE7 %in% municipios_vale) %>% left_join( df_nome) 
 
-saveRDS(tabela04_economia, 'tabela4_economia.rds')
+saveRDS(tabela04_economia, 'dados/tabela4_economia.rds')
 ```
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}

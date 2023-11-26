@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -151,11 +170,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#quais-as-características-da-população-residente" id="toc-quais-as-características-da-população-residente" class="nav-link active" data-scroll-target="#quais-as-características-da-população-residente"><span class="header-section-number">3</span> Quais as características da população residente?</a>
-  <ul class="collapse">
-  <li><a href="#povos-indígenas" id="toc-povos-indígenas" class="nav-link" data-scroll-target="#povos-indígenas"><span class="header-section-number">3.1</span> Povos indígenas</a></li>
-  <li><a href="#população-quilombola" id="toc-população-quilombola" class="nav-link" data-scroll-target="#população-quilombola"><span class="header-section-number">3.2</span> População quilombola</a></li>
-  </ul></li>
+  <li><a href="#quantas-pessoas-residem-nos-municípios-do-vale-do-lítio-como-essa-população-evoluiu-nos-últimos-12-anos" id="toc-quantas-pessoas-residem-nos-municípios-do-vale-do-lítio-como-essa-população-evoluiu-nos-últimos-12-anos" class="nav-link active" data-scroll-target="#quantas-pessoas-residem-nos-municípios-do-vale-do-lítio-como-essa-população-evoluiu-nos-últimos-12-anos"><span class="header-section-number">2.1</span> Quantas pessoas residem nos municípios do Vale do Lítio? Como essa população evoluiu nos últimos 12 anos?</a></li>
+  <li><a href="#qual-a-estrutura-etária-atual-dos-municípios-do-vale-do-lítio-é-uma-população-jovem-ou-envelhecida" id="toc-qual-a-estrutura-etária-atual-dos-municípios-do-vale-do-lítio-é-uma-população-jovem-ou-envelhecida" class="nav-link" data-scroll-target="#qual-a-estrutura-etária-atual-dos-municípios-do-vale-do-lítio-é-uma-população-jovem-ou-envelhecida"><span class="header-section-number">2.2</span> Qual a estrutura etária atual dos municípios do Vale do Lítio? É uma população jovem ou envelhecida?</a></li>
+  <li><a href="#há-registros-de-povos-tradicionais-nos-municípios-do-vale-do-lítio" id="toc-há-registros-de-povos-tradicionais-nos-municípios-do-vale-do-lítio" class="nav-link" data-scroll-target="#há-registros-de-povos-tradicionais-nos-municípios-do-vale-do-lítio"><span class="header-section-number">2.3</span> Há registros de povos tradicionais nos municípios do Vale do Lítio?</a></li>
   </ul>
 </nav>
     </div>
@@ -179,661 +196,44 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="quais-as-características-da-população-residente" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Quais as características da população residente?</h1>
-<div class="cell">
-<div class="cell-output-display">
-
-<div id="peqjntiyvd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#peqjntiyvd table {
-  font-family: Karla, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#peqjntiyvd thead, #peqjntiyvd tbody, #peqjntiyvd tfoot, #peqjntiyvd tr, #peqjntiyvd td, #peqjntiyvd th {
-  border-style: none;
-}
-
-#peqjntiyvd p {
-  margin: 0;
-  padding: 0;
-}
-
-#peqjntiyvd .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#peqjntiyvd .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#peqjntiyvd .gt_title {
-  color: #333333;
-  font-size: 26px;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#peqjntiyvd .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#peqjntiyvd .gt_heading {
-  background-color: #FFFFFF;
-  text-align: left;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#peqjntiyvd .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#peqjntiyvd .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#peqjntiyvd .gt_col_heading {
-  color: #FFFFFF;
-  background-color: #104E8B;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#peqjntiyvd .gt_column_spanner_outer {
-  color: #FFFFFF;
-  background-color: #104E8B;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#peqjntiyvd .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#peqjntiyvd .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#peqjntiyvd .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#peqjntiyvd .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#peqjntiyvd .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#peqjntiyvd .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#peqjntiyvd .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#peqjntiyvd .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#peqjntiyvd .gt_row {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#peqjntiyvd .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#peqjntiyvd .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#peqjntiyvd .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#peqjntiyvd .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#peqjntiyvd .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#peqjntiyvd .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#peqjntiyvd .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#peqjntiyvd .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#peqjntiyvd .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#peqjntiyvd .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#peqjntiyvd .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#peqjntiyvd .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#peqjntiyvd .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#peqjntiyvd .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#peqjntiyvd .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#peqjntiyvd .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#peqjntiyvd .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#peqjntiyvd .gt_left {
-  text-align: left;
-}
-
-#peqjntiyvd .gt_center {
-  text-align: center;
-}
-
-#peqjntiyvd .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#peqjntiyvd .gt_font_normal {
-  font-weight: normal;
-}
-
-#peqjntiyvd .gt_font_bold {
-  font-weight: bold;
-}
-
-#peqjntiyvd .gt_font_italic {
-  font-style: italic;
-}
-
-#peqjntiyvd .gt_super {
-  font-size: 65%;
-}
-
-#peqjntiyvd .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#peqjntiyvd .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#peqjntiyvd .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#peqjntiyvd .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#peqjntiyvd .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#peqjntiyvd .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#peqjntiyvd .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="4" class="gt_heading gt_title gt_font_normal" style="color: #104E8B; font-family: Merriweather; font-weight: bold;">Características Demográficas </td>
-    </tr>
-    <tr class="gt_heading">
-      <td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Vale do Lítio</td>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ANO">ANO</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="População total">População total</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa de crescimento da População">Taxa de crescimento da População</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Ranking Populacional">Ranking Populacional</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Araçuaí">Araçuaí</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Araçuaí  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Araçuaí  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">36041</td>
-<td headers="Araçuaí  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.93</td>
-<td headers="Araçuaí  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">90</td></tr>
-    <tr><td headers="Araçuaí  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Araçuaí  D_POPT" class="gt_row gt_right" style="font-size: smaller;">36715</td>
-<td headers="Araçuaí  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.93</td>
-<td headers="Araçuaí  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">99</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Capelinha">Capelinha</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Capelinha  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Capelinha  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">34796</td>
-<td headers="Capelinha  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">4.94</td>
-<td headers="Capelinha  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">94</td></tr>
-    <tr><td headers="Capelinha  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Capelinha  D_POPT" class="gt_row gt_right" style="font-size: smaller;">38321</td>
-<td headers="Capelinha  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">4.94</td>
-<td headers="Capelinha  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">96</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Coronel Murta">Coronel Murta</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Coronel Murta  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="Coronel Murta  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9209</td>
-<td headers="Coronel Murta  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.50</td>
-<td headers="Coronel Murta  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">395</td></tr>
-    <tr><td headers="Coronel Murta  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="Coronel Murta  D_POPT" class="gt_row gt_right" style="font-size: smaller;">9117</td>
-<td headers="Coronel Murta  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.50</td>
-<td headers="Coronel Murta  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">383</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Itaobim">Itaobim</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Itaobim  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="Itaobim  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">20997</td>
-<td headers="Itaobim  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.01</td>
-<td headers="Itaobim  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">176</td></tr>
-    <tr><td headers="Itaobim  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="Itaobim  D_POPT" class="gt_row gt_right" style="font-size: smaller;">21001</td>
-<td headers="Itaobim  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">−0.01</td>
-<td headers="Itaobim  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">170</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Itinga">Itinga</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Itinga  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Itinga  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">14407</td>
-<td headers="Itinga  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2.22</td>
-<td headers="Itinga  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">247</td></tr>
-    <tr><td headers="Itinga  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Itinga  D_POPT" class="gt_row gt_right" style="font-size: smaller;">15053</td>
-<td headers="Itinga  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">2.22</td>
-<td headers="Itinga  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">256</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Malacacheta">Malacacheta</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Malacacheta  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Malacacheta  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18787</td>
-<td headers="Malacacheta  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.62</td>
-<td headers="Malacacheta  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">191</td></tr>
-    <tr><td headers="Malacacheta  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Malacacheta  D_POPT" class="gt_row gt_right" style="font-size: smaller;">18556</td>
-<td headers="Malacacheta  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">−0.62</td>
-<td headers="Malacacheta  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">206</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Medina">Medina</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Medina  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="Medina  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">20701</td>
-<td headers="Medina  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.80</td>
-<td headers="Medina  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">180</td></tr>
-    <tr><td headers="Medina  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="Medina  D_POPT" class="gt_row gt_right" style="font-size: smaller;">21037</td>
-<td headers="Medina  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">−0.80</td>
-<td headers="Medina  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">169</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Minas Novas">Minas Novas</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Minas Novas  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="Minas Novas  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">31509</td>
-<td headers="Minas Novas  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">1.14</td>
-<td headers="Minas Novas  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">118</td></tr>
-    <tr><td headers="Minas Novas  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="Minas Novas  D_POPT" class="gt_row gt_right" style="font-size: smaller;">30803</td>
-<td headers="Minas Novas  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">1.14</td>
-<td headers="Minas Novas  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">109</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Pedra Azul">Pedra Azul</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Pedra Azul  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Pedra Azul  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">23843</td>
-<td headers="Pedra Azul  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">1.02</td>
-<td headers="Pedra Azul  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">145</td></tr>
-    <tr><td headers="Pedra Azul  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Pedra Azul  D_POPT" class="gt_row gt_right" style="font-size: smaller;">24333</td>
-<td headers="Pedra Azul  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">1.02</td>
-<td headers="Pedra Azul  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">153</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Rubelita">Rubelita</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Rubelita  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Rubelita  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">7777</td>
-<td headers="Rubelita  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−15.07</td>
-<td headers="Rubelita  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">437</td></tr>
-    <tr><td headers="Rubelita  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Rubelita  D_POPT" class="gt_row gt_right" style="font-size: smaller;">5609</td>
-<td headers="Rubelita  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">−15.07</td>
-<td headers="Rubelita  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">567</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Salinas">Salinas</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Salinas  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="Salinas  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">41864</td>
-<td headers="Salinas  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3.37</td>
-<td headers="Salinas  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">85</td></tr>
-    <tr><td headers="Salinas  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="Salinas  D_POPT" class="gt_row gt_right" style="font-size: smaller;">39182</td>
-<td headers="Salinas  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">3.37</td>
-<td headers="Salinas  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">81</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Teófilo Otoni">Teófilo Otoni</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Teófilo Otoni  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="Teófilo Otoni  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">141269</td>
-<td headers="Teófilo Otoni  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2.40</td>
-<td headers="Teófilo Otoni  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18</td></tr>
-    <tr><td headers="Teófilo Otoni  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="Teófilo Otoni  D_POPT" class="gt_row gt_right" style="font-size: smaller;">134733</td>
-<td headers="Teófilo Otoni  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">2.40</td>
-<td headers="Teófilo Otoni  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">17</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Turmalina">Turmalina</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Turmalina  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Turmalina  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18046</td>
-<td headers="Turmalina  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">6.01</td>
-<td headers="Turmalina  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">200</td></tr>
-    <tr><td headers="Turmalina  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Turmalina  D_POPT" class="gt_row gt_right" style="font-size: smaller;">20280</td>
-<td headers="Turmalina  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">6.01</td>
-<td headers="Turmalina  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">186</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Virgem da Lapa">Virgem da Lapa</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Virgem da Lapa  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Virgem da Lapa  D_POPT" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">13625</td>
-<td headers="Virgem da Lapa  tx_cresc" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.38</td>
-<td headers="Virgem da Lapa  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">274</td></tr>
-    <tr><td headers="Virgem da Lapa  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Virgem da Lapa  D_POPT" class="gt_row gt_right" style="font-size: smaller;">13729</td>
-<td headers="Virgem da Lapa  tx_cresc" class="gt_row gt_right" style="font-size: smaller;">0.38</td>
-<td headers="Virgem da Lapa  Ranking_Populacao" class="gt_row gt_right" style="font-size: smaller;">278</td></tr>
-  </tbody>
-  
-  
-</table>
-</div>
-</div>
-</div>
-<p>[Comentário Tabela 2 - Caio]</p>
-<p>[Tabela 2 - Vitor] - Inserir uma tabela com as seguintes colunas:</p>
+<section id="quantas-pessoas-residem-nos-municípios-do-vale-do-lítio-como-essa-população-evoluiu-nos-últimos-12-anos" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="quantas-pessoas-residem-nos-municípios-do-vale-do-lítio-como-essa-população-evoluiu-nos-últimos-12-anos"><span class="header-section-number">2.1</span> Quantas pessoas residem nos municípios do Vale do Lítio? Como essa população evoluiu nos últimos 12 anos?</h2>
+<p>Segundo os resultados do Censo Demográfico do IBGE, Teófilo Otoni é o maior município com mais de 137 mil pessoas, ocupando a 18ª posição no estado de Minas Gerais em 2022. Salinas, Capelinha e Araçuaí registraram entre 34 a 40 mil habitantes. Já o municípios de Pedra Azul, Minas Novas, Medina, Turmalina, Itaobim e Malacacheta foram recenseados entre 17 a 24 mil habitantes em 2022. Itinga, Virgem da Lapa, Coronel Murta e Rubelita possuem populações menores que 15 mil habitantes, sendo Rubelita o município com o menor contigente populacional, 5.679 residentes em 2022. Assim, classifica-se em termos de tamanho populacional:</p>
 <ul>
-<li><p>Município</p></li>
-<li><p>Razão de dependência</p></li>
-<li><p>Índice de envelhecimento</p></li>
-<li><p>Percentual da população com 65 anos ou mais de idade</p></li>
-<li><p>Taxa de urbanização</p></li>
+<li><p><strong>Grupo 1</strong>. Teófilo Otoni</p></li>
+<li><p><strong>Grupo 2</strong>. Salinas, Capelinha e Araçuaí</p></li>
+<li><p><strong>Grupo 3</strong>. Pedra Azul, Minas Novas, Medina, Turmalina, Itaobim e Malacacheta</p></li>
+<li><p><strong>Grupo 4</strong>. Itinga, Virgem da Lapa, Coronel Murta e Rubelita</p></li>
 </ul>
+<p>Em termos do crescimento populacional entre 2022 e 2010, destacaram-se:</p>
+<ol type="1">
+<li><p>a estabilidade da população de Teófilo Otoni (<strong>Grupo 1</strong>);</p></li>
+<li><p>a estabilidade da população de Salinas, crescimento em Capelinha e decrescimento populacional em Araçuaí (<strong>Grupo 2</strong>);</p></li>
+<li><p>a redução populacional de todos os menores municípios (<strong>Grupos 3 e 4</strong>), com exceção de Turmalina e Pedra Azul.</p></li>
+</ol>
+<p>No cenário de desaceleração do crescimento populacional experimentado pelo país, é notável que a diminuição da população, antes mais proeminente nos municípios menores, está se tornando progressivamente perceptível também nos municípios de maior porte <span class="citation" data-cites="ibge2023_primeiros">(<a href="references.html#ref-ibge2023_primeiros" role="doc-biblioref">IBGE 2023a</a>)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="dxhuagqhrh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ezfmbdzxai" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#dxhuagqhrh table {
+#ezfmbdzxai table {
   font-family: Karla, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dxhuagqhrh thead, #dxhuagqhrh tbody, #dxhuagqhrh tfoot, #dxhuagqhrh tr, #dxhuagqhrh td, #dxhuagqhrh th {
+#ezfmbdzxai thead, #ezfmbdzxai tbody, #ezfmbdzxai tfoot, #ezfmbdzxai tr, #ezfmbdzxai td, #ezfmbdzxai th {
   border-style: none;
 }
 
-#dxhuagqhrh p {
+#ezfmbdzxai p {
   margin: 0;
   padding: 0;
 }
 
-#dxhuagqhrh .gt_table {
+#ezfmbdzxai .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -859,14 +259,14 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#dxhuagqhrh .gt_caption {
+#ezfmbdzxai .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dxhuagqhrh .gt_title {
+#ezfmbdzxai .gt_title {
   color: #333333;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: initial;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -876,7 +276,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#dxhuagqhrh .gt_subtitle {
+#ezfmbdzxai .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -888,7 +288,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#dxhuagqhrh .gt_heading {
+#ezfmbdzxai .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -900,13 +300,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#dxhuagqhrh .gt_bottom_border {
+#ezfmbdzxai .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dxhuagqhrh .gt_col_headings {
+#ezfmbdzxai .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -921,7 +321,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#dxhuagqhrh .gt_col_heading {
+#ezfmbdzxai .gt_col_heading {
   color: #FFFFFF;
   background-color: #104E8B;
   font-size: 100%;
@@ -941,7 +341,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#dxhuagqhrh .gt_column_spanner_outer {
+#ezfmbdzxai .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #104E8B;
   font-size: 100%;
@@ -953,15 +353,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#dxhuagqhrh .gt_column_spanner_outer:first-child {
+#ezfmbdzxai .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dxhuagqhrh .gt_column_spanner_outer:last-child {
+#ezfmbdzxai .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dxhuagqhrh .gt_column_spanner {
+#ezfmbdzxai .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -973,11 +373,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#dxhuagqhrh .gt_spanner_row {
+#ezfmbdzxai .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dxhuagqhrh .gt_group_heading {
+#ezfmbdzxai .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1003,7 +403,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#dxhuagqhrh .gt_empty_group_heading {
+#ezfmbdzxai .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1018,15 +418,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#dxhuagqhrh .gt_from_md > :first-child {
+#ezfmbdzxai .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dxhuagqhrh .gt_from_md > :last-child {
+#ezfmbdzxai .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dxhuagqhrh .gt_row {
+#ezfmbdzxai .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -1045,7 +445,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#dxhuagqhrh .gt_stub {
+#ezfmbdzxai .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1058,7 +458,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#dxhuagqhrh .gt_stub_row_group {
+#ezfmbdzxai .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1072,15 +472,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#dxhuagqhrh .gt_row_group_first td {
+#ezfmbdzxai .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dxhuagqhrh .gt_row_group_first th {
+#ezfmbdzxai .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dxhuagqhrh .gt_summary_row {
+#ezfmbdzxai .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1090,16 +490,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#dxhuagqhrh .gt_first_summary_row {
+#ezfmbdzxai .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dxhuagqhrh .gt_first_summary_row.thick {
+#ezfmbdzxai .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dxhuagqhrh .gt_last_summary_row {
+#ezfmbdzxai .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1109,7 +509,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#dxhuagqhrh .gt_grand_summary_row {
+#ezfmbdzxai .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1119,7 +519,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#dxhuagqhrh .gt_first_grand_summary_row {
+#ezfmbdzxai .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1129,7 +529,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#dxhuagqhrh .gt_last_grand_summary_row_top {
+#ezfmbdzxai .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1139,11 +539,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#dxhuagqhrh .gt_striped {
+#ezfmbdzxai .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dxhuagqhrh .gt_table_body {
+#ezfmbdzxai .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1152,7 +552,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#dxhuagqhrh .gt_footnotes {
+#ezfmbdzxai .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1166,7 +566,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#dxhuagqhrh .gt_footnote {
+#ezfmbdzxai .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1175,7 +575,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#dxhuagqhrh .gt_sourcenotes {
+#ezfmbdzxai .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1189,7 +589,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#dxhuagqhrh .gt_sourcenote {
+#ezfmbdzxai .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1197,294 +597,183 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#dxhuagqhrh .gt_left {
+#ezfmbdzxai .gt_left {
   text-align: left;
 }
 
-#dxhuagqhrh .gt_center {
+#ezfmbdzxai .gt_center {
   text-align: center;
 }
 
-#dxhuagqhrh .gt_right {
+#ezfmbdzxai .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dxhuagqhrh .gt_font_normal {
+#ezfmbdzxai .gt_font_normal {
   font-weight: normal;
 }
 
-#dxhuagqhrh .gt_font_bold {
+#ezfmbdzxai .gt_font_bold {
   font-weight: bold;
 }
 
-#dxhuagqhrh .gt_font_italic {
+#ezfmbdzxai .gt_font_italic {
   font-style: italic;
 }
 
-#dxhuagqhrh .gt_super {
+#ezfmbdzxai .gt_super {
   font-size: 65%;
 }
 
-#dxhuagqhrh .gt_footnote_marks {
+#ezfmbdzxai .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dxhuagqhrh .gt_asterisk {
+#ezfmbdzxai .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dxhuagqhrh .gt_indent_1 {
+#ezfmbdzxai .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dxhuagqhrh .gt_indent_2 {
+#ezfmbdzxai .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dxhuagqhrh .gt_indent_3 {
+#ezfmbdzxai .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dxhuagqhrh .gt_indent_4 {
+#ezfmbdzxai .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dxhuagqhrh .gt_indent_5 {
+#ezfmbdzxai .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
     <tr class="gt_heading">
-      <td colspan="6" class="gt_heading gt_title gt_font_normal" style="color: #104E8B; font-family: Merriweather; font-weight: bold;">Características Demográficas </td>
+      <td colspan="7" class="gt_heading gt_title gt_font_normal" style="color: #104E8B; font-family: Merriweather; font-weight: bold;">População residente, taxa média geométrica de crescimento anual e ranking populacional</td>
     </tr>
     <tr class="gt_heading">
-      <td colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Vale do Lítio</td>
+      <td colspan="7" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Municípios do Vale do Lítio - 2010 e 2022</td>
     </tr>
     <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="IBGE7">IBGE7</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ANO">ANO</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Razão de dependência total">Razão de dependência total</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Índice de envelhecimento">Índice de envelhecimento</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="População de 65 a 69 anos de idade">População de 65 a 69 anos de idade</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa de urbanização">Taxa de urbanização</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Município">Município</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="População residente 2010 (pessoas)">População residente 2010 (pessoas)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="População residente 2022 (pessoas)">População residente 2022 (pessoas)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa de crescimento 2010/2000 (%)">Taxa de crescimento 2010/2000 (%)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa de crescimento 2022/2010 (%)">Taxa de crescimento 2022/2010 (%)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Ranking 2010">Ranking 2010</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Ranking 2022">Ranking 2022</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Araçuaí">Araçuaí</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Araçuaí  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3103405</td>
-<td headers="Araçuaí  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Araçuaí  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">53.17</td>
-<td headers="Araçuaí  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">36.96</td>
-<td headers="Araçuaí  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9.37</td>
-<td headers="Araçuaí  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">65.07</td></tr>
-    <tr><td headers="Araçuaí  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3103405</td>
-<td headers="Araçuaí  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="Araçuaí  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.58</td>
-<td headers="Araçuaí  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">58.27</td>
-<td headers="Araçuaí  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">11.25</td>
-<td headers="Araçuaí  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">71.98</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Capelinha">Capelinha</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Capelinha  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3112307</td>
-<td headers="Capelinha  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="Capelinha  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">53.49</td>
-<td headers="Capelinha  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">18.99</td>
-<td headers="Capelinha  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">5.56</td>
-<td headers="Capelinha  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">71.12</td></tr>
-    <tr><td headers="Capelinha  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3112307</td>
-<td headers="Capelinha  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Capelinha  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">41.27</td>
-<td headers="Capelinha  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">56.17</td>
-<td headers="Capelinha  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">11.11</td>
-<td headers="Capelinha  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">77.22</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Coronel Murta">Coronel Murta</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Coronel Murta  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3119500</td>
-<td headers="Coronel Murta  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Coronel Murta  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">53.60</td>
-<td headers="Coronel Murta  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.21</td>
-<td headers="Coronel Murta  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">10.01</td>
-<td headers="Coronel Murta  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">73.41</td></tr>
-    <tr><td headers="Coronel Murta  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3119500</td>
-<td headers="Coronel Murta  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="Coronel Murta  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">42.45</td>
-<td headers="Coronel Murta  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">64.79</td>
-<td headers="Coronel Murta  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">12.42</td>
-<td headers="Coronel Murta  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">74.98</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Itaobim">Itaobim</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Itaobim  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3133303</td>
-<td headers="Itaobim  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="Itaobim  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">55.76</td>
-<td headers="Itaobim  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">37.96</td>
-<td headers="Itaobim  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">9.85</td>
-<td headers="Itaobim  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">75.13</td></tr>
-    <tr><td headers="Itaobim  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3133303</td>
-<td headers="Itaobim  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Itaobim  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">40.54</td>
-<td headers="Itaobim  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">63.32</td>
-<td headers="Itaobim  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">11.85</td>
-<td headers="Itaobim  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">72.26</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Itinga">Itinga</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Itinga  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3134004</td>
-<td headers="Itinga  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Itinga  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">62.05</td>
-<td headers="Itinga  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">35.31</td>
-<td headers="Itinga  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9.99</td>
-<td headers="Itinga  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">45.49</td></tr>
-    <tr><td headers="Itinga  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3134004</td>
-<td headers="Itinga  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="Itinga  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">42.34</td>
-<td headers="Itinga  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">65.83</td>
-<td headers="Itinga  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">12.52</td>
-<td headers="Itinga  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">78.29</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Malacacheta">Malacacheta</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Malacacheta  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3139201</td>
-<td headers="Malacacheta  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="Malacacheta  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">57.83</td>
-<td headers="Malacacheta  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">35.77</td>
-<td headers="Malacacheta  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">9.65</td>
-<td headers="Malacacheta  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">62.94</td></tr>
-    <tr><td headers="Malacacheta  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3139201</td>
-<td headers="Malacacheta  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Malacacheta  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">42.49</td>
-<td headers="Malacacheta  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">65.92</td>
-<td headers="Malacacheta  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">12.57</td>
-<td headers="Malacacheta  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">70.77</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Medina">Medina</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Medina  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3141405</td>
-<td headers="Medina  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Medina  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">57.37</td>
-<td headers="Medina  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">37.61</td>
-<td headers="Medina  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9.96</td>
-<td headers="Medina  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">71.78</td></tr>
-    <tr><td headers="Medina  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3141405</td>
-<td headers="Medina  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="Medina  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.74</td>
-<td headers="Medina  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">62.86</td>
-<td headers="Medina  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">11.84</td>
-<td headers="Medina  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">74.10</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Minas Novas">Minas Novas</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Minas Novas  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141801</td>
-<td headers="Minas Novas  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="Minas Novas  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">54.41</td>
-<td headers="Minas Novas  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">21.11</td>
-<td headers="Minas Novas  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">6.14</td>
-<td headers="Minas Novas  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">40.87</td></tr>
-    <tr><td headers="Minas Novas  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3141801</td>
-<td headers="Minas Novas  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Minas Novas  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">40.71</td>
-<td headers="Minas Novas  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">57.99</td>
-<td headers="Minas Novas  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">11.23</td>
-<td headers="Minas Novas  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">66.43</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Pedra Azul">Pedra Azul</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Pedra Azul  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3148707</td>
-<td headers="Pedra Azul  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Pedra Azul  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">57.08</td>
-<td headers="Pedra Azul  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">30.65</td>
-<td headers="Pedra Azul  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">8.53</td>
-<td headers="Pedra Azul  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">88.12</td></tr>
-    <tr><td headers="Pedra Azul  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3148707</td>
-<td headers="Pedra Azul  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="Pedra Azul  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.91</td>
-<td headers="Pedra Azul  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">62.22</td>
-<td headers="Pedra Azul  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">11.80</td>
-<td headers="Pedra Azul  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">92.52</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Rubelita">Rubelita</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Rubelita  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3156502</td>
-<td headers="Rubelita  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="Rubelita  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">59.15</td>
-<td headers="Rubelita  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">37.01</td>
-<td headers="Rubelita  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">10.04</td>
-<td headers="Rubelita  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">32.37</td></tr>
-    <tr><td headers="Rubelita  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3156502</td>
-<td headers="Rubelita  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Rubelita  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">42.34</td>
-<td headers="Rubelita  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">71.16</td>
-<td headers="Rubelita  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">13.10</td>
-<td headers="Rubelita  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">53.26</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Salinas">Salinas</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Salinas  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3157005</td>
-<td headers="Salinas  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Salinas  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">49.04</td>
-<td headers="Salinas  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">41.25</td>
-<td headers="Salinas  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9.61</td>
-<td headers="Salinas  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">78.40</td></tr>
-    <tr><td headers="Salinas  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3157005</td>
-<td headers="Salinas  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="Salinas  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">40.86</td>
-<td headers="Salinas  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">57.36</td>
-<td headers="Salinas  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">11.19</td>
-<td headers="Salinas  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">81.41</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Teófilo Otoni">Teófilo Otoni</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Teófilo Otoni  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3168606</td>
-<td headers="Teófilo Otoni  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="Teófilo Otoni  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">48.42</td>
-<td headers="Teófilo Otoni  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">39.18</td>
-<td headers="Teófilo Otoni  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">9.18</td>
-<td headers="Teófilo Otoni  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">81.69</td></tr>
-    <tr><td headers="Teófilo Otoni  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3168606</td>
-<td headers="Teófilo Otoni  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Teófilo Otoni  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">37.10</td>
-<td headers="Teófilo Otoni  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">57.87</td>
-<td headers="Teófilo Otoni  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">10.45</td>
-<td headers="Teófilo Otoni  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">89.28</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Turmalina">Turmalina</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Turmalina  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3169703</td>
-<td headers="Turmalina  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2010</td>
-<td headers="Turmalina  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">47.66</td>
-<td headers="Turmalina  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">24.65</td>
-<td headers="Turmalina  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">6.38</td>
-<td headers="Turmalina  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">71.59</td></tr>
-    <tr><td headers="Turmalina  IBGE7" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">3169703</td>
-<td headers="Turmalina  ANO" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">2021</td>
-<td headers="Turmalina  D_RDEPP" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">43.44</td>
-<td headers="Turmalina  D_INDENVE" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">62.46</td>
-<td headers="Turmalina  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">12.35</td>
-<td headers="Turmalina  D_POPPURB" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">77.52</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="6" class="gt_group_heading" scope="colgroup" id="Virgem da Lapa">Virgem da Lapa</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Virgem da Lapa  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3171600</td>
-<td headers="Virgem da Lapa  ANO" class="gt_row gt_right" style="font-size: smaller;">2010</td>
-<td headers="Virgem da Lapa  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">50.94</td>
-<td headers="Virgem da Lapa  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">41.88</td>
-<td headers="Virgem da Lapa  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">9.96</td>
-<td headers="Virgem da Lapa  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">50.22</td></tr>
-    <tr><td headers="Virgem da Lapa  IBGE7" class="gt_row gt_right" style="font-size: smaller;">3171600</td>
-<td headers="Virgem da Lapa  ANO" class="gt_row gt_right" style="font-size: smaller;">2021</td>
-<td headers="Virgem da Lapa  D_RDEPP" class="gt_row gt_right" style="font-size: smaller;">42.42</td>
-<td headers="Virgem da Lapa  D_INDENVE" class="gt_row gt_right" style="font-size: smaller;">66.14</td>
-<td headers="Virgem da Lapa  D_PROPP65M" class="gt_row gt_right" style="font-size: smaller;">12.56</td>
-<td headers="Virgem da Lapa  D_POPPURB" class="gt_row gt_right" style="font-size: smaller;">66.41</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Teófilo Otoni</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">134745</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">137418</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.40</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.16</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">17</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Salinas</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller;">39178</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller;">40178</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller;">0.65</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller;">0.21</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller;">81</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller;">86</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Capelinha</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">34803</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">39626</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">1.09</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">1.09</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">94</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">88</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Araçuaí</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller;">36013</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller;">34297</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller;">0.08</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller;">−0.41</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller;">90</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller;">104</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Pedra Azul</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">23839</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">24410</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.10</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.20</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">145</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">142</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Minas Novas</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller;">30794</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller;">24405</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller;">0.05</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller;">−1.92</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller;">109</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller;">143</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Medina</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">21026</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">20156</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.29</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.35</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">169</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">185</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Turmalina</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller;">18055</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller;">20000</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller;">1.44</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller;">0.86</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller;">200</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller;">187</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Itaobim</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">21001</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">19151</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.13</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.77</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">170</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">192</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Malacacheta</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller;">18776</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller;">17516</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller;">−0.25</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller;">−0.58</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller;">191</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller;">206</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Itinga</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">14407</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">13745</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">0.36</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.39</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">247</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">272</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Virgem da Lapa</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller;">13619</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller;">11804</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller;">−0.04</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller;">−1.18</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller;">274</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller;">306</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Coronel Murta</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">9117</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">8200</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.02</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">−0.88</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">383</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">421</td></tr>
+    <tr><td headers="Municipio" class="gt_row gt_left" style="font-size: smaller;">Rubelita</td>
+<td headers="pop_2010" class="gt_row gt_right" style="font-size: smaller;">7772</td>
+<td headers="pop_2022" class="gt_row gt_right" style="font-size: smaller;">5679</td>
+<td headers="tx_2000_2010" class="gt_row gt_right" style="font-size: smaller;">−2.68</td>
+<td headers="tx_2010_2022" class="gt_row gt_right" style="font-size: smaller;">−2.58</td>
+<td headers="ranking2010" class="gt_row gt_right" style="font-size: smaller;">437</td>
+<td headers="ranking2022" class="gt_row gt_right" style="font-size: smaller;">555</td></tr>
   </tbody>
   
   
@@ -1492,34 +781,36 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>[Comentário Gráfico 1 - Caio]</p>
-<p>[Gráfico 1 - Vitor] - Inserir pirâmides etárias</p>
-<p>[Pensar na apresentação é possível as pirâmides passando?]</p>
-<p>[Comentário Tabela 3 - Caio]</p>
-<p>[Tabela 3 - Vitor] - Inserir uma tabela com as seguintes colunas:</p>
-<p>Título: Indicadores da dinâmica demográfica selecionados - municípios do Vale do Lítio</p>
+<p>Fonte: IBGE/Censo Demográficos 2000-2010-2022. Elaboração: FJP/Diretoria de Estatística e Informações</p>
+</section>
+<section id="qual-a-estrutura-etária-atual-dos-municípios-do-vale-do-lítio-é-uma-população-jovem-ou-envelhecida" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="qual-a-estrutura-etária-atual-dos-municípios-do-vale-do-lítio-é-uma-população-jovem-ou-envelhecida"><span class="header-section-number">2.2</span> Qual a estrutura etária atual dos municípios do Vale do Lítio? É uma população jovem ou envelhecida?</h2>
+<p>A análise da distribuição da população em diferentes faixas etárias oferece <em>insights</em> sobre as relações entre esses grupos, suas proporções em relação à população total e possibilita acompanhar a evolução da dinâmica demográfica ao longo do tempo.</p>
+<p>Os dados do Censo Demográfico de 2022 apontam para a continuidade do processo de envelhecimento da população brasileira. Isso se manifesta na diminuição das proporções dos grupos mais jovens em relação aos grupos de adultos e idosos. Esse fenômeno é impulsionado principalmente pela queda significativa do número médio de filhos por mulher, um declínio progressivo e veloz observado no Brasil desde o final da década de 1960. Em menor escala, contribui para essa dinâmica a redução da mortalidade em todas as faixas etárias, incluindo os idosos <span class="citation" data-cites="ibge2023_idade">(<a href="references.html#ref-ibge2023_idade" role="doc-biblioref">IBGE 2023b</a>)</span>.</p>
+<p>Em 2022, o município de Teófilo Otoni apresentou uma proporção de população de 0 a 14 anos 18,7%, de 15 a 64 anos 68,6% e de 65 anos ou mais 12,7%. A título de comparação, Minas Gerais registrou 18,1%, 69,6% e 12,4%, respectivamente. Assim, em termos médios, Teófilo Otoni estrutura similar a Minas Gerais. A razão de dependência total<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> registrou 45,8%, o que significa dizer que existem 45,8 crianças e idosos para cada 100 em idade ativa. Já o índice de envelhecimento<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> foi de 68%, que significa que há 68 pessoas com mais de 65 anos para cada 100 pessoas na faixa etária entre 0 e 14 anos. Quanto maior o valor do indicador, mais envelhecida é a população. Minas Gerais registrou 68,6 idosos para cada 100 crianças.</p>
+<p>Outros destaques foram: 1. Capelinha (<strong>Grupo 2</strong>) é tem o mais baixo índice de envelhecimento entre os municípios do Vale do Lítio, seguidos de Trumalina e Minas Novas (<strong>Grupo 3</strong>); 2. Todos os municípios pequenos (<strong>Grupo 4</strong>) são mais envelhidos que a Minas Gerais, com destaque para Rubelita que o número de idosos já superou o número de crianças; 3. Os municípios de Itaobim, Malacacheta e Medina (<strong>Grupo 3</strong>) também são mais envelhecidos que a média de Minas Gerais.</p>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="zwxssykldy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="niuirsepfb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#zwxssykldy table {
+#niuirsepfb table {
   font-family: Karla, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zwxssykldy thead, #zwxssykldy tbody, #zwxssykldy tfoot, #zwxssykldy tr, #zwxssykldy td, #zwxssykldy th {
+#niuirsepfb thead, #niuirsepfb tbody, #niuirsepfb tfoot, #niuirsepfb tr, #niuirsepfb td, #niuirsepfb th {
   border-style: none;
 }
 
-#zwxssykldy p {
+#niuirsepfb p {
   margin: 0;
   padding: 0;
 }
 
-#zwxssykldy .gt_table {
+#niuirsepfb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1545,14 +836,14 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#zwxssykldy .gt_caption {
+#niuirsepfb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zwxssykldy .gt_title {
+#niuirsepfb .gt_title {
   color: #333333;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: initial;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1562,7 +853,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#zwxssykldy .gt_subtitle {
+#niuirsepfb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1574,7 +865,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#zwxssykldy .gt_heading {
+#niuirsepfb .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1586,13 +877,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#zwxssykldy .gt_bottom_border {
+#niuirsepfb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zwxssykldy .gt_col_headings {
+#niuirsepfb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1607,7 +898,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#zwxssykldy .gt_col_heading {
+#niuirsepfb .gt_col_heading {
   color: #FFFFFF;
   background-color: #104E8B;
   font-size: 100%;
@@ -1627,7 +918,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#zwxssykldy .gt_column_spanner_outer {
+#niuirsepfb .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #104E8B;
   font-size: 100%;
@@ -1639,15 +930,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#zwxssykldy .gt_column_spanner_outer:first-child {
+#niuirsepfb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zwxssykldy .gt_column_spanner_outer:last-child {
+#niuirsepfb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zwxssykldy .gt_column_spanner {
+#niuirsepfb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1659,11 +950,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#zwxssykldy .gt_spanner_row {
+#niuirsepfb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zwxssykldy .gt_group_heading {
+#niuirsepfb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1689,7 +980,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#zwxssykldy .gt_empty_group_heading {
+#niuirsepfb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1704,15 +995,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#zwxssykldy .gt_from_md > :first-child {
+#niuirsepfb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zwxssykldy .gt_from_md > :last-child {
+#niuirsepfb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zwxssykldy .gt_row {
+#niuirsepfb .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -1731,7 +1022,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#zwxssykldy .gt_stub {
+#niuirsepfb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1744,7 +1035,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#zwxssykldy .gt_stub_row_group {
+#niuirsepfb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1758,15 +1049,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#zwxssykldy .gt_row_group_first td {
+#niuirsepfb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zwxssykldy .gt_row_group_first th {
+#niuirsepfb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zwxssykldy .gt_summary_row {
+#niuirsepfb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1776,16 +1067,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#zwxssykldy .gt_first_summary_row {
+#niuirsepfb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zwxssykldy .gt_first_summary_row.thick {
+#niuirsepfb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zwxssykldy .gt_last_summary_row {
+#niuirsepfb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1795,7 +1086,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#zwxssykldy .gt_grand_summary_row {
+#niuirsepfb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1805,7 +1096,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#zwxssykldy .gt_first_grand_summary_row {
+#niuirsepfb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1815,7 +1106,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#zwxssykldy .gt_last_grand_summary_row_top {
+#niuirsepfb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1825,11 +1116,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#zwxssykldy .gt_striped {
+#niuirsepfb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zwxssykldy .gt_table_body {
+#niuirsepfb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1838,7 +1129,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#zwxssykldy .gt_footnotes {
+#niuirsepfb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1852,7 +1143,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#zwxssykldy .gt_footnote {
+#niuirsepfb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1861,7 +1152,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#zwxssykldy .gt_sourcenotes {
+#niuirsepfb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1875,7 +1166,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#zwxssykldy .gt_sourcenote {
+#niuirsepfb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1883,180 +1174,225 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#zwxssykldy .gt_left {
+#niuirsepfb .gt_left {
   text-align: left;
 }
 
-#zwxssykldy .gt_center {
+#niuirsepfb .gt_center {
   text-align: center;
 }
 
-#zwxssykldy .gt_right {
+#niuirsepfb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zwxssykldy .gt_font_normal {
+#niuirsepfb .gt_font_normal {
   font-weight: normal;
 }
 
-#zwxssykldy .gt_font_bold {
+#niuirsepfb .gt_font_bold {
   font-weight: bold;
 }
 
-#zwxssykldy .gt_font_italic {
+#niuirsepfb .gt_font_italic {
   font-style: italic;
 }
 
-#zwxssykldy .gt_super {
+#niuirsepfb .gt_super {
   font-size: 65%;
 }
 
-#zwxssykldy .gt_footnote_marks {
+#niuirsepfb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zwxssykldy .gt_asterisk {
+#niuirsepfb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zwxssykldy .gt_indent_1 {
+#niuirsepfb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zwxssykldy .gt_indent_2 {
+#niuirsepfb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zwxssykldy .gt_indent_3 {
+#niuirsepfb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zwxssykldy .gt_indent_4 {
+#niuirsepfb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zwxssykldy .gt_indent_5 {
+#niuirsepfb .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
     <tr class="gt_heading">
-      <td colspan="4" class="gt_heading gt_title gt_font_normal" style="color: #104E8B; font-family: Merriweather; font-weight: bold;"> Indicadores da dinâmica demográfica</td>
+      <td colspan="9" class="gt_heading gt_title gt_font_normal" style="color: #104E8B; font-family: Merriweather; font-weight: bold;">Proporção da população por grupos etários, ranking da proporção, taxa de dependência total e índice de envelhecimento</td>
     </tr>
     <tr class="gt_heading">
-      <td colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Vale do Lítio</td>
+      <td colspan="9" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Municípios do Vale do Lítio - 2010 e 2022</td>
     </tr>
     <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Esperança de vida ao nascer">Esperança de vida ao nascer</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Esperança de vida ao nascer">Esperança de vida ao nascer</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa de fecundidade total">Taxa de fecundidade total</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Taxa líquida migratória">Taxa líquida migratória</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Município">Município</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Proporção população 0 a 14 anos (%)">Proporção população 0 a 14 anos (%)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Proporção população 15 a 64 anos (%)">Proporção população 15 a 64 anos (%)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Proporção população 65 anos ou mais (%)">Proporção população 65 anos ou mais (%)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Ranking prop. pop. 0 a 14 anos">Ranking prop. pop. 0 a 14 anos</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Ranking prop. pop. 15 a 64 anos">Ranking prop. pop. 15 a 64 anos</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Ranking prop. pop. 65 anos ou mais">Ranking prop. pop. 65 anos ou mais</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Razão de dependência total (%)">Razão de dependência total (%)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="IE (%)">IE (%)</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Araçuaí">Araçuaí</th>
+      <th colspan="9" class="gt_group_heading" scope="colgroup" id="Grupo 1">Grupo 1</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="Araçuaí  D_TMI" class="gt_row gt_right" style="font-size: smaller;">16.5</td>
-<td headers="Araçuaí  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">74.27</td>
-<td headers="Araçuaí  D_TFT" class="gt_row gt_right" style="font-size: smaller;">1.89</td>
-<td headers="Araçuaí  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-8.89</td></tr>
+    <tr class="gt_row_group_first"><td headers="Grupo 1  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Teófilo Otoni</td>
+<td headers="Grupo 1  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18.7</td>
+<td headers="Grupo 1  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">68.6</td>
+<td headers="Grupo 1  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">12.7</td>
+<td headers="Grupo 1  ranking00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">324</td>
+<td headers="Grupo 1  ranking15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">331</td>
+<td headers="Grupo 1  ranking65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">557</td>
+<td headers="Grupo 1  rd.total" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">45.8</td>
+<td headers="Grupo 1  ind.envelhec" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">68.0</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Capelinha">Capelinha</th>
+      <th colspan="9" class="gt_group_heading" scope="colgroup" id="Grupo 2">Grupo 2</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="Capelinha  D_TMI" class="gt_row gt_right" style="font-size: smaller;">16.3</td>
-<td headers="Capelinha  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">74.41</td>
-<td headers="Capelinha  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.35</td>
-<td headers="Capelinha  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-3.98</td></tr>
+    <tr class="gt_row_group_first"><td headers="Grupo 2  Municipio" class="gt_row gt_left" style="font-size: smaller;">Araçuaí</td>
+<td headers="Grupo 2  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller;">18.7</td>
+<td headers="Grupo 2  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller;">68.3</td>
+<td headers="Grupo 2  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller;">13.0</td>
+<td headers="Grupo 2  ranking00_14" class="gt_row gt_right" style="font-size: smaller;">317</td>
+<td headers="Grupo 2  ranking15_64" class="gt_row gt_right" style="font-size: smaller;">378</td>
+<td headers="Grupo 2  ranking65_mais" class="gt_row gt_right" style="font-size: smaller;">534</td>
+<td headers="Grupo 2  rd.total" class="gt_row gt_right" style="font-size: smaller;">46.4</td>
+<td headers="Grupo 2  ind.envelhec" class="gt_row gt_right" style="font-size: smaller;">69.1</td></tr>
+    <tr><td headers="Grupo 2  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Capelinha</td>
+<td headers="Grupo 2  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">21.0</td>
+<td headers="Grupo 2  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">70.3</td>
+<td headers="Grupo 2  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">8.7</td>
+<td headers="Grupo 2  ranking00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">87</td>
+<td headers="Grupo 2  ranking15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">89</td>
+<td headers="Grupo 2  ranking65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">832</td>
+<td headers="Grupo 2  rd.total" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">42.3</td>
+<td headers="Grupo 2  ind.envelhec" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">41.4</td></tr>
+    <tr><td headers="Grupo 2  Municipio" class="gt_row gt_left" style="font-size: smaller;">Salinas</td>
+<td headers="Grupo 2  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller;">18.1</td>
+<td headers="Grupo 2  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller;">67.7</td>
+<td headers="Grupo 2  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller;">14.2</td>
+<td headers="Grupo 2  ranking00_14" class="gt_row gt_right" style="font-size: smaller;">417</td>
+<td headers="Grupo 2  ranking15_64" class="gt_row gt_right" style="font-size: smaller;">501</td>
+<td headers="Grupo 2  ranking65_mais" class="gt_row gt_right" style="font-size: smaller;">380</td>
+<td headers="Grupo 2  rd.total" class="gt_row gt_right" style="font-size: smaller;">47.7</td>
+<td headers="Grupo 2  ind.envelhec" class="gt_row gt_right" style="font-size: smaller;">78.4</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Coronel Murta">Coronel Murta</th>
+      <th colspan="9" class="gt_group_heading" scope="colgroup" id="Grupo 3">Grupo 3</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="Coronel Murta  D_TMI" class="gt_row gt_right" style="font-size: smaller;">20.3</td>
-<td headers="Coronel Murta  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">72.05</td>
-<td headers="Coronel Murta  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.16</td>
-<td headers="Coronel Murta  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-11.32</td></tr>
+    <tr class="gt_row_group_first"><td headers="Grupo 3  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Itaobim</td>
+<td headers="Grupo 3  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18.7</td>
+<td headers="Grupo 3  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">67.1</td>
+<td headers="Grupo 3  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">14.2</td>
+<td headers="Grupo 3  ranking00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">320</td>
+<td headers="Grupo 3  ranking15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">601</td>
+<td headers="Grupo 3  ranking65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">378</td>
+<td headers="Grupo 3  rd.total" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">49.1</td>
+<td headers="Grupo 3  ind.envelhec" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">75.8</td></tr>
+    <tr><td headers="Grupo 3  Municipio" class="gt_row gt_left" style="font-size: smaller;">Malacacheta</td>
+<td headers="Grupo 3  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller;">19.0</td>
+<td headers="Grupo 3  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller;">67.2</td>
+<td headers="Grupo 3  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller;">13.9</td>
+<td headers="Grupo 3  ranking00_14" class="gt_row gt_right" style="font-size: smaller;">284</td>
+<td headers="Grupo 3  ranking15_64" class="gt_row gt_right" style="font-size: smaller;">585</td>
+<td headers="Grupo 3  ranking65_mais" class="gt_row gt_right" style="font-size: smaller;">419</td>
+<td headers="Grupo 3  rd.total" class="gt_row gt_right" style="font-size: smaller;">48.9</td>
+<td headers="Grupo 3  ind.envelhec" class="gt_row gt_right" style="font-size: smaller;">73.0</td></tr>
+    <tr><td headers="Grupo 3  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Medina</td>
+<td headers="Grupo 3  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">19.7</td>
+<td headers="Grupo 3  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">65.5</td>
+<td headers="Grupo 3  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">14.8</td>
+<td headers="Grupo 3  ranking00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">192</td>
+<td headers="Grupo 3  ranking15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">792</td>
+<td headers="Grupo 3  ranking65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">299</td>
+<td headers="Grupo 3  rd.total" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">52.7</td>
+<td headers="Grupo 3  ind.envelhec" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">74.8</td></tr>
+    <tr><td headers="Grupo 3  Municipio" class="gt_row gt_left" style="font-size: smaller;">Minas Novas</td>
+<td headers="Grupo 3  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller;">19.6</td>
+<td headers="Grupo 3  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller;">69.4</td>
+<td headers="Grupo 3  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller;">11.0</td>
+<td headers="Grupo 3  ranking00_14" class="gt_row gt_right" style="font-size: smaller;">207</td>
+<td headers="Grupo 3  ranking15_64" class="gt_row gt_right" style="font-size: smaller;">202</td>
+<td headers="Grupo 3  ranking65_mais" class="gt_row gt_right" style="font-size: smaller;">726</td>
+<td headers="Grupo 3  rd.total" class="gt_row gt_right" style="font-size: smaller;">44.2</td>
+<td headers="Grupo 3  ind.envelhec" class="gt_row gt_right" style="font-size: smaller;">56.3</td></tr>
+    <tr><td headers="Grupo 3  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Pedra Azul</td>
+<td headers="Grupo 3  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">19.9</td>
+<td headers="Grupo 3  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">67.8</td>
+<td headers="Grupo 3  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">12.3</td>
+<td headers="Grupo 3  ranking00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">171</td>
+<td headers="Grupo 3  ranking15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">487</td>
+<td headers="Grupo 3  ranking65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">603</td>
+<td headers="Grupo 3  rd.total" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">47.6</td>
+<td headers="Grupo 3  ind.envelhec" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">61.8</td></tr>
+    <tr><td headers="Grupo 3  Municipio" class="gt_row gt_left" style="font-size: smaller;">Turmalina</td>
+<td headers="Grupo 3  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller;">19.2</td>
+<td headers="Grupo 3  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller;">70.2</td>
+<td headers="Grupo 3  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller;">10.6</td>
+<td headers="Grupo 3  ranking00_14" class="gt_row gt_right" style="font-size: smaller;">252</td>
+<td headers="Grupo 3  ranking15_64" class="gt_row gt_right" style="font-size: smaller;">106</td>
+<td headers="Grupo 3  ranking65_mais" class="gt_row gt_right" style="font-size: smaller;">750</td>
+<td headers="Grupo 3  rd.total" class="gt_row gt_right" style="font-size: smaller;">42.5</td>
+<td headers="Grupo 3  ind.envelhec" class="gt_row gt_right" style="font-size: smaller;">55.5</td></tr>
     <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Itaobim">Itaobim</th>
+      <th colspan="9" class="gt_group_heading" scope="colgroup" id="Grupo 4">Grupo 4</th>
     </tr>
-    <tr class="gt_row_group_first"><td headers="Itaobim  D_TMI" class="gt_row gt_right" style="font-size: smaller;">20.0</td>
-<td headers="Itaobim  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">72.19</td>
-<td headers="Itaobim  D_TFT" class="gt_row gt_right" style="font-size: smaller;">1.90</td>
-<td headers="Itaobim  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-6.04</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Itinga">Itinga</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Itinga  D_TMI" class="gt_row gt_right" style="font-size: smaller;">18.9</td>
-<td headers="Itinga  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">72.83</td>
-<td headers="Itinga  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.25</td>
-<td headers="Itinga  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-9.36</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Malacacheta">Malacacheta</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Malacacheta  D_TMI" class="gt_row gt_right" style="font-size: smaller;">22.2</td>
-<td headers="Malacacheta  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">71.05</td>
-<td headers="Malacacheta  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.25</td>
-<td headers="Malacacheta  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-19.72</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Medina">Medina</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Medina  D_TMI" class="gt_row gt_right" style="font-size: smaller;">16.5</td>
-<td headers="Medina  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">74.27</td>
-<td headers="Medina  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.25</td>
-<td headers="Medina  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-16.06</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Minas Novas">Minas Novas</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Minas Novas  D_TMI" class="gt_row gt_right" style="font-size: smaller;">18.4</td>
-<td headers="Minas Novas  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">73.14</td>
-<td headers="Minas Novas  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.35</td>
-<td headers="Minas Novas  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-18.08</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Pedra Azul">Pedra Azul</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Pedra Azul  D_TMI" class="gt_row gt_right" style="font-size: smaller;">19.0</td>
-<td headers="Pedra Azul  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">72.79</td>
-<td headers="Pedra Azul  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.29</td>
-<td headers="Pedra Azul  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-15.53</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Rubelita">Rubelita</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Rubelita  D_TMI" class="gt_row gt_right" style="font-size: smaller;">17.8</td>
-<td headers="Rubelita  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">73.46</td>
-<td headers="Rubelita  D_TFT" class="gt_row gt_right" style="font-size: smaller;">1.92</td>
-<td headers="Rubelita  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-24.38</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Salinas">Salinas</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Salinas  D_TMI" class="gt_row gt_right" style="font-size: smaller;">17.1</td>
-<td headers="Salinas  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">73.90</td>
-<td headers="Salinas  D_TFT" class="gt_row gt_right" style="font-size: smaller;">1.71</td>
-<td headers="Salinas  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-7.32</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Teófilo Otoni">Teófilo Otoni</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Teófilo Otoni  D_TMI" class="gt_row gt_right" style="font-size: smaller;">16.2</td>
-<td headers="Teófilo Otoni  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">74.45</td>
-<td headers="Teófilo Otoni  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.09</td>
-<td headers="Teófilo Otoni  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-6.15</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Turmalina">Turmalina</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Turmalina  D_TMI" class="gt_row gt_right" style="font-size: smaller;">17.0</td>
-<td headers="Turmalina  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">73.98</td>
-<td headers="Turmalina  D_TFT" class="gt_row gt_right" style="font-size: smaller;">2.22</td>
-<td headers="Turmalina  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-0.64</td></tr>
-    <tr class="gt_group_heading_row">
-      <th colspan="4" class="gt_group_heading" scope="colgroup" id="Virgem da Lapa">Virgem da Lapa</th>
-    </tr>
-    <tr class="gt_row_group_first"><td headers="Virgem da Lapa  D_TMI" class="gt_row gt_right" style="font-size: smaller;">18.9</td>
-<td headers="Virgem da Lapa  D_ESPVIDA" class="gt_row gt_right" style="font-size: smaller;">72.83</td>
-<td headers="Virgem da Lapa  D_TFT" class="gt_row gt_right" style="font-size: smaller;">1.72</td>
-<td headers="Virgem da Lapa  D_TLM" class="gt_row gt_right" style="font-size: smaller;">-8.27</td></tr>
+    <tr class="gt_row_group_first"><td headers="Grupo 4  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Coronel Murta</td>
+<td headers="Grupo 4  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">18.5</td>
+<td headers="Grupo 4  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">67.0</td>
+<td headers="Grupo 4  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">14.5</td>
+<td headers="Grupo 4  ranking00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">372</td>
+<td headers="Grupo 4  ranking15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">613</td>
+<td headers="Grupo 4  ranking65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">332</td>
+<td headers="Grupo 4  rd.total" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">49.3</td>
+<td headers="Grupo 4  ind.envelhec" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">78.8</td></tr>
+    <tr><td headers="Grupo 4  Municipio" class="gt_row gt_left" style="font-size: smaller;">Itinga</td>
+<td headers="Grupo 4  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller;">19.2</td>
+<td headers="Grupo 4  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller;">66.9</td>
+<td headers="Grupo 4  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller;">14.0</td>
+<td headers="Grupo 4  ranking00_14" class="gt_row gt_right" style="font-size: smaller;">258</td>
+<td headers="Grupo 4  ranking15_64" class="gt_row gt_right" style="font-size: smaller;">636</td>
+<td headers="Grupo 4  ranking65_mais" class="gt_row gt_right" style="font-size: smaller;">402</td>
+<td headers="Grupo 4  rd.total" class="gt_row gt_right" style="font-size: smaller;">49.5</td>
+<td headers="Grupo 4  ind.envelhec" class="gt_row gt_right" style="font-size: smaller;">73.0</td></tr>
+    <tr><td headers="Grupo 4  Municipio" class="gt_row gt_left" style="font-size: smaller; background-color: #E5E5E5;">Rubelita</td>
+<td headers="Grupo 4  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">17.2</td>
+<td headers="Grupo 4  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">65.3</td>
+<td headers="Grupo 4  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">17.5</td>
+<td headers="Grupo 4  ranking00_14" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">566</td>
+<td headers="Grupo 4  ranking15_64" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">803</td>
+<td headers="Grupo 4  ranking65_mais" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">67</td>
+<td headers="Grupo 4  rd.total" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">53.2</td>
+<td headers="Grupo 4  ind.envelhec" class="gt_row gt_right" style="font-size: smaller; background-color: #E5E5E5;">101.9</td></tr>
+    <tr><td headers="Grupo 4  Municipio" class="gt_row gt_left" style="font-size: smaller;">Virgem da Lapa</td>
+<td headers="Grupo 4  p.pop_00_14" class="gt_row gt_right" style="font-size: smaller;">17.3</td>
+<td headers="Grupo 4  p.pop_15_64" class="gt_row gt_right" style="font-size: smaller;">68.0</td>
+<td headers="Grupo 4  p.pop_65_mais" class="gt_row gt_right" style="font-size: smaller;">14.7</td>
+<td headers="Grupo 4  ranking00_14" class="gt_row gt_right" style="font-size: smaller;">554</td>
+<td headers="Grupo 4  ranking15_64" class="gt_row gt_right" style="font-size: smaller;">454</td>
+<td headers="Grupo 4  ranking65_mais" class="gt_row gt_right" style="font-size: smaller;">306</td>
+<td headers="Grupo 4  rd.total" class="gt_row gt_right" style="font-size: smaller;">47.1</td>
+<td headers="Grupo 4  ind.envelhec" class="gt_row gt_right" style="font-size: smaller;">84.9</td></tr>
   </tbody>
   
   
@@ -2064,22 +1400,31 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<ul>
-<li><p>Município</p></li>
-<li><p>Esperança de vida ao nascer</p></li>
-<li><p>Mortalidade infantil</p></li>
-<li><p>Taxa de fecundidade total</p></li>
-<li><p>Taxa líquida migratória</p></li>
-</ul>
-<section id="povos-indígenas" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="povos-indígenas"><span class="header-section-number">3.1</span> Povos indígenas</h2>
-<p>Os povos indígenas e comunidades tradicionais</p>
+<p>Fonte: IBGE/Censo Demográfico 2022. Elaboração: FJP/Diretoria de Estatística e Informações. Nota: IE = Índice de Envelhecimento.</p>
 </section>
-<section id="população-quilombola" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="população-quilombola"><span class="header-section-number">3.2</span> População quilombola</h2>
+<section id="há-registros-de-povos-tradicionais-nos-municípios-do-vale-do-lítio" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="há-registros-de-povos-tradicionais-nos-municípios-do-vale-do-lítio"><span class="header-section-number">2.3</span> Há registros de povos tradicionais nos municípios do Vale do Lítio?</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-ibge2023_primeiros" class="csl-entry" role="listitem">
+IBGE. 2023a. <span>«Censo Demográfico 2022: População e domicílios: Primeiros resultados»</span>. Rio de Janeiro: Instituto Brasileiro de Geografia e Estatística; <a href="https://censo2022.ibge.gov.br/apps/pgi/pdf/CensoDemografico2022-PopulacaoeDomicilios-PrimeirosResultados-20230627final.pdf" class="uri">https://censo2022.ibge.gov.br/apps/pgi/pdf/CensoDemografico2022-PopulacaoeDomicilios-PrimeirosResultados-20230627final.pdf</a>.
+</div>
+<div id="ref-ibge2023_idade" class="csl-entry" role="listitem">
+———. 2023b. <span>«Censo Demográfico 2022: População por idade e sexo: Resultados do universo»</span>. Rio de Janeiro: Instituto Brasileiro de Geografia e Estatística; <a href="https://censo2022.ibge.gov.br/apps/pgi/pdf/Censo%20Demográfico%202022%20-%20População%20por%20idade%20e%20sexo%20-%20BR.pdf" class="uri">https://censo2022.ibge.gov.br/apps/pgi/pdf/Censo%20Demográfico%202022%20-%20População%20por%20idade%20e%20sexo%20-%20BR.pdf</a>.
+</div>
+</div>
 </section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>A razão de dependência total (RD) representa a soma da razão de dependência jovem e da razão de dependência adulta. Ela indica a carga de dependência total sobre a população em idade ativa. Pode ser determinado pela seguinte fórmula:</p>
+<p>RD = ( P0-14 + P65+ )/ P15-64 x 100</p>
+<p>onde P0-14 é a população de 0 a 14 anos, P15-64 a população de 15 a 64 anos e P65+ representando a população de 65 anos ou mais de idade.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>O Índice de envelhecimento (IE) representa o número de pessoas com 65 anos e mais de idade em relação a um grupo de 100 crianças de zero a 14 anos. É determinado pela seguinte fórmula:</p>
+<p>IE = (P65+ / P0-14) x 100</p>
+<p>onde P0-14 é a população de 0 a 14 anos e P65+ representando a população de 65 anos ou mais de idade.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
