@@ -1,26 +1,141 @@
 ---
-title: "Social"
+title: "Aspectos sociais"
 editor: visual
 ---
 
-# Sociais
+## Como está a situação social nos municípios do Vale do Lítio de maneira geral?
 
-\- Educação
+O Índice Mineiro de Responsabilidade Social (IMRS) é uma métrica que avalia a responsabilidade social na gestão pública estadual, compreendendo a implementação, pela administração pública, de políticas, planos, programas, projetos e ações destinados a garantir o acesso da população a serviços essenciais em áreas estratégicas, como educação, saúde, segurança pública, vulnerabilidade, saneamento e meio ambiente. Ao utilizar esse índice multidimensional com dados de 2019 a 2021 e fazer uma comparação entre os 853 municípios do estado, pode-se observar o seguinte:
 
-*Única tabela*
+-   Em termos gerais, nenhum dos municípios do Vale do Lítio figura entre os 100 municípios mais responsáveis socialmente. Pelo contrário, muitos deles ocupam posições inferiores no ranking, com dois deles, Medina e Itinga, sendo classificados entre os 100 municípios menos responsáveis socialmente;
 
-Taxa de atendimento da educação básica 2021-- Ranking 2021 - E_TXATBASICA
+-   Entre os 14 municípios do Vale do Lítio, na área da educação, destacaram-se positivamente Capelinha e Salinas. Na saúde, Malacacheta apresentou o melhor desempenho, enquanto Teófilo Otoni se sobressai na segurança pública e vulnerabilidade. Além disso, Capelinha destacou-se novamente em saneamento.
 
-Taxa de distorção idade séries nos anos finais do ensino fundamental 2021-- Ranking 2021 - E_DISTEF
+-   A análise do IMRS aponta que, em comparação entre os 14 municípios do Vale do Lítio, os esforços das políticas públicas devem ser direcionados com maior atenção para os seguintes municípios em termos de:
 
-Taxa de distorção idade séries nos anos finais do ensino médio- 2021-- Ranking 2021 - E_DISTEFAF
+1.  **Educação**: Itinga, Minas Novas e Virgem da Lapa;
 
-Índice de Qualidade Geral da Educação 2021 -- Ranking 2021 (ou último ano disponível) - E_IQE
+2.  **Saúde**: Itinga, Rubelita, Iaobim e Araçuaí;
 
-```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
-##----------- Dev tabela 01 educação
+3.  **Segurança pública**: Pedra Azul, Medina e Araçuaí;
+
+4.  **Vulnerabilidade**: Itaobim, Pedra Azul e todos do **Grupo 4** (Coronel Murta, Itinga, Rubelita e Virgem da Lapa);
+
+5.  **Saneamento básico**: Itaobim, Coronel Murta, Itinga e Medina.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+##----------- Dev tabela 00 - imrs
 library(readxl)
 library(tidyverse)
+library(gt)
+imrs<- read.csv2("C:/Users/caios/OneDrive/Área de Trabalho/dev_version/bases/imrs_2020.csv")
+# Crie um DataFrame com as colunas "Municipio" e "IBGE7"
+df_nome <- data.frame(
+  Nome_munic = c(
+    "Araçuaí",
+    "Capelinha",
+    "Coronel Murta",
+    "Itaobim",
+    "Itinga",
+    "Malacacheta",
+    "Medina",
+    "Minas Novas",
+    "Pedra Azul",
+    "Teófilo Otoni",
+    "Turmalina",
+    "Rubelita",
+    "Virgem da Lapa",
+    "Salinas"
+  ),
+  ibge7 = c(
+    3103405,
+    3112307,
+    3119500,
+    3133303,
+    3134004,
+    3139201,
+    3141405,
+    3141801,
+    3148707,
+    3168606,
+    3169703,
+    3156502,
+    3171600,
+    3157005
+  ),
+  vale_do_litio = rep(1,14)
+)
+
+tabela00_social <- left_join(imrs,df_nome) %>% 
+  mutate(Grupo = case_when(
+    Nome_munic == "Teófilo Otoni" ~ "Grupo 1",
+    Nome_munic == "Salinas" | Nome_munic == "Capelinha" | Nome_munic == "Araçuaí" ~ "Grupo 2",
+    Nome_munic == "Pedra Azul" | Nome_munic == "Minas Novas" | Nome_munic == "Medina" |
+    Nome_munic == "Turmalina" | Nome_munic == "Itaobim" | Nome_munic == "Malacacheta" ~ "Grupo 3",
+    Nome_munic == "Itinga" | Nome_munic == "Virgem da Lapa" | Nome_munic == "Coronel Murta" |
+    Nome_munic == "Rubelita" ~ "Grupo 4"),
+    ranking_imrs = rank(-imrs_2020, ties.method = "min"),
+                  ranking_imrs_educacao = rank(-imrs_educ_2020, ties.method = "min"),
+        ranking_imrs_saude = rank(-imrs_saude_2020, ties.method = "min"),
+         ranking_imrs_seguranca = rank(-imrs_seg_2020, ties.method = "min"),
+         ranking_imrs_vulnerabilidade = rank(-imrs_vuln_2020, ties.method = "min"),
+         ranking_imrs_saneamento = rank(-imrs_saneam_2020, ties.method = "min")) %>% 
+  filter(vale_do_litio==1) %>% arrange(Grupo) %>% 
+  select(-ibge7, -Municipio,-imrs_2020, -imrs_educ_2020, -imrs_vuln_2020,
+         -imrs_saude_2020, -imrs_seg_2020, -imrs_saneam_2020, -vale_do_litio)
+
+tabela00_social  %>% 
+  group_by(Grupo) %>% 
+  gt() %>% 
+  tab_header(
+    title = "Ranking do IMRS geral e por dimensões",
+    subtitle = md("Municípios do Vale do Lítio - 2020")
+  )%>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = md("Region and <br />IAP Type")) %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  )  %>% #rótulo
+  opt_table_font(font = google_font(name = "Karla")) %>% 
+  tab_options(data_row.padding = px(6),
+              heading.align = 'left',
+              column_labels.background.color = 'dodgerblue4',
+              heading.title.font.size = px(20)) %>% 
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>%
+  cols_label(
+    Nome_munic= 'Município',
+    ranking_imrs = 'Ranking IMRS',
+    ranking_imrs_educacao = 'Ranking IMRS Educação',
+    ranking_imrs_saude = 'Ranking IMRS Saúde',
+    ranking_imrs_seguranca = 'Ranking IMRS Segurança',
+    ranking_imrs_vulnerabilidade = 'Ranking IMRS Vulnerabilidade',
+    ranking_imrs_saneamento = 'Ranking IMRS Saneamento'
+  )  
+
+```
+
+Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
+
+## O que revelam os principais indicadores da área da educação, saúde, assistência social, segurança pública e saneamento básico?
+
+### Educação
+
+A taxa de atendimento escolar na educação básica é um indicador de acesso ao sistema educacional. Essa taxa se aproxima de 100% em geral, mas alguns municípios apresentaram índices menores, como Virgem da Lapa (80,6%), Coronel Murta (84,5%), Minas Novas (86%) e Itinga (89,9%).
+
+Para entender melhor a adequação entre a idade dos alunos e o ano escolar em que estão matriculados, é importante observar a taxa de distorção idade-série. Nos anos finais do ensino fundamental e no ensino médio, essa taxa observada revelou uma maior discrepância nos municípios de Teófilo Otoni, Itaobim, Malacacheta e Itinga, onde a idade dos alunos frequentemente não corresponde à série ideal.
+
+Quanto à qualidade da educação, o Índice de Qualidade Geral da Educação fornece uma perspectiva abrangente. Esse índice é uma média ponderada dos indicadores de qualidade do ensino de Matemática e Língua Portuguesa. Esses indicadores são avaliados em três momentos cruciais da jornada educacional: no 5º e 9º anos do ensino fundamental e na 3ª série do ensino médio. A ponderação leva em conta o número de alunos que realizam o exame em cada disciplina, baseando-se nos dados do Programa de Avaliação da Rede Pública de Educação Básica (PROEB) de Minas Gerais. Entre os municípios do Vale do Lítio, Pedra Azul, Itinga e Rubelita se destacaram pelos resultados mais baixos em termos de qualidade geral da educação.
+
+
+```{r, eval = FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
 educ <- read_excel("dados/educ.xlsx", col_types = c("numeric", 
 +     "numeric", "numeric", "numeric", "numeric", 
@@ -59,13 +174,6 @@ educ <- read_excel("dados/educ.xlsx", col_types = c("numeric",
 +     "numeric", "numeric"))
 
 
-
-
-
-```
-
-```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
-
 municipios_vale <- c(
   3103405,  # Araçuaí
   3112307,  # Capelinha
@@ -87,19 +195,28 @@ municipios_vale <- c(
 tabela01_social<- educ %>%  left_join(df_nome) %>% select(Municipio, IBGE7, ANO,E_TXATBASICA, E_DISTEF, E_DISTEFAF, E_IQE)  %>% filter(IBGE7 %in% municipios_vale & ANO== 2021) %>% 
   select(Municipio, everything()) 
 
-saveRDS(tabela01_social,'tabela01_social.rds')
+saveRDS(tabela01_social,'dados/tabela01_social.rds')
 ```
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
 library(gt)
 
-tabela01_social <- readRDS("dados/tabela01_social.rds")
+tabela01_social <- readRDS("dados/tabela01_social.rds") %>% 
+    mutate( Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4")) %>%  arrange(Grupo) %>%  select(-IBGE7, -ANO)
 
 tabela01_social  %>% 
+  group_by(Grupo) %>% 
   gt() %>% 
   tab_header(
-    title = "Educação",
+    title = "Indicadores educacionais selecionados",
+    subtitle = md("Municípios do Vale do Lítio - 2021 (ou último ano disponível)")
   )%>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = md("Region and <br />IAP Type")) %>%
@@ -111,7 +228,7 @@ tabela01_social  %>%
   tab_options(data_row.padding = px(6),
               heading.align = 'left',
               column_labels.background.color = 'dodgerblue4',
-              heading.title.font.size = px(26)) %>% 
+              heading.title.font.size = px(20)) %>% 
   tab_style(
     style = cell_text(
       color = 'dodgerblue4', 
@@ -121,30 +238,30 @@ tabela01_social  %>%
     locations = cells_title(groups = 'title')
   ) %>%
   cols_label(
-    E_TXATBASICA = 'Taxa de atendimento da educação básica',
-    E_DISTEF = 'Taxa de distorção idade séries nos anos finais do ensino fundamental',
-    E_DISTEFAF = 'Taxa de distorção idade séries nos anos finais do ensino médio',
+    Municipio = "Município",
+    E_TXATBASICA = 'Taxa de atendimento da educação básica (%)',
+    E_DISTEF = 'Taxa de distorção idade séries nos anos finais do ensino fundamental (%)',
+    E_DISTEFAF = 'Taxa de distorção idade séries nos anos finais do ensino médio (%)',
     E_IQE = 'Índice de Qualidade Geral da Educação '
   )  %>% 
   fmt_number(
-    columns = 4:7,  # Seleciona colunas
+    columns = 2:4,  # Seleciona colunas
+    decimals = 1)  %>% 
+  fmt_number(
+    columns = 5,  # Seleciona colunas
     decimals = 2)  # Definir 2 casas decimais 
 
 ```
+Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
 
-\- Saúde
+###Saúde
 
-*Única tabela*
+Diversos indicadores são úteis para avaliar a situação da saúde nos municípios. Um deles é a taxa de mortalidade por doenças não transmissíveis, como neoplasias, diabetes, doenças cardiovasculares e doenças respiratórias crônicas, na faixa etária de 30 a 69 anos. Nesse aspecto, Rubelita, Virgem da Lapa e Medina se destacaram com taxas superiores a 300 óbitos por cada mil habitantes.
 
-Taxa de mortalidade por doenças crônicas não transmissíveis 2021 -- Ranking 2021
+No que se refere à cobertura da vacina pentavalente, que protege contra Difteria, Tétano, Coqueluche, Meningite e outras infecções causadas pelo *Haemophilus Influenzae* Tipo B e a Hepatite B em crianças menores de um ano, os dados do Programa Nacional de Imunizações mostraram que Itaobim e Rubelita possuem as menores coberturas vacinais, abaixo de 50%.
 
-Cobertura vacinal de pentavalente em menores de 1 ano 2021 -- Ranking 2021
+Outros indicadores relevantes na área da saúde incluem a proporção de óbitos por causas mal definidas e as internações hospitalares por condições sensíveis à atenção primária. Esses indicadores apontaram para situações mais críticas nos municípios de Medina, Minas Novas e Teófilo Otoni para o primeiro caso, e em Malacacheta, Medina e Rubelita para o segundo. 
 
-Proporção de óbitos por causas mal definidas 2021 -- Ranking 2021
-
-Internações hospitalares por condições sensíveis à atenção primária 2021 -- Ranking 2021
-
-Infraestrutura para assistência à saúde - 2021 -- Ranking 2021
 
 ```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -174,13 +291,23 @@ saveRDS(tabel02_social, 'tabela02_social.rds')
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
-tabela02_social <- readRDS("dados/tabela02_social.rds")
+tabela02_social <- readRDS("dados/tabela02_social.rds")%>% 
+    mutate( Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4")) %>%  arrange(Grupo) %>%  select(-IBGE7, -ANO)
+
 
 
 tabela02_social  %>% 
+  group_by(Grupo) %>% 
   gt() %>% 
   tab_header(
-    title = "Saúde",
+    title = "Indicadores da saúde selecionados",
+    subtitle = md("Municípios do Vale do Lítio - 2021")
   )%>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = md("Region and <br />IAP Type")) %>%
@@ -192,7 +319,7 @@ tabela02_social  %>%
   tab_options(data_row.padding = px(6),
               heading.align = 'left',
               column_labels.background.color = 'dodgerblue4',
-              heading.title.font.size = px(26)) %>% 
+              heading.title.font.size = px(20)) %>% 
   tab_style(
     style = cell_text(
       color = 'dodgerblue4', 
@@ -202,27 +329,23 @@ tabela02_social  %>%
     locations = cells_title(groups = 'title')
   ) %>%
   cols_label(
-    S_TXMODCNT30A69 = 'Taxa de mortalidade por doenças crônicas não transmissíveis ',
-    S_PENTA = 'Cobertura vacinal de pentavalente em menores de 1 ano ',
-    S_OBMALDEF = 'Proporção de óbitos por causas mal definidas',
-    S_INTERSAP = 'Internações hospitalares por condições sensíveis à atenção primária '
+    S_TXMODCNT30A69 = 'Taxa de mortalidade por doenças crônicas não transmissíveis (por 100 mil hab.)',
+    S_PENTA = 'Cobertura vacinal de pentavalente em menores de 1 ano (%)',
+    S_OBMALDEF = 'Proporção de óbitos por causas mal definidas (%)',
+    S_INTERSAP = 'Internações hospitalares por condições sensíveis à atenção primária (%)'
   )  %>% 
   fmt_number(
-    columns = 4:7,  # Seleciona colunas
-    decimals = 2)  # Definir 2 casas decimais 
+    columns = 2:6,  # Seleciona colunas
+    decimals = 1)  # Definir 2 casas decimais 
 ```
+Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
 
-\- Vulnerabilidade
+### Assistência Social
 
-*Única tabela*
+O percentual da população inscrita no Cadastro Único (CadÚnico) é um indicador que reflete a proporção dos habitantes cadastrados nos Programas Sociais do Governo Federal. Essa ferramenta é vital para identificar e caracterizar famílias de baixa renda, facilitando o direcionamento eficaz de políticas públicas. Uma alta porcentagem de inscrições no CadÚnico pode sugerir uma prevalência elevada de famílias com renda inferior no município, além de indicar a eficácia governamental em registrar aqueles que são elegíveis para receber benefícios sociais. Na região do Vale do Lítio, a maioria dos municípios registra mais da metade de sua população no CadÚnico, com Teófilo Otoni sendo a exceção. Em 2021, Rubelita se destacou com o maior percentual, onde 74,3% da população estava cadastrada.
 
-Percentual da população de Sete Lagoas registrada no Cadastro Único 2021 -- Ranking
+Quanto ao percentual de população pobre e extremamente pobre registrada no CadÚnico, Rubelita e Pedra Azul exibiram taxas superiores a 70%. Essa estatística é essencial para compreender a dimensão da pobreza e da extrema pobreza nestes municípios. Já em relação às pessoas cadastradas no CadÚnico sem ocupação, Itinga, Araçuaí e Coronel Murta apresentaram os índices mais elevados. Um percentual alto nesse indicador pode apontar para problemas como desemprego ou subutilização da força de trabalho local. Isso também acena para políticas que fomentem a criação de empregos e ofereçam capacitação profissional, além de programas de assistência social para atender a esse segmento da população.
 
-Percentual da população pobre e extremamente pobre do Cadastro Único 2021
-
-Percentual das pessoas de 18 a 64 anos inscritas no CadÚnico sem ocupação 2021
-
-Percentual da população de 16 a 64 anos empregada no setor formal 2021
 
 ```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -270,12 +393,22 @@ tabela03_social<- ass_social%>% left_join(df_nome) %>% select(Municipio, IBGE7, 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
-tabela03_social <- readRDS("dados/tabela03_social.rds")
+tabela03_social <- readRDS("dados/tabela03_social.rds")%>% 
+    mutate( Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4")) %>%  arrange(Grupo) %>%  select(-IBGE7, -ANO)
+
 
 tabela03_social  %>% 
+  group_by(Grupo) %>% 
   gt() %>% 
   tab_header(
-    title = "Vulnerabilidade",
+    title = "Indicadores de assistência social selecionados",
+    subtitle = md("Municípios do Vale do Lítio - 2021")
   )%>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = md("Region and <br />IAP Type")) %>%
@@ -287,7 +420,7 @@ tabela03_social  %>%
   tab_options(data_row.padding = px(6),
               heading.align = 'left',
               column_labels.background.color = 'dodgerblue4',
-              heading.title.font.size = px(26)) %>% 
+              heading.title.font.size = px(20)) %>% 
   tab_style(
     style = cell_text(
       color = 'dodgerblue4', 
@@ -302,19 +435,18 @@ tabela03_social  %>%
     B_POPIDCADSPOP = 'Percentual das pessoas de 18 a 64 anos inscritas no CadÚnico sem ocupação'
   )  %>% 
   fmt_number(
-    columns = 4:6,  # Seleciona colunas
-    decimals = 2)  # Definir 2 casas decimais 
+    columns = 2:5,  # Seleciona colunas
+    decimals = 1)  # Definir 2 casas decimais 
 ```
+Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
 
-\- Segurança
+### Segurança
 
-Única tabela
+Os indicadores de segurança pública são ferramentas para avaliar a situação de segurança e a eficácia das forças policiais em determinadas regiões ou países. Por exemplo, a taxa de ocorrência de homicídios dolosos, que reflete a frequência de homicídios intencionais por 100.000 habitantes, é um importante indicador. Em 2021, os municípios de Medina, Pedra Azul e Itinga registraram as maiores taxas. Uma alta incidência de homicídios dolosos geralmente sinaliza problemas mais profundos de segurança pública e pode estar relacionada a fatores como criminalidade organizada, tensões sociais ou políticas de segurança ineficientes.
 
-Taxa de ocorrência de homicídios dolosos -- ranking 2021 -- Ranking 2021 - P_HOM_TX
+Quanto à taxa de crimes violentos contra o patrimônio, como roubos e assaltos, observou-se que Medina, Pedra Azul e Rubelita apresentaram as taxas mais elevadas. Tais índices elevados podem comprometer a sensação de segurança entre a população e evidenciam a necessidade de implementar estratégias específicas para prevenir e combater esses crimes.
 
-Taxa de crimes violentos contra o patrimônio -- ranking 2021 -- Ranking 2021 - P_CVPA
-
-Número de habitantes por policial militar -- ranking 2021 -- Ranking 2021
+O número de habitantes por policial militar, por sua vez, serve como uma medida da densidade de policiamento em uma área. Uma proporção elevada de habitantes por policial pode indicar uma potencial escassez de efetivos, o que pode comprometer a eficácia das respostas policiais e a segurança como um todo. Em contrapartida, uma proporção mais baixa pode sugerir uma cobertura policial adequada, embora isso não assegure necessariamente maior eficiência na prevenção ou no combate ao crime. No Vale do Lítio, em 9 dos 14 municípios, a proporção é de mais de 700 habitantes por policial. Teófilo Otoni se destacou positivamente, com a melhor proporção do Vale do Lítio, apresentando 274 habitantes por policial.
 
 ```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -348,12 +480,22 @@ saveRDS(tabela04_social, 'dados/tabela04_social.rds')
 library(tidyverse)
 library(gt)
 
-tabela04_social <- readRDS("dados/tabela04_social.rds")
+tabela04_social <- readRDS("dados/tabela04_social.rds")%>% 
+    mutate( Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4")) %>%  arrange(Grupo) %>%  select(-IBGE7, -ANO)
+
 
 tabela04_social  %>% 
+  group_by(Grupo) %>% 
   gt() %>% 
   tab_header(
-    title = "Segurança Social",
+    title = "Indicadores de segurança pública selecionados",
+    subtitle = md("Municípios do Vale do Lítio - 2021")
   )%>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = md("Region and <br />IAP Type")) %>%
@@ -365,7 +507,7 @@ tabela04_social  %>%
   tab_options(data_row.padding = px(6),
               heading.align = 'left',
               column_labels.background.color = 'dodgerblue4',
-              heading.title.font.size = px(26)) %>% 
+              heading.title.font.size = px(20)) %>% 
   tab_style(
     style = cell_text(
       color = 'dodgerblue4', 
@@ -375,31 +517,61 @@ tabela04_social  %>%
     locations = cells_title(groups = 'title')
   ) %>%
   cols_label(
-    P_HOM_TX = 'Taxa de ocorrência de homicídios dolosos',
-    P_CVPA = 'Taxa de crimes violentos contra o patrimônio',
-    P_PM = 'Número de habitantes por policial militar'
+    P_HOM_TX = 'Taxa de ocorrência de homicídios dolosos (por 100 mil hab.)',
+    P_CVPA = 'Taxa de crimes violentos contra o patrimônio (por 100 mil hab.)',
+    P_PM = 'Número de habitantes por policial militar (hab./policial)'
   )  %>% 
   fmt_number(
-    columns = 4:6,  # Seleciona colunas
-    decimals = 2)  # Definir 2 casas decimais 
-
-
+    columns = 2:3,  # Seleciona colunas
+    decimals = 1)  %>% 
+  fmt_number(
+    columns = 4,  # Seleciona colunas
+    decimals = 0)  # Definir 2 casas decimais 
 ```
+Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
 
-\- Saneamento
+### Saneamento
 
-Única tabela
+Diversos indicadores são fundamentais para avaliar a qualidade dos serviços de saneamento básico e a eficiência da gestão pública em prover infraestruturas essenciais para a saúde e qualidade de vida da população. Por exemplo, o percentual da população urbana residente em domicílios conectados à rede geral de abastecimento de água tende a próximo a 100%, porém em Teófilo Otoni, Malacacheta e Pedra Azul registrou percentuais inferiores a 90%. Em termos de esgotamento sanitário, Itaobim e Coronel Murta apresentaram os menores percentuais de população urbana atendida. A adequada infraestrutura de saneamento é vital para prevenir doenças e assegurar um ambiente urbano saudável. Já em relação à coleta e tratamento de lixo, a maioria dos municípios atende quase 100% da população, mas Rubelita e Turmalina registraram índices inferiores a 90%, destacando áreas que necessitam de melhorias.
 
-Percentual da população urbana residente em domicílios ligados à rede geral de
-
-abastecimento de água -- ranking 2021 -- Ranking 2021 - N_COBAGUA
-
-Destinação final do lixo -- ranking 2021 -- Ranking 2021- N_DISPOSLIXO
-
-Índice de Esforço de Gestão das Políticas de Saneamento Básico -- ranking 2021 -- Ranking 2021 N_GESTÃO
+Além disso, o Índice de Esforço de Gestão das Políticas de Saneamento Básico é um termômetro da eficácia da gestão urbana. Ele considera aspectos como a existência de um conselho municipal de saneamento ou órgão colegiado, a implementação de políticas municipais e planos municipais de saneamento e suas abrangências. Quanto mais próximo de 1, melhor a avaliação. Observou-se que em 8 dos 14 municípios do Vale do Lítio, o índice foi igual ou inferior a 0,40, indicando uma necessidade de aprimoramento na administração e implementação das políticas de saneamento.
 
 ```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
-
+df_nome <- data.frame(
+  Municipio = c(
+    "Araçuaí",
+    "Capelinha",
+    "Coronel Murta",
+    "Itaobim",
+    "Itinga",
+    "Malacacheta",
+    "Medina",
+    "Minas Novas",
+    "Pedra Azul",
+    "Teófilo Otoni",
+    "Turmalina",
+    "Rubelita",
+    "Virgem da Lapa",
+    "Salinas"
+  ),
+  IBGE7 = c(
+    3103405,
+    3112307,
+    3119500,
+    3133303,
+    3134004,
+    3139201,
+    3141405,
+    3141801,
+    3148707,
+    3168606,
+    3169703,
+    3156502,
+    3171600,
+    3157005
+  ),
+  vale_do_litio = rep(1,14)
+)
 
 library(readxl)
 saneamento <- read_excel("bases/11 - SANEAMENTO E HABITAÇÃO/IMRS - 2022/Base Plataforma 2022 (Nova)/BASE SANEAMENTO E HABITAÇÃO  2000 a 2021 igor.xlsx", 
@@ -419,7 +591,7 @@ saneamento <- read_excel("bases/11 - SANEAMENTO E HABITAÇÃO/IMRS - 2022/Base P
         "numeric", "numeric", "numeric", 
         "numeric", "numeric"))
 
-tabela05_social<-  saneamento %>%  left_join(df_nome)  %>%   select(Municipio, IBGE7, ANO,N_COBAGUA,N_DISPOSLIXO,N_GESTÃO) %>%filter(IBGE7 %in% municipios_vale & ANO== 2021) %>% select(Municipio, everything())  
+tabela05_social<-  saneamento %>%  left_join(df_nome)  %>%   select(Municipio, IBGE7, ANO,N_COBAGUA,N_COBESGOTO,N_LIXO,N_GESTÃO) %>%filter(IBGE7 %in% municipios_vale & ANO== 2021) %>% select(Municipio, everything())  
 
 
 
@@ -428,16 +600,25 @@ saveRDS(tabela05_social, 'dados/tabela05_social.rds')
 ```
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-
 library(tidyverse)
 library(gt)
 
-tabela05_social <- readRDS("dados/tabela05_social.rds")
+tabela05_social <- readRDS("dados/tabela05_social.rds")%>% 
+    mutate( Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4")) %>%  arrange(Grupo) %>%  select(-IBGE7, -ANO)
+
 
 tabela05_social  %>% 
+  group_by(Grupo) %>% 
   gt() %>% 
   tab_header(
-    title = "Segurança Social",
+    title = "Indicadores de saneamento básico selecionados",
+    subtitle = md("Municípios do Vale do Lítio - 2021 (ou último ano disponível)")
   )%>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = md("Region and <br />IAP Type")) %>%
@@ -449,7 +630,7 @@ tabela05_social  %>%
   tab_options(data_row.padding = px(6),
               heading.align = 'left',
               column_labels.background.color = 'dodgerblue4',
-              heading.title.font.size = px(26)) %>% 
+              heading.title.font.size = px(20)) %>% 
   tab_style(
     style = cell_text(
       color = 'dodgerblue4', 
@@ -459,12 +640,18 @@ tabela05_social  %>%
     locations = cells_title(groups = 'title')
   ) %>%
   cols_label(
-    N_COBAGUA = 'Percentual da população urbana residente em domicílios ligados à rede geral de abastecimento de água',
-    N_DISPOSLIXO = 'Destinação final do lixo',
+    N_COBAGUA = 'Percentual da população urbana residente em domicílios ligados à rede geral de abastecimento de água (%)',
+    N_COBESGOTO = "Percentual da população urbana atendida com serviço de esgotamento sanitário (rede) (%)",
+    N_LIXO = 'Percentual da população atendida por sistema de coleta e tratamento de lixo (%)',
+    
     N_GESTÃO = 'Índice de Esforço de Gestão das Políticas de Saneamento Básico'
   )  %>% 
   fmt_number(
-    columns = 4:6,  # Seleciona colunas
-    decimals = 2)  # Definir 2 casas decimais 
+    columns = 2:4,  # Seleciona colunas
+    decimals = 1)  %>% 
+  fmt_number(
+    columns = 5,  # Seleciona colunas
+    decimals = 2) 
 
 ```
+Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
