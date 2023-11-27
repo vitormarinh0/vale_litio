@@ -1,11 +1,11 @@
 ---
-title: "Demografia"
+title: "Aspectos populacionais"
 editor: visual
 ---
 
-## Quantas pessoas residem nos municípios do Vale do Lítio? Como essa população evoluiu nos últimos 12 anos?
+## Quantas pessoas residem nos municípios do Vale do Lítio? Qual foi a evolução populacional nos últimos 12 anos?
 
-Segundo os resultados do Censo Demográfico do IBGE, Teófilo Otoni é o maior município com mais de 137 mil pessoas, ocupando a 18ª posição no estado de Minas Gerais em 2022. Salinas, Capelinha e Araçuaí registraram entre 34 a 40 mil habitantes. Já o municípios de Pedra Azul, Minas Novas, Medina, Turmalina, Itaobim e Malacacheta foram recenseados entre 17 a 24 mil habitantes em 2022. Itinga, Virgem da Lapa, Coronel Murta e Rubelita possuem populações menores que 15 mil habitantes, sendo Rubelita o município com o menor contigente populacional, 5.679 residentes em 2022. Assim, classifica-se em termos de tamanho populacional:
+Com base nos dados do Censo Demográfico do IBGE, é possível identificar o tamanho da população nos municípios do Vale do Lítio em 2022. Teófilo Otoni se destaca como o maior município, com mais de 137 mil habitantes, ocupando a 18ª posição no estado de Minas Gerais. Salinas, Capelinha e Araçuaí registraram populações variando de 34 a 40 mil habitantes. Já os municípios de Pedra Azul, Minas Novas, Medina, Turmalina, Itaobim e Malacacheta contaram com populações que variaram de 17 a 24 mil habitantes em 2022. Itinga, Virgem da Lapa, Coronel Murta e Rubelita possuem populações inferiores a 15 mil habitantes, sendo Rubelita o município com o menor contingente populacional, com 5.679 residentes em 2022. Portanto, é possível classificar esses municípios em termos de tamanho populacional da seguinte maneira:
 
 -   **Grupo 1**. Teófilo Otoni
 
@@ -15,15 +15,15 @@ Segundo os resultados do Censo Demográfico do IBGE, Teófilo Otoni é o maior m
 
 -   **Grupo 4**. Itinga, Virgem da Lapa, Coronel Murta e Rubelita
 
-Em termos do crescimento populacional entre 2022 e 2010, destacaram-se:
+Na análise do crescimento populacional entre 2022 e 2010, destacam-se os seguintes pontos:
 
-1.  a estabilidade da população de Teófilo Otoni (**Grupo 1**);
+1.  Estabilidade da população de Teófilo Otoni (**Grupo 1**);
 
-2.  a estabilidade da população de Salinas, crescimento em Capelinha e decrescimento populacional em Araçuaí (**Grupo 2**);
+2.  Estabilidade da população em Salinas, crescimento em Capelinha e decrescimento populacional em Araçuaí (**Grupo 2**);
 
-3.  a redução populacional de todos os menores municípios (**Grupos 3 e 4**), com exceção de Turmalina e Pedra Azul.
+3.  Redução populacional em todos os municípios menores (**Grupos 3 e 4**), com exceção de Turmalina e Pedra Azul.
 
-No cenário de desaceleração do crescimento populacional experimentado pelo país, é notável que a diminuição da população, antes mais proeminente nos municípios menores, está se tornando progressivamente perceptível também nos municípios de maior porte [@ibge2023_primeiros].
+Em um cenário de desaceleração do crescimento populacional experimentado pelo país, é notável que a diminuição da população, antes mais evidente nos municípios menores, está se tornando progressivamente perceptível também nos municípios de maior porte [@ibge2023_primeiros].
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -121,36 +121,36 @@ tabela01 %>%  gt() %>% tab_header(
     decimals = 2)  # Define 2 casas decimais para a coluna "Valor"
 
 ```
-
 Fonte: IBGE/Censo Demográficos 2000-2010-2022. Elaboração: FJP/Diretoria de Estatística e Informações
 
-## Qual a estrutura etária atual dos municípios do Vale do Lítio? É uma população jovem ou envelhecida?
+## Qual é a estrutura etária atual dos municípios do Vale do Lítio? A população é predominantemente jovem ou envelhecida?
 
-A análise da distribuição da população em diferentes faixas etárias oferece *insights* sobre as relações entre esses grupos, suas proporções em relação à população total e possibilita acompanhar a evolução da dinâmica demográfica ao longo do tempo.
+A análise da distribuição da população em diferentes faixas etárias proporciona *insights* valiosos sobre as relações demográficas, suas proporções em relação à população total e permite acompanhar a evolução da dinâmica etária ao longo do tempo.
 
-Os dados do Censo Demográfico de 2022 apontam para a continuidade do processo de envelhecimento da população brasileira. Isso se manifesta na diminuição das proporções dos grupos mais jovens em relação aos grupos de adultos e idosos. Esse fenômeno é impulsionado principalmente pela queda significativa do número médio de filhos por mulher, um declínio progressivo e veloz observado no Brasil desde o final da década de 1960. Em menor escala, contribui para essa dinâmica a redução da mortalidade em todas as faixas etárias, incluindo os idosos [@ibge2023_idade].
+De acordo com os dados do Censo Demográfico de 2022, observa-se uma continuidade do processo de envelhecimento da população brasileira. Isso se manifesta na diminuição das proporções dos grupos mais jovens em relação aos grupos de adultos e idosos. Esse fenômeno é impulsionado principalmente pela significativa redução do número médio de filhos por mulher, uma tendência que vem ocorrendo de forma constante no Brasil desde o final da década de 1960. Em menor escala, contribui para essa dinâmica a redução da mortalidade em todas as faixas etárias, incluindo os idosos [@ibge2023_idade].
 
-Em 2022, o município de Teófilo Otoni apresentou uma proporção de população de 0 a 14 anos 18,7%, de 15 a 64 anos 68,6% e de 65 anos ou mais 12,7%. A título de comparação, Minas Gerais registrou 18,1%, 69,6% e 12,4%, respectivamente. Assim, em termos médios, Teófilo Otoni estrutura similar a Minas Gerais. A razão de dependência total[^1_demografia-1] registrou 45,8%, o que significa dizer que existem 45,8 crianças e idosos para cada 100 em idade ativa. Já o índice de envelhecimento[^1_demografia-2] foi de 68%, que significa que há 68 pessoas com mais de 65 anos para cada 100 pessoas na faixa etária entre 0 e 14 anos. Quanto maior o valor do indicador, mais envelhecida é a população. Minas Gerais registrou 68,6 idosos para cada 100 crianças.
+Em 2022, o município de Teófilo Otoni apresentou a seguinte estrutura etária: 18,7% da população com idade de 0 a 14 anos, 68,6% entre 15 e 64 anos e 12,7% com 65 anos ou mais. Em comparação, o estado de Minas Gerais registrou 18,1%, 69,6% e 12,4%, respectivamente. Isso indica que, em termos médios, Teófilo Otoni possui uma estrutura semelhante à de Minas Gerais. A razão de dependência total, que representa a carga de dependência sobre a população em idade ativa, foi de 45,8%, o que significa que existem 45,8 crianças e idosos para cada 100 pessoas em idade ativa. Além disso, o índice de envelhecimento atingiu 68%, o que indica que há 68 pessoas com mais de 65 anos para cada 100 pessoas na faixa etária entre 0 e 14 anos. Quanto maior o valor deste indicador, mais envelhecida é a população. Minas Gerais registrou 68,6 idosos para cada 100 crianças.
 
-[^1_demografia-1]: A razão de dependência total (RD) representa a soma da razão de dependência jovem e da razão de dependência adulta. Ela indica a carga de dependência total sobre a população em idade ativa. Pode ser determinado pela seguinte fórmula:
 
-    RD = ( P0-14 + P65+ )/ P15-64 x 100
+<!-- [^1_demografia-1]: A razão de dependência total (RD) representa a soma da razão de dependência jovem e da razão de dependência adulta. Ela indica a carga de dependência total sobre a população em idade ativa. Pode ser determinado pela seguinte fórmula: -->
 
-    onde P0-14 é a população de 0 a 14 anos, P15-64 a população de 15 a 64 anos e P65+ representando a população de 65 anos ou mais de idade.
+<!--     RD = ( P0-14 + P65+ )/ P15-64 x 100 -->
 
-[^1_demografia-2]: O Índice de envelhecimento (IE) representa o número de pessoas com 65 anos e mais de idade em relação a um grupo de 100 crianças de zero a 14 anos. É determinado pela seguinte fórmula:
+<!--     onde P0-14 é a população de 0 a 14 anos, P15-64 a população de 15 a 64 anos e P65+ representando a população de 65 anos ou mais de idade. -->
 
-    IE = (P65+ / P0-14) x 100
+<!-- [^1_demografia-2]: O Índice de envelhecimento (IE) representa o número de pessoas com 65 anos e mais de idade em relação a um grupo de 100 crianças de zero a 14 anos. É determinado pela seguinte fórmula: -->
 
-    onde P0-14 é a população de 0 a 14 anos e P65+ representando a população de 65 anos ou mais de idade.
+<!--     IE = (P65+ / P0-14) x 100 -->
 
-Outros destaques foram:
+<!--     onde P0-14 é a população de 0 a 14 anos e P65+ representando a população de 65 anos ou mais de idade. -->
 
-1.  Capelinha (**Grupo 2**) é tem o mais baixo índice de envelhecimento entre os municípios do Vale do Lítio, seguidos de Trumalina e Minas Novas (**Grupo 3**);
+Destacam-se os seguintes pontos:
 
-2.  Todos os municípios pequenos (**Grupo 4**) são mais envelhidos que a Minas Gerais, com destaque para Rubelita que o número de idosos já superou o número de crianças;
+1.  Capelinha (pertencente ao **Grupo 2**) possui o índice de envelhecimento mais baixo entre os municípios do Vale do Lítio, seguido por Turmalina e Minas Novas (**Grupo 3**);
 
-3.  Os municípios de Itaobim, Malacacheta e Medina (**Grupo 3**) também são mais envelhecidos que a média de Minas Gerais.
+2.  Todos os municípios menores (pertencentes ao **Grupo 4**) apresentam uma população mais envelhecida do que a média de Minas Gerais, com destaque para Rubelita, onde o número de idosos já superou o número de crianças;
+
+3.  Os municípios de Itaobim, Malacacheta e Medina (também pertencentes ao **Grupo 3**) também possuem uma população mais envelhecida do que a média de Minas Gerais.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 # Leia a base de dados mais recente de população por faixa de idade do Censo Demográfico 2022
@@ -240,14 +240,13 @@ tabela02 %>%  group_by(Grupo) %>% gt() %>%
              ranking00_14 = "Ranking prop. pop. 0 a 14 anos", 
              ranking15_64 = "Ranking prop. pop. 15 a 64 anos", 
              ranking65_mais = "Ranking prop. pop. 65 anos ou mais",
-             rd.total = "Razão de dependência total (%)", 
+             rd.total = "RD (%)", 
              ind.envelhec = "IE (%)") %>% 
   fmt_number(
     columns = c(3:5,9:10),  # Seleciona todas as colunas
     decimals = 1)  # Define 2 casas decimais para a coluna "Valor"
   
 ```
-
-Fonte: IBGE/Censo Demográfico 2022. Elaboração: FJP/Diretoria de Estatística e Informações. Nota: IE = Índice de Envelhecimento.
+Fonte: IBGE/Censo Demográfico 2022. Elaboração: FJP/Diretoria de Estatística e Informações. Nota: RD = Razão de Dependência. IE = Índice de Envelhecimento.
 
 <!-- ## Há registros de povos tradicionais nos municípios do Vale do Lítio? -->
