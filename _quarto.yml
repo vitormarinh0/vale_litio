@@ -3,7 +3,7 @@ project:
 
 book:
   title: "<img src='img/logo_fjp.png' alt='Logo' style='vertical-align: middle; width:180px'> Vale do Lítio"
-  subtitle: "Características Socioeconômicas e Ambientais dos Municípios"
+  subtitle: "Características Socioeconômicas dos Municípios"
   author:
     - name: "[Caio Gonçalves](https://github.com/ccsgonc)"
       affiliation: Fundação João Pinheiro
@@ -18,7 +18,7 @@ book:
     - 1_Demografia.qmd
     - 2_Economia.qmd
     - 3_Social.qmd
-    - 4_Ambiental.qmd
+    # - 4_Ambiental.qmd
     - 5_Acoes.qmd
     - references.qmd
 
