@@ -142,16 +142,20 @@ options(scipen = 999)
 
 tabela02_economia <- readRDS("dados/tabela02_economia.rds")
 
+colnames(tabela02_economia)[4:7] <- c("Agropecuária", "Indústria", 
+"Serviços", "Administração")
 
 # Selecione apenas as colunas relevantes (atividades) e reformule os dados
 dados_plot <- tabela02_economia %>%   filter(IBGE7 %in% municipios_vale) %>% 
-  select(ANO, MUNICIPIO, va_agro, va_ind, va_serv, va_adm) %>%
-  pivot_longer(cols = starts_with("va_"), names_to = "Atividade", values_to = "Valor")
+  select(ANO, MUNICIPIO, Agropecuária, Indústria, Serviços, Administração) %>%
+  pivot_longer(cols = c("Agropecuária", "Indústria", 
+"Serviços", "Administração"), names_to = "Atividade", values_to = "Valor")
 
 # Crie o gráfico empilhado
 grafico <- ggplot(dados_plot, aes(x = MUNICIPIO, y = Valor, fill = Atividade)) +
   geom_bar(stat = "identity") +
-  labs(title = "Valor adicionado total e segundo atividades econômicas dos Municípios do Vale do Lítio - 2021",
+  labs(title = "Valor adicionado total e segundo atividades econômicas",
+       subtitle = "Municípios do Vale do Lítio - 2021",
        x = "Município",
        y = "R$") +
   scale_fill_brewer(palette = "Set1") +  # Escolha uma paleta de cores
@@ -291,7 +295,8 @@ dados_menores <- dados_filtrados %>% filter(R_EMPRSFMI <= 110)
 p1 <- ggplot(dados_filtrados, aes(x = ANO, y = R_EMPRSFMI, group = Municipio, color = Municipio)) +
   geom_line(size = .5) +  # Aumentar a espessura das linhas
   geom_point(aes(shape = Municipio), size = 2) +  # Adicionar marcadores
-  labs(title = "Vínculos empregatícios formais na indústria extrativa dos municípios do Vale do Lítio - 2010-2021",
+  labs(title = "Vínculos empregatícios formais na indústria extrativa",
+      subtitle = "Municípios do Vale do Lítio - 2021",
        x = "Ano",
        y = "Vínculos formais") +
   theme_minimal() +

@@ -5,6 +5,6 @@ account: fjp-direi
 server: posit.cloud
 hostUrl: https://api.posit.cloud/v1
 appId: 7134230
-bundleId: 7972026
+bundleId: 7990981
 url: https://posit.cloud/content/7134230
 version: 1
