@@ -1,1 +1,21 @@
 # Prefácio {.unnumbered}
+
+O propósito deste documento é fornecer respostas a algumas perguntas relacionadas às características socioeconômicas dos municípios que compõem o Vale do Lítio. O conteúdo deste documento abrange uma variedade de informações, incluindo dados demográficos, produção, emprego, vulnerabilidade, educação, saúde e saneamento básico. Além disso, este relatório destaca elementos identificados nos planos de desenvolvimento elaborados para a região em estudo.
+
+Os dados utilizados neste documento foram coletados na Plataforma do Índice Mineiro de Responsabilidade Social [IMRS](https://imrs.fjp.mg.gov.br/) da Fundação João Pinheiro, onde é possível acessar perfis individuais de cada município [aqui](https://imrs.fjp.mg.gov.br/Perfil). As fontes de dados provêm de diversas origens, incluindo os dados mais recentes do Censo Demográfico de 2022 realizado pelo Instituto Brasileiro de Geografia e Estatística (IBGE).
+
+**Perguntas orientadoras**:
+
+1.  Quantas pessoas residem nos municípios do Vale do Lítio? Qual foi a evolução populacional nos últimos 12 anos?
+
+2.  Qual é a estrutura etária atual dos municípios do Vale do Lítio? A população é predominantemente jovem ou envelhecida?
+
+3.  Em termos da importância econômica das atividades presentes nos municípios do Vale do Lítio, o que os dados dos PIB revelam?
+
+4.  Qual a importância da indústria extrativa na geração de empregos formais nos municípios do Vale do Lítio?
+
+5.  Como está a situação social nos municípios do Vale do Lítio de maneira geral?
+
+6.  O que revelam os principais indicadores da área da educação, saúde, assistência social, segurança pública e saneamento básico?
+
+7.  O que dizem os planos de desenvolvimento realizados para a região?

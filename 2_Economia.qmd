@@ -1,13 +1,23 @@
 ---
-title: "Economia"
+title: "Aspectos econômicos"
 editor: visual
 ---
 
-# Quais as características econômicas dos municípios?
+## Em termos da importância econômica das atividades presentes nos municípios do Vale do Lítio, o que os dados dos PIB revelam?
 
-\[Comentário Tabela 1 - Caio\]
+Ao analisar a importância econômica das atividades presentes nos municípios do Vale do Lítio com base nos dados do Produto Interno Bruto (PIB), observa-se o seguinte:
 
-\[Tabela 1 - Vitor\] - Inserir uma tabela com as seguintes colunas:
+1.  Todos os municípios se destacam nas atividades relacionadas aos serviços públicos, incluindo administração, defesa, educação e saúde públicas, além da seguridade social, bem como no agrupamento que engloba todos os outros serviços, exceto o comércio.
+
+2.  Na composição das atividades mais importantes, a indústria extrativa ocupa a terceira posição em Medina e Pedra Azul (pertencentes **ao Grupo 3**), bem como em Itinga e Coronel Murta (pertencentes ao **Grupo 4**).
+
+3.  A produção florestal, pesca e aquicultura desempenha um papel crucial na economia de Turmalina e ocupa a terceira posição em Capelinha, Minas Novas e Rubelita.
+
+4.  As atividades comerciais desempenham um papel significativo nas economias de Virgem da Lapa, Malacacheta, Itaobim, Salinas e Teófilo Otoni, este último sendo o 61º maior PIB do estado de Minas Gerais e o 18º em termos populacionais.
+
+5.  A construção civil é a terceira atividade mais importante em Araçuaí, que, apesar de ter uma população maior que os demais municípios do **Grupo 3**, contribuiu menos para a economia mineira em 2021, ficando atrás dos municípios menores, como Turmalina, Pedra Azul e Malacacheta.
+
+No que diz respeito ao PIB per capita, Turmalina, Capelinha e Salinas apresentam os maiores valores entre os 14 municípios do Vale do Lítio. Em contrapartida, Rubelita, Virgem da Lapa e Itinga possuem os menores valores.
 
 ```{r, eval = FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -20,20 +30,19 @@ pop<- read_excel("bases/0 - POPULAÇÃO REFERÊNCIA/IMRS - 2022 (População Ref
 
 ####---------------------------------------------------------
 
-pib_municipal$IBGE7<- as.character(pib_municipal$IBGE7)
 
 pib_mg<- left_join(pop, pib_municipal,by = c('ANO', 'IBGE7')) %>% 
   select(MUNICIPIO, everything()) %>% janitor::clean_names() 
 
 pib_mg<- pib_mg %>% 
-  mutate(ranking_uf = rank(pib_mg$produto_interno_bruto_a_precos_correntes_r_1_000))
+  mutate(ranking_uf = rank(-pib_mg$produto_interno_bruto_a_precos_correntes_r_1_000))
 
 
 
 tabela01_economia <- pib_mg %>% janitor::clean_names() %>%   select(ibge7,municipio,produto_interno_bruto_a_precos_correntes_r_1_000, produto_interno_bruto_per_capita_a_precos_correntes_r_1_00, ranking_uf, atividade_com_maior_valor_adicionado_bruto, atividade_com_segundo_maior_valor_adicionado_bruto, atividade_com_terceiro_maior_valor_adicionado_bruto) %>% 
   filter(ibge7 %in% municipios_vale) 
 
-saveRDS(tabela01_economia, 'tabela01_economia.rds')
+saveRDS(tabela01_economia, 'dados/tabela01_economia.rds')
 
 ```
 
@@ -62,12 +71,19 @@ municipios_vale <- c(
   3157005  # Salinas
 )
 
- tabela01_economia <- readRDS("dados/tabela01_economia.rds")
+ tabela01_economia <- readRDS("dados/tabela01_economia.rds") %>% 
+   mutate(Grupo = case_when(
+    municipio == "Teófilo Otoni" ~ "Grupo 1",
+    municipio == "Salinas" | municipio == "Capelinha" | municipio == "Araçuaí" ~ "Grupo 2",
+    municipio == "Pedra Azul" | municipio == "Minas Novas" | municipio == "Medina" |
+    municipio == "Turmalina" | municipio == "Itaobim" | municipio == "Malacacheta" ~ "Grupo 3",
+    municipio == "Itinga" | municipio == "Virgem da Lapa" | municipio == "Coronel Murta" |
+    municipio == "Rubelita" ~ "Grupo 4")) %>% arrange(Grupo) %>% select(-ibge7)
 
-tabela01_economia %>% gt() %>%
+tabela01_economia %>% group_by(Grupo) %>% gt() %>%
   tab_header(
-    title = " Indicadores Econômicos",
-    subtitle = md("Vale do Lítio")
+    title = "Produto Interno Bruto, ranking do PIB, PIB per capita e atividades econômicas mais importantes",
+    subtitle = md("Municípios do Vale do Lítio - 2021")
   )%>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = md("Region and <br />IAP Type")) %>%
@@ -79,7 +95,7 @@ tabela01_economia %>% gt() %>%
   tab_options(data_row.padding = px(6),
               heading.align = 'left',
               column_labels.background.color = 'dodgerblue4',
-              heading.title.font.size = px(26)) %>% 
+              heading.title.font.size = px(20)) %>% 
   tab_style(
     style = cell_text(
       color = 'dodgerblue4', 
@@ -89,10 +105,9 @@ tabela01_economia %>% gt() %>%
     locations = cells_title(groups = 'title')
   ) %>%
   cols_label(
-    ibge7 = "Código IBGE",
     municipio = 'Município',
-    produto_interno_bruto_a_precos_correntes_r_1_000 = 'PIB',
-    produto_interno_bruto_per_capita_a_precos_correntes_r_1_00 = 'PIB per capita',
+    produto_interno_bruto_a_precos_correntes_r_1_000 = 'PIB (R$)',
+    produto_interno_bruto_per_capita_a_precos_correntes_r_1_00 = 'PIB per capita (R$)',
     ranking_uf = 'Ranking Estadual',
     atividade_com_maior_valor_adicionado_bruto = 'Primeira atividade mais importante',
     atividade_com_segundo_maior_valor_adicionado_bruto = 'Segunda atividade mais importante',
@@ -100,26 +115,7 @@ tabela01_economia %>% gt() %>%
   )
 
 ```
-
--   Município
-
--   PIB 2020
-
--   PIB per capita 2020
-
--   Posição ranking PIB 2020
-
--   Primeira atividade mais importante
-
--   Segunda atividade mais importante
-
--   Terceira atividade mais importante
-
-\[Comentario Gráfico 1 - Caio\]
-
-\[Gráfico 1 - Vitor\] - Inserir gráfico de barras com distribuição das atividades (va agropecuária, industria, serviços e administração pública) 2010 e 2020
-
--   Município
+Fonte: IBGE/Contas Regionais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ```{r, eval = FALSE,echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -146,47 +142,67 @@ options(scipen = 999)
 
 tabela02_economia <- readRDS("dados/tabela02_economia.rds")
 
+colnames(tabela02_economia)[4:7] <- c("Agropecuária", "Indústria", 
+"Serviços", "Administração")
 
 # Selecione apenas as colunas relevantes (atividades) e reformule os dados
 dados_plot <- tabela02_economia %>%   filter(IBGE7 %in% municipios_vale) %>% 
-  select(ANO, MUNICIPIO, va_agro, va_ind, va_serv, va_adm) %>%
-  pivot_longer(cols = starts_with("va_"), names_to = "Atividade", values_to = "Valor")
+  select(ANO, MUNICIPIO, Agropecuária, Indústria, Serviços, Administração) %>%
+  pivot_longer(cols = c("Agropecuária", "Indústria", 
+"Serviços", "Administração"), names_to = "Atividade", values_to = "Valor")
 
 # Crie o gráfico empilhado
 grafico <- ggplot(dados_plot, aes(x = MUNICIPIO, y = Valor, fill = Atividade)) +
   geom_bar(stat = "identity") +
-  labs(title = "Distribuição das Atividades por Município e Ano",
+  labs(title = "Valor adicionado total e segundo atividades econômicas",
+       subtitle = "Municípios do Vale do Lítio - 2021",
        x = "Município",
-       y = "Valor") +
+       y = "R$") +
   scale_fill_brewer(palette = "Set1") +  # Escolha uma paleta de cores
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 # Exiba o gráfico
 print(grafico)
-
-
-
 ```
+Fonte: IBGE/Contas Regionais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
 
-\[Tabela 2- Vitor\] - Inserir uma tabela com as seguintes colunas:
+## Qual a importância da indústria extrativa na geração de empregos formais nos municípios do Vale do Lítio?
 
--   Município
+Com base nos dados mais recentes da Relação Anual de Informações Sociais (RAIS) de 2021, pode-se destacar os seguintes pontos-chave:
 
--   Empregaodos no setor formal
+**Grupo 1**
 
--   Empregados no setor formal - extrativa mineral
+-   Teófilo Otoni é um município com um número substancial de empregados no setor formal, totalizando 27.796 vínculos. No entanto, o setor extrativo mineral desempenha um papel muito limitado, com apenas 13 empregados, representando meros 0,05% do total de empregos na indústria extrativa.
 
--   Percentual de empregados na indústria extrativa
+**Grupo 2**:
 
--   indústria da construção
+-   Araçuaí se destaca com 4.685 empregados no setor formal, enquanto o setor extrativo mineral emprega 258 pessoas, correspondendo a uma parcela de 5,51% dos vínculos empregatícios.
+
+-   Salinas possui 6.351 empregados no setor formal, com 31 deles no setor extrativo, o que representa 0,49% dos empregos nesse setor.
+
+**Grupo 3**:
+
+-   Medina é um município com 1.593 empregados no setor formal e 116 no setor extrativo, o que equivale a uma parcela de 7,28% de seus empregados.
+
+-   Pedra Azul é um dos municípios mais dependentes da indústria extrativa, com 357 empregados nesse setor, o que representa 13,53% do total de empregos.
+
+**Grupo 4**:
+
+-   Coronel Murta possui 654 empregados no setor formal, com 32 deles no setor extrativo, representando 4,89% dos empregos na indústria extrativa.
+
+-   Itinga é notável com 858 empregados no setor formal e 196 no setor extrativo, o que corresponde a ao maior percentual comparado aos municípios do Vale do Lítio, 22,84% de seus empregados registrados na indústria extrativa.
+
+-   Rubelita conta com 557 empregados no setor formal, dos quais 59 estão no setor extrativo, correspondendo a 10,59% dos empregos totais.
+
+Em resumo, a importância da indústria extrativa varia significativamente entre os municípios do Vale do Lítio, com alguns municípios dependendo muito mais desse setor do que outros, em especial: Itinga, Pedra Azul, Rubelita, Aracuaí e Medina conforme os registros de 2021.
 
 ```{r, eval = FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
 ##dev_version
-tabela03_economia<- emp_renda %>%  filter(IBGE7 %in% municipios_vale) %>% left_join( df_nome) %>%
-  select(IBGE7, Municipio, everything())
-
-saveRDS(tabela03_economia, 'tabela03_economia.rds')
+# tabela03_economia<- emp_renda %>%  filter(IBGE7 %in% municipios_vale) %>% left_join( df_nome) %>%
+#   select(IBGE7, Municipio, everything())
+# 
+# saveRDS(tabela03_economia, 'tabela03_economia.rds')
 
 
 ```
@@ -198,8 +214,20 @@ saveRDS(tabela03_economia, 'tabela03_economia.rds')
 
 tabela03_economia <- readRDS("dados/tabela03_economia.rds")
 
+
+
 tabela03_economia  %>% select(-R_EMPRSFIC) %>% 
-  mutate(tx_emp_ext = R_EMPRSFMI/R_EMPRSF) %>% 
+  mutate(Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4"),
+    tx_emp_ext = R_EMPRSFMI/R_EMPRSF*100) %>% 
+  select(-IBGE7,-ANO) %>% 
+  arrange(Grupo) %>% 
+  group_by(Grupo) %>% 
   gt() %>% 
   tab_header(
     title = "Composição do Emprego",
@@ -226,22 +254,16 @@ tabela03_economia  %>% select(-R_EMPRSFIC) %>%
   cols_label(
     R_EMPRSF = 'Empregados do setor formal',
     R_EMPRSFMI = 'Empregados setor extrativo mineral',
-    tx_emp_ext = 'Percentual de empregados na indústria extrativa'
+    tx_emp_ext = 'Percentual de empregados na indústria extrativa (%)'
   )  %>% 
   fmt_number(
-    columns = 6,  # Seleciona colunas
+    columns = 5,  # Seleciona colunas
     decimals = 2)  # Definir 2 casas decimais 
-  
-
-
-
-
 
 ```
+Fonte: MTE/Relação Anual de Informações Sociais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
 
-\[Comentario Gráfico 2 - Caio\]
-
-\[Gráfico 2 - Vitor\] - Inserir gráfico de linha com total de empregados na indústria extrativa 2010-2021
+É possível verificar a evolução dos empregos formais na indústria extrativa nos municípios do Vale do Lítio por meio dos dados da RAIS 2021. Entre os destaques em termos de quantidade, destacam-se Pedra Azul, Araçuaí, Itinga e Medina. Notavelmente, Medina apresenta uma tendência de queda desde 2013, enquanto Pedra Azul demonstra um aumento constante desde 2016.
 
 ```{r, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -273,9 +295,10 @@ dados_menores <- dados_filtrados %>% filter(R_EMPRSFMI <= 110)
 p1 <- ggplot(dados_filtrados, aes(x = ANO, y = R_EMPRSFMI, group = Municipio, color = Municipio)) +
   geom_line(size = .5) +  # Aumentar a espessura das linhas
   geom_point(aes(shape = Municipio), size = 2) +  # Adicionar marcadores
-  labs(title = "Evolução do Total de Empregados na Indústria Extrativa (2010-2021)",
+  labs(title = "Vínculos empregatícios formais na indústria extrativa",
+      subtitle = "Municípios do Vale do Lítio - 2021",
        x = "Ano",
-       y = "Total de Empregados") +
+       y = "Vínculos formais") +
   theme_minimal() +
   geom_point(size=.5)+
   geom_line()+
@@ -284,8 +307,5 @@ p1 <- ggplot(dados_filtrados, aes(x = ANO, y = R_EMPRSFMI, group = Municipio, co
            'yellow','black','gold', 'darkblue'))
 # Exibir o gráfico
 print(p1)
-
-
-
-
 ```
+Fonte: MTE/Relação Anual de Informações Sociais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.

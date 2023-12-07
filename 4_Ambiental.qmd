@@ -1,19 +1,9 @@
 ---
-title: "Ambiental"
+title: "Aspectos ambientais"
 editor: visual
 ---
 
-Ambientais
-
-Tabela 1 - último ano disponível
-
-Area e densidade populacional
-
-Percentual de áreas indígenas - M_AIIGENA
-
-Percentual de áreas de proteção integral - M_PROINTEGRAL
-
-Percentual de áreas de uso sustentável - M_USOSUST
+\[Em desenvolvimento\]
 
 ```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
