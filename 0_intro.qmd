@@ -1,27 +1,32 @@
 # Introdução {.unnumbered}
 
-A iniciativa Vale do Lítio é um projeto concebido pela [Invest Minas](https://www.investminas.mg.gov.br/) com a missão de impulsionar o desenvolvimento das regiões Nordeste e Norte do estado de Minas Gerais em torno da crescente cadeia produtiva do lítio.
+A iniciativa Vale do Lítio é um projeto concebido pela [Invest Minas](https://www.investminas.mg.gov.br/) com a missão de impulsionar o desenvolvimento das regiões Nordeste e Norte do estado de Minas Gerais em torno da dinâmica e ascendente cadeia produtiva do lítio.
 
-Estão incluídos no projeto um conjunto de 14 municípios que se destacam por possuírem reservas de lítio. São eles: Araçuaí, Capelinha, Coronel Murta, Itaobim, Itinga, Malacacheta, Medina, Minas Novas, Pedra Azul, Virgem da Lapa, Teófilo Otoni e Turmalina, localizados na região Nordeste de Minas, além de Rubelita e Salinas, situados na região Norte do estado.
+Estão incluídos no projeto um conjunto de 14 municípios que se destacam por possuírem reservas de lítio. São eles: Araçuaí, Capelinha, Coronel Murta, Itaobim, Itinga, Malacacheta, Medina, Minas Novas, Pedra Azul, Virgem da Lapa, Teófilo Otoni e Turmalina, localizados na região Nordeste de Minas, além de Rubelita e Salinas, situados na região Norte do estado. O Mapa 1 localiza esses municípios no território mineiro.
 
 É importante ressaltar que o lítio desempenha um papel essencial em diversas aplicações, como na fabricação de ligas metálicas, dispositivos médicos e na produção de fármacos. No entanto, seu uso mais proeminente é na fabricação de baterias de alta durabilidade, que alimentam veículos elétricos e dispositivos eletroeletrônicos, representando uma peça fundamental na transição para fontes de energia mais limpas e na revolução tecnológica em curso.
 
-Mapa 1: Municípios do Vale do Lítio
 
+Mapa 1: Municípios do Vale do Lítio
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
 # Carregue as bibliotecas necessárias
 library(leaflet)
 library(sf)
 library(dplyr)
 library(geobr)
+library(shiny)
+library(shinythemes)
+library(wordcloud)
+library(dplyr)
+library(igraph)
+library(networkD3)
+library(visNetwork)
 
 municipios <- read_municipality(code_muni = "MG", year = 2010)
 
 ```
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-
-
 municipios_ibge <- c(
   3103405,  # Araçuaí
   3112307,  # Capelinha
@@ -52,18 +57,21 @@ dados_sf_filtrados <- dados_sf %>%
 # Crie um mapa Leaflet
 mapa <- leaflet() %>%
   addTiles() %>%
-  addPolygons(data = dados_sf, 
-              fillColor = "green", 
-              fillOpacity = 0, 
-              color = "black", 
-              stroke = TRUE, 
+  addPolygons(data = dados_sf,
+              fillColor = "green",
+              fillOpacity = 0,
+              color = "black",
+              stroke = TRUE,
               weight = 1) %>%
-  addPolygons(data = dados_sf_filtrados, 
-              fillColor = "red",  # Cor dos polígonos 
-              fillOpacity = 0.4, 
-              color = "black", 
-              stroke = TRUE, 
+  addPolygons(data = dados_sf_filtrados,
+              fillColor = "red",  # Cor dos polígonos
+              fillOpacity = 0.4,
+              color = "black",
+              stroke = TRUE,
               weight = 1)
 #visualizar
 mapa
+
 ```
+
+

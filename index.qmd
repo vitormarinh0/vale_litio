@@ -1,10 +1,12 @@
 # Prefácio {.unnumbered}
 
-O propósito deste documento é fornecer respostas a algumas perguntas relacionadas às características socioeconômicas dos municípios que compõem o Vale do Lítio. O conteúdo deste documento abrange uma variedade de informações, incluindo dados demográficos, produção, emprego, vulnerabilidade, educação, saúde e saneamento básico. Além disso, este relatório destaca elementos identificados nos planos de desenvolvimento elaborados para a região em estudo.
+O propósito deste documento é fornecer informações relacionadas às características socioeconômicas dos municípios que compõem o Vale do Lítio. De forma simples e direta, este livro digital aborda uma gama de temas essenciais, incluindo dados demográficos, produção, emprego, vulnerabilidade, educação, saúde e saneamento básico. Além disso, destaca elementos identificados nos planos de desenvolvimento elaborados para a região em estudo.
 
-Os dados utilizados neste documento foram coletados na Plataforma do Índice Mineiro de Responsabilidade Social [IMRS](https://imrs.fjp.mg.gov.br/) da Fundação João Pinheiro, onde é possível acessar perfis individuais de cada município [aqui](https://imrs.fjp.mg.gov.br/Perfil). As fontes de dados provêm de diversas origens, incluindo os dados mais recentes do Censo Demográfico de 2022 realizado pelo Instituto Brasileiro de Geografia e Estatística (IBGE).
+Para garantir a qualidade das informações, utilizou-se os dados sistematizados na Plataforma do Índice Mineiro de Responsabilidade Social [IMRS](https://imrs.fjp.mg.gov.br/) da Fundação João Pinheiro, onde também é possível acessar perfis individuais de cada município [aqui](https://imrs.fjp.mg.gov.br/Perfil). As fontes de dados provêm de diversas origens, incluindo os dados mais recentes do Censo Demográfico de 2022 realizado pelo Instituto Brasileiro de Geografia e Estatística (IBGE).
 
 **Perguntas orientadoras**:
+
+Este prefácio também serve como um guia para as principais questões que o documento busca responder:
 
 1.  Quantas pessoas residem nos municípios do Vale do Lítio? Qual foi a evolução populacional nos últimos 12 anos?
 
@@ -18,4 +20,6 @@ Os dados utilizados neste documento foram coletados na Plataforma do Índice Min
 
 6.  O que revelam os principais indicadores da área da educação, saúde, assistência social, segurança pública e saneamento básico?
 
-7.  O que dizem os planos de desenvolvimento realizados para a região?
+7.  Qual a situação desses municípios em termos de equipamentos de saúde e educação?
+
+8.  O que dizem os planos de desenvolvimento realizados para a região sobre o lítio e as questões sociais?

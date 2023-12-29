@@ -11,7 +11,7 @@ book:
     - name: "[Vitor Marinho](https://github.com/vitor-marinho-fjp)"
       affiliation: Fundação João Pinheiro
       affiliation_url: https://fjp.mg.gov.br/
-  date: "11/27/2023"
+  date: "12/29/2023"
   chapters:
     - index.qmd
     - 0_intro.qmd
@@ -19,6 +19,7 @@ book:
     - 2_Economia.qmd
     - 3_Social.qmd
     # - 4_Ambiental.qmd
+    - 3a_equipamentos_publicos.qmd
     - 5_Acoes.qmd
     - references.qmd
 

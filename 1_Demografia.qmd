@@ -121,6 +121,7 @@ tabela01 %>%  gt() %>% tab_header(
     decimals = 2)  # Define 2 casas decimais para a coluna "Valor"
 
 ```
+
 Fonte: IBGE/Censo Demográficos 2000-2010-2022. Elaboração: FJP/Diretoria de Estatística e Informações
 
 ## Qual é a estrutura etária atual dos municípios do Vale do Lítio? A população é predominantemente jovem ou envelhecida?
@@ -130,7 +131,6 @@ A análise da distribuição da população em diferentes faixas etárias propor
 De acordo com os dados do Censo Demográfico de 2022, observa-se uma continuidade do processo de envelhecimento da população brasileira. Isso se manifesta na diminuição das proporções dos grupos mais jovens em relação aos grupos de adultos e idosos. Esse fenômeno é impulsionado principalmente pela significativa redução do número médio de filhos por mulher, uma tendência que vem ocorrendo de forma constante no Brasil desde o final da década de 1960. Em menor escala, contribui para essa dinâmica a redução da mortalidade em todas as faixas etárias, incluindo os idosos [@ibge2023_idade].
 
 Em 2022, o município de Teófilo Otoni apresentou a seguinte estrutura etária: 18,7% da população com idade de 0 a 14 anos, 68,6% entre 15 e 64 anos e 12,7% com 65 anos ou mais. Em comparação, o estado de Minas Gerais registrou 18,1%, 69,6% e 12,4%, respectivamente. Isso indica que, em termos médios, Teófilo Otoni possui uma estrutura semelhante à de Minas Gerais. A razão de dependência total, que representa a carga de dependência sobre a população em idade ativa, foi de 45,8%, o que significa que existem 45,8 crianças e idosos para cada 100 pessoas em idade ativa. Além disso, o índice de envelhecimento atingiu 68%, o que indica que há 68 pessoas com mais de 65 anos para cada 100 pessoas na faixa etária entre 0 e 14 anos. Quanto maior o valor deste indicador, mais envelhecida é a população. Minas Gerais registrou 68,6 idosos para cada 100 crianças.
-
 
 <!-- [^1_demografia-1]: A razão de dependência total (RD) representa a soma da razão de dependência jovem e da razão de dependência adulta. Ela indica a carga de dependência total sobre a população em idade ativa. Pode ser determinado pela seguinte fórmula: -->
 
@@ -247,6 +247,7 @@ tabela02 %>%  group_by(Grupo) %>% gt() %>%
     decimals = 1)  # Define 2 casas decimais para a coluna "Valor"
   
 ```
+
 Fonte: IBGE/Censo Demográfico 2022. Elaboração: FJP/Diretoria de Estatística e Informações. Nota: RD = Razão de Dependência. IE = Índice de Envelhecimento.
 
 <!-- ## Há registros de povos tradicionais nos municípios do Vale do Lítio? -->

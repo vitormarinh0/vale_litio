@@ -1,0 +1,234 @@
+---
+title: "Equipamentos"
+editor: visual
+---
+
+## Qual a situação desses municípios em termos de equipamentos de saúde e educação?
+
+Conforme os dados do Cadastro Nacional de Estabelecimentos de Saúde (CNES) foi possível verificar o aumento dos estabelecimentos entre os anos de 2010 e 2022 sendo em alguns municípios em maior magnitude com destaque para Teófilo Otoni que tem 499 estabelecimentos de sáude cadastrados em 2022. Ressalta-se que nesse total incluem hospitais, tanto públicos quanto privados, incluindo hospitais gerais e especializados, além de clínicas e consultórios, unidades básicas de saúde, laboratórios, entre outros.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(tidyverse)
+# options(scipen=999)
+# 
+# #========================== manipulação 
+# data <- readRDS("estabelecimentos_saude.rds")
+# 
+# municipios_vale <- c(
+#   3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801,
+#   3148707, 3168606, 3169703, 3156502, 3171600, 3157005
+# )
+# 
+# df_nome <- readRDS('df_nome.rds')
+# 
+# # Filtrar 
+# data <- data %>%
+#   filter(id_municipio %in% as.character(municipios_vale)) 
+# 
+# # Filtrar, agrupar e resumir os dados
+# data_filtered <- data %>%
+#   filter(ano %in% c('2010', '2022')) %>%
+#   group_by(ano, id_municipio) %>%
+#   summarise(qtd_cnes = n_distinct(id_estabelecimento_cnes)) %>% 
+#   left_join(df_nome, by = "id_municipio")
+# 
+# saveRDS(data_filtered,"data_estabelecimentos.RDS")
+# data_filtered <- readRDS("data_estabelecimentos.RDS")
+# # 
+# write.csv(data_filtered,"data_filtered.csv")
+
+data_filtered <- read.csv("data_filtered.csv")
+data_filtered <- data_filtered[,2:5]
+
+#===================visualização 
+ ggplot(data_filtered, aes(x = Municipio, y = qtd_cnes, fill = as.factor(ano))) +
+  geom_bar(stat = "identity", position = "dodge", color = "white") +
+  geom_text(aes(label = qtd_cnes), position = position_dodge(width = 0.9), vjust = -0.5, size = 3) +
+  labs(
+    title = "Quantidade de Estabelecimentos de Saúde",
+    subtitle = "Municípios do Vale do Lítio - 2010 e 2022",
+    x = "Município",
+    y = "Quantidade de Estabelecimentos",
+    fill = "Ano",
+    # caption = "Fonte: Ministério da Saúde"
+  )  +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set2") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+Fonte: Ministério da Saúde. Elaboração: FJP/Diretoria de Estatística e Informações.
+
+Em termos dos leitos em cada um dos municípios, observou-se que Teófilo Otoni, destacou-se com o maior número total de leitos, somando 352, com uma distribuição significativa em todas as categorias, especialmente em leitos cirúrgicos com 160 unidades. Os municípios do Grupo 2 mostraram uma quantidade moderada de leitos, com Salinas possuindo o maior total do grupo, com 89 leitos. O Grupo 3 tem números mais reduzidos, sendo Itaobim o que apresenta o maior total, com 49 leitos. Por fim, o Grupo 4 tem uma situação particularmente crítica em termos de leitos hospitalares, com Coronel Murta e Itinga não apresentando leitos em nenhuma categoria, e Rubelita tendo apenas três leitos classificados como "Outros Leitos". Virgem da Lapa possui 23 leitos, todos concentrados nas categorias de leitos clínicos e cirúrgicos. A tabela sugere diferenças significativas na capacidade hospitalar entre os municípios.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(gt)
+
+# leitos_summary <- readRDS('leitos_summary.rds')
+# 
+# leitos_summary <-  leitos_summary %>% filter(ano==2022) %>%  select(Municipio, total_leito_clinico, total_leito_cirurgico,outros_leitos) %>% group_by(Municipio) %>%  mutate(Grupo = case_when(
+#     Municipio == "Teófilo Otoni" ~ "Grupo 1",
+#     Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+#     Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+#     Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+#     Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+#     Municipio == "Rubelita" ~ "Grupo 4"),
+#     Total = total_leito_clinico+total_leito_cirurgico+outros_leitos) 
+#      
+# saveRDS(leitos_summary ,"leitos_summary.RDS")
+# leitos_summary  <- readRDS("leitos_summary.RDS")
+# 
+# write.csv(leitos_summary ,"leitos_summary.csv")
+leitos_summary <- read.csv("leitos_summary.csv")
+leitos_summary <- leitos_summary[,2:7]
+ 
+  leitos_summary %>% arrange(Grupo) %>% 
+  group_by(Grupo) %>%   gt() %>%   tab_header(
+    title = "Quantidade Leitos Hospitalares",
+    subtitle = "Municípios do Vale do Lítio - 2022",
+  )%>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = md("Region and <br />IAP Type")) %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  )  %>% #rótulo
+  opt_table_font(font = google_font(name = "Karla")) %>% 
+  tab_options(data_row.padding = px(6),
+              heading.align = 'left',
+              column_labels.background.color = 'dodgerblue4',
+              heading.title.font.size = px(20)) %>% 
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>%
+  cols_label(
+    total_leito_clinico = 'Leito Clínico',
+    total_leito_cirurgico = 'Leito Cirúrgico',
+    outros_leitos = 'Outros Leitos',
+    Total = "Total"
+  )  
+
+  
+  
+  
+```
+
+Com os dados do Censo da Educação Superior, é possível verificar a quantidade de cursos superiores ofertados, sendo que 10 dos 14 municípios possuem oferta. O aumento ocorreu em todos esses entre os anos de 2010 e 2021. Teófilo Otoni apresentou registro de 126 cursos em 2021. Em termos de grau acadêmico, a maioria oferta são cursos tecnólogicos e, a depender do município, licenciatura vem em segundo lugar.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+
+#=========manipulacao
+municipios_vale <- c(
+  3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801,
+  3148707, 3168606, 3169703, 3156502, 3171600, 3157005
+)
+
+df_nome <- readRDS('df_nome.rds')
+
+df <- read_rds('censo_sup.rds')
+
+# Filtrar e converter ano para formato de data
+df <- df %>%
+  filter(id_municipio %in% as.character(municipios_vale))  %>% 
+  left_join(df_nome, by = "id_municipio")
+
+# Filtrar, agrupar e resumir os dados
+df_filtered <- df %>%
+  group_by(ano, id_municipio) %>%
+  summarise(qtd_cursos = n_distinct(nome_curso_cine),
+            Municipio = Municipio)%>%
+  filter(ano %in% c('2010', '2021')) 
+
+
+#============ viz
+
+# Criar o gráfico de barras
+# Criar o gráfico de barras
+ggplot(df_filtered, aes(x = Municipio, y = qtd_cursos, fill = as.factor(ano))) +
+  geom_bar(stat = "identity", position = "dodge", color = "white") +
+  geom_text(aes(label = qtd_cursos), position = position_dodge(width = 0.9), vjust = -0.5, size = 3) +
+  labs(
+    title = iconv("Quantidade de Cursos Superiores", to = "UTF-8"),
+    subtitle = "Municípios do Vale do Lítio - 2020 e 2021",
+    x = "Município",
+    y = "Quantidade de Cursos",
+    fill = "Ano",
+    # caption = "Fonte: INEP"
+  ) +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set1") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+```
+
+Fonte: INEP. Elaboração: FJP/Diretoria de Estatística e Informações.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(RColorBrewer)
+# Distribuição de Tipos de Grau Acadêmico
+tipos_vale_2021 <- df %>% 
+  filter(ano == 2021) %>% 
+  select(id_municipio, ano, tipo_grau_academico) %>%
+  left_join(df_nome)
+
+# Defina a ordem dos níveis do tipo_grau_academico
+ordem_niveis <- c(
+  "1" = "Bacharelado",
+  "2" = "Licenciatura",
+  "3" = "Tecnológico",
+  "4" = "Bacharelado e Licenciatura",
+  "." = "Não aplicável"
+)
+
+# Mapeie o fator tipo_grau_academico para a ordem desejada
+tipos_vale_2021$tipo_grau_academico <- factor(
+  tipos_vale_2021$tipo_grau_academico,
+  levels = names(ordem_niveis),
+  labels = ordem_niveis
+)
+
+# Gráfico de barras com valores nas barras e duas casas decimais
+ggplot(tipos_vale_2021, aes(x = Municipio, fill = tipo_grau_academico)) +
+  geom_bar(position = "fill") +
+  geom_text(
+    aes(
+      label = scales::percent(after_stat(count / tapply(count, x, sum)[x]), accuracy = 0.01)
+    ),
+    stat = "count",
+    position = position_fill(vjust = 0.5),
+    size = 3,
+    color = "white"
+  ) +
+  labs(
+    title = "Distribuição dos cursos segundo tipos de grau acadêmico",
+    subtitle = "Municípios do Vale do Lítio - 2021",
+    x = "Município",
+    y = "Proporção",
+    fill = "Tipo de Grau Acadêmico"
+  ) +
+  theme_minimal() +
+  scale_fill_manual(
+    values = brewer.pal(5, "Set2"),  # paleta de cor 
+    name = "Grau Acadêmico",
+    labels = ordem_niveis
+  ) +
+  scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 10)) +
+  scale_y_continuous(labels = scales::percent_format(scale = 1)) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
+
+
+
+```
+
+Fonte: INEP. Elaboração: FJP/Diretoria de Estatística e Informações.
