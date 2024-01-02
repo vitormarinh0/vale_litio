@@ -3,8 +3,7 @@ title: "Aspectos regiões"
 editor: visual
 ---
 
-## Qual o posicionamento dos municípios do Vale do Lítio em termos da rede de influência das cidades?
----
+## \## Qual o posicionamento dos municípios do Vale do Lítio em termos da rede de influência das cidades?
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
 # Carregue as bibliotecas necessárias

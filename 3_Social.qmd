@@ -134,7 +134,6 @@ Para entender melhor a adequação entre a idade dos alunos e o ano escolar em q
 
 Quanto à qualidade da educação, o Índice de Qualidade Geral da Educação fornece uma perspectiva abrangente. Esse índice é uma média ponderada dos indicadores de qualidade do ensino de Matemática e Língua Portuguesa. Esses indicadores são avaliados em três momentos cruciais da jornada educacional: no 5º e 9º anos do ensino fundamental e na 3ª série do ensino médio. A ponderação leva em conta o número de alunos que realizam o exame em cada disciplina, baseando-se nos dados do Programa de Avaliação da Rede Pública de Educação Básica (PROEB) de Minas Gerais. Entre os municípios do Vale do Lítio, Pedra Azul, Itinga e Rubelita se destacaram pelos resultados mais baixos em termos de qualidade geral da educação.
 
-
 ```{r, eval = FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
 educ <- read_excel("dados/educ.xlsx", col_types = c("numeric", 
@@ -252,16 +251,16 @@ tabela01_social  %>%
     decimals = 2)  # Definir 2 casas decimais 
 
 ```
+
 Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
 
-###Saúde
+### Saúde
 
 Diversos indicadores são úteis para avaliar a situação da saúde nos municípios. Um deles é a taxa de mortalidade por doenças não transmissíveis, como neoplasias, diabetes, doenças cardiovasculares e doenças respiratórias crônicas, na faixa etária de 30 a 69 anos. Nesse aspecto, Rubelita, Virgem da Lapa e Medina se destacaram com taxas superiores a 300 óbitos por cada mil habitantes.
 
 No que se refere à cobertura da vacina pentavalente, que protege contra Difteria, Tétano, Coqueluche, Meningite e outras infecções causadas pelo *Haemophilus Influenzae* Tipo B e a Hepatite B em crianças menores de um ano, os dados do Programa Nacional de Imunizações mostraram que Itaobim e Rubelita possuem as menores coberturas vacinais, abaixo de 50%.
 
-Outros indicadores relevantes na área da saúde incluem a proporção de óbitos por causas mal definidas e as internações hospitalares por condições sensíveis à atenção primária. Esses indicadores apontaram para situações mais críticas nos municípios de Medina, Minas Novas e Teófilo Otoni para o primeiro caso, e em Malacacheta, Medina e Rubelita para o segundo. 
-
+Outros indicadores relevantes na área da saúde incluem a proporção de óbitos por causas mal definidas e as internações hospitalares por condições sensíveis à atenção primária. Esses indicadores apontaram para situações mais críticas nos municípios de Medina, Minas Novas e Teófilo Otoni para o primeiro caso, e em Malacacheta, Medina e Rubelita para o segundo.
 
 ```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -338,6 +337,7 @@ tabela02_social  %>%
     columns = 2:6,  # Seleciona colunas
     decimals = 1)  # Definir 2 casas decimais 
 ```
+
 Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ### Assistência Social
@@ -345,7 +345,6 @@ Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Di
 O percentual da população inscrita no Cadastro Único (CadÚnico) é um indicador que reflete a proporção dos habitantes cadastrados nos Programas Sociais do Governo Federal. Essa ferramenta é vital para identificar e caracterizar famílias de baixa renda, facilitando o direcionamento eficaz de políticas públicas. Uma alta porcentagem de inscrições no CadÚnico pode sugerir uma prevalência elevada de famílias com renda inferior no município, além de indicar a eficácia governamental em registrar aqueles que são elegíveis para receber benefícios sociais. Na região do Vale do Lítio, a maioria dos municípios registra mais da metade de sua população no CadÚnico, com Teófilo Otoni sendo a exceção. Em 2021, Rubelita se destacou com o maior percentual, onde 74,3% da população estava cadastrada.
 
 Quanto ao percentual de população pobre e extremamente pobre registrada no CadÚnico, Rubelita e Pedra Azul exibiram taxas superiores a 70%. Essa estatística é essencial para compreender a dimensão da pobreza e da extrema pobreza nestes municípios. Já em relação às pessoas cadastradas no CadÚnico sem ocupação, Itinga, Araçuaí e Coronel Murta apresentaram os índices mais elevados. Um percentual alto nesse indicador pode apontar para problemas como desemprego ou subutilização da força de trabalho local. Isso também acena para políticas que fomentem a criação de empregos e ofereçam capacitação profissional, além de programas de assistência social para atender a esse segmento da população.
-
 
 ```{r, eval = FALSE, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -438,6 +437,7 @@ tabela03_social  %>%
     columns = 2:5,  # Seleciona colunas
     decimals = 1)  # Definir 2 casas decimais 
 ```
+
 Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ### Segurança
@@ -528,6 +528,7 @@ tabela04_social  %>%
     columns = 4,  # Seleciona colunas
     decimals = 0)  # Definir 2 casas decimais 
 ```
+
 Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ### Saneamento
@@ -654,4 +655,5 @@ tabela05_social  %>%
     decimals = 2) 
 
 ```
+
 Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.

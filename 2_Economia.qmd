@@ -115,6 +115,7 @@ tabela01_economia %>% group_by(Grupo) %>% gt() %>%
   )
 
 ```
+
 Fonte: IBGE/Contas Regionais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ```{r, eval = FALSE,echo=FALSE, warning=FALSE, message=FALSE}
@@ -164,6 +165,7 @@ grafico <- ggplot(dados_plot, aes(x = MUNICIPIO, y = Valor, fill = Atividade)) +
 # Exiba o gráfico
 print(grafico)
 ```
+
 Fonte: IBGE/Contas Regionais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ## Qual a importância da indústria extrativa na geração de empregos formais nos municípios do Vale do Lítio?
@@ -261,6 +263,7 @@ tabela03_economia  %>% select(-R_EMPRSFIC) %>%
     decimals = 2)  # Definir 2 casas decimais 
 
 ```
+
 Fonte: MTE/Relação Anual de Informações Sociais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 É possível verificar a evolução dos empregos formais na indústria extrativa nos municípios do Vale do Lítio por meio dos dados da RAIS 2021. Entre os destaques em termos de quantidade, destacam-se Pedra Azul, Araçuaí, Itinga e Medina. Notavelmente, Medina apresenta uma tendência de queda desde 2013, enquanto Pedra Azul demonstra um aumento constante desde 2016.
@@ -308,4 +311,5 @@ p1 <- ggplot(dados_filtrados, aes(x = ANO, y = R_EMPRSFMI, group = Municipio, co
 # Exibir o gráfico
 print(p1)
 ```
+
 Fonte: MTE/Relação Anual de Informações Sociais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
