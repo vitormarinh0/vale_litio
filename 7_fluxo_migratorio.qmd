@@ -1,0 +1,149 @@
+---
+title: "Fluxos Migratórios"
+editor: visual
+---
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(tidyverse)
+library(gt)
+# UTF-8 encoding
+Sys.setlocale("LC_ALL", "en_US.UTF-8")
+
+# criar df
+vale_litio_data <- data.frame(
+  codigo_ibge = c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600,31 ,31 ),
+  municipios = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Vale do Lítio", "Minas Gerais"),
+  populacao_2000 = c(35713, 31231, 9134, 21271, 13894, 19250, 21641, 30646, 23608, 10199, 36720, 129424, 15655, 13672, 412058, 17891494),
+  populacao_2010 = c(36041, 34796, 9117, 21001, 14407, 18787, 21037, 30803, 23843, 7777, 39182, 134733, 18046, 13625, 423195, 19595309),
+  populacao_2022 = c(34297, 39626, 8200, 19151, 13745, 17516, 20156, 24405, 24410, 5679, 40178, 137418, 20000, 11804, 416585, 20538718),
+  taxa_cresc_2000_2010 = c(0.09, 1.09, -0.02, -0.13, 0.36, -0.24, -0.28, 0.05, 0.10, -2.67, 0.65, 0.40, 1.43, -0.03, 0.27, 0.91),
+  taxa_cresc_2010_2022 = c(-0.41, 1.09, -0.88, -0.77, -0.39, -0.58, -0.36, -1.92, 0.20, -2.59, 0.21, 0.16, 0.86, -1.19, -0.13, 0.39),
+  stringsAsFactors = FALSE #converter strigs para factor
+)
+
+
+```
+
+A característica comum entre os municípios do Vale do Lítio é o nítido esvaziamento populacional que têm experimentado ao longo dos anos. A tabela 1 revela que desde o início do século, esse fenômeno tem sido evidente, com muitos municípios registrando taxas de crescimento negativas, enquanto os poucos que apresentaram aumento o fizeram a taxas muito baixas. No segundo decênio deste século, as previsões se confirmaram. Os resultados do Censo Demográfico de 2022 mostram que a maioria dos municípios da região apresentou decréscimos populacionais, com taxas negativas bastante expressivas, como foi o caso de Rubelita (-2,6% ao ano), Minas Novas (-1,9% ao ano), Virgem da Lapa (-1,2% ao ano), entre outros. As maiores taxas positivas foram observadas nos municípios de Capelinha (1,1% ao ano) e Turmalina (0,9% ao ano). Os municípios com crescimento positivo provocaram um aumento total de população na região de 11.032 pessoas, enquanto aqueles com crescimento negativo contribuíram para uma diminuição total da população em 17.642 pessoas. Em 2022, em oito municípios, as populações totais não apenas diminuíram em relação a 2010, mas também em relação ao ano 2000.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Adjust the cols_label function with the correct column names from your data frame
+tabela01_fluxo <- vale_litio_data %>%
+  gt() %>%
+  tab_header(
+    title = "População residente dos municípios",
+    subtitle = "Censos de 2000, 2010 e 2022 e Taxas de Cresc. Anual"
+  ) %>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = "Municípios") %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  ) %>%
+  opt_table_font(font = "Karla") %>%
+  tab_options(
+    data_row.padding = px(6),
+    heading.align = 'left',
+    column_labels.background.color = 'dodgerblue4',
+    heading.title.font.size = px(20)
+  ) %>%
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = "Merriweather"
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>%
+  cols_label(
+    codigo_ibge = 'Código IBGE',
+    municipios = 'Municípios',
+    populacao_2000 = 'População 2000',
+    populacao_2010 = 'População 2010',
+    populacao_2022 = 'População 2022',
+    taxa_cresc_2000_2010 = 'Taxa de Crescimento 2000/2010 (%)',
+    taxa_cresc_2010_2022 = 'Taxa de Crescimento 2010/2022 (%)'
+  )
+
+tabela01_fluxo
+
+```
+
+Esses resultados estão diretamente relacionados ao fator migratório, que por sua vez está associado ao processo de desruralização da região (tabela 2). O censo de 2022 deve confirmar o processo verificado em 2010, quando todos os municípios apresentaram taxas de crescimento urbano positivas e taxas de crescimento rural negativas. As únicas exceções, com taxas de crescimento urbano negativas, foram Itaobim (-0,2% ao ano) e Rubelita (-0,02% ao ano). Por outro lado, o único município com taxa de crescimento rural positiva foi Itaobim (0,05% ao ano). A tendência verificada em regiões desenvolvidas é que a participação da população rural deixa de exercer pressão sobre o setor urbano quando se estabiliza em torno de 15% da população total. Este é o caso do Estado de Minas Gerais, cujos saldos líquidos migratórios negativos, historicamente expressivos, passam a ser praticamente nulos nos anos 2000 e 2010, quando a participação da população rural é de, respectivamente, 18% e 15%.
+
+Em 2010, os únicos municípios da região com baixa participação da população rural no total foram Pedra Azul (12%) e Teófilo Otoni (18%). Por outro lado, em quatro municípios, as participações das populações rurais eram iguais ou superiores a 50%: Rubelita (68%), Minas Novas (59%), Itinga (55%) e Virgem da Lapa (50%). Não por coincidência, esses municípios foram os que apresentaram as maiores taxas de crescimento negativas entre 2010 e 2022. Os dados de 2010 indicavam que esses municípios entraram no período de 2010 a 2022 com estoques bastante expressivos de população rural. Mesmo que as taxas de crescimento da população urbana tenham sido consideráveis, elas não foram e não são suficientes para absorver os fluxos migratórios no sentido rural/urbano. Tanto é verdade que as taxas de crescimento total dos municípios, como já mencionado, não refletem o tamanho desses fluxos, sendo muito baixas ou negativas. Isso sugere que os setores urbanos desses municípios não são capazes de absorver a pressão rural e acabam servindo apenas como uma etapa no processo migratório uma vez iniciado.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+
+# dados de população
+Sys.setlocale("LC_ALL", "en_US.UTF-8")
+dados <- data.frame(
+  Municipio = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa"),
+  Homens = c(17854, 17144, 4657, 10491, 7352, 9169, 10477, 15360, 11749, 4000, 19270, 64447, 9161, 6757),
+  Mulheres = c(18187, 17652, 4460, 10510, 7055, 9618, 10560, 15443, 12094, 3777, 19912, 70286, 8885, 6868)
+)
+
+# Transforma long
+dados_long <- dados %>%
+  pivot_longer(cols = c("Homens", "Mulheres"), names_to = "Genero", values_to = "Populacao")
+
+
+# Criar gráfico de barras empilhadas
+ggplot(dados_long, aes(x = Municipio, y = Populacao, fill = Genero)) +
+  geom_bar(stat = "identity", position = "fill") +
+  coord_flip() +  # Virar o gráfico para melhor visualização
+  theme_minimal() +
+  scale_fill_manual(values = c("Homens" = "#1f77b4", "Mulheres" = "#ff7f0e")) +
+  labs(x = "Município", y = "Proporção", fill = "") +
+  theme(legend.position = "bottom")
+
+
+```
+
+```{r,  echo=FALSE, warning=FALSE, message=FALSE}
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+
+# criar df
+df <- data.frame(
+  Codigo_do_municipio = c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600),
+  Nome_do_municipio = c('Araçuaí', 'Capelinha', 'Coronel Murta', 'Itaobim', 'Itinga', 'Malacacheta', 'Medina', 'Minas Novas', 'Pedra Azul', 'Rubelita', 'Salinas', 'Teófilo Otoni', 'Turmalina', 'Virgem da Lapa'),
+  Tx_cresc_total = c(0.091465916, 1.086775428, -0.018627386, -0.12766431, 0.363229157, -0.243163073, -0.282668453, 0.051112455, 0.099099427, -2.674767312, 0.65106922, 0.402821212, 1.431486009, -0.034430124),
+  Tx_cresc_urbana = c(1.364187441, 2.119736324, 0.328586304, -0.186301588, 1.338527461, 0.79639783, 0.414456913, 4.998869616, 0.44255029, -0.019851123, 1.573417026, 0.683470148, 2.428755062, 1.521592623),
+  Tx_cresc_rural = c(-1.883449123, -1.049551393, -0.913587185, 0.051851896, -0.377866564, -1.775126879, -1.847433544, -2.270817169, -2.097472014, -3.709815378, -2.078243178, -0.753270432, -0.682780443, -1.373411452)
+)
+
+# Transform data
+df_long <- df %>%
+  gather(key = "Taxa_de_Crescimento", value = "Valor", -Codigo_do_municipio, -Nome_do_municipio)
+
+# Define colores
+colors <- c("#084d8c", "#e07a10", "#296111")
+
+# barras plot
+ggplot(df_long, aes(x = Nome_do_municipio, y = Valor, fill = Taxa_de_Crescimento)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.7)) +
+  scale_fill_manual(values = colors) +
+  geom_text(aes(label = sprintf("%.2f", Valor)), 
+            position = position_dodge(width = 0.7), vjust = -.65, size = 2) +
+  labs(title = "Taxa de Crescimento Total, Urbana e Rural por Município",
+       x = "Nome do Município", y = "Taxa de Crescimento",
+       fill = "Tipo de Crescimento") +  # Rename legend here
+  theme(axis.text.x = element_text(angle = 35, hjust = 1),
+        legend.position = "top",  # Position legend on top
+        legend.title = element_blank())
+
+
+
+```
+
+A tabela 3 mostra que, em 2010, todos os municípios do microterritório apresentaram saldos líquidos migratórios negativos, ou seja, mais pessoas saíram desses municípios do que entraram. O somatório desses saldos negativos representou um contingente de -53,9 mil pessoas na região, um número maior do que a população de cada um de seus municípios, com exceção de Teófilo Otoni. Todos os municípios apresentam saldos líquidos migratórios negativos tanto em relação aos outros municípios do estado, fora das Regiões Geográficas Intermediárias (RGInt) a que pertencem , quanto em relação aos municípios de fora do estado (com exceção de Itaobim, que possui um saldo positivo interestadual de 38 migrantes). Os municípios do Vale do Lítio, que estão na RGInt de Teófilo Otoni, possuem saldos positivos em relação aos municípios do próprio Vale do Lítio, principalmente devido ao saldo positivo do município de Teófilo Otoni, que exerce uma grande atração sobre os outros municípios da região. No entanto, essa atração não se sustenta, uma vez que o município atua como expulsor de população, com um saldo líquido migratório de -3,6 mil pessoas para os municípios de outras regiões de Minas Gerais, bem como para os de outros estados. Essa dinâmica se repete em todos os outros municípios com saldos positivos em relação à RGInt de Teófilo Otoni (Araçuaí, Capelinha, Turmalina e Virgem da Lapa). No caso da RGInt de Montes Claros, Rubelita apresenta saldos negativos em relação aos outros municípios dessa região, enquanto Salinas registra saldos positivos. Em ambos os casos, os saldos líquidos migratórios negativos são expressivos, principalmente em relação aos municípios de outros estados. Conclui-se que todos os municípios do Vale do Lítio que atraem migrantes das próprias RGInt desempenham um papel de etapa migratória, pois recebem correntes migratórias de municípios que estão expulsando população de forma acentuada.
+
+![](images/saldo_migra.png)
+
+Como demonstrado acima, os resultados do Censo Demográfico de 2022 sugerem que todos os processos migratórios observados para o ano de 2010 foram potencializados, resultando no generalizado esvaziamento populacional já mencionado. Evidentemente, todos esses processos resultam em uma reestruturação interna, principalmente no que diz respeito à estrutura etária da população, o que terá implicações em diversos aspectos socioeconômicos e, consequentemente, na redefinição de políticas públicas.
+
+Todo o processo migratório afeta diversos aspectos da dinâmica demográfica. Por exemplo, a menor participação da população rural e o processo de urbanização são alguns dos aspectos que explicam a acentuada queda na taxa de fecundidade. Em 2010, o conjunto de municípios do Vale do Lítio estava com um nível de fecundidade exatamente igual ao nível de reposição (2,1 filhos por mulher em idade reprodutiva), indicando que apenas o número necessário para substituir o casal estava sendo alcançado. A mortalidade infantil, embora em 2010 ainda estivesse em níveis acima da média do estado, apresentou quedas bastante expressivas em relação aos níveis em que se encontravam em 2000. Capelinha e Minas Novas são os municípios da região com os maiores níveis de fecundidade, com 2,4 filhos por mulher em idade reprodutiva, enquanto Salinas e Virgem da Lapa são os municípios com os níveis mais baixos (1,7 filhos). Em 2010, o município de Malacacheta apresentou o maior nível de mortalidade infantil, com 22,2 mortes de crianças de até 1 ano de vida para cada 1000 nascidas vivas, enquanto Teófilo Otoni registrou o menor nível, com 16,2 mortes de crianças para cada 1000 nascidas vivas. Esse padrão de comportamento dos indicadores demográficos está diretamente relacionado ao processo de urbanização desses municípios, em detrimento da população rural.
