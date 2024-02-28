@@ -86,9 +86,32 @@ tabela01_fluxo
 
 ```
 
-Esses resultados estão diretamente relacionados ao fator migratório, que por sua vez está associado ao processo de desruralização da região (tabela 2). O censo de 2022 deve confirmar o processo verificado em 2010, quando todos os municípios apresentaram taxas de crescimento urbano positivas e taxas de crescimento rural negativas. As únicas exceções, com taxas de crescimento urbano negativas, foram Itaobim (-0,2% ao ano) e Rubelita (-0,02% ao ano). Por outro lado, o único município com taxa de crescimento rural positiva foi Itaobim (0,05% ao ano). A tendência verificada em regiões desenvolvidas é que a participação da população rural deixa de exercer pressão sobre o setor urbano quando se estabiliza em torno de 15% da população total. Este é o caso do Estado de Minas Gerais, cujos saldos líquidos migratórios negativos, historicamente expressivos, passam a ser praticamente nulos nos anos 2000 e 2010, quando a participação da população rural é de, respectivamente, 18% e 15%.
+Esses resultados estão diretamente relacionados ao fator migratório, que por sua vez está associado ao processo de desruralização da região. O censo de 2022 deve confirmar o processo verificado em 2010, quando todos os municípios apresentaram taxas de crescimento urbano positivas e taxas de crescimento rural negativas. As únicas exceções, com taxas de crescimento urbano negativas, foram Itaobim (-0,2% ao ano) e Rubelita (-0,02% ao ano). Por outro lado, o único município com taxa de crescimento rural positiva foi Itaobim (0,05% ao ano). A tendência verificada em regiões desenvolvidas é que a participação da população rural deixa de exercer pressão sobre o setor urbano quando se estabiliza em torno de 15% da população total. Este é o caso do Estado de Minas Gerais, cujos saldos líquidos migratórios negativos, historicamente expressivos, passam a ser praticamente nulos nos anos 2000 e 2010, quando a participação da população rural é de, respectivamente, 18% e 15%.
 
 Em 2010, os únicos municípios da região com baixa participação da população rural no total foram Pedra Azul (12%) e Teófilo Otoni (18%). Por outro lado, em quatro municípios, as participações das populações rurais eram iguais ou superiores a 50%: Rubelita (68%), Minas Novas (59%), Itinga (55%) e Virgem da Lapa (50%). Não por coincidência, esses municípios foram os que apresentaram as maiores taxas de crescimento negativas entre 2010 e 2022. Os dados de 2010 indicavam que esses municípios entraram no período de 2010 a 2022 com estoques bastante expressivos de população rural. Mesmo que as taxas de crescimento da população urbana tenham sido consideráveis, elas não foram e não são suficientes para absorver os fluxos migratórios no sentido rural/urbano. Tanto é verdade que as taxas de crescimento total dos municípios, como já mencionado, não refletem o tamanho desses fluxos, sendo muito baixas ou negativas. Isso sugere que os setores urbanos desses municípios não são capazes de absorver a pressão rural e acabam servindo apenas como uma etapa no processo migratório uma vez iniciado.
+
+
+```{r,  echo=FALSE, warning=FALSE, message=FALSE}
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+
+# criar df
+df <- data.frame(
+  Codigo_do_municipio = c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600),
+  Nome_do_municipio = c('Araçuaí', 'Capelinha', 'Coronel Murta', 'Itaobim', 'Itinga', 'Malacacheta', 'Medina', 'Minas Novas', 'Pedra Azul', 'Rubelita', 'Salinas', 'Teófilo Otoni', 'Turmalina', 'Virgem da Lapa'),
+  Tx_cresc_total = c(0.091465916, 1.086775428, -0.018627386, -0.12766431, 0.363229157, -0.243163073, -0.282668453, 0.051112455, 0.099099427, -2.674767312, 0.65106922, 0.402821212, 1.431486009, -0.034430124),
+  Tx_cresc_urbana = c(1.364187441, 2.119736324, 0.328586304, -0.186301588, 1.338527461, 0.79639783, 0.414456913, 4.998869616, 0.44255029, -0.019851123, 1.573417026, 0.683470148, 2.428755062, 1.521592623),
+  Tx_cresc_rural = c(-1.883449123, -1.049551393, -0.913587185, 0.051851896, -0.377866564, -1.775126879, -1.847433544, -2.270817169, -2.097472014, -3.709815378, -2.078243178, -0.753270432, -0.682780443, -1.373411452)
+)
+
+# Transform data
+df_long <- df %>%
+  gather(key = "Taxa_de_Crescimento", value = "Valor", -Codigo_do_municipio, -Nome_do_municipio)
+
+
+
+```
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -127,28 +150,6 @@ ggplot(dados_proporcao_long, aes(x = Municipio, y = Proporcao, fill = Genero)) +
 ```
 
 Os dados oferecem uma visão detalhada da distribuição de gênero nos municípios selecionados, destacando variações nas proporções de homens e mulheres. Ao observar as proporções, é possível identificar uma diversidade demográfica interessante, onde alguns municípios, como Coronel Murta e Rubelita, exibem uma quase igualdade entre os sexos, enquanto outros, como Teófilo Otoni, apresentam uma discrepância mais acentuada, com uma proporção maior de mulheres. Essas diferenças podem ser influenciadas por uma variedade de fatores, como características socioeconômicas, padrões migratórios e políticas locais. A compreensão dessas disparidades é crucial para o desenvolvimento de políticas públicas que atendam às necessidades específicas de cada comunidade, promovendo a equidade de gênero e o bem-estar social.
-
-```{r,  echo=FALSE, warning=FALSE, message=FALSE}
-# Load required libraries
-library(ggplot2)
-library(dplyr)
-
-# criar df
-df <- data.frame(
-  Codigo_do_municipio = c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600),
-  Nome_do_municipio = c('Araçuaí', 'Capelinha', 'Coronel Murta', 'Itaobim', 'Itinga', 'Malacacheta', 'Medina', 'Minas Novas', 'Pedra Azul', 'Rubelita', 'Salinas', 'Teófilo Otoni', 'Turmalina', 'Virgem da Lapa'),
-  Tx_cresc_total = c(0.091465916, 1.086775428, -0.018627386, -0.12766431, 0.363229157, -0.243163073, -0.282668453, 0.051112455, 0.099099427, -2.674767312, 0.65106922, 0.402821212, 1.431486009, -0.034430124),
-  Tx_cresc_urbana = c(1.364187441, 2.119736324, 0.328586304, -0.186301588, 1.338527461, 0.79639783, 0.414456913, 4.998869616, 0.44255029, -0.019851123, 1.573417026, 0.683470148, 2.428755062, 1.521592623),
-  Tx_cresc_rural = c(-1.883449123, -1.049551393, -0.913587185, 0.051851896, -0.377866564, -1.775126879, -1.847433544, -2.270817169, -2.097472014, -3.709815378, -2.078243178, -0.753270432, -0.682780443, -1.373411452)
-)
-
-# Transform data
-df_long <- df %>%
-  gather(key = "Taxa_de_Crescimento", value = "Valor", -Codigo_do_municipio, -Nome_do_municipio)
-
-
-
-```
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
