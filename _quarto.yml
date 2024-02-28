@@ -21,6 +21,7 @@ book:
     - 3a_equipamentos_publicos.qmd
     - 5_Acoes.qmd
     - 7_fluxo_migratorio.qmd
+    - cad_unico.qmd
     - references.qmd
 
 bibliography: references.bib
