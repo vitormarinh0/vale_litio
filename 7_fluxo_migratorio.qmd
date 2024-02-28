@@ -3,12 +3,16 @@ title: "Fluxos Migratórios"
 editor: visual
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+Sys.setlocale("LC_ALL", "en_US.UTF-8")
+
+```
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
 library(tidyverse)
 library(gt)
-# UTF-8 encoding
-Sys.setlocale("LC_ALL", "en_US.UTF-8")
 stringsAsFactors = FALSE #converter strings para factor
 
 # criar df
