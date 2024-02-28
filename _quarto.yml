@@ -21,6 +21,7 @@ book:
     # - 4_Ambiental.qmd
     - 3a_equipamentos_publicos.qmd
     - 5_Acoes.qmd
+    - 7_fluxo_migratorio.qmd
     - references.qmd
 
 bibliography: references.bib
