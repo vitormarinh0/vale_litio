@@ -28,7 +28,7 @@ O Índice Mineiro de Responsabilidade Social (IMRS) é uma métrica que avalia a
 library(readxl)
 library(tidyverse)
 library(gt)
-imrs<- read.csv2("C:/Users/caios/OneDrive/Área de Trabalho/dev_version/bases/imrs_2020.csv")
+imrs<- read.csv2("bases/imrs_2020.csv")
 # Crie um DataFrame com as colunas "Municipio" e "IBGE7"
 df_nome <- data.frame(
   Nome_munic = c(
