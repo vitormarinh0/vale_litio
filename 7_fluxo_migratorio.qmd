@@ -9,18 +9,27 @@ library(tidyverse)
 library(gt)
 # UTF-8 encoding
 Sys.setlocale("LC_ALL", "en_US.UTF-8")
+stringsAsFactors = FALSE #converter strings para factor
 
 # criar df
 vale_litio_data <- data.frame(
   codigo_ibge = c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600,31 ,31 ),
-  municipios = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Vale do Lítio", "Minas Gerais"),
+  Municipio = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Vale do Lítio", "Minas Gerais"),
   populacao_2000 = c(35713, 31231, 9134, 21271, 13894, 19250, 21641, 30646, 23608, 10199, 36720, 129424, 15655, 13672, 412058, 17891494),
   populacao_2010 = c(36041, 34796, 9117, 21001, 14407, 18787, 21037, 30803, 23843, 7777, 39182, 134733, 18046, 13625, 423195, 19595309),
   populacao_2022 = c(34297, 39626, 8200, 19151, 13745, 17516, 20156, 24405, 24410, 5679, 40178, 137418, 20000, 11804, 416585, 20538718),
   taxa_cresc_2000_2010 = c(0.09, 1.09, -0.02, -0.13, 0.36, -0.24, -0.28, 0.05, 0.10, -2.67, 0.65, 0.40, 1.43, -0.03, 0.27, 0.91),
   taxa_cresc_2010_2022 = c(-0.41, 1.09, -0.88, -0.77, -0.39, -0.58, -0.36, -1.92, 0.20, -2.59, 0.21, 0.16, 0.86, -1.19, -0.13, 0.39),
   stringsAsFactors = FALSE #converter strigs para factor
-)
+) %>% 
+  mutate(Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4")
+  )
 
 
 ```
@@ -29,7 +38,10 @@ A característica comum entre os municípios do Vale do Lítio é o nítido esva
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 # Adjust the cols_label function with the correct column names from your data frame
-tabela01_fluxo <- vale_litio_data %>%
+tabela01_fluxo <- vale_litio_data %>% 
+  select(-codigo_ibge) %>% 
+  mutate(Grupo = factor(Grupo, levels = c("Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4"))) %>%
+  group_by(Grupo) %>% 
   gt() %>%
   tab_header(
     title = "População residente dos municípios",
@@ -57,8 +69,7 @@ tabela01_fluxo <- vale_litio_data %>%
     locations = cells_title(groups = 'title')
   ) %>%
   cols_label(
-    codigo_ibge = 'Código IBGE',
-    municipios = 'Municípios',
+    Municipio = 'Municípios',
     populacao_2000 = 'População 2000',
     populacao_2010 = 'População 2010',
     populacao_2022 = 'População 2022',
@@ -67,6 +78,7 @@ tabela01_fluxo <- vale_litio_data %>%
   )
 
 tabela01_fluxo
+
 
 ```
 
@@ -120,20 +132,24 @@ df <- data.frame(
 df_long <- df %>%
   gather(key = "Taxa_de_Crescimento", value = "Valor", -Codigo_do_municipio, -Nome_do_municipio)
 
-# Define colores
+
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
 colors <- c("#084d8c", "#e07a10", "#296111")
 
-# barras plot
-ggplot(df_long, aes(x = Nome_do_municipio, y = Valor, fill = Taxa_de_Crescimento)) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.7)) +
-  scale_fill_manual(values = colors) +
-  geom_text(aes(label = sprintf("%.2f", Valor)), 
-            position = position_dodge(width = 0.7), vjust = -.65, size = 2) +
-  labs(title = "Taxa de Crescimento Total, Urbana e Rural por Município",
-       x = "Nome do Município", y = "Taxa de Crescimento",
-       fill = "Tipo de Crescimento") +  # Rename legend here
-  theme(axis.text.x = element_text(angle = 35, hjust = 1),
-        legend.position = "top",  # Position legend on top
+# Gráfico de barras horizontais com valores dentro das barras (apenas dois dígitos)
+ggplot(df_long, aes(x = Valor, y = Nome_do_municipio, fill = Taxa_de_Crescimento)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = colors) +  # Define as cores manualmente
+  geom_text(aes(label = sprintf("%.2f", Valor)), hjust = -0.2, size = 2.5, color = "white") +  # Formata os valores para dois dígitos
+  labs(title = "Taxa de Crescimento Total, Urbana e Rural 2010-22",
+       x = "Taxa de Crescimento",
+       y = "Nome do Município",
+       fill = "Tipo de Crescimento") +
+  theme(legend.position = "top",  # Posiciona a legenda no topo
         legend.title = element_blank())
 
 
@@ -142,8 +158,38 @@ ggplot(df_long, aes(x = Nome_do_municipio, y = Valor, fill = Taxa_de_Crescimento
 
 A tabela 3 mostra que, em 2010, todos os municípios do microterritório apresentaram saldos líquidos migratórios negativos, ou seja, mais pessoas saíram desses municípios do que entraram. O somatório desses saldos negativos representou um contingente de -53,9 mil pessoas na região, um número maior do que a população de cada um de seus municípios, com exceção de Teófilo Otoni. Todos os municípios apresentam saldos líquidos migratórios negativos tanto em relação aos outros municípios do estado, fora das Regiões Geográficas Intermediárias (RGInt) a que pertencem , quanto em relação aos municípios de fora do estado (com exceção de Itaobim, que possui um saldo positivo interestadual de 38 migrantes). Os municípios do Vale do Lítio, que estão na RGInt de Teófilo Otoni, possuem saldos positivos em relação aos municípios do próprio Vale do Lítio, principalmente devido ao saldo positivo do município de Teófilo Otoni, que exerce uma grande atração sobre os outros municípios da região. No entanto, essa atração não se sustenta, uma vez que o município atua como expulsor de população, com um saldo líquido migratório de -3,6 mil pessoas para os municípios de outras regiões de Minas Gerais, bem como para os de outros estados. Essa dinâmica se repete em todos os outros municípios com saldos positivos em relação à RGInt de Teófilo Otoni (Araçuaí, Capelinha, Turmalina e Virgem da Lapa). No caso da RGInt de Montes Claros, Rubelita apresenta saldos negativos em relação aos outros municípios dessa região, enquanto Salinas registra saldos positivos. Em ambos os casos, os saldos líquidos migratórios negativos são expressivos, principalmente em relação aos municípios de outros estados. Conclui-se que todos os municípios do Vale do Lítio que atraem migrantes das próprias RGInt desempenham um papel de etapa migratória, pois recebem correntes migratórias de municípios que estão expulsando população de forma acentuada.
 
-![](saldo_migra.png)
+## Municípios do Vale do Lítio: Movimentos Migratórios em relação à data de referência de 31/07/2005 - Total e Saldo
+
+| Municípios     | Imigrantes (1) |                  |                          | Emigrantes (2) |                  |                          | Saldo Migratório |                      |                      |
+|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
+|                | Total          | Municípios de MG | Municípios de Outras UFs | Total          | Municípios de MG | Municípios de Outras UFs | Total            | Saldo Intra-estadual | Saldo Inter estadual |
+| Araçuaí        | 1.312          | 897              | 546                      | 351            | 415              | 2.866                    | 1.348            | 417                  | 931                  |
+| Capelinha      | 2.340          | 2013             | 1.188                    | 825            | 327              | 3.561                    | 2.853            | 651                  | 2202                 |
+| Coronel Murta  | 265            | 210              | 67                       | 143            | 55               | 929                      | 586              | 151                  | 435                  |
+| Itaobim        | 1.079          | 647              | 409                      | 238            | 432              | 1.642                    | 1.248            | 599                  | 649                  |
+| Itinga         | 522            | 307              | 206                      | 101            | 215              | 1.332                    | 680              | 206                  | 474                  |
+| Malacacheta    | 744            | 368              | 268                      | 100            | 376              | 2.882                    | 1.767            | 503                  | 1264                 |
+| Medina         | 796            | 523              | 226                      | 297            | 273              | 2.495                    | 1.364            | 387                  | 977                  |
+| Minas Novas    | 765            | 572              | 433                      | 139            | 193              | 4.049                    | 1.644            | 776                  | 868                  |
+| Pedra Azul     | 540            | 354              | 181                      | 173            | 186              | 2.755                    | 2.020            | 461                  | 1559                 |
+| Rubelita       | 235            | 147              | 92                       | 55             | 88               | 952                      | 698              | 638                  | 60                   |
+| Salinas        | 2.252          | 1728             | 1.243                    | 485            | 524              | 4.322                    | 2.150            | 768                  | 1382                 |
+| Teófilo Otoni  | 7.107          | 5266             | 3.461                    | 1805           | 1.841            | 10.688                   | 6.368            | 1.953                | 4415                 |
+| Turmalina      | 1.076          | 851              | 563                      | 288            | 225              | 1.171                    | 839              | 357                  | 482                  |
+| Virgem da Lapa | 668            | 412              | 252                      | 160            | 256              | 1.299                    | 480              | 212                  | 268                  |
+| Vale do Lítio  | 58.868         | 39881            | 24.034                   | 15847          | 18.987           | 112.740                  | 72.157           | 24.034               | 48123                |
+| Minas Gerais   | 1.326.235      | 944.419          |                          | 381.816        | 1.328.658        | 944.419                  |                  | 384.239              | -2.423               |
 
 Como demonstrado acima, os resultados do Censo Demográfico de 2022 sugerem que todos os processos migratórios observados para o ano de 2010 foram potencializados, resultando no generalizado esvaziamento populacional já mencionado. Evidentemente, todos esses processos resultam em uma reestruturação interna, principalmente no que diz respeito à estrutura etária da população, o que terá implicações em diversos aspectos socioeconômicos e, consequentemente, na redefinição de políticas públicas.
 
-Todo o processo migratório afeta diversos aspectos da dinâmica demográfica. Por exemplo, a menor participação da população rural e o processo de urbanização são alguns dos aspectos que explicam a acentuada queda na taxa de fecundidade. Em 2010, o conjunto de municípios do Vale do Lítio estava com um nível de fecundidade exatamente igual ao nível de reposição (2,1 filhos por mulher em idade reprodutiva), indicando que apenas o número necessário para substituir o casal estava sendo alcançado. A mortalidade infantil, embora em 2010 ainda estivesse em níveis acima da média do estado, apresentou quedas bastante expressivas em relação aos níveis em que se encontravam em 2000. Capelinha e Minas Novas são os municípios da região com os maiores níveis de fecundidade, com 2,4 filhos por mulher em idade reprodutiva, enquanto Salinas e Virgem da Lapa são os municípios com os níveis mais baixos (1,7 filhos). Em 2010, o município de Malacacheta apresentou o maior nível de mortalidade infantil, com 22,2 mortes de crianças de até 1 ano de vida para cada 1000 nascidas vivas, enquanto Teófilo Otoni registrou o menor nível, com 16,2 mortes de crianças para cada 1000 nascidas vivas. Esse padrão de comportamento dos indicadores demográficos está diretamente relacionado ao processo de urbanização desses municípios, em detrimento da população rural.
+![](taxa_fecundidade.png)
+
+Todo o processo migratório afeta diversos aspectos da dinâmica demográfica. Por exemplo, a menor participação da população rural e o processo de urbanização são alguns dos aspectos que explicam a acentuada queda na taxa de fecundidade. Em 2010, o conjunto de municípios do Vale do Lítio estava com um nível de fecundidade exatamente igual ao nível de reposição (2,1 filhos por mulher em idade reprodutiva), indicando que apenas o número necessário para substituir o casal estava sendo alcançado.
+
+![](mortalidade_infantil.png)
+
+A mortalidade infantil, embora em 2010 ainda estivesse em níveis acima da média do estado, apresentou quedas bastante expressivas em relação aos níveis em que se encontravam em 2000. Capelinha e Minas Novas são os municípios da região com os maiores níveis de fecundidade, com 2,4 filhos por mulher em idade reprodutiva, enquanto Salinas e Virgem da Lapa são os municípios com os níveis mais baixos (1,7 filhos). Em 2010, o município de Malacacheta apresentou o maior nível de mortalidade infantil, com 22,2 mortes de crianças de até 1 ano de vida para cada 1000 nascidas vivas, enquanto Teófilo Otoni registrou o menor nível, com 16,2 mortes de crianças para cada 1000 nascidas vivas. Esse padrão de comportamento dos indicadores demográficos está diretamente relacionado ao processo de urbanização desses municípios, em detrimento da população rural.
+
+![](esperanca_vida.png)
+
+A queda nas taxas de fecundidade é um dos principais fatores responsáveis pelo envelhecimento da população. Os resultados do censo de 2022 indicam que esse processo de redução na fecundidade deve ter se acentuado bastante na última década. Pela tabela 5 observa-se que, para cada 100 crianças, o número de pessoas com mais de 65 anos representava 34 em 2010 e subiu para 67 em 2022. Este índice atinge um máximo de 102 idosos para 100 crianças no município de Rubelita e um mínimo de 42 idosos em Capelinha, sendo este o único município com um índice inferior a 50 em 2022.
