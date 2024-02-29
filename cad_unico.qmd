@@ -8,9 +8,11 @@ Sys.setlocale("LC_ALL", "en_US.UTF-8")
 
 ```
 
-## Taxa de Analfabetimso
+## O que os dados do CadÚnico podem revelar sobre o a população em idade ativa e migração?
 
-Para cálculo da taxa de analfabetimso da população inscrita no CadÚnico em idade ativa para o trablaho, considerou-se a faixa etária entre 15 e 64 anos. Observa-se que Minas Novas e Malacacheta acumulam o maior percentual de pessoas em idae para o trabalho na situação de analfabetismo. Os municípios de Araçuaí e Turmalina se posicionam no outor estremo, com as menores taxas de analfabetismo dentro do grupo analisado. Rubelita e Itinga apresentaram tendência de elevação da taxa nos últimos anos enquanto que Minas Novas revelou tendência de redução da taxa de analfabetismo. Os percentuais anuais no total do grupo variam entre 8,93 (2022) e 18,44 em 2014 quando os municípios tiveram a maior taxa.
+### Taxa de Analfabetismo
+
+Para cálculo da taxa de analfabetismo da população inscrita no CadÚnico em idade ativa para o trabalho, considerou-se a faixa etária entre 15 e 64 anos. Observa-se que Minas Novas e Malacacheta acumulam o maior percentual de pessoas em idae para o trabalho na situação de analfabetismo. Os municípios de Araçuaí e Turmalina se posicionam no outor estremo, com as menores taxas de analfabetismo dentro do grupo analisado. Rubelita e Itinga apresentaram tendência de elevação da taxa nos últimos anos enquanto que Minas Novas revelou tendência de redução da taxa de analfabetismo. Os percentuais anuais no total do grupo variam entre 8,93 (2022) e 18,44 em 2014 quando os municípios tiveram a maior taxa.
 
 ```{r}
 # Importando os dados
@@ -61,7 +63,7 @@ ggplot(df_long, aes(x = Ano, y = MUNICIPIO, fill = TaxaAnalfabetismo)) +
 
 ```
 
-## Taxa de Escolizarição
+### Taxa de Escolarização
 
 A taxa de escolarização representa o percentual de indivíduos com idade acima de 25 anos que concluiu a educação básica, ou seja, o ensino médio. Tems-e assima a média geral de estudo do grupo em foco. No grupo analisado, a média geral de todo o período é de 27%, sendo que Coronel Murta tem a melhor média no perído (43,18%) e Minas Novas a menor média (20,01%) da populção em idade ativa em situação de vulnerabilidade. Os dados mostram que a taxa de escolarização vem crescendo entre os anos 2012 e 2022. No último ano, Turmalina se destaca com 42,14% do segmento populacional com idade acima de 25 que possui o ensino médio completo, seguido de Teófilo Otoni e Turmalina.
 
@@ -113,8 +115,8 @@ ggplot(df_long, aes(x = Ano, y = TaxaEscolarizacao, group = MUNICIPIO, color = M
 
 ```
 
-## População em Idade ativa
+### População em Idade Ativa
 
 Os dados referentes à condição de vínculo empregatício se referem à população inscrita no CadÚnico que declarou ter trabalhado na semana anterior à inscrição ou atualização, no ano referência, com fechamento da base em dezembro do referido ano. Observa-se a predominância de trabalho na condição de autônomo ou sem vínculo contratual em todos os municípios e em todo o período apurado. Vê-se também a tendência de aumento do percentual de pessoas que prestaram algum serviço na condição de aprendiz, estagiário ou sem remuneração. Os municípios Rubelita, Itinga e Malacaheta apresentam maior percentual de pessoas que trabalharam sem qualquer típo de vínculo empregatício no período analisado. Araçuaí, Trumalina, Teófilo Otoni e Virgem da Lapa são os municípios com maior percentual de trabalhadores autônomos ou remunerados sem contrato de trabalho. Coornel Murta e Virgem da Lapa possuem o maior percentual de indivíduos no serviço militar ou empregador, inscritos no CadÚnico nos últimos três anos analisados. Entre 2012 e 2018, Itinga foi o município com maior percentual de indivíduos na condição de aprendiz, estagiário ou que trabalharam e não tiveram remuneração e Medina nos três últimos anos analisados. Os dados de 2022 não se encontravam disponíveis na base acessada.
 
-## Saldo Migratorio Anual
+### Saldo Migratorio Anual

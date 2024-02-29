@@ -225,7 +225,7 @@ Em 2010, todos os municípios do microterritório apresentaram saldos líquidos 
 ## Municípios do Vale do Lítio: Movimentos Migratórios em relação à data de referência de 31/07/2005 - Total e Saldo
 
 | Municípios     | Imigrantes (1) |                  |                          | Emigrantes (2) |                  |                          | Saldo Migratório |                      |                      |
-|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+|----------------|----------------|------------------|--------------------------|----------------|------------------|--------------------------|------------------|----------------------|----------------------|
 |                | Total          | Municípios de MG | Municípios de Outras UFs | Total          | Municípios de MG | Municípios de Outras UFs | Total            | Saldo Intra-estadual | Saldo Inter estadual |
 | Araçuaí        | 1.312          | 897              | 546                      | 351            | 415              | 2.866                    | 1.348            | 417                  | 931                  |
 | Capelinha      | 2.340          | 2013             | 1.188                    | 825            | 327              | 3.561                    | 2.853            | 651                  | 2202                 |

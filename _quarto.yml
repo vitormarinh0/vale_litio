@@ -16,10 +16,10 @@ book:
     - index.qmd
     - 0_intro.qmd
     - 1_Demografia.qmd
-    - 7_fluxo_migratorio.qmd
-    - cad_unico.qmd
     - 2_Economia.qmd
     - 3_Social.qmd
+    - 7_fluxo_migratorio.qmd
+    - cad_unico.qmd
     - 3a_equipamentos_publicos.qmd
     - 5_Acoes.qmd
     - references.qmd
