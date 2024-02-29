@@ -20,6 +20,10 @@ Este prefácio também serve como um guia para as principais questões que o doc
 
 6.  O que revelam os principais indicadores da área da educação, saúde, assistência social, segurança pública e saneamento básico?
 
-7.  Qual a situação desses municípios em termos de equipamentos de saúde e educação?
+7.  Quais os movimentos migratórios observados nos municípios do Vale do Lítio? É possível inferir sobre a última década sem os dados do Censo Demográfico de 2022?
 
-8.  O que dizem os planos de desenvolvimento realizados para a região sobre o lítio e as questões sociais?
+8.  O que os dados do CadÚnico podem revelar sobre o a população em idade ativa e migração?
+
+9.  Qual a situação desses municípios em termos de equipamentos de saúde e educação?
+
+10. O que dizem os planos de desenvolvimento realizados para a região sobre o lítio e as questões sociais?

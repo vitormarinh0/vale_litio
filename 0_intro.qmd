@@ -6,8 +6,8 @@ Estão incluídos no projeto um conjunto de 14 municípios que se destacam por p
 
 É importante ressaltar que o lítio desempenha um papel essencial em diversas aplicações, como na fabricação de ligas metálicas, dispositivos médicos e na produção de fármacos. No entanto, seu uso mais proeminente é na fabricação de baterias de alta durabilidade, que alimentam veículos elétricos e dispositivos eletroeletrônicos, representando uma peça fundamental na transição para fontes de energia mais limpas e na revolução tecnológica em curso.
 
-
 Mapa 1: Municípios do Vale do Lítio
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
 # Carregue as bibliotecas necessárias
 library(leaflet)
@@ -73,5 +73,3 @@ mapa <- leaflet() %>%
 mapa
 
 ```
-
-
