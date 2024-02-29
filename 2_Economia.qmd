@@ -19,10 +19,17 @@ Ao analisar a importância econômica das atividades presentes nos municípios d
 
 No que diz respeito ao PIB per capita, Turmalina, Capelinha e Salinas apresentam os maiores valores entre os 14 municípios do Vale do Lítio. Em contrapartida, Rubelita, Virgem da Lapa e Itinga possuem os menores valores.
 
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+
+```
+
 ```{r, eval = FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
 ##------Dev_version
-#PIB
+library(readxl)
+
 pib_municipal <- read_excel("dados/pib_municipal.xls")
 # População
 pop<- read_excel("bases/0 - POPULAÇÃO REFERÊNCIA/IMRS - 2022 (População Referência)/IMRS2022 - BASE POPULACAO REFERENCIA.xlsx") %>% select(IBGE7, ANO, D_POPT) %>% filter(ANO==c('2010', '2020'))
@@ -288,28 +295,31 @@ dados_filtrados <- tabela4_economia %>%
   filter(ANO >= 2010 & ANO <= 2021)
 
 
-# Filtrar dados para municípios com R_EMPRSFMI > 100
-dados_maiores <- dados_filtrados %>% filter(R_EMPRSFMI > 110)
+# Definindo cores personalizadas
+custom_colors <- c("#b6186b", "#50c878", "#4d5816", "#8b0000", "#c0c0c0", 
+                   "#084d8c", "#e07a10", "#5d360e", "#296111", "#d51919", 
+                   "#33cccc", "#2676ff", "#FF69B4", "#8A2BE2")
 
-# Filtrar dados para municípios com R_EMPRSFMI <= 100
-dados_menores <- dados_filtrados %>% filter(R_EMPRSFMI <= 110)
+# Definindo formas personalizadas
+custom_shapes <- c(16, 17, 18, 19, 15, 8, 7, 6, 5, 4, 3, 2, 1, 0)
 
-# Maiores
+# Criando o gráfico melhorado
 p1 <- ggplot(dados_filtrados, aes(x = ANO, y = R_EMPRSFMI, group = Municipio, color = Municipio)) +
-  geom_line(size = .5) +  # Aumentar a espessura das linhas
-  geom_point(aes(shape = Municipio), size = 2) +  # Adicionar marcadores
+  geom_line(size = 0.9) +  # Linhas mais espessas para melhor visibilidade
+  geom_point(aes(shape = Municipio), size = 2) +  # Marcadores personalizados
+  scale_color_manual(values = custom_colors) +  # Cores personalizadas
+  scale_shape_manual(values = custom_shapes) +  # Formas personalizadas
   labs(title = "Vínculos empregatícios formais na indústria extrativa",
-      subtitle = "Municípios do Vale do Lítio - 2021",
+       subtitle = "Municípios do Vale do Lítio - 2021",
        x = "Ano",
        y = "Vínculos formais") +
   theme_minimal() +
-  geom_point(size=.5)+
-  geom_line()+
-  scale_color_manual(values = c("red", "blue", "green", "purple", "orange",
-           "pink", "brown", "cyan", "gray", "violet",
-           'yellow','black','gold', 'darkblue'))
-# Exibir o gráfico
+  theme(legend.position = "bottom",  # Ajustando a posição da legenda
+        axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))  # Rotacionando os rótulos do eixo x
+
+# Exibindo o gráfico
 print(p1)
+
 ```
 
 Fonte: MTE/Relação Anual de Informações Sociais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
