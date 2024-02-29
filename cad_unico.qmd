@@ -1,0 +1,123 @@
+---
+title: "População Cadastro Único"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+Sys.setlocale("LC_ALL", "en_US.UTF-8")
+
+```
+
+## Taxa de Analfabetimso
+
+Para cálculo da taxa de analfabetimso da população inscrita no CadÚnico em idade ativa para o trablaho, considerou-se a faixa etária entre 15 e 64 anos. Observa-se que Minas Novas e Malacacheta acumulam o maior percentual de pessoas em idae para o trabalho na situação de analfabetismo. Os municípios de Araçuaí e Turmalina se posicionam no outor estremo, com as menores taxas de analfabetismo dentro do grupo analisado. Rubelita e Itinga apresentaram tendência de elevação da taxa nos últimos anos enquanto que Minas Novas revelou tendência de redução da taxa de analfabetismo. Os percentuais anuais no total do grupo variam entre 8,93 (2022) e 18,44 em 2014 quando os municípios tiveram a maior taxa.
+
+```{r}
+# Importando os dados
+df_analfabetismo <- data.frame(
+  IBGE = c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600),
+  MUNICIPIO = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa"),
+  `2012` = c(5.57, 12.14, 9.61, 11.81, 10.73, 15.83, 9.56, 18.66, 13.14, 15.16, 7.10, 10.84, 5.70, 9.30),
+  `2013` = c(5.44, 11.64, 10.10, 11.79, 10.33, 15.85, 9.11, 19.47, 12.69, 14.50, 7.15, 10.48, 5.19, 8.60),
+  `2014` = c(14.44, 20.74, 17.91, 20.77, 19.22, 22.02, 15.93, 27.10, 20.25, 21.30, 15.48, 16.13, 10.97, 15.88),
+  `2015` = c(4.93, 10.89, 10.35, 10.93, 9.46, 16.18, 7.76, 19.03, 11.71, 11.87, 6.92, 8.57, 3.62, 8.10),
+  `2016` = c(4.70, 10.35, 9.58, 10.35, 8.79, 15.79, 7.17, 20.17, 11.38, 10.54, 6.92, 7.96, 3.03, 7.39),
+  `2017` = c(4.53, 10.42, 9.53, 10.12, 8.22, 15.91, 6.76, 19.62, 11.51, 10.84, 7.72, 7.99, 3.34, 6.88),
+  `2018` = c(4.48, 10.35, 9.77, 10.56, 8.44, 16.09, 6.90, 17.31, 11.95, 10.33, 7.80, 8.47, 4.09, 6.38),
+  `2019` = c(4.83, 9.99, 9.55, 10.65, 8.81, 16.20, 7.36, 16.13, 12.37, 10.04, 7.32, 8.71, 4.78, 5.93),
+  `2020` = c(5.49, 9.33, 8.94, 10.87, 9.16, 15.50, 7.52, 15.33, 12.66, 10.10, 6.92, 8.70, 5.56, 5.97),
+  `2021` = c(5.72, 8.52, 8.54, 10.78, 9.76, 14.77, 7.67, 13.08, 13.09, 10.17, 6.36, 8.06, 5.61, 5.66),
+  `2022` = c(5.98, 7.88, 8.29, 11.29, 10.16, 14.37, 7.71, 11.03, 12.85, 11.24, 5.64, 7.18, 5.33, 6.13)
+)
+
+
+
+```
+
+```{r}
+# Carregando os pacotes necessários
+library(ggplot2)
+library(reshape2)
+library(RColorBrewer)
+
+
+# Transformando o dataframe para o formato longo
+df_long <- melt(df_analfabetismo, id.vars = c("IBGE", "MUNICIPIO"), variable.name = "Ano", value.name = "TaxaAnalfabetismo")
+
+# Ajustando os nomes dos anos 
+df_long$Ano <- gsub("X", "", df_long$Ano)
+
+# Escolhendo uma paleta de cores
+color_palette <- rev(brewer.pal(name = "Spectral", n = 9))
+
+# Criando o mapa de calor
+ggplot(df_long, aes(x = Ano, y = MUNICIPIO, fill = TaxaAnalfabetismo)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = round(TaxaAnalfabetismo, 2)), vjust = 1, size=3) +
+  scale_fill_gradientn(colors = color_palette) +
+  theme_minimal() +
+  labs(title = "Taxa de Analfabetismo por Município (2012-2022)", x = "Ano", y = "Município", fill = "Taxa de Analfabetismo")
+
+
+```
+
+## Taxa de Escolizarição
+
+A taxa de escolarização representa o percentual de indivíduos com idade acima de 25 anos que concluiu a educação básica, ou seja, o ensino médio. Tems-e assima a média geral de estudo do grupo em foco. No grupo analisado, a média geral de todo o período é de 27%, sendo que Coronel Murta tem a melhor média no perído (43,18%) e Minas Novas a menor média (20,01%) da populção em idade ativa em situação de vulnerabilidade. Os dados mostram que a taxa de escolarização vem crescendo entre os anos 2012 e 2022. No último ano, Turmalina se destaca com 42,14% do segmento populacional com idade acima de 25 que possui o ensino médio completo, seguido de Teófilo Otoni e Turmalina.
+
+```{r}
+# Criando o dataframe
+tx_escolaricao <- data.frame(
+  IBGE = c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600),
+  MUNICIPIO = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa"),
+  `2012` = c(19.82, 15.42, 20.63, 15.29, 14.75, 11.53, 14.87, 9.54, 21.60, 13.85, 16.20, 16.77, 16.37, 24.64),
+  `2013` = c(21.24, 17.51, 25.44, 16.79, 15.97, 14.98, 17.13, 10.32, 22.37, 16.15, 18.99, 18.68, 19.32, 25.64),
+  `2014` = c(23.51, 19.84, 27.61, 18.52, 17.54, 16.80, 18.60, 12.20, 23.14, 18.33, 21.22, 20.48, 22.90, 28.24),
+  `2015` = c(26.35, 22.24, 30.85, 22.94, 20.59, 20.48, 21.88, 13.65, 25.90, 22.19, 23.97, 25.45, 28.28, 30.02),
+  `2016` = c(28.46, 24.22, 35.04, 24.01, 23.08, 21.90, 23.31, 14.30, 28.37, 25.38, 25.84, 27.54, 31.32, 32.70),
+  `2017` = c(29.98, 24.53, 37.87, 25.66, 26.53, 21.57, 23.92, 19.06, 30.74, 26.76, 28.72, 28.10, 33.66, 36.72),
+  `2018` = c(32.46, 26.39, 38.89, 27.46, 29.14, 23.70, 27.31, 25.05, 34.04, 29.91, 31.51, 30.04, 36.21, 38.37),
+  `2019` = c(34.58, 29.09, 39.93, 28.38, 29.05, 24.87, 28.43, 26.75, 35.70, 34.43, 33.85, 34.45, 39.45, 39.11),
+  `2020` = c(35.19, 30.40, 39.45, 29.43, 28.15, 24.17, 28.71, 27.18, 34.81, 35.33, 34.53, 34.73, 39.38, 38.32),
+  `2021` = c(36.02, 32.51, 39.26, 30.87, 29.80, 25.37, 30.40, 29.44, 36.74, 35.84, 37.32, 38.10, 39.87, 40.23),
+  `2022` = c(37.26, 35.65, 41.05, 34.32, 30.97, 26.23, 32.54, 32.58, 39.26, 36.02, 39.42, 41.30, 42.14, 40.53)
+)
+
+```
+
+```{r}
+# Carregando os pacotes necessários
+library(ggplot2)
+library(reshape2)
+library(RColorBrewer)
+
+# Transformando o dataframe para o formato longo
+df_long <- melt(tx_escolaricao, id.vars = c("IBGE", "MUNICIPIO"), variable.name = "Ano", value.name = "TaxaEscolarizacao")
+
+# Ajustando os nomes dos anos 
+df_long$Ano <- gsub("X", "", df_long$Ano)
+
+# Definindo as cores manualmente
+custom_colors <- c("#b6186b", "#50c878", "#4d5816", "#8b0000", "#c0c0c0", "#084d8c", "#e07a10", "#5d360e", "#296111", "#d51919", "#33cccc", "#2676ff", "#FF69B4", "#8A2BE2")
+
+
+# Criando o gráfico de linhas
+ggplot(df_long, aes(x = Ano, y = TaxaEscolarizacao, group = MUNICIPIO, color = MUNICIPIO)) +
+  geom_line() +
+  scale_color_manual(values = custom_colors) +
+  theme_minimal() +
+  labs(title = "Taxa de Escolarização por Município (2012-2022)", x = "Ano", y = "Taxa de Escolarização (%)", color = "Município") +
+  theme(legend.position = "bottom")
+
+
+
+```
+
+## População em Idade ativa
+
+Os dados referentes à condição de vínculo empregatício se referem à população inscrita no CadÚnico que declarou ter trabalhado na semana anterior à inscrição ou atualização, no ano referência, com fechamento da base em dezembro do referido ano. Observa-se a predominância de trabalho na condição de autônomo ou sem vínculo contratual em todos os municípios e em todo o período apurado. Vê-se também a tendência de aumento do percentual de pessoas que prestaram algum serviço na condição de aprendiz, estagiário ou sem remuneração. Os municípios Rubelita, Itinga e Malacaheta apresentam maior percentual de pessoas que trabalharam sem qualquer típo de vínculo empregatício no período analisado. Araçuaí, Trumalina, Teófilo Otoni e Virgem da Lapa são os municípios com maior percentual de trabalhadores autônomos ou remunerados sem contrato de trabalho. Coornel Murta e Virgem da Lapa possuem o maior percentual de indivíduos no serviço militar ou empregador, inscritos no CadÚnico nos últimos três anos analisados. Entre 2012 e 2018, Itinga foi o município com maior percentual de indivíduos na condição de aprendiz, estagiário ou que trabalharam e não tiveram remuneração e Medina nos três últimos anos analisados. Os dados de 2022 não se encontravam disponíveis na base acessada.
+
+## Saldo Migratorio Anual
+
+
+
