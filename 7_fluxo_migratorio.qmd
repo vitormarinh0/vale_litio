@@ -3,6 +3,8 @@ title: "Fluxos Migratórios"
 editor: visual
 ---
 
+## Quais os movimentos migratórios observados nos municípios do Vale do Lítio? É possível inferir sobre a última década sem os dados do Censo Demográfico de 2022?
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 Sys.setlocale("LC_ALL", "en_US.UTF-8")
@@ -32,24 +34,26 @@ vale_litio_data <- data.frame(
     Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
     Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
     Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
-    Municipio == "Rubelita" ~ "Grupo 4")
-  )
+    Municipio == "Rubelita" ~ "Grupo 4",
+    Municipio == "Vale do Lítio" | Municipio == "Minas Gerais" ~ "Totais"
+    )
+  ) %>% arrange(Grupo)
 
 
 ```
 
-A característica comum entre os municípios do Vale do Lítio é o nítido esvaziamento populacional que têm experimentado ao longo dos anos. A tabela 1 revela que desde o início do século, esse fenômeno tem sido evidente, com muitos municípios registrando taxas de crescimento negativas, enquanto os poucos que apresentaram aumento o fizeram a taxas muito baixas. No segundo decênio deste século, as previsões se confirmaram. Os resultados do Censo Demográfico de 2022 mostram que a maioria dos municípios da região apresentou decréscimos populacionais, com taxas negativas bastante expressivas, como foi o caso de Rubelita (-2,6% ao ano), Minas Novas (-1,9% ao ano), Virgem da Lapa (-1,2% ao ano), entre outros. As maiores taxas positivas foram observadas nos municípios de Capelinha (1,1% ao ano) e Turmalina (0,9% ao ano). Os municípios com crescimento positivo provocaram um aumento total de população na região de 11.032 pessoas, enquanto aqueles com crescimento negativo contribuíram para uma diminuição total da população em 17.642 pessoas. Em 2022, em oito municípios, as populações totais não apenas diminuíram em relação a 2010, mas também em relação ao ano 2000.
+A característica comum entre os municípios do Vale do Lítio é o nítido esvaziamento populacional que têm experimentado ao longo dos anos. A tabela abaixo revela que desde o início do século, esse fenômeno tem sido evidente, com muitos municípios registrando taxas de crescimento negativas, enquanto os poucos que apresentaram aumento o fizeram a taxas muito baixas. No segundo decênio deste século, as previsões se confirmaram. Os resultados do Censo Demográfico de 2022 mostram que a maioria dos municípios da região apresentou decréscimos populacionais, com taxas negativas bastante expressivas, como foi o caso de Rubelita (-2,6% ao ano), Minas Novas (-1,9% ao ano), Virgem da Lapa (-1,2% ao ano), entre outros. As maiores taxas positivas foram observadas nos municípios de Capelinha (1,1% ao ano) e Turmalina (0,9% ao ano). Os municípios com crescimento positivo provocaram um aumento total de população na região de 11.032 pessoas, enquanto aqueles com crescimento negativo contribuíram para uma diminuição total da população em 17.642 pessoas. Em 2022, em oito municípios, as populações totais não apenas diminuíram em relação a 2010, mas também em relação ao ano 2000.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 # Adjust the cols_label function with the correct column names from your data frame
 tabela01_fluxo <- vale_litio_data %>% 
   select(-codigo_ibge) %>% 
-  mutate(Grupo = factor(Grupo, levels = c("Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4"))) %>%
+  mutate(Grupo = factor(Grupo, levels = c("Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Totais"))) %>%
   group_by(Grupo) %>% 
   gt() %>%
   tab_header(
-    title = "População residente dos municípios",
-    subtitle = "Censos de 2000, 2010 e 2022 e Taxas de Cresc. Anual"
+    title = "População residente e taxas de crescimento anual",
+    subtitle = "Municípios do Vale do Lítio - 2000, 2010 e 2022",
   ) %>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = "Municípios") %>%
@@ -86,10 +90,11 @@ tabela01_fluxo
 
 ```
 
+Fonte: IBGE/Censo Demográficos 2000-2010-2022. Elaboração: FJP/Diretoria de Estatística e Informações
+
 Esses resultados estão diretamente relacionados ao fator migratório, que por sua vez está associado ao processo de desruralização da região. O censo de 2022 deve confirmar o processo verificado em 2010, quando todos os municípios apresentaram taxas de crescimento urbano positivas e taxas de crescimento rural negativas. As únicas exceções, com taxas de crescimento urbano negativas, foram Itaobim (-0,2% ao ano) e Rubelita (-0,02% ao ano). Por outro lado, o único município com taxa de crescimento rural positiva foi Itaobim (0,05% ao ano). A tendência verificada em regiões desenvolvidas é que a participação da população rural deixa de exercer pressão sobre o setor urbano quando se estabiliza em torno de 15% da população total. Este é o caso do Estado de Minas Gerais, cujos saldos líquidos migratórios negativos, historicamente expressivos, passam a ser praticamente nulos nos anos 2000 e 2010, quando a participação da população rural é de, respectivamente, 18% e 15%.
 
 Em 2010, os únicos municípios da região com baixa participação da população rural no total foram Pedra Azul (12%) e Teófilo Otoni (18%). Por outro lado, em quatro municípios, as participações das populações rurais eram iguais ou superiores a 50%: Rubelita (68%), Minas Novas (59%), Itinga (55%) e Virgem da Lapa (50%). Não por coincidência, esses municípios foram os que apresentaram as maiores taxas de crescimento negativas entre 2010 e 2022. Os dados de 2010 indicavam que esses municípios entraram no período de 2010 a 2022 com estoques bastante expressivos de população rural. Mesmo que as taxas de crescimento da população urbana tenham sido consideráveis, elas não foram e não são suficientes para absorver os fluxos migratórios no sentido rural/urbano. Tanto é verdade que as taxas de crescimento total dos municípios, como já mencionado, não refletem o tamanho desses fluxos, sendo muito baixas ou negativas. Isso sugere que os setores urbanos desses municípios não são capazes de absorver a pressão rural e acabam servindo apenas como uma etapa no processo migratório uma vez iniciado.
-
 
 ```{r,  echo=FALSE, warning=FALSE, message=FALSE}
 # Load required libraries
@@ -115,44 +120,6 @@ df_long <- df %>%
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
-library(ggplot2)
-library(dplyr)
-library(tidyr)
-
-# Dados
-dados <- data.frame(
-  Municipio = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa"),
-  Homens = c(17854, 17144, 4657, 10491, 7352, 9169, 10477, 15360, 11749, 4000, 19270, 64447, 9161, 6757),
-  Mulheres = c(18187, 17652, 4460, 10510, 7055, 9618, 10560, 15443, 12094, 3777, 19912, 70286, 8885, 6868)
-)
-
-# Calcular a proporção
-dados_proporcao <- dados %>%
-  mutate(Total = Homens + Mulheres) %>%
-  mutate(Prop_Homens = Homens / Total,
-         Prop_Mulheres = Mulheres / Total)
-
-# Transformar os dados para o formato longo
-dados_proporcao_long <- dados_proporcao %>%
-  pivot_longer(cols = c(Prop_Homens, Prop_Mulheres), names_to = "Genero", values_to = "Proporcao")
-
-# Criar gráfico de barras empilhadas com paleta de cores RColorBrewer
-ggplot(dados_proporcao_long, aes(x = Municipio, y = Proporcao, fill = Genero)) +
-  geom_bar(stat = "identity", position = "stack") +
-  geom_text(aes(label = scales::percent(Proporcao, accuracy = 0.01)), position = position_stack(vjust = 0.5), color = "white", size = 3) + # Adiciona os valores das proporções nas barras com duas casas decimais
-  coord_flip() +  # Virar o gráfico para melhor visualização
-  theme_minimal() +
-  scale_fill_brewer(palette = "Dark2") +  # Escolha uma paleta da RColorBrewer
-  labs(x = "Município", y = "Proporção", fill = "") +
-  theme(legend.position = "bottom")
-
-
-```
-
-Os dados oferecem uma visão detalhada da distribuição de gênero nos municípios selecionados, destacando variações nas proporções de homens e mulheres. Ao observar as proporções, é possível identificar uma diversidade demográfica interessante, onde alguns municípios, como Coronel Murta e Rubelita, exibem uma quase igualdade entre os sexos, enquanto outros, como Teófilo Otoni, apresentam uma discrepância mais acentuada, com uma proporção maior de mulheres. Essas diferenças podem ser influenciadas por uma variedade de fatores, como características socioeconômicas, padrões migratórios e políticas locais. A compreensão dessas disparidades é crucial para o desenvolvimento de políticas públicas que atendam às necessidades específicas de cada comunidade, promovendo a equidade de gênero e o bem-estar social.
-
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-
 colors <- c("#084d8c", "#e07a10", "#296111")
 
 # Gráfico de barras horizontais
@@ -160,20 +127,100 @@ ggplot(df_long, aes(x = Valor, y = Nome_do_municipio, fill = Taxa_de_Crescimento
   geom_bar(stat = "identity") +
   scale_fill_manual(values = colors) +  # Define as cores manualmente
   geom_text(aes(label = sprintf("%.2f", Valor)), hjust = -0.2, size = 2.5, color = "white") +  # Formata os valores para dois dígitos
-  labs(title = "Taxa de Crescimento Total, Urbana e Rural 2010-22",
-       x = "Taxa de Crescimento",
+  labs(title = "Taxa de Crescimento Total, Urbana e Rural",
+       subtitle = "Municípios do Vale do Lítio - 2000 e 2010",
+       x = "Taxa de Crescimento (%)",
        y = "Nome do Município",
        fill = "Tipo de Crescimento") +
   theme(legend.position = "top",  # Posiciona a legenda no topo
         legend.title = element_blank())
-
-
-
 ```
 
-Em 2010, todos os municípios do microterritório apresentaram saldos líquidos migratórios negativos, ou seja, mais pessoas saíram desses municípios do que entraram. O somatório desses saldos negativos representou um contingente de -53,9 mil pessoas na região, um número maior do que a população de cada um de seus municípios, com exceção de Teófilo Otoni. Todos os municípios apresentam saldos líquidos migratórios negativos tanto em relação aos outros municípios do estado, fora das Regiões Geográficas Intermediárias (RGInt) a que pertencem , quanto em relação aos municípios de fora do estado (com exceção de Itaobim, que possui um saldo positivo interestadual de 38 migrantes).
+Fonte: IBGE/Censo Demográficos 2000-2010. Elaboração: FJP/Diretoria de Estatística e Informações
 
-Os municípios do Vale do Lítio, que estão na RGInt de Teófilo Otoni, possuem saldos positivos em relação aos municípios do próprio Vale do Lítio, principalmente devido ao saldo positivo do município de Teófilo Otoni, que exerce uma grande atração sobre os outros municípios da região. No entanto, essa atração não se sustenta, uma vez que o município atua como expulsor de população, com um saldo líquido migratório de -3,6 mil pessoas para os municípios de outras regiões de Minas Gerais, bem como para os de outros estados. Essa dinâmica se repete em todos os outros municípios com saldos positivos em relação à RGInt de Teófilo Otoni (Araçuaí, Capelinha, Turmalina e Virgem da Lapa). No caso da RGInt de Montes Claros, Rubelita apresenta saldos negativos em relação aos outros municípios dessa região, enquanto Salinas registra saldos positivos. Em ambos os casos, os saldos líquidos migratórios negativos são expressivos, principalmente em relação aos municípios de outros estados. Conclui-se que todos os municípios do Vale do Lítio que atraem migrantes das próprias RGInt desempenham um papel de etapa migratória, pois recebem correntes migratórias de municípios que estão expulsando população de forma acentuada.
+<!-- #Os dados oferecem uma visão detalhada da distribuição de sexo nos municípios selecionados, destacando variações nas proporções de homens e mulheres. Ao observar as proporções, é possível identificar uma diversidade demográfica interessante, onde alguns municípios, como Coronel Murta e Rubelita, exibem uma quase igualdade entre os sexos, enquanto outros, como Teófilo Otoni, apresentam uma discrepância mais acentuada, com uma proporção maior de mulheres. Essas diferenças podem ser influenciadas por uma variedade de fatores, como características socioeconômicas, padrões migratórios e políticas locais. A compreensão dessas disparidades é crucial para o desenvolvimento de políticas públicas que atendam às necessidades específicas de cada comunidade, promovendo a equidade de gênero e o bem-estar social. -->
+
+<!-- # ```{r, echo=FALSE, warning=FALSE, message=FALSE} -->
+
+<!-- #  -->
+
+<!-- # library(ggplot2) -->
+
+<!-- # library(dplyr) -->
+
+<!-- # library(tidyr) -->
+
+<!-- #  -->
+
+<!-- # # Dados -->
+
+<!-- # dados <- data.frame( -->
+
+<!-- #   Municipio = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa"), -->
+
+<!-- #   Homens = c(17854, 17144, 4657, 10491, 7352, 9169, 10477, 15360, 11749, 4000, 19270, 64447, 9161, 6757), -->
+
+<!-- #   Mulheres = c(18187, 17652, 4460, 10510, 7055, 9618, 10560, 15443, 12094, 3777, 19912, 70286, 8885, 6868) -->
+
+<!-- # ) -->
+
+<!-- #  -->
+
+<!-- # # Calcular a proporção -->
+
+<!-- # dados_proporcao <- dados %>% -->
+
+<!-- #   mutate(Total = Homens + Mulheres) %>% -->
+
+<!-- #   mutate(Homem = Homens / Total, -->
+
+<!-- #          Mulher = Mulheres / Total) -->
+
+<!-- #  -->
+
+<!-- # # Transformar os dados para o formato longo -->
+
+<!-- # dados_proporcao_long <- dados_proporcao %>% -->
+
+<!-- #   pivot_longer(cols = c(Homem, Mulher), names_to = "Genero", values_to = "Proporcao") -->
+
+<!-- #  -->
+
+<!-- # # Criar gráfico de barras empilhadas com paleta de cores RColorBrewer -->
+
+<!-- # ggplot(dados_proporcao_long, aes(x = Municipio, y = Proporcao, fill = Genero)) + -->
+
+<!-- #   geom_bar(stat = "identity", position = "stack") + -->
+
+<!-- #   geom_text(aes(label = scales::percent(Proporcao, accuracy = 0.01)), position = position_stack(vjust = 0.5), color = "white", size = 3) + # Adiciona os valores das proporções nas barras com duas casas decimais -->
+
+<!-- #   coord_flip() +  # Virar o gráfico para melhor visualização -->
+
+<!-- #   theme_minimal() + -->
+
+<!-- #   scale_fill_brewer(palette = "Dark2") +  # Escolha uma paleta da RColorBrewer -->
+
+<!-- #   labs(title = "Proporção da população por sexo", -->
+
+<!-- #     subtitle = "Municípios do Vale do Lítio - 2022", -->
+
+<!-- #     x = "Município",  -->
+
+<!-- #     y = "Proporção (%)",  -->
+
+<!-- #     fill = "") + -->
+
+<!-- #   theme(legend.position = "bottom") -->
+
+<!-- #  -->
+
+<!-- #  -->
+
+<!-- # ``` -->
+
+<!-- Fonte: IBGE/Censo Demográfico 2022. Elaboração: FJP/Diretoria de Estatística e Informações -->
+
+Em 2010, todos os municípios do microterritório apresentaram saldos líquidos migratórios negativos, ou seja, mais pessoas saíram desses municípios do que entraram. O somatório desses saldos negativos representou um contingente de -53,9 mil pessoas na região, um número maior do que a população de cada um de seus municípios, com exceção de Teófilo Otoni. Todos os municípios apresentam saldos líquidos migratórios negativos tanto em relação aos outros municípios do estado, fora das Regiões Geográficas Intermediárias (RGInt) a que pertencem, quanto em relação aos municípios de fora do estado (com exceção de Itaobim, que possui um saldo positivo interestadual de 38 migrantes).Os municípios do Vale do Lítio, que estão na RGInt de Teófilo Otoni, possuem saldos positivos em relação aos municípios do próprio Vale do Lítio, principalmente devido ao saldo positivo do município de Teófilo Otoni, que exerce uma grande atração sobre os outros municípios da região. No entanto, essa atração não se sustenta, uma vez que o município atua como expulsor de população, com um saldo líquido migratório de -3,6 mil pessoas para os municípios de outras regiões de Minas Gerais, bem como para os de outros estados. Essa dinâmica se repete em todos os outros municípios com saldos positivos em relação à RGInt de Teófilo Otoni (Araçuaí, Capelinha, Turmalina e Virgem da Lapa). No caso da RGInt de Montes Claros, Rubelita apresenta saldos negativos em relação aos outros municípios dessa região, enquanto Salinas registra saldos positivos. Em ambos os casos, os saldos líquidos migratórios negativos são expressivos, principalmente em relação aos municípios de outros estados. Conclui-se que todos os municípios do Vale do Lítio que atraem migrantes das próprias RGInt desempenham um papel de etapa migratória, pois recebem correntes migratórias de municípios que estão expulsando população de forma acentuada.
 
 ## Municípios do Vale do Lítio: Movimentos Migratórios em relação à data de referência de 31/07/2005 - Total e Saldo
 
@@ -201,13 +248,19 @@ Como demonstrado acima, os resultados do Censo Demográfico de 2022 sugerem que 
 
 ![](taxa_fecundidade.png)
 
+Fonte: Atlas do Desenvolvimento Humano. Elaboração: FJP/Diretoria de Estatística e Informações
+
 Todo o processo migratório afeta diversos aspectos da dinâmica demográfica. Por exemplo, a menor participação da população rural e o processo de urbanização são alguns dos aspectos que explicam a acentuada queda na taxa de fecundidade. Em 2010, o conjunto de municípios do Vale do Lítio estava com um nível de fecundidade exatamente igual ao nível de reposição (2,1 filhos por mulher em idade reprodutiva), indicando que apenas o número necessário para substituir o casal estava sendo alcançado.
 
 ![](mortalidade_infantil.png)
 
+Fonte: Atlas do Desenvolvimento Humano. Elaboração: FJP/Diretoria de Estatística e Informações
+
 A mortalidade infantil, embora em 2010 ainda estivesse em níveis acima da média do estado, apresentou quedas bastante expressivas em relação aos níveis em que se encontravam em 2000. Capelinha e Minas Novas são os municípios da região com os maiores níveis de fecundidade, com 2,4 filhos por mulher em idade reprodutiva, enquanto Salinas e Virgem da Lapa são os municípios com os níveis mais baixos (1,7 filhos). Em 2010, o município de Malacacheta apresentou o maior nível de mortalidade infantil, com 22,2 mortes de crianças de até 1 ano de vida para cada 1000 nascidas vivas, enquanto Teófilo Otoni registrou o menor nível, com 16,2 mortes de crianças para cada 1000 nascidas vivas. Esse padrão de comportamento dos indicadores demográficos está diretamente relacionado ao processo de urbanização desses municípios, em detrimento da população rural.
 
 ![](esperanca_vida.png)
+
+Fonte: Atlas do Desenvolvimento Humano. Elaboração: FJP/Diretoria de Estatística e Informações
 
 A queda nas taxas de fecundidade é um dos principais fatores responsáveis pelo envelhecimento da população. Os resultados do censo de 2022 indicam que esse processo de redução na fecundidade deve ter se acentuado bastante na última década. Pela tabela 5 observa-se que, para cada 100 crianças, o número de pessoas com mais de 65 anos representava 34 em 2010 e subiu para 67 em 2022. Este índice atinge um máximo de 102 idosos para 100 crianças no município de Rubelita e um mínimo de 42 idosos em Capelinha, sendo este o único município com um índice inferior a 50 em 2022.
 
@@ -263,5 +316,7 @@ g2 <- ggplot(data_long[data_long$Município == "Vale do Lítio" & grepl("RazaoDe
   theme_minimal()
 g2
 ```
+
+### Conclusão
 
 A compreensão da dinâmica demográfica de qualquer região envolve a análise dos processos relacionados aos nascimentos, mortes e migração. O Vale do Lítio é uma região onde todos esses processos estão em curso e são determinados pela realidade socioeconômica local. Como evidenciado, é uma região que enfrenta um claro processo de esvaziamento populacional, com seus municípios experimentando decréscimos populacionais ou crescendo a taxas muito baixas na última década. O Censo de 2022 confirma a tendência observada nos censos anteriores, que apontaram quedas acentuadas nas taxas de fecundidade e crescentes saldos líquidos migratórios negativos. A fecundidade é um componente que dificilmente contribuirá novamente para o crescimento da região, uma vez que suas taxas estão diretamente relacionadas ao intenso processo de urbanização e tendem a se estabilizar em níveis baixos, como observado em outras regiões. Portanto, o crescimento demográfico da região depende cada vez mais do componente migratório, que está diretamente relacionado aos fatores de expulsão atuantes na região, bem como aos fatores de atração oferecidos por outras regiões, dada a realidade local.
