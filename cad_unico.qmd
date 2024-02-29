@@ -119,4 +119,111 @@ ggplot(df_long, aes(x = Ano, y = TaxaEscolarizacao, group = MUNICIPIO, color = M
 
 Os dados referentes à condição de vínculo empregatício se referem à população inscrita no CadÚnico que declarou ter trabalhado na semana anterior à inscrição ou atualização, no ano referência, com fechamento da base em dezembro do referido ano. Observa-se a predominância de trabalho na condição de autônomo ou sem vínculo contratual em todos os municípios e em todo o período apurado. Vê-se também a tendência de aumento do percentual de pessoas que prestaram algum serviço na condição de aprendiz, estagiário ou sem remuneração. Os municípios Rubelita, Itinga e Malacaheta apresentam maior percentual de pessoas que trabalharam sem qualquer típo de vínculo empregatício no período analisado. Araçuaí, Trumalina, Teófilo Otoni e Virgem da Lapa são os municípios com maior percentual de trabalhadores autônomos ou remunerados sem contrato de trabalho. Coornel Murta e Virgem da Lapa possuem o maior percentual de indivíduos no serviço militar ou empregador, inscritos no CadÚnico nos últimos três anos analisados. Entre 2012 e 2018, Itinga foi o município com maior percentual de indivíduos na condição de aprendiz, estagiário ou que trabalharam e não tiveram remuneração e Medina nos três últimos anos analisados. Os dados de 2022 não se encontravam disponíveis na base acessada.
 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Carregando o pacote ggplot2
+library(tidyverse)
+library(readxl)
+pop_idade_ativa <- read_excel("pop_idade_ativa.xlsx")
+
+pop_idade_ativa_long <- pop_idade_ativa %>%
+  gather(key = "Tipo_Trabalho", value = "Percentual", sem_contrato, com_contrato, militar_ou_empregador, sem_remuneração)
+
+# Criando o painel de gráficos
+ggplot(pop_idade_ativa_long, aes(x = ano, y = Percentual, group = MUNICIPIO, colour = MUNICIPIO)) +
+  geom_line() +
+  geom_point() +
+  theme_minimal() +
+  labs(y = "Percentual", x = "Ano") +
+  facet_wrap(~Tipo_Trabalho, scales = "free_y") +
+  theme(legend.position = "bottom")
+
+```
+
 ### Saldo Migratorio Anual
+
+Com base nos dados do Cadastro único, apurou-se o saldo migratório e a taxa líquida de migração do período entre 2012-2022 dos municípios do Projeto Lítio. O grupo alvo foi a população em idade ativa (14 a 64 anos). A definição de migrante baseou-se no município de última residência no ano anterior, sendo, portanto, uma análise de período. O saldo migratório se refere à diferença entre a quantidade de pessoas que entraram no município e a quantidade de pessoas que saíram do município, entre os indivíduos que permaneceram inscritos na base. A taxa líquida de migração mostra o percentual do saldo em relação à população com idade entre 14 e 64 anos, no ano limite, já tendo sido consideradas as saídas no intervalo (mortalidade, saída da base e mudança para outro estado/país). Nos municípios do Vale do Lítio predomina o saldo migratório negativo ou próximo de zero, o que significa que não há retenção da população com idade ativa para o trabalho em situação de vulnerabilidade financeira.
+
+```{r, warning=FALSE}
+# Carregando os pacotes necessários
+library(ggplot2)
+library(dplyr)
+library(readxl)
+saldo_migratorio <- read_excel("saldo_migratorio.xlsx", 
+    sheet = "Planilha2")
+
+# Configuração de cores personalizadas para positivo e negativo
+custom_colors_pos_neg <- c("positivo" = "#538017", "negativo" = "#802f17")
+
+# Adicionando uma nova coluna para indicar se o saldo migratório é positivo ou negativo
+saldo_migratorio <- saldo_migratorio %>%
+  mutate(SaldoTipo = ifelse(SM >= 0, "positivo", "negativo"))
+
+# Criando o gráfico lollipop com transparência nas bolinhas
+g <- ggplot(saldo_migratorio, aes(x = Município, y = SM)) +
+  geom_segment(aes(xend = Município, yend = 0, color = SaldoTipo), size = 1.2) + # Linhas do gráfico lollipop
+  geom_point(aes(fill = SaldoTipo), size = 3.5, shape = 21, position = position_dodge(width = 0.05), color = "black", alpha = 0.8) + # Pontos do gráfico lollipop com transparência
+  scale_color_manual(values = custom_colors_pos_neg) +
+  scale_fill_manual(values = custom_colors_pos_neg) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+        legend.position = "top", # Posicionando a legenda no topo
+        plot.title = element_text(hjust = 0.5, size = 16),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 14)) +
+  labs(title = "Saldo Migratório por Município",
+       subtitle = "2012 - 2022",
+       y = "Saldo Migratório",
+       x = "Município") +
+  guides(color = guide_legend(title = "Saldo Migratório"), fill = guide_legend(title = "Saldo Migratório"))
+
+# Exibindo o gráfico
+print(g)
+
+
+```
+
+
+## taxa liquida de migração 
+
+A migração é o componente imediato de resposta a condicionantes ou choques na população. Pelos dados observados, isto não aconteceu nos municípios, mantendo-se a tendência de evasão. Rubelita, Salinas e Turmalina apresentaram taxa líquida positiva entre 2021/2022, porém com saldo líquido pouco expressivo em relação ao grupo populacional analisado. Capelinha vem mantendo a taxa líquida de migração positiva, porém com saldo migratório também pouco expressivo. Pedra Azul apresentou sinais de reversão do cenário negativo de contribuição no crescimento populacional pela migração somente entre 2021/2022. Teófilo Otoni que é o maior município em termos populacionais do grupo do Vale do Lítio apresentou taxas oscilatórios no período o que revela a baixa capacidade de retenção, caracterizando-se como um município de passagem.
+
+
+
+```{r}
+# Carregando os pacotes necessários
+library(ggplot2)
+
+# Configuração de cores personalizadas
+custom_colors <- c("#b6186b", "#50c878", "#4d5816", "#8b0000", "#c0c0c0", 
+                   "#084d8c", "#e07a10", "#5d360e", "#296111", "#d51919", 
+                   "#33cccc", "#2676ff", "#FF69B4", "#8A2BE2")
+
+# Definindo os anos manualmente para o eixo x
+anos <- c(2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022)
+
+# Criando o gráfico de linhas para a taxa líquida de migração com melhor distinção
+ ggplot(saldo_migratorio, aes(x = ano, y = TLM, group = Município, colour = Município)) +
+  geom_line(size = 0.9) +  # Aumentando a espessura das linhas
+  geom_point(size = 3, shape = 21) +  # Adicionando marcadores com bordas
+  scale_color_manual(values = custom_colors) +  # Utilizando cores personalizadas
+  scale_x_continuous(breaks = anos) +  # Definindo os anos manualmente
+  theme_minimal() +
+  labs(title = "Taxa Líquida de Migração por Município e Ano",
+       y = "Taxa Líquida de Migração",
+       x = "Ano") +
+  theme(legend.position = "bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1)) 
+
+
+```
+
+
+
+
+
+
+
+
+
+
