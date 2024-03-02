@@ -1,27 +1,32 @@
 ---
 title: "Aspectos sociais"
 editor: visual
+authors: 
+- Caio Gonçalves 
+- Vitor Marinho
 ---
 
 ## Como está a situação social nos municípios do Vale do Lítio de maneira geral?
 
-O Índice Mineiro de Responsabilidade Social (IMRS) é uma métrica que avalia a responsabilidade social na gestão pública estadual, compreendendo a implementação, pela administração pública, de políticas, planos, programas, projetos e ações destinados a garantir o acesso da população a serviços essenciais em áreas estratégicas, como educação, saúde, segurança pública, vulnerabilidade, saneamento e meio ambiente. Ao utilizar esse índice multidimensional com dados de 2019 a 2021 e fazer uma comparação entre os 853 municípios do estado, pode-se observar o seguinte:
+O Índice Mineiro de Responsabilidade Social (IMRS) é uma métrica multidimensional que avalia a responsabilidade social na gestão pública estadual, compreendendo a implementação, pela administração pública, de políticas, planos, programas, projetos e ações destinados a garantir o acesso da população a serviços essenciais em áreas estratégicas, como educação, saúde, segurança pública, vulnerabilidade, saneamento e meio ambiente.
 
--   Em termos gerais, nenhum dos municípios do Vale do Lítio figura entre os 100 municípios mais responsáveis socialmente. Pelo contrário, muitos deles ocupam posições inferiores no ranking, com dois deles, Medina e Itinga, sendo classificados entre os 100 municípios menos responsáveis socialmente;
+Ao utilizar esse índice com dados de 2019 a 2021 e fazer uma comparação entre os 853 municípios do estado, destacam-se os seguintes pontos:
 
--   Entre os 14 municípios do Vale do Lítio, na área da educação, destacaram-se positivamente Capelinha e Salinas. Na saúde, Malacacheta apresentou o melhor desempenho, enquanto Teófilo Otoni se sobressai na segurança pública e vulnerabilidade. Além disso, Capelinha destacou-se novamente em saneamento.
+-   Em termos gerais, nenhum dos municípios do Vale do Lítio figura entre os 100 municípios mais responsáveis socialmente. Pelo contrário, muitos deles ocupam posições inferiores no *ranking*, com dois deles, Medina e Itinga, sendo classificados entre os 100 municípios menos responsáveis socialmente;
 
--   A análise do IMRS aponta que, em comparação entre os 14 municípios do Vale do Lítio, os esforços das políticas públicas devem ser direcionados com maior atenção para os seguintes municípios em termos de:
+-   Entre os 14 municípios do Vale do Lítio, na área da educação, destacaram-se positivamente Capelinha e Salinas. Na saúde, Malacacheta apresentou o melhor desempenho, enquanto Teófilo Otoni se sobressai na segurança pública e vulnerabilidade. Além disso, Capelinha destacou-se também em saneamento.
+
+-   Considerando-se este indicador, percebe-se que a priorização na formulação de políticas públicas deve atender a diferentes necessidades em cada um dos municípios. Ao utilizar um recorte nos *ranking* das dimensões inferiores a 600ª posição, ou seja, entre o grupo dos 30% dos municípios de Minas Gerais mais carentes, tem-se as seguintes indicações de priorização por dimensão:
 
 1.  **Educação**: Itinga, Minas Novas e Virgem da Lapa;
 
-2.  **Saúde**: Itinga, Rubelita, Iaobim e Araçuaí;
+2.  **Saúde**: Itinga, Rubelita, Itaobim e Araçuaí;
 
 3.  **Segurança pública**: Pedra Azul, Medina e Araçuaí;
 
 4.  **Vulnerabilidade**: Itaobim, Pedra Azul e todos do **Grupo 4** (Coronel Murta, Itinga, Rubelita e Virgem da Lapa);
 
-5.  **Saneamento básico**: Itaobim, Coronel Murta, Itinga e Medina.
+5.  **Saneamento básico**: Itaobim, Coronel Murta, Itinga, Medina e Malacacheta.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 ##----------- Dev tabela 00 - imrs

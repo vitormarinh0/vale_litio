@@ -1,20 +1,28 @@
 ---
 title: "Ações prioritárias para o desenvolvimento"
+authors: 
+- Caio Gonçalves 
+- Cláudio Shikida
 ---
 
 ## O que dizem os planos de desenvolvimento realizados para a região sobre o lítio e as questões sociais?
 
 <!-- A utilização da matriz insumo-produto (MIP) para a análise regional e o cálculo de índices de ligação enriquecem consideravelmente nossa compreensão do impacto econômico da mineração nos municípios do Norte e Nordeste de Minas Gerais. De acordo com o estudo de Souza, Gonçalves e Franco (2015), que se baseou na MIP de 2008 de Minas Gerais, setores-chave como "indústria extrativa mineral", "alimentos e bebidas", "produtos químicos", "fabricação de aço e derivados" e "serviços de informação" foram identificados. -->
 
-O Norte e o Nordeste de Minas Gerais destacam-se como áreas promissoras para a mineração, especialmente na extração de lítio. O potencial de produção de lítio já havia sido indicado em estudos para região como o Plano de Desenvolvimento para o Vale do Jequitinhonha [@fjp2017]. O que significa um leque de oportunidades para a região, que, apesar de ter uma indústria pouco desenvolvida, possui nichos com grande potencial, como a fabricação de alimentos e construção civil conforme os estudos mais recentes de setores-chave utilizando matriz insumo-produto da Região Intermediária de Teófilo Otoni [@fjp2023].
+O Norte e o Nordeste de Minas Gerais destacam-se como áreas promissoras para a mineração, especialmente na extração de lítio. O potencial de produção de lítio já havia sido indicado em estudos para região como o Plano de Desenvolvimento para o Vale do Jequitinhonha [@fjp2017]. Isto significa que a criação do Vale do Lítio pode ser uma oportunidade para o desenvolvimento da região que em termos industriais, há nichoscom potencial de desenvolvimento para a região, como a fabricação de alimentos e construção civil conforme estudo de setores-chave utilizando matriz insumo-produto da Região Intermediária de Teófilo Otoni [@fjp2023].
 
-As estratégias de desenvolvimento para estes municípios relacionados ao lítio (e a mineração) incluem:
+Possíveis estratégias de desenvolvimento para estes municípios relacionados ao lítio (e à mineração) incluem:
 
 -   **Fortalecimento da Indústria Local**: Foco especial na cadeia produtiva do lítio, incentivando seu processamento na região para agregar valor ao produto. Isso envolve a internalização de toda a cadeia, desde a extração até a fabricação de baterias, representando uma chance significativa para o avanço econômico e industrial local, utilizando os recursos naturais para gerar emprego e aumentar a receita, contribuindo para um crescimento econômico sustentável.
 
 -   **Atenção aos Desafios Ambientais e Sociais**: Considerar os impactos ambientais e sociais da mineração, como o despejo de efluentes tóxicos e a poluição do ar e do solo, que podem causar doenças graves e prejudicar a agricultura. A atenção deve se estender além dos municípios do Vale, alcançando áreas adjacentes e ao longo dos rios. Assim, é vital que a mineração seja conciliada com a proteção ambiental.
 
-Conforme indicado no Plano de Desenvolvimento para o Vale do Jequitinhonha [@fjp2017], as ações prioritárias para o desenvolvimento social levantadas no estudo foram:
+-   **Melhoria do Ambiente de Negócios**: Conforme dados atualizados até 2024, dos 14 municípios do Vale do Lítio, apenas 6 deles sancionaram uma versão municipal da Lei de Liberdade Econômica, quais sejam, Rubelita, Salinas, Malacacheta, Medina, Minas Novas e Turmalina. Como se sabe, a Lei de Liberdade Econômica é um instrumento facilitador da abertura de novos negócios, notadamente aqueles que envolvem baixo risco (a listagem das 701 atividades, conforme a legislação mineira, encontra-se no Anexo I da Resolução 02 de 13 de maio de 2021). Estudos mostram que a melhora no ambiente de negócios tem impacto positivo na prosperidade local (ver, por exemplo, Cavalcante 2015). 
+
+-  **Articulação Institucional**: O sucesso de uma política pública no denominado Vale do Lítio depende de uma articulação governamental com governos locais, populações e com o governo federal. A exploração do lítio, de forma ambientalmente eficaz e com um ambiente de negócios favorável tem potencial para uma geração de empregos que não se percam no médio prazo. O alinhamento dos interesses é necessário não apenas para o início do projeto, mas também para seu bom andamento.
+
+
+Conforme indicado no Plano de Desenvolvimento para o Vale do Jequitinhonha [@fjp2017], as ações prioritárias para o desenvolvimento social levantadas à época no estudo foram:
 
 ### Educação
 
@@ -56,15 +64,15 @@ Conforme indicado no Plano de Desenvolvimento para o Vale do Jequitinhonha [@fjp
 
 ### Segurança pública
 
--   Increm entar a infraestrutura, os recursos logísticos e os efetivos da Polícia Civil (todas as carreiras);
+-   Incrementar a infraestrutura, os recursos logísticos e os efetivos da Polícia Civil (todas as carreiras);
 
--   Incrementar a infraestrutura, os recursos logísticos e os efetivos da Polícia M ilitar (com ênfase em im plem entação de unidades de Patrulhas Rurais);
+-   Incrementar a infraestrutura, os recursos logísticos e os efetivos da Polícia Militar (com ênfase em implementação de unidades de Patrulhas Rurais);
 
--   Criar espaços interinstitucionais de interlocucão entre Poder Público Estadual, Municipal (Prefeituras e Câm aras de Vereadores), Poder Judiciário e Forças de Segurança Pública, por meio do incentivo à críacão de Gabinetes de Gestão Integrada Municipal de Segurança Pública (GGIM-SP) nos municípios-sede de microterritórios;
+-   Criar espaços interinstitucionais de interlocucão entre Poder Público Estadual, Municipal (Prefeituras e Câmaras de Vereadores), Poder Judiciário e Forças de Segurança Pública, por meio do incentivo à críacão de Gabinetes de Gestão Integrada Municipal de Segurança Pública (GGIM-SP) nos municípios-sede de microterritórios;
 
 -   Construir Centros Socioeducativos para o cumprimento de medidas de internação nos municípios de Araçuaí e Medina;
 
--   Auxiliar a produção e elaboração de Planos Municipais de Segurança Pública em municípios-sede de microterritórios. A ênfase deve ser dada principalm ente em políticas de prevenção, organizando e articulando instituições de assistência social e de educacâo, associações de bairro, entre outras.
+-   Auxiliar a produção e elaboração de Planos Municipais de Segurança Pública em municípios-sede de microterritórios. A ênfase deve ser dada principalmente em políticas de prevenção, organizando e articulando instituições de assistência social e de educacâo, associações de bairro, entre outras.
 
 ### Saneamento e habitação
 
@@ -90,9 +98,12 @@ Conforme indicado no Plano de Desenvolvimento para o Vale do Jequitinhonha [@fjp
 
 -   Fomentar a capacitação de gestores e conselheiros municipais, objetivando o fortalecimento da política pública municipal e o empoderamento municipal para implementação das políticas públicas de habitação social.
 
+
+A análise feita anteriormente, embora não permita um comentário técnico mais detalhado sobre cada um dos tópicos acima, mostra que a realidade das cidades do Vale do Lítio e, de forma mais geral, do Vale do Jequitinhonha não se alterou tanto desde 2017 o que, se por um lado, é motivo de preocupação, fica claro que há espaço para políticas públicas que transformem as 14 cidades e seu entorno em uma vitrine da administração estadual para o restante da Federação. 
+
 ### Considerações finais
 
-Um plano de ação pode transformar essa região de Minas Gerais em um importante polo industrial, centrado na exploração do lítio. Diante da crescente demanda por baterias desse material, a região tem potencial para se tornar um *hub* estratégico na produção desses materiais. O desenvolvimento não apenas impulsionará a economia local, mas também posicionará a região como um fornecedor-chave de lítio e seus derivados no mercado global. Para isso, é essencial desenvolver políticas que agreguem valor, levando em conta tanto as oportunidades econômicas quanto as responsabilidades ambientais e sociais inerentes à atividade mineradora. Existem um série de ações já indicadas que melhorariam o desenolvimento social em estudos prévios para região e podem ser verificados a viabilidade para os municípios do vale do Lítio.
+Um plano de ação pode transformar essa região de Minas Gerais em um importante polo industrial, centrado na exploração do lítio. Diante da crescente demanda por baterias desse material, a região tem potencial para se tornar um *hub* estratégico na produção desses materiais. O desenvolvimento não apenas impulsionará a economia local, mas também posicionará a região como um fornecedor-chave de lítio e seus derivados no mercado global. Para isso, é essencial desenvolver políticas que agreguem valor, levando em conta tanto as oportunidades econômicas quanto as responsabilidades ambientais e sociais inerentes à atividade mineradora. Existem uma série de ações já indicadas que melhorariam o desenolvimento social em estudos prévios para região e podem ser verificados a viabilidade para os municípios do vale do Lítio.
 
 <!-- Esta análise revela uma mudança significativa na dinâmica produtiva da região, marcada pela expansão da atividade mineradora, com destaque para a extração de granito, grafita e, especialmente, lítio, principalmente no Médio Jequitinhonha. Essas atividades se tornaram uma fonte relevante de empregos e receitas para muitos municípios. A atividade cafeeira também manteve sua importância como um motor de dinamismo e geração de empregos. -->
 
