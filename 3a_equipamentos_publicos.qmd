@@ -188,9 +188,12 @@ ggplot(df_filtered, aes(x = Municipio, y = qtd_cursos, fill = as.factor(ano))) +
 
 Fonte: INEP. Elaboração: FJP/Diretoria de Estatística e Informações.
 
-Quando se analisa o grau acadêmico, a maioria oferta é de cursos tecnológicos e, a depender do município, a licenciatura vem em segundo lugar. Além disso, embora as informações sobre os cursos sejam precárias em termos do quantitativo de vagas e inscritos, percebe-se que apenas em um município há oferta de curso de engenharia, no caso, a engenharia civil.
+Quando se analisa o grau acadêmico, a maioria oferta é de cursos tecnológicos e, a depender do município, a licenciatura vem em segundo lugar. Além disso, embora as informações sobre os cursos sejam precárias em termos do quantitativo de matriculas, percebe-se que apenas em um município há oferta de curso de engenharia, no caso, a engenharia civil.
 
-Outros cursos ofertados incluem: matemática, física, química, ciências contábeis, engenharia de alimentos, administração (presencial e à distância), administração pública, artes visuais, pedagogia, educação física, artes, análise e desenvolvimento de sistemas, engenharia agrícola e ambiental, pedagogia, história, direito, letras e gestão ambiental. Não é difícil perceber que a adequação da formação de capital humano para as possíveis atividades no Vale do Lítio necessita de uma atenção especial, seja por meio do suporte de universidades públicas estaduais ou privadas.
+Outros cursos ofertados incluem: pedagogia, direito, administração, ciências contábeis, educação física, serviço social, matemática, interdiciplinar em ciência e tecnologia, pscicologia, enfermagem, ciências biológicas, fisioterapia e farmácia, entre outros.Não é difícil perceber que a adequação da formação de capital humano para as possíveis atividades no Vale do Lítio necessita de uma atenção especial, seja por meio do suporte de universidades públicas estaduais ou privadas.  
+#matemática, física, química, ciências contábeis, engenharia de alimentos, administração (presencial e à distância), administração pública, artes visuais, pedagogia, educação física, artes, análise e desenvolvimento de sistemas, engenharia agrícola e ambiental,pedagogia, história, direito, letras e gestão ambiental. 
+
+
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -264,7 +267,8 @@ df_nome <- readRDS('df_nome.rds')
 
 df <- read_rds('censo_sup.rds')%>%
   filter(id_municipio %in% as.character(municipios_vale))  %>% 
-  left_join(df_nome, by = "id_municipio")
+  left_join(df_nome, by = "id_municipio")%>%
+  mutate(nome_curso = str_to_title(nome_curso))
 
 ```
 
@@ -274,32 +278,25 @@ library(dplyr)
 library(gt)
 
 # Passo 1: Criar uma coluna com o nome do curso e o total de inscritos entre parênteses
-df <- df %>%
+df2 <- df %>%
   group_by(Municipio.x, nome_curso) %>%
-  summarise(total_inscritos = sum(quantidade_inscritos, na.rm = TRUE),
-            total_vagas = sum(quantidade_vagas, na.rm = TRUE)) %>%
-  ungroup() %>%
-  mutate(nome_curso = paste(nome_curso, "(", total_inscritos, ")", sep = ""))
-
-# Passo 2: Calcular o total de vagas por município
-total_vagas_por_municipio <- df %>%
-  group_by(Municipio.x) %>%
-  summarise(total_vagas_municipio = sum(total_vagas, na.rm = TRUE))
-
-# Passo 3: Juntar as tabelas
-final_table <- left_join(df, total_vagas_por_municipio, by = "Municipio.x")
+  summarise(total_inscritos = sum(quantidade_matriculas, na.rm = TRUE)) %>%
+  ungroup() 
+df2 <-  df2%>%
+  mutate(nome_curso = str_to_title(nome_curso))
 
 # Passo 4: Ordenar e selecionar os 5 cursos com o maior número de inscritos por município
-top_5_cursos_por_municipio <- final_table %>%
+top_5_cursos_por_municipio <- df2 %>%
   arrange(Municipio.x, desc(total_inscritos)) %>%
   group_by(Municipio.x) 
 
 # Exibir a tabela final
 top_5_cursos_por_municipio %>% 
+  filter(total_inscritos>0) %>% 
   slice_head(n = 5) %>%
   gt() %>%
   tab_header(
-    title = "Top 5 Cursos em Número de Inscritos por Município",
+    title = "Quantidade de Matriculas nos Cinco Maiores Cursos em Nível Superior",
     subtitle = "Municípios do Vale do Lítio - 2021"
   )  %>% #rótulo
   opt_table_font(font = google_font(name = "Karla")) %>% 
@@ -317,12 +314,17 @@ top_5_cursos_por_municipio %>%
   )%>%
   cols_label(
     nome_curso = 'Curso/Municipio',
-    total_inscritos = 'Total de Inscritos',
-    total_vagas = 'Vagas Ofertadas',
-    total_vagas_municipio = 'Vagas Totais de Ensino Superior'
+    total_inscritos = 'Total de Matriculas'
   )
 
 
 
+```
+Fonte: INEP. Elaboração: FJP/Diretoria de Estatística e Informações.
+
+
+```{r, include=FALSE}
+top_5_cursos_por_municipio %>% group_by(nome_curso) %>% 
+  summarise(total = sum(total_inscritos)) %>% arrange(desc(total)) %>%  gt()
 ```
 
