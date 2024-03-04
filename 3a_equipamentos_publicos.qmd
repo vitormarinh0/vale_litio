@@ -7,6 +7,11 @@ authors:
 - Cláudio Shikida
 ---
 
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
 ## Qual a situação desses municípios em termos de equipamentos de saúde e educação?
 
 Usando os dados do Cadastro Nacional de Estabelecimentos de Saúde (CNES) foi possível verificar o aumento dos estabelecimentos entre os anos de 2010 e 2022. Ressalta-se que nesse total incluem-se hospitais, tanto públicos quanto privados, hospitais gerais e especializados, além de clínicas e consultórios, unidades básicas de saúde, laboratórios, entre outros.
@@ -69,7 +74,7 @@ Fonte: Ministério da Saúde. Elaboração: FJP/Diretoria de Estatística e Info
 
 Em termos dos leitos em cada um dos municípios, novamente Teófilo Otoni foi o destaque, com o maior número total de leitos, somando 352, com uma distribuição significativa em todas as categorias (especialmente em leitos cirúrgicos com 160 unidades).
 
-Os municípios do Grupo 2 mostraram uma quantidade moderada de leitos, com Salinas possuindo o maior total do grupo, com 89 leitos. O Grupo 3 tem números mais reduzidos, sendo Itaobim o que apresenta o maior total, com 49 leitos. Por fim, o Grupo 4 tem uma situação particularmente crítica em termos de leitos hospitalares, com Coronel Murta e Itinga não apresentando leitos em nenhuma categoria, e Rubelita tendo apenas três leitos classificados como \"Outros Leitos\". Virgem da Lapa possui 23 leitos, todos concentrados nas categorias de leitos clínicos e cirúrgicos. A tabela sugere diferenças significativas na capacidade hospitalar entre os municípios.
+Os municípios do Grupo 2 mostraram uma quantidade moderada de leitos, com Salinas possuindo o maior total do grupo, com 89 leitos. O Grupo 3 tem números mais reduzidos, sendo Itaobim o que apresenta o maior total, com 49 leitos. Por fim, o Grupo 4 tem uma situação particularmente crítica em termos de leitos hospitalares, com Coronel Murta e Itinga não apresentando leitos em nenhuma categoria, e Rubelita tendo apenas três leitos classificados como "Outros Leitos". Virgem da Lapa possui 23 leitos, todos concentrados nas categorias de leitos clínicos e cirúrgicos. A tabela sugere diferenças significativas na capacidade hospitalar entre os municípios.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -249,7 +254,7 @@ Fonte: INEP. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ## Quantidade de Cursos e Vagas Ofertadas
 
-```{r}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 municipios_vale <- c(
   3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801,
   3148707, 3168606, 3169703, 3156502, 3171600, 3157005
@@ -261,21 +266,63 @@ df <- read_rds('censo_sup.rds')%>%
   filter(id_municipio %in% as.character(municipios_vale))  %>% 
   left_join(df_nome, by = "id_municipio")
 
-# Agrupar por nome do curso e somar as vagas
-curso_vagas <- df %>%
-  group_by(nome_curso) %>%
-  summarize(quantidade_vagas = sum(quantidade_vagas, na.rm = TRUE)) %>%
-  arrange(desc(quantidade_vagas))
+```
 
-# Pegar os 5 cursos com maior número de vagas
-top_cursos <- head(curso_vagas, 5)
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
-# Criar o gráfico
-ggplot(top_cursos, aes(x=reorder(nome_curso, quantidade_vagas), y=quantidade_vagas, fill=nome_curso)) +
-  geom_bar(stat="identity") +
-  coord_flip() +  # Para ter barras horizontais
-  theme_minimal() +
-  labs(x="Curso", y="Quantidade de Vagas", title="Vagas por Curso", fill="Curso") +
-  scale_fill_brewer(palette="Paired") # Usar uma paleta de cores
+library(dplyr)
+library(gt)
+
+# Passo 1: Criar uma coluna com o nome do curso e o total de inscritos entre parênteses
+df <- df %>%
+  group_by(Municipio.x, nome_curso) %>%
+  summarise(total_inscritos = sum(quantidade_inscritos, na.rm = TRUE),
+            total_vagas = sum(quantidade_vagas, na.rm = TRUE)) %>%
+  ungroup() %>%
+  mutate(nome_curso = paste(nome_curso, "(", total_inscritos, ")", sep = ""))
+
+# Passo 2: Calcular o total de vagas por município
+total_vagas_por_municipio <- df %>%
+  group_by(Municipio.x) %>%
+  summarise(total_vagas_municipio = sum(total_vagas, na.rm = TRUE))
+
+# Passo 3: Juntar as tabelas
+final_table <- left_join(df, total_vagas_por_municipio, by = "Municipio.x")
+
+# Passo 4: Ordenar e selecionar os 5 cursos com o maior número de inscritos por município
+top_5_cursos_por_municipio <- final_table %>%
+  arrange(Municipio.x, desc(total_inscritos)) %>%
+  group_by(Municipio.x) 
+
+# Exibir a tabela final
+top_5_cursos_por_municipio %>% 
+  slice_head(n = 5) %>%
+  gt() %>%
+  tab_header(
+    title = "Top 5 Cursos em Número de Inscritos por Município",
+    subtitle = "Municípios do Vale do Lítio - 2021"
+  )  %>% #rótulo
+  opt_table_font(font = google_font(name = "Karla")) %>% 
+  tab_options(data_row.padding = px(6),
+              heading.align = 'left',
+              column_labels.background.color = 'dodgerblue4',
+              heading.title.font.size = px(20)) %>% 
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  )%>%
+  cols_label(
+    nome_curso = 'Curso/Municipio',
+    total_inscritos = 'Total de Inscritos',
+    total_vagas = 'Vagas Ofertadas',
+    total_vagas_municipio = 'Vagas Totais de Ensino Superior'
+  )
+
+
 
 ```
+
