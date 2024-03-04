@@ -1,6 +1,9 @@
 ---
-title: "Aspectos populacionais"
+title: "População e estrutura etária"
 editor: visual
+authors: 
+- Caio Gonçalves 
+- Vitor Marinho
 ---
 
 ## Quantas pessoas residem nos municípios do Vale do Lítio? Qual foi a evolução populacional nos últimos 12 anos?

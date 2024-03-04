@@ -1,0 +1,10 @@
+---
+title: "Fluxos Migratórios com dados censitários"
+editor: visual
+authors: 
+- Olinto Nogueira
+---
+
+## Quais os movimentos migratórios observados nos municípios do Vale do Lítio? É possível inferir sobre a última década sem os dados do Censo Demográfico de 2022?
+
+\[Em edição\]

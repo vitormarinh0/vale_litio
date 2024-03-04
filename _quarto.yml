@@ -4,25 +4,36 @@ project:
 book:
   title: "<img src='img/logo_fjp.png' alt='Logo' style='vertical-align: middle; width:180px'> Vale do Lítio"
   subtitle: "Características Socioeconômicas dos Municípios"
-  author:
-    - name: "[Caio Gonçalves](https://github.com/ccsgonc)"
-      affiliation: Fundação João Pinheiro
-      affiliation_url: https://fjp.mg.gov.br/
-    - name: "[Vitor Marinho](https://github.com/vitor-marinho-fjp)"
-      affiliation: Fundação João Pinheiro
-      affiliation_url: https://fjp.mg.gov.br/
-  date: "12/29/2023"
+  # author:
+    # - name: "[Caio Gonçalves](https://github.com/ccsgonc)"
+    #   affiliation: Fundação João Pinheiro
+    #   affiliation_url: https://fjp.mg.gov.br/
+    # - name: "[Vitor Marinho](https://github.com/vitor-marinho-fjp)"
+    #   affiliation: Fundação João Pinheiro
+    #   affiliation_url: https://fjp.mg.gov.br/
+  date: "03/01/2023"
   chapters:
     - index.qmd
+    - autoridades.qmd
     - 0_intro.qmd
     - 1_Demografia.qmd
     - 2_Economia.qmd
     - 3_Social.qmd
-    - 7_fluxo_migratorio.qmd
-    - cad_unico.qmd
+    - temp1.qmd
+    - temp2.qmd
+    - temp3.qmd
+    #- 7_fluxo_migratorio.qmd
+    #- cad_unico.qmd
     - 3a_equipamentos_publicos.qmd
     - 5_Acoes.qmd
     - references.qmd
+  sidebar:
+    pinned: true
+    
+  search: 
+    location: sidebar
+    type: textbox
+  # downloads: [pdf, epub] - ver: https://stackoverflow.com/questions/73868585/quarto-book-download-button
 
 bibliography: references.bib
 
@@ -34,3 +45,5 @@ format:
     documentclass: scrreprt
 lang: pt
 editor: visual
+
+

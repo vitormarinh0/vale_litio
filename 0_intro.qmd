@@ -73,3 +73,7 @@ mapa <- leaflet() %>%
 mapa
 
 ```
+
+<br>
+
+Destaca-se que a expressão "Vale do Lítio" é empregada especificamente para denominar os municípios abrangidos pelo projeto governamental, sem implicar uma definição geomorfológica, territorial ou de identidade.
