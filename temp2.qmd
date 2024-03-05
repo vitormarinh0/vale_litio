@@ -46,7 +46,6 @@ ggplot(df, aes(x = df$X._POP_Cad_x_municipio_Censo_2022, y = reorder(Município,
 
 ```
 
-
 ### Taxa de Analfabetismo
 
 Para cálculo da taxa de analfabetismo da população inscrita no CadÚnico em idade ativa para o trabalho, considerou-se a faixa etária entre 15 e 64 anos. Observa-se que Minas Novas e Malacacheta acumulam o maior percentual de pessoas em idae para o trabalho na situação de analfabetismo. Os municípios de Araçuaí e Turmalina se posicionam no outor estremo, com as menores taxas de analfabetismo dentro do grupo analisado. Rubelita e Itinga apresentaram tendência de elevação da taxa nos últimos anos enquanto que Minas Novas revelou tendência de redução da taxa de analfabetismo. Os percentuais anuais no total do grupo variam entre 8,93 (2022) e 18,44 em 2014 quando os municípios tiveram a maior taxa.
@@ -222,8 +221,8 @@ anos <- c(2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022)
 
 # Criando o gráfico de linhas para a taxa líquida de migração com melhor distinção
  ggplot(saldo_migratorio, aes(x = ano, y = SM, group = Município, colour = Município)) +
-  geom_line(size = 0.9) +  # Aumentando a espessura das linhas
-  geom_point(size = 3, shape = 21) +  # Adicionando marcadores com bordas
+  geom_line(linewidth = 0.9) +  # Aumentando a espessura das linhas
+  geom_point(linewidth = 3, shape = 21) +  # Adicionando marcadores com bordas
   scale_color_manual(values = custom_colors) +  # Utilizando cores personalizadas
   scale_x_continuous(breaks = anos) +  # Definindo os anos manualmente
   theme_minimal() +
@@ -255,7 +254,7 @@ anos <- c(2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022)
 
 # Criando o gráfico de linhas para a taxa líquida de migração com melhor distinção
  ggplot(saldo_migratorio, aes(x = ano, y = TLM, group = Município, colour = Município)) +
-  geom_line(size = 0.9) +  # Aumentando a espessura das linhas
+  geom_line(linewidth = 0.9) +  # Aumentando a espessura das linhas
   geom_point(size = 3, shape = 21) +  # Adicionando marcadores com bordas
   scale_color_manual(values = custom_colors) +  # Utilizando cores personalizadas
   scale_x_continuous(breaks = anos) +  # Definindo os anos manualmente
@@ -266,6 +265,47 @@ anos <- c(2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022)
   theme(legend.position = "bottom",
         axis.text.x = element_text(angle = 45, hjust = 1)) 
 
+
+
+```
+
+## Sexo
+
+Conforme observa-se de modo geral, a população feminina apresenta maior em relação à população masculina, em idade compreendia entre 14 e 64 anos, na base do CadÚnico. A recomendação das políticas socioasssistenciais para que a inscrição seja feita preferencialmente por mulheres torna-se a prerrogativa principal para este quadro. A média geral é de 45% de homens e 55% de mulheres inscritas, em todo o período, nos municípios do Vale do Lítio.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(readxl)
+prop_mac_fem <- read_excel("prop_mac_fem.xlsx")
+
+# Calcular a população total
+df <- prop_mac_fem %>%
+  mutate(pop_total = masc + fem) %>% filter(ano==2022)
+
+# Calcular a proporção da população por gênero
+df <- df %>%
+  mutate(prop_masc = masc / pop_total,
+         prop_fem = fem / pop_total)
+
+# Reorganizar os dados no formato longo
+df_long <- df %>%
+  select(MUNICIPIO, prop_masc, prop_fem) %>%
+  pivot_longer(cols = c(prop_masc, prop_fem),
+               names_to = "Genero",
+               values_to = "Proporcao")
+
+# Criar o gráfico de barras empilhadas
+ggplot(df_long, aes(x = MUNICIPIO, y = Proporcao, fill = Genero)) +
+  geom_bar(stat = "identity", position = "stack") +
+  geom_text(aes(label = scales::percent(Proporcao, accuracy = 0.01)), position = position_stack(vjust = 0.5), color = "white", size = 3) + 
+  coord_flip() +  # Virar o gráfico para melhor visualização
+  theme_minimal() +
+  scale_fill_brewer(palette = "Dark2") +  # Escolha uma paleta da RColorBrewer
+  labs(title = "Proporção da população por sexo",
+       subtitle = "Municípios do Vale do Lítio - 2022",
+       x = "Município",
+       y = "Proporção (%)",
+       fill = "") +
+  theme(legend.position = "bottom")
 
 
 ```
