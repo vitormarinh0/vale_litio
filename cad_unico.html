@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.1.189">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
 </style>
@@ -59,7 +59,6 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
-  
     
   </div>
   
@@ -68,28 +67,43 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="o-que-os-dados-do-cadúnico-podem-revelar-sobre-o-a-população-em-idade-ativa-e-migração" class="level2">
 <h2 class="anchored" data-anchor-id="o-que-os-dados-do-cadúnico-podem-revelar-sobre-o-a-população-em-idade-ativa-e-migração">O que os dados do CadÚnico podem revelar sobre o a população em idade ativa e migração?</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>   CENSO_2022 X._POP_Cad_x_municipio_Censo_2022      Município    IBGE
+1       34297                              68.1        Araçuaí 3103405
+2       39626                              66.6      Capelinha 3112307
+3        8200                              82.3  Coronel Murta 3119500
+4       19151                              61.7        Itaobim 3133303
+5       13745                              73.1         Itinga 3134004
+6       17516                              52.7    Malacacheta 3139201
+7       20156                              67.9         Medina 3141405
+8       24405                              67.7    Minas Novas 3141801
+9       24410                              68.9     Pedra Azul 3148707
+10       5679                              78.4       Rubelita 3156502
+11      40178                              64.7        Salinas 3157005
+12     137418                              46.9  Teófilo Otoni 3168606
+13      20000                              63.1      Turmalina      NA
+14      11804                              79.1 Virgem da Lapa 3171600</code></pre>
+</div>
+</div>
 <section id="taxa-de-analfabetismo" class="level3">
 <h3 class="anchored" data-anchor-id="taxa-de-analfabetismo">Taxa de Analfabetismo</h3>
 <p>Para cálculo da taxa de analfabetismo da população inscrita no CadÚnico em idade ativa para o trabalho, considerou-se a faixa etária entre 15 e 64 anos. Observa-se que Minas Novas e Malacacheta acumulam o maior percentual de pessoas em idae para o trabalho na situação de analfabetismo. Os municípios de Araçuaí e Turmalina se posicionam no outor estremo, com as menores taxas de analfabetismo dentro do grupo analisado. Rubelita e Itinga apresentaram tendência de elevação da taxa nos últimos anos enquanto que Minas Novas revelou tendência de redução da taxa de analfabetismo. Os percentuais anuais no total do grupo variam entre 8,93 (2022) e 18,44 em 2014 quando os municípios tiveram a maior taxa.</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.2.3</code></pre>
+
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'reshape2' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output-display">
-<p><img src="cad_unico_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
-</div>
+<div class="cell">
+
 </div>
 </section>
 <section id="taxa-de-escolarização" class="level3">
 <h3 class="anchored" data-anchor-id="taxa-de-escolarização">Taxa de Escolarização</h3>
 <p>A taxa de escolarização representa o percentual de indivíduos com idade acima de 25 anos que concluiu a educação básica, ou seja, o ensino médio. Tems-e assima a média geral de estudo do grupo em foco. No grupo analisado, a média geral de todo o período é de 27%, sendo que Coronel Murta tem a melhor média no perído (43,18%) e Minas Novas a menor média (20,01%) da populção em idade ativa em situação de vulnerabilidade. Os dados mostram que a taxa de escolarização vem crescendo entre os anos 2012 e 2022. No último ano, Turmalina se destaca com 42,14% do segmento populacional com idade acima de 25 que possui o ensino médio completo, seguido de Teófilo Otoni e Turmalina.</p>
 <div class="cell">
-<div class="cell-output-display">
-<p><img src="cad_unico_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+
 </div>
+<div class="cell">
+
 </div>
 </section>
 <section id="população-em-idade-ativa" class="level3">
@@ -97,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Os dados referentes à condição de vínculo empregatício se referem à população inscrita no CadÚnico que declarou ter trabalhado na semana anterior à inscrição ou atualização, no ano referência, com fechamento da base em dezembro do referido ano. Observa-se a predominância de trabalho na condição de autônomo ou sem vínculo contratual em todos os municípios e em todo o período apurado. Vê-se também a tendência de aumento do percentual de pessoas que prestaram algum serviço na condição de aprendiz, estagiário ou sem remuneração. Os municípios Rubelita, Itinga e Malacaheta apresentam maior percentual de pessoas que trabalharam sem qualquer típo de vínculo empregatício no período analisado. Araçuaí, Trumalina, Teófilo Otoni e Virgem da Lapa são os municípios com maior percentual de trabalhadores autônomos ou remunerados sem contrato de trabalho. Coornel Murta e Virgem da Lapa possuem o maior percentual de indivíduos no serviço militar ou empregador, inscritos no CadÚnico nos últimos três anos analisados. Entre 2012 e 2018, Itinga foi o município com maior percentual de indivíduos na condição de aprendiz, estagiário ou que trabalharam e não tiveram remuneração e Medina nos três últimos anos analisados. Os dados de 2022 não se encontravam disponíveis na base acessada.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="cad_unico_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<p><img src="cad_unico_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -105,8 +119,15 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="saldo-migratorio-anual">Saldo Migratorio Anual</h3>
 <p>Com base nos dados do Cadastro único, apurou-se o saldo migratório e a taxa líquida de migração do período entre 2012-2022 dos municípios do Projeto Lítio. O grupo alvo foi a população em idade ativa (14 a 64 anos). A definição de migrante baseou-se no município de última residência no ano anterior, sendo, portanto, uma análise de período. O saldo migratório se refere à diferença entre a quantidade de pessoas que entraram no município e a quantidade de pessoas que saíram do município, entre os indivíduos que permaneceram inscritos na base. A taxa líquida de migração mostra o percentual do saldo em relação à população com idade entre 14 e 64 anos, no ano limite, já tendo sido consideradas as saídas no intervalo (mortalidade, saída da base e mudança para outro estado/país). Nos municípios do Vale do Lítio predomina o saldo migratório negativo ou próximo de zero, o que significa que não há retenção da população com idade ativa para o trabalho em situação de vulnerabilidade financeira.</p>
 <div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
 <div class="cell-output-display">
-<p><img src="cad_unico_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<p><img src="cad_unico_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -116,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 <p>A migração é o componente imediato de resposta a condicionantes ou choques na população. Pelos dados observados, isto não aconteceu nos municípios, mantendo-se a tendência de evasão. Rubelita, Salinas e Turmalina apresentaram taxa líquida positiva entre 2021/2022, porém com saldo líquido pouco expressivo em relação ao grupo populacional analisado. Capelinha vem mantendo a taxa líquida de migração positiva, porém com saldo migratório também pouco expressivo. Pedra Azul apresentou sinais de reversão do cenário negativo de contribuição no crescimento populacional pela migração somente entre 2021/2022. Teófilo Otoni que é o maior município em termos populacionais do grupo do Vale do Lítio apresentou taxas oscilatórios no período o que revela a baixa capacidade de retenção, caracterizando-se como um município de passagem.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="cad_unico_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<p><img src="cad_unico_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -150,23 +171,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -178,24 +185,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
     setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -231,128 +221,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
       });
-    }
+      return popup.innerHTML;
+    });
   }
 });
 </script>

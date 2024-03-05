@@ -122,129 +122,48 @@ df_long <- df %>%
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
-colors <- c("#084d8c", "#e07a10", "#296111")
+colors <- c("#296111","#084d8c", "#e07a10" )
 
 # Gráfico de barras horizontais
 ggplot(df_long, aes(x = Valor, y = Nome_do_municipio, fill = Taxa_de_Crescimento)) +
   geom_bar(stat = "identity") +
-  scale_fill_manual(values = colors) +  # Define as cores manualmente
-  geom_text(aes(label = sprintf("%.2f", Valor)), hjust = -0.2, size = 2.5, color = "white") +  # Formata os valores para dois dígitos
+  scale_fill_manual(values = colors, name = "Tipo de Crescimento", 
+                    labels = c("Rural", "Total", "Urbana")) +  # Define as cores manualmente
+  geom_text(aes(label = sprintf("%.1f", Valor)), hjust = -0.2, size = 2.5, color = "black") +  # Formata os valores para dois dígitos
   labs(title = "Taxa de Crescimento Total, Urbana e Rural",
        subtitle = "Municípios do Vale do Lítio - 2000 e 2010",
        x = "Taxa de Crescimento (%)",
        y = "Nome do Município",
        fill = "Tipo de Crescimento") +
   theme(legend.position = "top",  # Posiciona a legenda no topo
-        legend.title = element_blank())
+        legend.title = element_blank())+
+  theme_minimal()
 ```
 
 Fonte: IBGE/Censo Demográficos 2000-2010. Elaboração: FJP/Diretoria de Estatística e Informações
-
-<!-- #Os dados oferecem uma visão detalhada da distribuição de sexo nos municípios selecionados, destacando variações nas proporções de homens e mulheres. Ao observar as proporções, é possível identificar uma diversidade demográfica interessante, onde alguns municípios, como Coronel Murta e Rubelita, exibem uma quase igualdade entre os sexos, enquanto outros, como Teófilo Otoni, apresentam uma discrepância mais acentuada, com uma proporção maior de mulheres. Essas diferenças podem ser influenciadas por uma variedade de fatores, como características socioeconômicas, padrões migratórios e políticas locais. A compreensão dessas disparidades é crucial para o desenvolvimento de políticas públicas que atendam às necessidades específicas de cada comunidade, promovendo a equidade de gênero e o bem-estar social. -->
-
-<!-- # ```{r, echo=FALSE, warning=FALSE, message=FALSE} -->
-
-<!-- #  -->
-
-<!-- # library(ggplot2) -->
-
-<!-- # library(dplyr) -->
-
-<!-- # library(tidyr) -->
-
-<!-- #  -->
-
-<!-- # # Dados -->
-
-<!-- # dados <- data.frame( -->
-
-<!-- #   Municipio = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa"), -->
-
-<!-- #   Homens = c(17854, 17144, 4657, 10491, 7352, 9169, 10477, 15360, 11749, 4000, 19270, 64447, 9161, 6757), -->
-
-<!-- #   Mulheres = c(18187, 17652, 4460, 10510, 7055, 9618, 10560, 15443, 12094, 3777, 19912, 70286, 8885, 6868) -->
-
-<!-- # ) -->
-
-<!-- #  -->
-
-<!-- # # Calcular a proporção -->
-
-<!-- # dados_proporcao <- dados %>% -->
-
-<!-- #   mutate(Total = Homens + Mulheres) %>% -->
-
-<!-- #   mutate(Homem = Homens / Total, -->
-
-<!-- #          Mulher = Mulheres / Total) -->
-
-<!-- #  -->
-
-<!-- # # Transformar os dados para o formato longo -->
-
-<!-- # dados_proporcao_long <- dados_proporcao %>% -->
-
-<!-- #   pivot_longer(cols = c(Homem, Mulher), names_to = "Genero", values_to = "Proporcao") -->
-
-<!-- #  -->
-
-<!-- # # Criar gráfico de barras empilhadas com paleta de cores RColorBrewer -->
-
-<!-- # ggplot(dados_proporcao_long, aes(x = Municipio, y = Proporcao, fill = Genero)) + -->
-
-<!-- #   geom_bar(stat = "identity", position = "stack") + -->
-
-<!-- #   geom_text(aes(label = scales::percent(Proporcao, accuracy = 0.01)), position = position_stack(vjust = 0.5), color = "white", size = 3) + # Adiciona os valores das proporções nas barras com duas casas decimais -->
-
-<!-- #   coord_flip() +  # Virar o gráfico para melhor visualização -->
-
-<!-- #   theme_minimal() + -->
-
-<!-- #   scale_fill_brewer(palette = "Dark2") +  # Escolha uma paleta da RColorBrewer -->
-
-<!-- #   labs(title = "Proporção da população por sexo", -->
-
-<!-- #     subtitle = "Municípios do Vale do Lítio - 2022", -->
-
-<!-- #     x = "Município",  -->
-
-<!-- #     y = "Proporção (%)",  -->
-
-<!-- #     fill = "") + -->
-
-<!-- #   theme(legend.position = "bottom") -->
-
-<!-- #  -->
-
-<!-- #  -->
-
-<!-- # ``` -->
-
-<!-- Fonte: IBGE/Censo Demográfico 2022. Elaboração: FJP/Diretoria de Estatística e Informações -->
 
 Em 2010, todos os municípios do microterritório apresentaram saldos líquidos migratórios negativos, ou seja, mais pessoas saíram desses municípios do que entraram. O somatório desses saldos negativos representou um contingente de -53,9 mil pessoas na região, um número maior do que a população de cada um de seus municípios, com exceção de Teófilo Otoni. Todos os municípios apresentam saldos líquidos migratórios negativos tanto em relação aos outros municípios do estado, fora das Regiões Geográficas Intermediárias (RGInt) a que pertencem, quanto em relação aos municípios de fora do estado (com exceção de Itaobim, que possui um saldo positivo interestadual de 38 migrantes).Os municípios do Vale do Lítio, que estão na RGInt de Teófilo Otoni, possuem saldos positivos em relação aos municípios do próprio Vale do Lítio, principalmente devido ao saldo positivo do município de Teófilo Otoni, que exerce uma grande atração sobre os outros municípios da região. No entanto, essa atração não se sustenta, uma vez que o município atua como expulsor de população, com um saldo líquido migratório de -3,6 mil pessoas para os municípios de outras regiões de Minas Gerais, bem como para os de outros estados. Essa dinâmica se repete em todos os outros municípios com saldos positivos em relação à RGInt de Teófilo Otoni (Araçuaí, Capelinha, Turmalina e Virgem da Lapa). No caso da RGInt de Montes Claros, Rubelita apresenta saldos negativos em relação aos outros municípios dessa região, enquanto Salinas registra saldos positivos. Em ambos os casos, os saldos líquidos migratórios negativos são expressivos, principalmente em relação aos municípios de outros estados. Conclui-se que todos os municípios do Vale do Lítio que atraem migrantes das próprias RGInt desempenham um papel de etapa migratória, pois recebem correntes migratórias de municípios que estão expulsando população de forma acentuada.
 
 ## Municípios do Vale do Lítio: Movimentos Migratórios em relação à data de referência de 31/07/2005 - Total e Saldo
 
-| Municípios     | Imigrantes (1) |                  |                          | Emigrantes (2) |                  |                          | Saldo Migratório |                      |                      |
-|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-|                | Total          | Municípios de MG | Municípios de Outras UFs | Total          | Municípios de MG | Municípios de Outras UFs | Total            | Saldo Intra-estadual | Saldo Inter estadual |
-| Araçuaí        | 1.312          | 897              | 546                      | 351            | 415              | 2.866                    | 1.348            | 417                  | 931                  |
-| Capelinha      | 2.340          | 2013             | 1.188                    | 825            | 327              | 3.561                    | 2.853            | 651                  | 2202                 |
-| Coronel Murta  | 265            | 210              | 67                       | 143            | 55               | 929                      | 586              | 151                  | 435                  |
-| Itaobim        | 1.079          | 647              | 409                      | 238            | 432              | 1.642                    | 1.248            | 599                  | 649                  |
-| Itinga         | 522            | 307              | 206                      | 101            | 215              | 1.332                    | 680              | 206                  | 474                  |
-| Malacacheta    | 744            | 368              | 268                      | 100            | 376              | 2.882                    | 1.767            | 503                  | 1264                 |
-| Medina         | 796            | 523              | 226                      | 297            | 273              | 2.495                    | 1.364            | 387                  | 977                  |
-| Minas Novas    | 765            | 572              | 433                      | 139            | 193              | 4.049                    | 1.644            | 776                  | 868                  |
-| Pedra Azul     | 540            | 354              | 181                      | 173            | 186              | 2.755                    | 2.020            | 461                  | 1559                 |
-| Rubelita       | 235            | 147              | 92                       | 55             | 88               | 952                      | 698              | 638                  | 60                   |
-| Salinas        | 2.252          | 1728             | 1.243                    | 485            | 524              | 4.322                    | 2.150            | 768                  | 1382                 |
-| Teófilo Otoni  | 7.107          | 5266             | 3.461                    | 1805           | 1.841            | 10.688                   | 6.368            | 1.953                | 4415                 |
-| Turmalina      | 1.076          | 851              | 563                      | 288            | 225              | 1.171                    | 839              | 357                  | 482                  |
-| Virgem da Lapa | 668            | 412              | 252                      | 160            | 256              | 1.299                    | 480              | 212                  | 268                  |
-| Vale do Lítio  | 58.868         | 39881            | 24.034                   | 15847          | 18.987           | 112.740                  | 72.157           | 24.034               | 48123                |
-| Minas Gerais   | 1.326.235      | 944.419          |                          | 381.816        | 1.328.658        | 944.419                  |                  | 384.239              | -2.423               |
+#### Imigrantes:  pessoas moravam nos municípios selecionados e que, na data de referência não moravam
+```{r}
+#imigrantes
+# Criar o dataframe com os dados fornecidos
+imigrantes <- data.frame(
+  ibge7 = c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600, NA, NA),
+  municipio = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Vale do Lítio", "Minas Gerais"),
+  total = c(1312, 2340, 265, 1079, 522, 744, 796, 765, 540, 235, 2252, 7107, 1076, 668, 58868, 1326235),
+  total_mg = c(897, 2013, 210, 647, 307, 368, 523, 572, 354, 147, 1728, 5266, 851, 412, 39881, 944419),
+  imig_rgint = c(546, 1188, 67, 409, 206, 268, 226, 433, 181, 92, 1243, 3461, 563, 252, 24034, NA),
+  imig_out_mg = c(351, 825, 143, 238, 101, 100, 297, 139, 173, 55, 485, 1805, 288, 160, 15847, NA),
+  imig_resto_br = c(415, 327, 55, 432, 215, 376, 273, 193, 186, 88, 524, 1841, 225, 256, 18987, 381816)
+)
+
+# Exibir o dataframe
+imigrantes %>% gt
+
+```
 
 Como demonstrado acima, os resultados do Censo Demográfico de 2022 sugerem que todos os processos migratórios observados para o ano de 2010 foram potencializados, resultando no generalizado esvaziamento populacional já mencionado. Evidentemente, todos esses processos resultam em uma reestruturação interna, principalmente no que diz respeito à estrutura etária da população, o que terá implicações em diversos aspectos socioeconômicos e, consequentemente, na redefinição de políticas públicas.
 
