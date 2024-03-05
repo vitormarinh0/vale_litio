@@ -190,11 +190,6 @@ Fonte: INEP. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 Quando se analisa o grau acadêmico, a maioria oferta é de cursos tecnológicos e, a depender do município, a licenciatura vem em segundo lugar. Além disso, embora as informações sobre os cursos sejam precárias em termos do quantitativo de matriculas, percebe-se que apenas em um município há oferta de curso de engenharia, no caso, a engenharia civil.
 
-Outros cursos ofertados incluem: pedagogia, direito, administração, ciências contábeis, educação física, serviço social, matemática, interdiciplinar em ciência e tecnologia, pscicologia, enfermagem, ciências biológicas, fisioterapia e farmácia, entre outros.Não é difícil perceber que a adequação da formação de capital humano para as possíveis atividades no Vale do Lítio necessita de uma atenção especial, seja por meio do suporte de universidades públicas estaduais ou privadas.  
-#matemática, física, química, ciências contábeis, engenharia de alimentos, administração (presencial e à distância), administração pública, artes visuais, pedagogia, educação física, artes, análise e desenvolvimento de sistemas, engenharia agrícola e ambiental,pedagogia, história, direito, letras e gestão ambiental. 
-
-
-
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
 library(RColorBrewer)
@@ -255,7 +250,8 @@ ggplot(tipos_vale_2021, aes(x = Municipio, fill = tipo_grau_academico)) +
 
 Fonte: INEP. Elaboração: FJP/Diretoria de Estatística e Informações.
 
-## Quantidade de Cursos e Vagas Ofertadas
+Outros cursos ofertados incluem: pedagogia, direito, administração, ciências contábeis, educação física, serviço social, matemática, interdiciplinar em ciência e tecnologia, pscicologia, enfermagem, ciências biológicas, fisioterapia e farmácia, entre outros.Não é difícil perceber que a adequação da formação de capital humano para as possíveis atividades no Vale do Lítio necessita de uma atenção especial, seja por meio do suporte de universidades públicas estaduais ou privadas.\
+#matemática, física, química, ciências contábeis, engenharia de alimentos, administração (presencial e à distância), administração pública, artes visuais, pedagogia, educação física, artes, análise e desenvolvimento de sistemas, engenharia agrícola e ambiental,pedagogia, história, direito, letras e gestão ambiental.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 municipios_vale <- c(
@@ -320,11 +316,10 @@ top_5_cursos_por_municipio %>%
 
 
 ```
-Fonte: INEP. Elaboração: FJP/Diretoria de Estatística e Informações.
 
+Fonte: INEP. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ```{r, include=FALSE}
 top_5_cursos_por_municipio %>% group_by(nome_curso) %>% 
   summarise(total = sum(total_inscritos)) %>% arrange(desc(total)) %>%  gt()
 ```
-
