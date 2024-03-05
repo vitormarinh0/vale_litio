@@ -64,7 +64,7 @@ mapa <- leaflet() %>%
               stroke = TRUE,
               weight = 1) %>%
   addPolygons(data = dados_sf_filtrados,
-              fillColor = "red",  # Cor dos polígonos
+              fillColor = "#56ac85",  # Cor dos polígonos
               fillOpacity = 0.4,
               color = "black",
               stroke = TRUE,
