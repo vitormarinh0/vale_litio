@@ -110,7 +110,7 @@ df <- data.frame(
   Tx_cresc_total = c(0.091465916, 1.086775428, -0.018627386, -0.12766431, 0.363229157, -0.243163073, -0.282668453, 0.051112455, 0.099099427, -2.674767312, 0.65106922, 0.402821212, 1.431486009, -0.034430124),
   Tx_cresc_urbana = c(1.364187441, 2.119736324, 0.328586304, -0.186301588, 1.338527461, 0.79639783, 0.414456913, 4.998869616, 0.44255029, -0.019851123, 1.573417026, 0.683470148, 2.428755062, 1.521592623),
   Tx_cresc_rural = c(-1.883449123, -1.049551393, -0.913587185, 0.051851896, -0.377866564, -1.775126879, -1.847433544, -2.270817169, -2.097472014, -3.709815378, -2.078243178, -0.753270432, -0.682780443, -1.373411452)
-)
+) 
 
 # Transform data
 df_long <- df %>%
@@ -146,22 +146,37 @@ Em 2010, todos os municípios do microterritório apresentaram saldos líquidos 
 
 ## Municípios do Vale do Lítio: Movimentos Migratórios em relação à data de referência de 31/07/2005 - Total e Saldo
 
-#### Imigrantes:  pessoas moravam nos municípios selecionados e que, na data de referência não moravam
+#### Imigrantes: pessoas moravam nos municípios selecionados e que, na data de referência não moravam
+
 ```{r}
+library(tidyverse)
+library(gt)
 #imigrantes
 # Criar o dataframe com os dados fornecidos
 imigrantes <- data.frame(
-  ibge7 = c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600, NA, NA),
-  municipio = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Vale do Lítio", "Minas Gerais"),
+  ibge7 = c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600, 31, 31),
+  Municipio = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Vale do Lítio", "Minas Gerais"),
   total = c(1312, 2340, 265, 1079, 522, 744, 796, 765, 540, 235, 2252, 7107, 1076, 668, 58868, 1326235),
   total_mg = c(897, 2013, 210, 647, 307, 368, 523, 572, 354, 147, 1728, 5266, 851, 412, 39881, 944419),
   imig_rgint = c(546, 1188, 67, 409, 206, 268, 226, 433, 181, 92, 1243, 3461, 563, 252, 24034, NA),
   imig_out_mg = c(351, 825, 143, 238, 101, 100, 297, 139, 173, 55, 485, 1805, 288, 160, 15847, NA),
   imig_resto_br = c(415, 327, 55, 432, 215, 376, 273, 193, 186, 88, 524, 1841, 225, 256, 18987, 381816)
-)
+) %>% 
+  mutate(Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4",
+    Municipio == "Vale do Lítio" | Municipio == "Minas Gerais" ~ "Totais"
+    )
+  ) %>% arrange(Grupo)
 
 # Exibir o dataframe
-imigrantes %>% gt %>%
+imigrantes %>% select(-ibge7) %>% 
+  mutate(Grupo = factor(Grupo, levels = c("Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Totais"))) %>%
+  group_by(Grupo) %>%   gt %>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = md("Region and <br />IAP Type")) %>%
   tab_style(
@@ -183,8 +198,16 @@ imigrantes %>% gt %>%
   ) %>% 
   tab_style(
     style = cell_fill(color = 'grey90'),
-    locations = cells_body(rows = seq(1, nrow(tabela02), 2))
-  )
+    locations = cells_body(rows = seq(1, nrow(imigrantes), 2))
+  ) %>%
+  cols_label(
+    Municipio = ' Municipio',
+    total = 'Total',
+    total_mg= 'Total Imigrantes de MG',
+    imig_rgint = "Imigrantes da RGINT",
+    imig_out_mg = 'Imigrantes Outros Municipios de MG', 
+    imig_resto_br = 'Imigrantes do Resto do Brasil' 
+  )  
 
 ```
 
@@ -192,29 +215,45 @@ imigrantes %>% gt %>%
 
 ```{r}
 # Criando os vetores com os dados
-ibge7 <- c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600, NA, NA)
-municipio <- c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Vale do Lítio", "Minas Gerais")
+ibge7 <- c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600, 31, 31)
+Municipio <- c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Vale do Lítio", "Minas Gerais")
 total <- c(2866, 3561, 929, 1642, 1332, 2882, 2495, 4049, 2755, 952, 4322, 10688, 1171, 1299, 112740, 1328658)
 total_mg <- c(1348, 2853, 586, 1248, 680, 1767, 1364, 1644, 2020, 698, 2150, 6368, 839, 480, 72157, 944419)
 emigrante_rgint <- c(417, 651, 151, 599, 206, 503, 387, 776, 461, 638, 768, 1953, 357, 212, 24034, NA)
 emigrante_out_mg <- c(931, 2202, 435, 649, 474, 1264, 977, 868, 1559, 60, 1382, 4415, 482, 268, 48123, NA)
-emigrante_resto_br <- c(1518, 708, 343, 394, 652, 1115, 1131, 2405, 735, 254, 2172, 4320, 332, 819, 40583, 384239)
+emigrante_resto_br <- c(1518, 708, 343, 394, 652, 1115, 1131, 2405, 735, 254, 2172, 4320, 332, 819, 40583, 384239) 
 
 # Criando o dataframe
-emigrantes <- data.frame(ibge7, municipio, total, total_mg, emigrante_rgint, emigrante_out_mg, emigrante_resto_br)
+emigrantes <- data.frame(ibge7, Municipio, total, total_mg, emigrante_rgint, 
+                         emigrante_out_mg, emigrante_resto_br) %>% 
+  mutate(Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4",
+    Municipio == "Vale do Lítio" | Municipio == "Minas Gerais" ~ "Totais"
+    )
+  ) %>% arrange(Grupo)
 
-emigrantes %>% gt %>%
+emigrantes %>% select(-ibge7) %>% 
+  mutate(Grupo = factor(Grupo, levels = c("Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Totais"))) %>%
+  group_by(Grupo) %>%   
+  gt() %>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = md("Region and <br />IAP Type")) %>%
   tab_style(
     style = cell_text(size = "smaller"),
     locations = cells_body()
-  )  %>% #rótulo
+  ) %>% 
   opt_table_font(font = google_font(name = "Karla")) %>% 
-  tab_options(data_row.padding = px(6),
-              heading.align = 'left',
-              column_labels.background.color = 'dodgerblue4',
-              heading.title.font.size = px(20)) %>% 
+  tab_options(
+    data_row.padding = px(6),
+    heading.align = 'left',
+    column_labels.background.color = 'dodgerblue4',
+    heading.title.font.size = px(20)
+  ) %>% 
   tab_style(
     style = cell_text(
       color = 'dodgerblue4', 
@@ -225,14 +264,24 @@ emigrantes %>% gt %>%
   ) %>% 
   tab_style(
     style = cell_fill(color = 'grey90'),
-    locations = cells_body(rows = seq(1, nrow(tabela02), 2))
-  )
+    locations = cells_body(rows = seq(1, nrow(emigrantes), 2))
+  ) %>%
+  cols_label(
+    Municipio = 'Municipio',
+    total = 'Total',
+    total_mg = 'Total Emigrantes de MG',
+    emigrante_rgint = 'Emigrantes da RGINT',
+    emigrante_out_mg = 'Emigrantes Outros Municipios de MG', 
+    emigrante_resto_br = 'Emigrantes do Resto do Brasil' 
+  )  
+
 ```
 
 #### Saldo Migratório
+
 ```{r}
 # Criando os vetores com os dados
-ibge7 <- c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600, NA, NA)
+ibge7 <- c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600, 31, 31)
 municipio <- c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Vale do Lítio", "Minas Gerais")
 total <- c(-1554, -1221, -664, -563, -810, -2138, -1699, -3284, -2215, -717, -2070, -3581, -95, -631, -53872, -2423)
 total_mg <- c(-451, -840, -376, -601, -373, -1399, -841, -1072, -1666, -551, -422, -1102, 12, -68, -32276, NA)
@@ -241,10 +290,24 @@ saldo_migratori_out_mg <- c(-580, -1377, -292, -411, -373, -1164, -680, -729, -1
 saldo_migratori_resto_br <- c(-1103, -381, -288, 38, -437, -739, -858, -2212, -549, -166, -1648, -2479, -107, -563, -21596, NA)
 
 # Criando o dataframe
-df_saldo <- data.frame(ibge7, municipio, total, total_mg, saldo_migratorio_rgint, saldo_migratori_out_mg, saldo_migratori_resto_br)
+df_saldo <- data.frame(ibge7, municipio, total, total_mg, saldo_migratorio_rgint, saldo_migratori_out_mg,
+                       saldo_migratori_resto_br) %>% 
+  mutate(Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4",
+    Municipio == "Vale do Lítio" | Municipio == "Minas Gerais" ~ "Totais"
+    )
+  ) %>% arrange(Grupo)
 
 # Mostrando o dataframe
-df_saldo %>% gt %>%
+df_saldo %>% select(-ibge7) %>% 
+  mutate(Grupo = factor(Grupo, levels = c("Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Totais"))) %>%
+  group_by(Grupo) %>%   
+  gt()  %>%
   opt_align_table_header(align = "left") %>%
   tab_stubhead(label = md("Region and <br />IAP Type")) %>%
   tab_style(
@@ -266,11 +329,18 @@ df_saldo %>% gt %>%
   ) %>% 
   tab_style(
     style = cell_fill(color = 'grey90'),
-    locations = cells_body(rows = seq(1, nrow(tabela02), 2))
-  )
+    locations = cells_body(rows = seq(1, nrow(df_saldo), 2))
+  ) %>%
+  cols_label(
+    municipio = 'Municipio',
+    total = 'Total',
+    total_mg = 'Saldo Total de MG',
+    saldo_migratorio_rgint = 'Saldo Migratório da RGINT',
+    saldo_migratori_out_mg = 'Saldo Migratório Outros Municipios de MG', 
+    saldo_migratori_resto_br = 'Saldo Migratório do Resto do Brasil'  # Adicionada vírgula aqui
+  )  
 
 ```
-
 
 Como demonstrado acima, os resultados do Censo Demográfico de 2022 sugerem que todos os processos migratórios observados para o ano de 2010 foram potencializados, resultando no generalizado esvaziamento populacional já mencionado. Evidentemente, todos esses processos resultam em uma reestruturação interna, principalmente no que diz respeito à estrutura etária da população, o que terá implicações em diversos aspectos socioeconômicos e, consequentemente, na redefinição de políticas públicas.
 
@@ -320,7 +390,7 @@ cores <- brewer.pal(4, "Set2")
 g1 <- ggplot(data_long[data_long$Município == "Vale do Lítio" & grepl("0a14|65mais", data_long$variable), ],
              aes(y = variable, x = value, fill = variable)) +
   geom_bar(stat = "identity", position = position_dodge(), orientation = "y") +
-  geom_text(aes(label = sprintf("%.1f%%", value)), position = position_dodge(width = 0.5), vjust = 0.5, hjust = 3, size = 4) +
+  geom_text(aes(label = sprintf("%.1f%%", value)), position = position_dodge(width = 0.5), vjust = 0.5, hjust = 3, linewidth = 4) +
   scale_fill_manual(values = cores) +
   labs(title = "Composição Etária do Vale do Lítio", x = "Percentual da População", y = "") +
   theme_minimal()
@@ -332,17 +402,27 @@ g1
 
 O grafico acima indica ainda que, no Vale do Lítio, a proporção da população com 65 anos ou mais aumentou de 8,8% em 2010 para 12,7% em 2022, enquanto a parcela da população entre 0 e 14 anos diminuiu de 25,6% para 19,0% no mesmo período. Esse cenário teve um impacto direto na razão de dependência, que declinou de 52,4% para 46,5% ao longo desses anos. Em 2022, o município com a maior proporção de crianças de 0 a 14 anos foi Capelinha, com 21,0%, e o município com a menor proporção foi Rubelita, com 17,2%. Quanto às pessoas com 65 anos ou mais, a maior proporção foi observada em Rubelita, com 17,5%, e a menor em Capelinha, com 8,7%. Esses mesmos municípios apresentam a menor e a maior razão de dependência, respectivamente: Capelinha com 42,3% e Rubelita com 53,2%.
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-# Gráfico de linha para a Razão de Dependência no Vale do Lítio
+```{r, warning=FALSE}
+library(ggplot2)
+library(RColorBrewer)
+
+# Definindo um conjunto de cores
+cores <- brewer.pal(4, "Set2")
+
 g2 <- ggplot(data_long[data_long$Município == "Vale do Lítio" & grepl("RazaoDependencia", data_long$variable), ],
-             aes(x = variable, y = value, group = 1)) +
-  geom_line(aes(color = variable)) +
-  geom_point(aes(color = variable)) +
-  geom_text(aes(label = sprintf("%.1f%%", value)), vjust = -0.5) +
+             aes(x = gsub("Ano", "", variable), y = value, group = 1)) +
+  geom_line(aes(color = variable), linetype = "dotted", linewidth = .8, color = "#3366FF") + # linha pontilhada com cor definida
+  geom_point(aes(color = variable), linewidth = 3) +
+  geom_text(aes(label = sprintf("%.1f%%", value), color = variable), vjust = 1.5, check_overlap = TRUE) +
   scale_color_manual(values = cores) +
   labs(title = "Razão de Dependência no Vale do Lítio", x = "", y = "Razão de Dependência (%)") +
-  theme_minimal()
+  theme_minimal() +
+  theme(legend.position = "none") 
+
 g2
+
+
+
 ```
 
 ### Conclusão
