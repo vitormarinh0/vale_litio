@@ -146,7 +146,8 @@ Em 2010, todos os municípios do microterritório apresentaram saldos líquidos 
 
 ## Municípios do Vale do Lítio: Movimentos Migratórios em relação à data de referência de 31/07/2005 - Total e Saldo
 
-#### Imigrantes:  pessoas moravam nos municípios selecionados e que, na data de referência não moravam
+#### Imigrantes: pessoas moravam nos municípios selecionados e que, na data de referência não moravam
+
 ```{r}
 #imigrantes
 # Criar o dataframe com os dados fornecidos

@@ -2,8 +2,8 @@
 title: "Produção e emprego"
 editor: visual
 authors: 
-- Caio Gonçalves 
 - Vitor Marinho
+- Caio Gonçalves 
 - Cláudio Shikida
 ---
 

@@ -11,18 +11,18 @@ Sys.setlocale("LC_ALL", "en_US.UTF-8")
 
 ```
 
+\[Em edição\]
+
 ## Quais os fluxos migratórios observados especificamente em Araçuaí?
 
-\[Em elaboração - autores\]
-
-## Estrutura demográfica
+### Estrutura demográfica
 
 A estrutura demográfica de uma população e a sua taxa de crescimento revelam a sua tendência demográfica. A pirâmide populacional de Araçuaí apresenta a base reduzida, com predominância da fase jovem adulta. Isto indica uma baixa taxa de natalidade e o boom da força de trabalho nos próximos anos em função da concentração nas faixas etárias entre 10 a 19 anos. O pequeno alargamento da 'cintura' da pirâmide reitera a tendência de redução das taxas de fecundidade de forma mais breve, na geração seguinte.
 
 ```{r}
 
 dados <- data.frame(
-  Idade = c('0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39',
+  Idade = c('00-04', '05-09', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39',
             '40-44', '45-49', '50-54', '55-59', '60-64', '65-69', '70-74', 
             '80-84', '85-89', '90-94', '95-99', '100+'),
   Masculino = c(5.5, 6.2, 7.5, 7.7, 7.4, 6.9, 7.1, 7.5, 7.8, 6.8, 6.7, 6.0, 5.2, 3.7, 3.2, 2.1, 1.4, 0.9, 0.4, 0.2),
@@ -50,3 +50,51 @@ g <- ggplot(dados) +
 ggplotly(g)
 
 ```
+
+### Imigração
+
+Em 2010, a população de Araçuaí era de 36.013. Para 18,8% dessa população (6.783 pessoas), residir no município é resultado de alguma experiência migratória, inclusive para 1.736 pessoas naturais do próprio município que no passado residiram em algum outro município e retornaram ao município de origem. Entre os não naturais do município (5.047 pessoas), 67,9% (3.428 pessoas) são naturais da própria Unidade da Federação (MG) e vieram de outros municípios do Estado; 24,9% (1.258 pessoas) são naturais de outras UFs podendo ter vindo da própria UF ou de outros Estados; 6,7% (340 pessoas) são naturais da UF mas vieram de outros Estados; e 0,4% (21 pessoas) são estrangeiros (naturalizados ou não).
+
+Do total dos imigrantes do município (naturais ou não), 8,7% (3.137 pessoas) cumpriram o processo migratório entre os anos de 2000 e 2010 (Tabela 1). E para 53,8% desses migrantes (1.687 pessoas) o processo se deu nos últimos três anos dessa década. Durante a década, os imigrantes que tiveram como origem outros municípios de Minas Gerais representaram 57,7% (1810,63 pessoas), de outras UFs 42,0% (1.318 pessoas) e de outros países 0,3% (9 pessoas). Do total de imigrantes internacionais, 0 eram estrangeiros, 0 naturalizados e 9 eram brasileiros que foram para o exterior e voltaram (migração internacional de retorno). A Tabela 1 e a Figura 1 mostram os Principais municípios que forneceram imigrantes para Araçuaí.
+
+\[Tabela 1\]
+
+\[Figura 1\]
+
+As pessoas que moravam em Araçuaí na data de referência do censo de 2010, mas que declararam que moravam em outro município ou país no dia 31/07/2005, têm-se que formavam um contingente de imigrantes que representava um montante de 5,9% (2.122 pessoas) da população total do município (Tabela 2).
+
+\[Tabela 2\]
+
+Do total desses imigrantes dos últimos cinco anos, 34,7% (736) pessoas cumpriram alguma etapa migratória entre 2005/2010, antes de chegar a Araçuaí (Tabela 3). Os municípios que, em termos de volume, se destacam como destino da etapa migratória intermediária desses migrantes foram:
+
+\[Tabela 3\]
+
+### Emigração
+
+Em 2010, as pessoas que nasceram e/ou moraram em Araçuaí e residiam em outros municípios formavam um contingente de 5.767 pessoas. Desse total, 3.148 destinaram-se a municípios da própria UF. As outras 2.618 pessoas foram para municípios de outros Estados. A Tabela 4 e a Figura 2 mostram os principais municípios de destino dos emigrantes de Araçuaí na década de 2000.
+
+\[Tabela 4\]
+
+\[Figura 2\]
+
+Em 2010, as pessoas que nasceram e/ou moraram em Araçuaí e residiam em outros municípios formavam um contingente de 5.767 pessoas. Desse total, 3.148 destinaram-se a municípios da própria UF. As outras 2.618 pessoas foram para municípios de outros Estados. A Tabela 4 e a Figura 2 mostram os principais municípios de destino dos emigrantes de Araçuaí na década de 2000.
+
+\[Tabela 5\]
+
+Por outro lado, Araçuaí foi também, nos cinco anos anteriores ao censo de 2010, apenas uma etapa migratória intermediária para 944 pessoas que se locomoveram para outros municípios brasileiros (Tabela 6). 
+
+\[Tabela 6\]
+
+### Saldos líquidos migratórios
+
+A diferença em Araçuaí entre os imigrantes (aqueles que não moravam no município em 31/07/2005) e os emigrantes (aqueles que nos outros municípios do país responderam que em 31/07/2005 moravam em Araçuaí) representou um saldo de -1.499, sendo que valores positivos significam que o município recebeu mais migrantes do que expulsou e valores negativos que recebeu menos pessoas do que aquelas que foram expulsas.
+
+\[Tabela 7\]
+
+\[Figura 3\]
+
+\[Figura 4\]
+
+\[Tabela 8\]
+
+\[Figura 5\]
