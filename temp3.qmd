@@ -20,6 +20,7 @@ Sys.setlocale("LC_ALL", "en_US.UTF-8")
 A estrutura demográfica de uma população e a sua taxa de crescimento revelam a sua tendência demográfica. A pirâmide populacional de Araçuaí apresenta a base reduzida, com predominância da fase jovem adulta. Isto indica uma baixa taxa de natalidade e o boom da força de trabalho nos próximos anos em função da concentração nas faixas etárias entre 10 a 19 anos. O pequeno alargamento da 'cintura' da pirâmide reitera a tendência de redução das taxas de fecundidade de forma mais breve, na geração seguinte.
 
 ```{r}
+library(tidyverse)
 
 dados <- data.frame(
   Idade = c('00-04', '05-09', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39',
@@ -53,13 +54,40 @@ ggplotly(g)
 
 ### Imigração
 
+```{r}
+# Criando um vetor para cada coluna
+nome <- c("Belo Horizonte", "Salinas", "Teófilo Otoni", "Coronel Murta", "Jenipapo de Minas", "Centralina",
+          "Francisco Badaró", "Padre Paraíso", "Virgem da Lapa", "Viçosa", "São Paulo", "Rio de Janeiro",
+          "Não Computados", "Itaquaquecetuba", "Vitória", "Campos do Jordão", "Flórida Paulista", 
+          "Santo André", "Brasília", "Ilhabela")
+uf <- c("MG", "MG", "MG", "MG", "MG", "MG", "MG", "MG", "MG", "MG", "SP", "RJ", "DF", "SP", "ES", 
+        "SP", "SP", "SP", "DF", "SP")
+pessoas <- c(433, 173, 149, 102, 91, 88, 85, 83, 70, 69, 295, 123, 113, 63, 62, 46, 42, 41, 34, 30)
+
+# Criando o DataFrame
+imigracao <- data.frame(Nome = nome, UF = uf, Pessoas = pessoas)
+
+
+```
+
 Em 2010, a população de Araçuaí era de 36.013. Para 18,8% dessa população (6.783 pessoas), residir no município é resultado de alguma experiência migratória, inclusive para 1.736 pessoas naturais do próprio município que no passado residiram em algum outro município e retornaram ao município de origem. Entre os não naturais do município (5.047 pessoas), 67,9% (3.428 pessoas) são naturais da própria Unidade da Federação (MG) e vieram de outros municípios do Estado; 24,9% (1.258 pessoas) são naturais de outras UFs podendo ter vindo da própria UF ou de outros Estados; 6,7% (340 pessoas) são naturais da UF mas vieram de outros Estados; e 0,4% (21 pessoas) são estrangeiros (naturalizados ou não).
 
-Do total dos imigrantes do município (naturais ou não), 8,7% (3.137 pessoas) cumpriram o processo migratório entre os anos de 2000 e 2010 (Tabela 1). E para 53,8% desses migrantes (1.687 pessoas) o processo se deu nos últimos três anos dessa década. Durante a década, os imigrantes que tiveram como origem outros municípios de Minas Gerais representaram 57,7% (1810,63 pessoas), de outras UFs 42,0% (1.318 pessoas) e de outros países 0,3% (9 pessoas). Do total de imigrantes internacionais, 0 eram estrangeiros, 0 naturalizados e 9 eram brasileiros que foram para o exterior e voltaram (migração internacional de retorno). A Tabela 1 e a Figura 1 mostram os Principais municípios que forneceram imigrantes para Araçuaí.
+Do total dos imigrantes do município (naturais ou não), 8,7% (3.137 pessoas) cumpriram o processo migratório entre os anos de 2000 e 2010 (Tabela 1). E para 53,8% desses migrantes (1.687 pessoas) o processo se deu nos últimos três anos dessa década. Durante a década, os imigrantes que tiveram como origem outros municípios de Minas Gerais representaram 57,7% (1810,63 pessoas), de outras UFs 42,0% (1.318 pessoas) e de outros países 0,3% (9 pessoas). Do total de imigrantes internacionais, 0 eram estrangeiros, 0 naturalizados e 9 eram brasileiros que foram para o exterior e voltaram (migração internacional de retorno). A a Figura abaixo mostram os Principais municípios que forneceram imigrantes para Araçuaí.
 
-\[Tabela 1\]
+```{r}
+# Gráfico de barras
+ggplot(imigracao, aes(x = reorder(Nome, Pessoas), y = Pessoas, fill = Nome)) +
+  geom_col() +
+  geom_text(aes(label = Pessoas), vjust = -0.02, hjust = 0.97, size = 2.3, color = 'black') +
+  coord_flip() +
+  labs(title = "Principais municípios que forneceram imigrantes para Araçuaí",
+       x = "Cidade", y = "Número de Pessoas") +
+  theme_minimal() +
+  theme(legend.text = element_text(size = 3.5),  # Ajuste o tamanho do texto da legenda
+        legend.key.size = unit(.3, "cm"))       # Ajuste o tamanho do bloco de cor da legenda
 
-\[Figura 1\]
+
+```
 
 As pessoas que moravam em Araçuaí na data de referência do censo de 2010, mas que declararam que moravam em outro município ou país no dia 31/07/2005, têm-se que formavam um contingente de imigrantes que representava um montante de 5,9% (2.122 pessoas) da população total do município (Tabela 2).
 
@@ -71,11 +99,36 @@ Do total desses imigrantes dos últimos cinco anos, 34,7% (736) pessoas cumprira
 
 ### Emigração
 
+```{r}
+# Criar o dataframe com os dados fornecidos
+emigracao <- data.frame(
+  Nome = c("Belo Horizonte", "Contagem", "Caraí", "Teófilo Otoni", "Betim", "Jenipapo de Minas", "Vespasiano", "Itinga", "Montes Claros", "Padre Paraíso", "Pitangueiras", "São Paulo", "Brasília", "Araraquara", "Rio de Janeiro", "Guariba", "Pontal", "Elias Fausto", "Américo Brasiliense", "Olímpia"),
+  UF = c("MG", "MG", "MG", "MG", "MG", "MG", "MG", "MG", "MG", "MG", "SP", "SP", "DF", "SP", "RJ", "SP", "SP", "SP", "SP", "SP"),
+  Pessoas = c(829, 258, 198, 176, 132, 105, 104, 87, 79, 76, 488, 359, 156, 87, 79, 70, 70, 63, 58, 56)
+)
+
+
+```
+
 Em 2010, as pessoas que nasceram e/ou moraram em Araçuaí e residiam em outros municípios formavam um contingente de 5.767 pessoas. Desse total, 3.148 destinaram-se a municípios da própria UF. As outras 2.618 pessoas foram para municípios de outros Estados. A Tabela 4 e a Figura 2 mostram os principais municípios de destino dos emigrantes de Araçuaí na década de 2000.
 
 \[Tabela 4\]
 
 \[Figura 2\]
+
+```{r}
+# Gráfico de barras
+ggplot(emigracao, aes(x = reorder(Nome, Pessoas), y = Pessoas, fill = Nome)) +
+  geom_col() +
+  geom_text(aes(label = Pessoas), vjust = -0.02, hjust = 0.97, size = 2.3, color = 'black') +
+  coord_flip() +
+  labs(title = "Principais municípios de Destino dos eemigrantes de Araçuaí",
+       x = "Cidade", y = "Número de Pessoas") +
+  theme_minimal() +
+  theme(legend.text = element_text(size = 3.5),  # Ajuste o tamanho do texto da legenda
+        legend.key.size = unit(.3, "cm"))       # Ajuste o tamanho do bloco de cor da legenda
+
+```
 
 Em 2010, as pessoas que nasceram e/ou moraram em Araçuaí e residiam em outros municípios formavam um contingente de 5.767 pessoas. Desse total, 3.148 destinaram-se a municípios da própria UF. As outras 2.618 pessoas foram para municípios de outros Estados. A Tabela 4 e a Figura 2 mostram os principais municípios de destino dos emigrantes de Araçuaí na década de 2000.
 
@@ -91,10 +144,113 @@ A diferença em Araçuaí entre os imigrantes (aqueles que não moravam no munic
 
 \[Tabela 7\]
 
+```{r}
+# Criar o dataframe com os dados fornecidos
+tx_mig_postiva <- data.frame(
+  Nome = c("Centralina", "Coronel Murta", "Salinas", "Padre Paraíso", "Viçosa", "Itaobim", "Almenara", "Jequitinhonha", "Francisco Badaró", "Teófilo Otoni", "Santo André", "Não Computados", "Campos do Jordão", "Vitória", "Valparaíso", "Itaquaquecetuba", "Mauá", "Bauru", "São Bernardo do Campo", "Vitória da Conquista"),
+  UF = c("MG", "MG", "MG", "MG", "MG", "MG", "MG", "MG", "MG", "MG", "SP", "DF", "SP", "ES", "SP", "SP", "SP", "SP", "SP", "BA"),
+  Pessoas = c(2.43, 1.659, 1.518, 1.195, 1.141, 1.071, 0.928, 0.732, 0.47, 0.453, 1.665, 1.551, 1.289, 1.184, 0.733, 0.445, 0.437, 0.356, 0.302, 0.282)
+)
+
+```
+
 \[Figura 3\]
+
+```{r}
+# Criar o gráfico de lolipop
+ggplot(tx_mig_postiva, aes(x = reorder(Nome, Pessoas), y = Pessoas)) +
+  geom_point(color = "#25a0a1", size = 3.5) +
+  geom_segment(aes(xend = reorder(Nome, Pessoas), yend = 0), color = "#25a0a1") +
+  coord_flip() +
+  labs(title = "Municipios em que Araçuaí tem Taxa Líquida Migratoria Positiva",
+       x = "Nome",
+       y = "Pessoas") +
+  theme_minimal()
+```
 
 \[Figura 4\]
 
+```{r}
+# Criar o novo dataframe com os dados fornecidos
+tx_mig_negativa <- data.frame(
+  Nome = c("Belo Horizonte", "Contagem", "Montes Claros", "Betim", "Mateus Leme", "Cataguases", "Vespasiano", "Itinga", "Caraí", "Jenipapo de Minas", "Pitangueiras", "Goiânia", "Elias Fausto", "Olímpia", "Brasília", "Pontal", "Américo Brasiliense", "Ilhabela", "Guariba", "Rio de Janeiro"),
+  UF = c("MG", "MG", "MG", "MG", "MG", "MG", "MG", "MG", "MG", "MG", "SP", "GO", "SP", "SP", "DF", "SP", "SP", "SP", "SP", "RJ"),
+  Pessoas = c(-7.06, -4.004, -1.633, -1.518, -1.2, -1.046, -1.024, -0.899, -0.829, -0.591, -10.028, -3.165, -2.138, -1.557, -1.523, -1.43, -1.289, -1.146, -1.061, -0.94)
+)
+
+```
+
+```{r}
+# Criar o gráfico de lolipop
+ggplot(tx_mig_postiva, aes(x = reorder(Nome, Pessoas), y = Pessoas)) +
+  geom_point(color = "#e13b31", size = 3.5) +
+  geom_segment(aes(xend = reorder(Nome, Pessoas), yend = 0), color = "#e13b31") +
+  coord_flip() +
+  labs(title = "Municipios em que Araçuaí tem Taxa Líquida Migratoria Negativa",
+       x = "Nome",
+       y = "Pessoas") +
+  theme_minimal()
+```
+
+## Distancia dos principais destinos
+
+```{r}
+library(ggplot2)
+
+# Criar o dataframe com os dados fornecidos
+df <- data.frame(
+  Nome = c("Centralina", "Coronel Murta", "Santo André", "Não computados"),
+  UF = c("MG", "MG", "SP", "DF"),
+  Distancia_km = c(1080, 45, 1172, 1020)
+)
+
+
+# Ordenar o dataframe pela distância em ordem crescente
+df <- df[order(df$Distancia_km),]
+
+# Criar o gráfico de barras horizontais
+ggplot(df, aes(x = Nome, y = Distancia_km, fill = Nome)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = Distancia_km), hjust = 3.9, size = 4) +  # Adicionar os valores dentro das barras
+  labs(title = "Distância dos Principais Municípios em Relação a Araçuaí",
+       x = "Município",
+       y = "Distância (km)",
+       fill = "Município") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size=8)) +
+  coord_flip()
+
+```
+
+### Distancia municipios com Saldo migratorio negativo 
 \[Tabela 8\]
 
 \[Figura 5\]
+
+```{r}
+library(ggplot2)
+
+# Criar o dataframe 
+df_distancias <- data.frame(
+  Nome = c("Belo Horizonte", "Contagem", "Pitangueiras", "Goiânia"),
+  UF = c("MG", "MG", "SP", "GO"),
+  Distancia_km = c(600, 586, 1086, 1168)
+)
+
+# Ordenar o dataframe pela distância em ordem decrescente
+df_distancias <- df_distancias[order(df_distancias$Distancia_km, decreasing = TRUE),]
+
+# Criar o gráfico de barras horizontais
+ggplot(df_distancias, aes(x = Nome, y = Distancia_km, fill = Nome)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = Distancia_km), hjust = 3.9, size = 4) +  # Adicionar os valores dentro das barras
+  labs(title = "Distância dos 4 Principais Municípios em Relação a Araçuaí",
+       x = "Município",
+       y = "Distância (km)",
+       fill = "Município") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size=8)) +
+  coord_flip()
+
+```
+
