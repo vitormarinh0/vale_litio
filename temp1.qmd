@@ -5,6 +5,8 @@ authors:
 - Olinto Nogueira
 ---
 
+\[Em edição\]
+
 ## Quais os movimentos migratórios observados nos municípios do Vale do Lítio? É possível inferir sobre a última década sem os dados do Censo Demográfico de 2022?
 
 ```{r setup, include=FALSE}
@@ -144,9 +146,9 @@ Fonte: IBGE/Censo Demográficos 2000-2010. Elaboração: FJP/Diretoria de Estat�
 
 Em 2010, todos os municípios do microterritório apresentaram saldos líquidos migratórios negativos, ou seja, mais pessoas saíram desses municípios do que entraram. O somatório desses saldos negativos representou um contingente de -53,9 mil pessoas na região, um número maior do que a população de cada um de seus municípios, com exceção de Teófilo Otoni. Todos os municípios apresentam saldos líquidos migratórios negativos tanto em relação aos outros municípios do estado, fora das Regiões Geográficas Intermediárias (RGInt) a que pertencem, quanto em relação aos municípios de fora do estado (com exceção de Itaobim, que possui um saldo positivo interestadual de 38 migrantes).Os municípios do Vale do Lítio, que estão na RGInt de Teófilo Otoni, possuem saldos positivos em relação aos municípios do próprio Vale do Lítio, principalmente devido ao saldo positivo do município de Teófilo Otoni, que exerce uma grande atração sobre os outros municípios da região. No entanto, essa atração não se sustenta, uma vez que o município atua como expulsor de população, com um saldo líquido migratório de -3,6 mil pessoas para os municípios de outras regiões de Minas Gerais, bem como para os de outros estados. Essa dinâmica se repete em todos os outros municípios com saldos positivos em relação à RGInt de Teófilo Otoni (Araçuaí, Capelinha, Turmalina e Virgem da Lapa). No caso da RGInt de Montes Claros, Rubelita apresenta saldos negativos em relação aos outros municípios dessa região, enquanto Salinas registra saldos positivos. Em ambos os casos, os saldos líquidos migratórios negativos são expressivos, principalmente em relação aos municípios de outros estados. Conclui-se que todos os municípios do Vale do Lítio que atraem migrantes das próprias RGInt desempenham um papel de etapa migratória, pois recebem correntes migratórias de municípios que estão expulsando população de forma acentuada.
 
-## Municípios do Vale do Lítio: Movimentos Migratórios em relação à data de referência de 31/07/2005 - Total e Saldo
+Municípios do Vale do Lítio: Movimentos Migratórios em relação à data de referência de 31/07/2005 - Total e Saldo
 
-#### Imigrantes: pessoas moravam nos municípios selecionados e que, na data de referência não moravam
+Imigrantes: pessoas moravam nos municípios selecionados e que, na data de referência não moravam
 
 ```{r}
 library(tidyverse)
@@ -211,7 +213,7 @@ imigrantes %>% select(-ibge7) %>%
 
 ```
 
-#### Emigrantes
+Emigrantes
 
 ```{r}
 # Criando os vetores com os dados
@@ -277,7 +279,7 @@ emigrantes %>% select(-ibge7) %>%
 
 ```
 
-#### Saldo Migratório
+Saldo Migratório
 
 ```{r}
 # Criando os vetores com os dados
