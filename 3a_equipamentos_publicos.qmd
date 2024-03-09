@@ -286,15 +286,20 @@ top_5_cursos_por_municipio <- df2 %>%
   arrange(Municipio.x, desc(total_inscritos)) %>%
   group_by(Municipio.x) 
 
+
+library(gt)
+
+library(gt)
+
 # Exibir a tabela final
 top_5_cursos_por_municipio %>% 
-  filter(total_inscritos>0) %>% 
+  filter(total_inscritos > 0) %>% 
   slice_head(n = 5) %>%
   gt() %>%
   tab_header(
     title = "Quantidade de Matriculas nos Cinco Maiores Cursos em Nível Superior",
     subtitle = "Municípios do Vale do Lítio - 2021"
-  )  %>% #rótulo
+  ) %>% 
   opt_table_font(font = google_font(name = "Karla")) %>% 
   tab_options(data_row.padding = px(6),
               heading.align = 'left',
@@ -302,22 +307,18 @@ top_5_cursos_por_municipio %>%
               heading.title.font.size = px(20)) %>% 
   tab_style(
     style = cell_text(
-      color = 'dodgerblue4', 
-      weight = 'bold', 
-      font = google_font('Merriweather')
+      weight = 'bold'
     ),
-    locations = cells_title(groups = 'title')
-  )%>%
+    locations = cells_body(columns = 1) # Aplica estilo à primeira coluna
+  ) %>% 
   cols_label(
     nome_curso = 'Curso/Municipio',
     total_inscritos = 'Total de Matriculas'
-  )
+  ) %>% tab_source_note("Fonte: INEP. Elaboração: FJP/Diretoria de Estatística e Informações.")
 
 
 
 ```
-
-Fonte: INEP. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ```{r, include=FALSE}
 top_5_cursos_por_municipio %>% group_by(nome_curso) %>% 

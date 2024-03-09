@@ -182,7 +182,7 @@ tx_mig_negativa <- data.frame(
 
 ```{r}
 # Criar o gráfico de lolipop
-ggplot(tx_mig_postiva, aes(x = reorder(Nome, Pessoas), y = Pessoas)) +
+ggplot(tx_mig_negativa, aes(x = reorder(Nome, Pessoas), y = Pessoas)) +
   geom_point(color = "#e13b31", size = 3.5) +
   geom_segment(aes(xend = reorder(Nome, Pessoas), yend = 0), color = "#e13b31") +
   coord_flip() +
@@ -222,7 +222,8 @@ ggplot(df, aes(x = Nome, y = Distancia_km, fill = Nome)) +
 
 ```
 
-### Distancia municipios com Saldo migratorio negativo 
+### Distancia municipios com Saldo migratorio negativo
+
 \[Tabela 8\]
 
 \[Figura 5\]
@@ -253,4 +254,3 @@ ggplot(df_distancias, aes(x = Nome, y = Distancia_km, fill = Nome)) +
   coord_flip()
 
 ```
-
