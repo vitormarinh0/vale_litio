@@ -3,7 +3,7 @@ project:
 
 book:
   title: "<img src='img/logo_fjp.png' alt='Logo' style='vertical-align: middle; width:180px'> Vale do Lítio"
-  subtitle: "Características Socioeconômicas dos Municípios"
+  subtitle: "Características Demográficas e Socioeconômicas dos Municípios"
   # author:
     # - name: "[Caio Gonçalves](https://github.com/ccsgonc)"
     #   affiliation: Fundação João Pinheiro
@@ -11,7 +11,7 @@ book:
     # - name: "[Vitor Marinho](https://github.com/vitor-marinho-fjp)"
     #   affiliation: Fundação João Pinheiro
     #   affiliation_url: https://fjp.mg.gov.br/
-  date: "03/01/2023"
+  date: "03/11/2023"
   chapters:
     - index.qmd
     - autoridades.qmd
