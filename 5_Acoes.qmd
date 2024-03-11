@@ -17,10 +17,9 @@ Possíveis estratégias de desenvolvimento para estes municípios relacionados a
 
 -   **Atenção aos Desafios Ambientais e Sociais**: Considerar os impactos ambientais e sociais da mineração, como o despejo de efluentes tóxicos e a poluição do ar e do solo, que podem causar doenças graves e prejudicar a agricultura. A atenção deve se estender além dos municípios do Vale, alcançando áreas adjacentes e ao longo dos rios. Assim, é vital que a mineração seja conciliada com a proteção ambiental.
 
--   **Melhoria do Ambiente de Negócios**: Conforme dados atualizados até 2024, dos 14 municípios do Vale do Lítio, apenas 6 deles sancionaram uma versão municipal da Lei de Liberdade Econômica, quais sejam, Rubelita, Salinas, Malacacheta, Medina, Minas Novas e Turmalina. Como se sabe, a Lei de Liberdade Econômica é um instrumento facilitador da abertura de novos negócios, notadamente aqueles que envolvem baixo risco (a listagem das 701 atividades, conforme a legislação mineira, encontra-se no Anexo I da Resolução 02 de 13 de maio de 2021). Estudos mostram que a melhora no ambiente de negócios tem impacto positivo na prosperidade local (ver, por exemplo, Cavalcante 2015). 
+-   **Melhoria do Ambiente de Negócios**: Conforme dados atualizados até 2024, dos 14 municípios do Vale do Lítio, apenas 6 deles sancionaram uma versão municipal da Lei de Liberdade Econômica, quais sejam, Rubelita, Salinas, Malacacheta, Medina, Minas Novas e Turmalina. Como se sabe, a Lei de Liberdade Econômica é um instrumento facilitador da abertura de novos negócios, notadamente aqueles que envolvem baixo risco (a listagem das 701 atividades, conforme a legislação mineira, encontra-se no Anexo I da Resolução 02 de 13 de maio de 2021). Estudos mostram que a melhora no ambiente de negócios tem impacto positivo na prosperidade local (ver, por exemplo, Cavalcante 2015).
 
--  **Articulação Institucional**: O sucesso de uma política pública no denominado Vale do Lítio depende de uma articulação governamental com governos locais, populações e com o governo federal. A exploração do lítio, de forma ambientalmente eficaz e com um ambiente de negócios favorável tem potencial para uma geração de empregos que não se percam no médio prazo. O alinhamento dos interesses é necessário não apenas para o início do projeto, mas também para seu bom andamento.
-
+-   **Articulação Institucional**: O sucesso de uma política pública no denominado Vale do Lítio depende de uma articulação governamental com governos locais, populações e com o governo federal. A exploração do lítio, de forma ambientalmente eficaz e com um ambiente de negócios favorável tem potencial para uma geração de empregos que não se percam no médio prazo. O alinhamento dos interesses é necessário não apenas para o início do projeto, mas também para seu bom andamento.
 
 Conforme indicado no Plano de Desenvolvimento para o Vale do Jequitinhonha [@fjp2017], as ações prioritárias para o desenvolvimento social levantadas à época no estudo foram:
 
@@ -98,8 +97,7 @@ Conforme indicado no Plano de Desenvolvimento para o Vale do Jequitinhonha [@fjp
 
 -   Fomentar a capacitação de gestores e conselheiros municipais, objetivando o fortalecimento da política pública municipal e o empoderamento municipal para implementação das políticas públicas de habitação social.
 
-
-A análise feita anteriormente, embora não permita um comentário técnico mais detalhado sobre cada um dos tópicos acima, mostra que a realidade das cidades do Vale do Lítio e, de forma mais geral, do Vale do Jequitinhonha não se alterou tanto desde 2017 o que, se por um lado, é motivo de preocupação, fica claro que há espaço para políticas públicas que transformem as 14 cidades e seu entorno em uma vitrine da administração estadual para o restante da Federação. 
+A análise feita anteriormente, embora não permita um comentário técnico mais detalhado sobre cada um dos tópicos acima, mostra que a realidade das cidades do Vale do Lítio e, de forma mais geral, do Vale do Jequitinhonha não se alterou tanto desde 2017 o que, se por um lado, é motivo de preocupação, fica claro que há espaço para políticas públicas que transformem as 14 cidades e seu entorno em uma vitrine da administração estadual para o restante da Federação.
 
 ### Considerações finais
 

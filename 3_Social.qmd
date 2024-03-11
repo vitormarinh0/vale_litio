@@ -333,6 +333,7 @@ tabela02_social  %>%
     locations = cells_title(groups = 'title')
   ) %>%
   cols_label(
+    Municipio = "Município",
     S_TXMODCNT30A69 = 'Taxa de mortalidade por doenças crônicas não transmissíveis (por 100 mil hab.)',
     S_PENTA = 'Cobertura vacinal de pentavalente em menores de 1 ano (%)',
     S_OBMALDEF = 'Proporção de óbitos por causas mal definidas (%)',
@@ -434,6 +435,7 @@ tabela03_social  %>%
     locations = cells_title(groups = 'title')
   ) %>%
   cols_label(
+    Municipio = "Município",
     B_POPCADUNICO = 'Percentual da população registrada no Cadastro Único ',
     B_POPPOBEXTRCAD = 'Percentual da população pobre e extremamente pobre do Cadastro Único',
     B_POPIDCADSPOP = 'Percentual das pessoas de 18 a 64 anos inscritas no CadÚnico sem ocupação'
@@ -522,6 +524,7 @@ tabela04_social  %>%
     locations = cells_title(groups = 'title')
   ) %>%
   cols_label(
+    Municipio = "Município",
     P_HOM_TX = 'Taxa de ocorrência de homicídios dolosos (por 100 mil hab.)',
     P_CVPA = 'Taxa de crimes violentos contra o patrimônio (por 100 mil hab.)',
     P_PM = 'Número de habitantes por policial militar (hab./policial)'
@@ -646,6 +649,7 @@ tabela05_social  %>%
     locations = cells_title(groups = 'title')
   ) %>%
   cols_label(
+    Municipio = "Município",
     N_COBAGUA = 'Percentual da população urbana residente em domicílios ligados à rede geral de abastecimento de água (%)',
     N_COBESGOTO = "Percentual da população urbana atendida com serviço de esgotamento sanitário (rede) (%)",
     N_LIXO = 'Percentual da população atendida por sistema de coleta e tratamento de lixo (%)',
