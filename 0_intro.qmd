@@ -77,3 +77,5 @@ mapa
 <br>
 
 Destaca-se que a expressão "Vale do Lítio" é empregada especificamente para denominar os municípios abrangidos pelo projeto governamental, sem implicar uma definição geomorfológica, territorial ou de identidade.
+
+nocite: \| @tidyverse \@ibge2000, \@ibge2021contasregionais, @mte2021rais, @fjp2020imrs, @pnud2020hdr
