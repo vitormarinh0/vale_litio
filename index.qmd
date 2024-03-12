@@ -8,26 +8,26 @@ Para garantir a qualidade das informações, utilizou-se os dados sistematizados
 
 Este prefácio também serve como um guia para as principais questões que o documento busca responder:
 
-1.  Quantas pessoas residem nos municípios do Vale do Lítio? Qual foi a evolução populacional nos últimos 12 anos?
+1.  Quantas pessoas residem nos municípios do Vale do Lítio? Qual foi a evolução populacional nos últimos 12 anos? [link](1_Demografia.qmd)
 
-2.  Qual é a estrutura etária atual dos municípios do Vale do Lítio? A população é predominantemente jovem ou envelhecida?
+2.  Qual é a estrutura etária atual dos municípios do Vale do Lítio? A população é predominantemente jovem ou envelhecida? [link](1_Demografia.qmd)
 
-3.  Em termos da importância econômica das atividades presentes nos municípios do Vale do Lítio, o que os dados dos PIB revelam?
+3.  Em termos da importância econômica das atividades presentes nos municípios do Vale do Lítio, o que os dados dos PIB revelam? [link](2_Economia.qmd)
 
 4.  Qual o quadro atual das exportações dos municípios do Vale do Lítio?
 
-5.  Qual a importância da indústria extrativa na geração de empregos formais nos municípios do Vale do Lítio?
+5.  Qual a importância da indústria extrativa na geração de empregos formais nos municípios do Vale do Lítio? [link](2_Economia.qmd)
 
-6.  Como está a situação social nos municípios do Vale do Lítio de maneira geral?
+6.  Como está a situação social nos municípios do Vale do Lítio de maneira geral? [link](3_Social.qmd)
 
-7.  O que revelam os principais indicadores da área da educação, saúde, assistência social, segurança pública e saneamento básico?
+7.  O que revelam os principais indicadores da área da educação, saúde, assistência social, segurança pública e saneamento básico? 
 
-8.  Quais os movimentos migratórios observados nos municípios do Vale do Lítio? É possível inferir sobre a última década sem os dados do Censo Demográfico de 2022?
+8.  Quais os movimentos migratórios observados nos municípios do Vale do Lítio? É possível inferir sobre a última década sem os dados do Censo Demográfico de 2022? [link](temp1.qmd)
 
-9.  O que os dados do CadÚnico podem revelar sobre o a população em idade ativa e migração?
+9.  O que os dados do CadÚnico podem revelar sobre o a população em idade ativa e migração? [link](temp2.qmd)
 
-10. Quais os fluxos migratórios observados especificamente em Araçuaí?
+10. Quais os fluxos migratórios observados especificamente em Araçuaí? [link](temp3.qmd)
 
-11. Qual a situação desses municípios em termos de equipamentos de saúde e educação?
+11. Qual a situação desses municípios em termos de equipamentos de saúde e educação? [link](3a_equipamentos_publicos.qmd)
 
-12. O que dizem os planos de desenvolvimento realizados para a região sobre o lítio e as questões sociais?
+12. O que dizem os planos de desenvolvimento realizados para a região sobre o lítio e as questões sociais? [link](5_Acoes.qmd)
