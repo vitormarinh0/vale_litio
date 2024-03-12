@@ -128,7 +128,7 @@ tabela01_economia %>% group_by(Grupo) %>% gt() %>%
 
 ```
 
-Fonte: IBGE/Contas Regionais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
+Fonte: @ibge2021contasregionais. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ```{r, eval = FALSE,echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -178,7 +178,7 @@ grafico <- ggplot(dados_plot, aes(x = MUNICIPIO, y = Valor, fill = Atividade)) +
 print(grafico)
 ```
 
-Fonte: IBGE/Contas Regionais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
+Fonte: @ibge2021contasregionais. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ## Qual o panorama atual das exportações dos municípios do Vale do Lítio?
 
@@ -305,7 +305,7 @@ tabela03_economia  %>% select(-R_EMPRSFIC) %>%
 
 ```
 
-Fonte: MTE/Relação Anual de Informações Sociais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
+Fonte: @rais2021
 
 É possível verificar a evolução dos empregos formais na indústria extrativa nos municípios do Vale do Lítio por meio dos dados da RAIS 2021. Entre os destaques em termos de quantidade, destacaram-se Pedra Azul, Araçuaí, Itinga e Medina. Notavelmente, Medina apresentou uma tendência de queda desde 2013, enquanto Pedra Azul demonstrou um aumento constante desde 2016.
 
@@ -356,10 +356,9 @@ print(p1)
 
 ```
 
-Fonte: @mte2021rais
+Fonte: @rais2021
 
 ### Taxa de Crescimento do emprego
-
 
 ```{r, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -463,6 +462,7 @@ ggplot(tx_cres_extrativo, aes(x = ano, y = TaxaCrescimento, color = Regiao, grou
   )
 
 ```
-Fonte: @mte2021rais
+
+Fonte: @rais2021
 
 O Vale do Lítio apresenta um padrão de emprego mais volátil com variações mais extremas nas taxas de crescimento ano a ano, enquanto Minas Gerais demonstra resiliência com recuperações mais rápidas após quedas. A volatilidade no Vale do Lítio pode ser devida à dependência de um setor específico, enquanto a economia mais diversificada de Minas Gerais pode fornecer uma estabilidade maior contra choques setoriais. Estas diferenças podem sugerir uma maior sensibilidade do Vale do Lítio a fatores como preços de commodities, políticas ambientais e demanda global, enquanto Minas Gerais tem uma base econômica mais ampla e resiliente.
