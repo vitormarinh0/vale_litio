@@ -358,35 +358,10 @@ print(p1)
 
 Fonte: @mte2021rais
 
-MTE/Relação Anual de Informações Sociais 2021. Elaboração: FJP/Diretoria de Estatística e Informações.
+### Taxa de Crescimento do emprego
 
-\### Taxa de Crescimento do emprego
 
-```{r}
-
-library(readr)
-
-rais_mg <- read_csv("rais_mg.csv")
-
-df <- rais_mg%>% filter(ano==2021)
-
-library("basedosdados")
-
-# Defina o seu projeto no Google Cloud
-
-set_billing_id("emissao")
-
-# Descricao CNAE
-
-query <- bdplyr("br_bd_diretorios_brasil.cnae_2)
-
-df_descricao_cnae <- bd_collect(query)
-
-df2 <- left_join(rais_mg, df_descricao_cnae)
-
-```
-
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
 
 ## Carregar pacotes necessários
 
@@ -450,7 +425,7 @@ O gráfico abaixo apresenta a taxa de crescimento do emprego na indústria extra
 
 No Vale do Lítio, a taxa de emprego no setor mineral começou a diminuir significativamente após 2014, alcançando seu declínio em 2018 com -11.14%. A partir de 2020, observa-se uma reversão daesta tendência e um aquecimento no setor com uma taxa de crescimento de 8.83%, sendo esta ligeiramente maior do que a taxa de crescimento estadual (8,20%).
 
-```{r}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 # Criar o gráfico
 library(readr)
 tx_cres_extrativo <- read_csv("tx_cres_extrativo.csv")
@@ -466,19 +441,28 @@ taxa_2021 <- 5.457930 # Substitua por valor real
 
 Como esperado, Minas Gerais demonstra uma maior estabilidade no emprego com períodos de crescimento acentuado, como o aumento de 21.37% em 2012 e um subsequente declínio em 2013 e 2014. Há uma recuperação notável após uma grande queda em 2016 com uma taxa de crescimento negativa de -13.09%, seguida por um crescimento robusto em 2017. Após outro declínio em 2018, Minas Gerais tem recuperado emprego no setor nos últimos anos, culminando em uma taxa de crescimento de 8.20% em 2021.
 
-```{r}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
 # Definindo as cores manualmente
-custom_colors <- c("#b6186b", "#50c878")
+custom_colors <- c("#d51b21", '#008000')
 
 ggplot(tx_cres_extrativo, aes(x = ano, y = TaxaCrescimento, color = Regiao, group = Regiao)) +
-geom_line(size=1) +
-geom_point(size=1.5, shape=21, fill="white") +
-scale_color_manual(values = custom_colors) +
-theme_minimal() +
-theme(legend.position = "bottom") +
-labs(title = "Taxa de Crescimento do Emprego no Setor Extrativo", subtitle = "Comparação entre o Vale do Lítio e o estado de Minas Gerais", x = "Ano",y = "Taxa de Crescimento (%)", color = "Região"
+  geom_line(size=1) +
+  geom_point(size=1.5, shape=21, fill="white") +
+  scale_color_manual(values = custom_colors) +
+  scale_x_continuous(breaks = seq(min(tx_cres_extrativo$ano), max(tx_cres_extrativo$ano), by = 2), 
+                     minor_breaks = seq(min(tx_cres_extrativo$ano), max(tx_cres_extrativo$ano), by = 1)) +
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  labs(
+    title = "Taxa de Crescimento do Emprego no Setor Extrativo",
+    subtitle = "Comparação entre o Vale do Lítio e o estado de Minas Gerais",
+    x = "Ano",
+    y = "Taxa de Crescimento (%)",
+    color = "Região"
   )
+
 ```
+Fonte: @mte2021rais
 
 O Vale do Lítio apresenta um padrão de emprego mais volátil com variações mais extremas nas taxas de crescimento ano a ano, enquanto Minas Gerais demonstra resiliência com recuperações mais rápidas após quedas. A volatilidade no Vale do Lítio pode ser devida à dependência de um setor específico, enquanto a economia mais diversificada de Minas Gerais pode fornecer uma estabilidade maior contra choques setoriais. Estas diferenças podem sugerir uma maior sensibilidade do Vale do Lítio a fatores como preços de commodities, políticas ambientais e demanda global, enquanto Minas Gerais tem uma base econômica mais ampla e resiliente.
