@@ -127,7 +127,7 @@ tabela00_social  %>%
 
 ```
 
-Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
+Fonte: @fjp2020imrs . Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ## O que revelam os principais indicadores da área da educação, saúde, assistência social, segurança pública e saneamento básico?
 
@@ -257,7 +257,7 @@ tabela01_social  %>%
 
 ```
 
-Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
+Fonte: @fjp2020imrs. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ### Saúde
 
@@ -344,7 +344,7 @@ tabela02_social  %>%
     decimals = 1)  # Definir 2 casas decimais 
 ```
 
-Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
+Fonte: @fjp2020imrs. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ### Assistência Social
 
@@ -445,7 +445,7 @@ tabela03_social  %>%
     decimals = 1)  # Definir 2 casas decimais 
 ```
 
-Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
+Fonte: @fjp2020imrs. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ### Segurança
 
@@ -537,7 +537,7 @@ tabela04_social  %>%
     decimals = 0)  # Definir 2 casas decimais 
 ```
 
-Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
+Fonte: @fjp2020imrs. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 ### Saneamento
 
@@ -665,4 +665,4 @@ tabela05_social  %>%
 
 ```
 
-Fonte: FJP/Índice Mineiro de Responsabilidade Social 2020. Elaboração: FJP/Diretoria de Estatística e Informações.
+FFonte: @fjp2020imrs. Elaboração: FJP/Diretoria de Estatística e Informações.

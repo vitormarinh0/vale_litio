@@ -70,7 +70,7 @@ data_filtered <- data_filtered[,2:5]
 
 ```
 
-Fonte: Ministério da Saúde. Elaboração: FJP/Diretoria de Estatística e Informações.
+Fonte: @cnes2022. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 Em termos dos leitos em cada um dos municípios, novamente Teófilo Otoni foi o destaque, com o maior número total de leitos, somando 352, com uma distribuição significativa em todas as categorias (especialmente em leitos cirúrgicos com 160 unidades).
 
@@ -134,6 +134,8 @@ leitos_summary <- leitos_summary[,2:7]
   
 ```
 
+Fonte: @cnes2022. Elaboração: FJP/Diretoria de Estatística e Informações.
+
 No que se refere à formação de capital humano nos municípios do Vale do Lítio, optou-se pela análise do ensino superior, tendo em vista o potencial de demanda de mão-de-obra qualificada. Como se sabe, a produção de veículos elétricos ou mesmo de baterias para estes são atividades que exigem não só matérias-primas como o lítio, mas também mão-de-obra que atendam alguns requisitos mínimos que vão desde o conhecimento de várias línguas até o conhecimento dos diversos processos, por exemplo, envolvidos na reciclagem de baterias.
 
 Com os dados do Censo da Educação Superior, é possível verificar a quantidade de cursos superiores ofertados (10 dos 14 municípios possuem oferta de ensino superior) e sua variação entre 2010 e 2021. Via de regra, todos os municípios apresentaram aumento no número de cursos superiores.
@@ -186,7 +188,7 @@ ggplot(df_filtered, aes(x = Municipio, y = qtd_cursos, fill = as.factor(ano))) +
 
 ```
 
-Fonte: INEP. Elaboração: FJP/Diretoria de Estatística e Informações.
+Fonte: @censo2022superior. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 Quando se analisa o grau acadêmico, a maioria oferta é de cursos tecnológicos e, a depender do município, a licenciatura vem em segundo lugar. Além disso, embora as informações sobre os cursos sejam precárias em termos do quantitativo de matriculas, percebe-se que apenas em um município há oferta de curso de engenharia, no caso, a engenharia civil.
 
@@ -248,7 +250,7 @@ ggplot(tipos_vale_2021, aes(x = Municipio, fill = tipo_grau_academico)) +
 
 ```
 
-Fonte: INEP. Elaboração: FJP/Diretoria de Estatística e Informações.
+Fonte: @censo2022superior. Elaboração: FJP/Diretoria de Estatística e Informações.
 
 Outros cursos ofertados incluem: pedagogia, direito, administração, ciências contábeis, educação física, serviço social, matemática, interdiciplinar em ciência e tecnologia, pscicologia, enfermagem, ciências biológicas, fisioterapia e farmácia, entre outros.Não é difícil perceber que a adequação da formação de capital humano para as possíveis atividades no Vale do Lítio necessita de uma atenção especial, seja por meio do suporte de universidades públicas estaduais ou privadas.\
 #matemática, física, química, ciências contábeis, engenharia de alimentos, administração (presencial e à distância), administração pública, artes visuais, pedagogia, educação física, artes, análise e desenvolvimento de sistemas, engenharia agrícola e ambiental,pedagogia, história, direito, letras e gestão ambiental.
@@ -317,4 +319,4 @@ top_5_cursos_por_municipio %>%
   ) 
 ```
 
-[@gt]
+Fonte: @censo2022superior. Elaboração: FJP/Diretoria de Estatística e Informações.

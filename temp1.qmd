@@ -94,7 +94,7 @@ tabela01_fluxo
 
 ```
 
-Fonte: IBGE/Censo Demográficos 2000-2010-2022. Elaboração: FJP/Diretoria de Estatística e Informações
+Fonte: @ibge2023_idade. Censo Demográficos 2000-2010-2022. Elaboração: FJP/Diretoria de Estatística e Informações
 
 Esses resultados estão diretamente relacionados ao fator migratório, que por sua vez está associado ao processo de desruralização da região. O censo de 2022 deve confirmar o processo verificado em 2010, quando todos os municípios apresentaram taxas de crescimento urbano positivas e taxas de crescimento rural negativas. As únicas exceções, com taxas de crescimento urbano negativas, foram Itaobim (-0,2% ao ano) e Rubelita (-0,02% ao ano). Por outro lado, o único município com taxa de crescimento rural positiva foi Itaobim (0,05% ao ano). A tendência verificada em regiões desenvolvidas é que a participação da população rural deixa de exercer pressão sobre o setor urbano quando se estabiliza em torno de 15% da população total. Este é o caso do Estado de Minas Gerais, cujos saldos líquidos migratórios negativos, historicamente expressivos, passam a ser praticamente nulos nos anos 2000 e 2010, quando a participação da população rural é de, respectivamente, 18% e 15%.
 
@@ -142,7 +142,7 @@ ggplot(df_long, aes(x = Valor, y = Nome_do_municipio, fill = Taxa_de_Crescimento
   theme_minimal()
 ```
 
-Fonte: IBGE/Censo Demográficos 2000-2010. Elaboração: FJP/Diretoria de Estatística e Informações
+Fonte: @ibge2023_idade. Censo Demográficos 2000-2010. Elaboração: FJP/Diretoria de Estatística e Informações
 
 Em 2010, todos os municípios do microterritório apresentaram saldos líquidos migratórios negativos, ou seja, mais pessoas saíram desses municípios do que entraram. O somatório desses saldos negativos representou um contingente de -53,9 mil pessoas na região, um número maior do que a população de cada um de seus municípios, com exceção de Teófilo Otoni. Todos os municípios apresentam saldos líquidos migratórios negativos tanto em relação aos outros municípios do estado, fora das Regiões Geográficas Intermediárias (RGInt) a que pertencem, quanto em relação aos municípios de fora do estado (com exceção de Itaobim, que possui um saldo positivo interestadual de 38 migrantes).Os municípios do Vale do Lítio, que estão na RGInt de Teófilo Otoni, possuem saldos positivos em relação aos municípios do próprio Vale do Lítio, principalmente devido ao saldo positivo do município de Teófilo Otoni, que exerce uma grande atração sobre os outros municípios da região. No entanto, essa atração não se sustenta, uma vez que o município atua como expulsor de população, com um saldo líquido migratório de -3,6 mil pessoas para os municípios de outras regiões de Minas Gerais, bem como para os de outros estados. Essa dinâmica se repete em todos os outros municípios com saldos positivos em relação à RGInt de Teófilo Otoni (Araçuaí, Capelinha, Turmalina e Virgem da Lapa). No caso da RGInt de Montes Claros, Rubelita apresenta saldos negativos em relação aos outros municípios dessa região, enquanto Salinas registra saldos positivos. Em ambos os casos, os saldos líquidos migratórios negativos são expressivos, principalmente em relação aos municípios de outros estados. Conclui-se que todos os municípios do Vale do Lítio que atraem migrantes das próprias RGInt desempenham um papel de etapa migratória, pois recebem correntes migratórias de municípios que estão expulsando população de forma acentuada.
 
@@ -213,6 +213,8 @@ imigrantes %>% select(-ibge7) %>%
 
 ```
 
+Fonte: @ibge2023_idade. Censo Demográficos 2000-2010. Elaboração: FJP/Diretoria de Estatística e Informações
+
 Emigrantes
 
 ```{r}
@@ -279,6 +281,8 @@ emigrantes %>% select(-ibge7) %>%
 
 ```
 
+Fonte: @ibge2023_idade. Censo Demográficos 2000-2010. Elaboração: FJP/Diretoria de Estatística e Informações
+
 Saldo Migratório
 
 ```{r}
@@ -344,23 +348,25 @@ df_saldo %>% select(-ibge7) %>%
 
 ```
 
+Fonte: @ibge2023_idade. Censo Demográficos 2000-2010. Elaboração: FJP/Diretoria de Estatística e Informações
+
 Como demonstrado acima, os resultados do Censo Demográfico de 2022 sugerem que todos os processos migratórios observados para o ano de 2010 foram potencializados, resultando no generalizado esvaziamento populacional já mencionado. Evidentemente, todos esses processos resultam em uma reestruturação interna, principalmente no que diz respeito à estrutura etária da população, o que terá implicações em diversos aspectos socioeconômicos e, consequentemente, na redefinição de políticas públicas.
 
 ![](taxa_fecundidade.png)
 
-Fonte: Atlas do Desenvolvimento Humano. Elaboração: FJP/Diretoria de Estatística e Informações
+Fonte: @pnud2020hdr. Elaboração: FJP/Diretoria de Estatística e Informações
 
 Todo o processo migratório afeta diversos aspectos da dinâmica demográfica. Por exemplo, a menor participação da população rural e o processo de urbanização são alguns dos aspectos que explicam a acentuada queda na taxa de fecundidade. Em 2010, o conjunto de municípios do Vale do Lítio estava com um nível de fecundidade exatamente igual ao nível de reposição (2,1 filhos por mulher em idade reprodutiva), indicando que apenas o número necessário para substituir o casal estava sendo alcançado.
 
 ![](mortalidade_infantil.png)
 
-Fonte: Atlas do Desenvolvimento Humano. Elaboração: FJP/Diretoria de Estatística e Informações
+Fonte: @pnud2020hdr. Elaboração: FJP/Diretoria de Estatística e Informações
 
 A mortalidade infantil, embora em 2010 ainda estivesse em níveis acima da média do estado, apresentou quedas bastante expressivas em relação aos níveis em que se encontravam em 2000. Capelinha e Minas Novas são os municípios da região com os maiores níveis de fecundidade, com 2,4 filhos por mulher em idade reprodutiva, enquanto Salinas e Virgem da Lapa são os municípios com os níveis mais baixos (1,7 filhos). Em 2010, o município de Malacacheta apresentou o maior nível de mortalidade infantil, com 22,2 mortes de crianças de até 1 ano de vida para cada 1000 nascidas vivas, enquanto Teófilo Otoni registrou o menor nível, com 16,2 mortes de crianças para cada 1000 nascidas vivas. Esse padrão de comportamento dos indicadores demográficos está diretamente relacionado ao processo de urbanização desses municípios, em detrimento da população rural.
 
 ![](esperanca_vida.png)
 
-Fonte: Atlas do Desenvolvimento Humano. Elaboração: FJP/Diretoria de Estatística e Informações
+Fonte: @pnud2020hdr. Elaboração: FJP/Diretoria de Estatística e Informações
 
 A queda nas taxas de fecundidade é um dos principais fatores responsáveis pelo envelhecimento da população. Os resultados do censo de 2022 indicam que esse processo de redução na fecundidade deve ter se acentuado bastante na última década. Pela tabela 5 observa-se que, para cada 100 crianças, o número de pessoas com mais de 65 anos representava 34 em 2010 e subiu para 67 em 2022. Este índice atinge um máximo de 102 idosos para 100 crianças no município de Rubelita e um mínimo de 42 idosos em Capelinha, sendo este o único município com um índice inferior a 50 em 2022.
 
@@ -426,6 +432,8 @@ g2
 
 
 ```
+
+Fonte: @pnud2020hdr.
 
 ### Conclusão
 

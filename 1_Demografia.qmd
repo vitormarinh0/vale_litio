@@ -26,7 +26,7 @@ Na análise do crescimento populacional entre 2022 e 2010, destacam-se os seguin
 
 3.  Redução populacional em todos os municípios menores (**Grupos 3 e 4**), com exceção de Turmalina e Pedra Azul.
 
-Em um cenário de desaceleração do crescimento populacional experimentado pelo país, é notável que a diminuição da população, antes mais evidente nos municípios menores, está se tornando progressivamente perceptível também nos municípios de maior porte [@ibge2023_primeiros].
+Em um cenário de desaceleração do crescimento populacional experimentado pelo país, é notável que a diminuição da população, antes mais evidente nos municípios menores, está se tornando progressivamente perceptível também nos municípios de maior porte @ibge2023_primeiros.
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -125,7 +125,7 @@ tabela01 %>%  gt() %>% tab_header(
 
 ```
 
-Fonte: IBGE/Censo Demográficos 2000-2010-2022. Elaboração: FJP/Diretoria de Estatística e Informações
+Fonte: @ibge2023_primeiros. Censo Demográficos 2000-2010-2022. Elaboração: FJP/Diretoria de Estatística e Informações
 
 ## Qual é a estrutura etária atual dos municípios do Vale do Lítio? A população é predominantemente jovem ou envelhecida?
 
@@ -251,6 +251,6 @@ tabela02 %>%  group_by(Grupo) %>% gt() %>%
   
 ```
 
-Fonte: IBGE/Censo Demográfico 2022. Elaboração: FJP/Diretoria de Estatística e Informações. Nota: RD = Razão de Dependência. IE = Índice de Envelhecimento.
+Fonte: @ibge2023_primeiros. Elaboração: FJP/Diretoria de Estatística e Informações. Nota: RD = Razão de Dependência. IE = Índice de Envelhecimento.
 
 <!-- ## Há registros de povos tradicionais nos municípios do Vale do Lítio? -->
