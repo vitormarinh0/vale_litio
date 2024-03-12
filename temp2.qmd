@@ -102,14 +102,14 @@ color_palette <- rev(brewer.pal(name = "Spectral", n = 9))
 # Criando o mapa de calor
 ggplot(df_long, aes(x = Ano, y = MUNICIPIO, fill = TaxaAnalfabetismo)) +
   geom_tile(color = "white") +
-  geom_text(aes(label = round(TaxaAnalfabetismo, 2)), vjust = 1, size=3) +
+  geom_text(aes(label = round(TaxaAnalfabetismo, 2)), vjust = 1, size = 3) +
   scale_fill_gradientn(colors = color_palette) +
   theme_minimal() +
   labs(title = "Taxa de Analfabetismo da população em idade ativa cadastrada no CadÚnico.\nMunicípios do Vale do Lítio. Período: 2012-2022.",
        subtitle = "Municípios do Vale do Lítio - 2015-2022",
-       x = "Ano", y = "Município", fill = "Taxa de Analfabetismo (%)")+
+       x = "Ano", y = "Município", fill = "Taxa de Analfabetismo (%)") +
   theme(legend.position = "bottom",
-        plot.title = element_text(hjust = 0, size = 12, face = "bold"))
+        plot.title = element_text(hjust = 1, size = 12, face = "bold", margin = margin(b = 0))) # Ajusta a posição horizontal do título
 
 ```
 
@@ -166,7 +166,9 @@ ggplot(df_long, aes(x = Ano, y = TaxaEscolarizacao, group = MUNICIPIO, color = M
        subtitle = "Municípios do Vale do Lítio - 2012-2022", 
        x = "Ano", y = "Taxa de Escolarização (%)", color = "Município")+
   theme(legend.position = "bottom",
-        plot.title = element_text(hjust = 0, size = 16, face = "bold"))
+        plot.title = element_text(hjust = 0, size = 16, face = "bold"))+
+  theme(legend.position = "bottom",
+        plot.title = element_text(hjust = 1, size = 12, face = "bold", margin = margin(b = 0))) # Ajusta a posição horizontal do título
 
 
 ```
@@ -195,12 +197,14 @@ ggplot(pop_idade_ativa_long, aes(x = ano, y = Percentual, group = Município, co
   geom_line() +
   geom_point() +
   theme_minimal() +
-  labs(title = "Situação de vínculo de trabalho da população entre 14 e 64 anos que trabalhou, cadastrada no CadÚnico",
+  labs(title = "Situação de vínculo de trabalho da população entre 14 e 64 anos \nque trabalhou, cadastrada no CadÚnico",
        subtitle = "Municípios do Vale do Lítio - 2012-2022",
        y = "%", x = "Ano") +
   facet_wrap(~Tipo_Trabalho, scales = "free_y") +
   theme(legend.position = "bottom",
-        plot.title = element_text(hjust = 0, size = 12, face = "bold"))
+        plot.title = element_text(hjust = 0, size = 12, face = "bold"))+
+  theme(legend.position = "bottom",
+        plot.title = element_text(hjust = 1, size = 12, face = "bold", margin = margin(b = 0))) # Ajusta a posição horizontal do título
 
 ```
 
