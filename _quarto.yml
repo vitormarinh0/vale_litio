@@ -34,13 +34,13 @@ book:
   search: 
     location: sidebar
     type: textbox
-  # downloads: [pdf, epub] - ver: https://stackoverflow.com/questions/73868585/quarto-book-download-button
-
-bibliography: references.bib
+ 
+bibliography: 
+    - references.bib
 
 format:
   html:
-    theme: Sandstone
+    theme: Simplex
     base: /vale_litio/
   pdf:
     documentclass: scrreprt
