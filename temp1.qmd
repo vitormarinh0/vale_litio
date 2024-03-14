@@ -429,8 +429,6 @@ g2 <- ggplot(data_long[data_long$Município == "Vale do Lítio" & grepl("RazaoDe
 
 g2
 
-
-
 ```
 
 Fonte: @pnud2020hdr.

@@ -7,7 +7,7 @@ authors:
 - Cláudio Shikida
 ---
 
-## Em termos da importância econômica das atividades presentes nos municípios do Vale do Lítio, o que os dados dos PIB revelam?
+## Em termos da importância econômica das atividades presentes nos municípios do Vale do Lítio, o que os dados dos PIB revelam? {#sec-qt1-economia}
 
 Ao analisar a importância econômica das atividades presentes nos municípios do Vale do Lítio com base nos dados do Produto Interno Bruto (PIB) de 2021, observa-se o seguinte:
 
@@ -180,7 +180,7 @@ print(grafico)
 
 Fonte: @ibge2021contasregionais. Elaboração: FJP/Diretoria de Estatística e Informações.
 
-## Qual o panorama atual das exportações dos municípios do Vale do Lítio?
+## Qual o panorama atual das exportações dos municípios do Vale do Lítio? {#sec-exportacao}
 
 Ao avaliar as informações do comércio exterior fornecidas pela Secretaria de Comércio Exterior (Secex) do Ministério do Desenvolvimento, Indústria, Comércio e Serviços (MDIC), observa-se uma nova dinâmica nas exportações dos municípios do Vale do Lítio. Esses dados revelam detalhes sobre as principais commodities exportadas, assim como as tendências de crescimento nessas atividades. Seguem os destaques:
 

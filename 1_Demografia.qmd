@@ -6,7 +6,7 @@ authors:
 - Vitor Marinho
 ---
 
-## Quantas pessoas residem nos municípios do Vale do Lítio? Qual foi a evolução populacional nos últimos 12 anos?
+## Quantas pessoas residem nos municípios do Vale do Lítio? Qual foi a evolução populacional nos últimos 12 anos? {#sec-residentes}
 
 Com base nos dados do Censo Demográfico do IBGE, é possível identificar o tamanho da população nos municípios do Vale do Lítio em 2022. Teófilo Otoni se destaca como o maior município, com mais de 137 mil habitantes, ocupando a 18ª posição no estado de Minas Gerais. Salinas, Capelinha e Araçuaí registraram populações variando de 34 a 40 mil habitantes. Já os municípios de Pedra Azul, Minas Novas, Medina, Turmalina, Itaobim e Malacacheta contaram com populações que variaram de 17 a 24 mil habitantes em 2022. Itinga, Virgem da Lapa, Coronel Murta e Rubelita possuem populações inferiores a 15 mil habitantes, sendo Rubelita o município com o menor contingente populacional, com 5.679 residentes em 2022. Portanto, é possível classificar esses municípios em termos de tamanho populacional da seguinte maneira:
 
@@ -127,7 +127,7 @@ tabela01 %>%  gt() %>% tab_header(
 
 Fonte: @ibge2023_primeiros. Censo Demográficos 2000-2010-2022. Elaboração: FJP/Diretoria de Estatística e Informações
 
-## Qual é a estrutura etária atual dos municípios do Vale do Lítio? A população é predominantemente jovem ou envelhecida?
+## Qual é a estrutura etária atual dos municípios do Vale do Lítio? A população é predominantemente jovem ou envelhecida? {#sec-estrutura-etaria}
 
 A análise da distribuição da população em diferentes faixas etárias proporciona *insights* valiosos sobre as relações demográficas, suas proporções em relação à população total e permite acompanhar a evolução da dinâmica etária ao longo do tempo.
 
