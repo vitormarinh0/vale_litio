@@ -17,18 +17,18 @@ Este prefácio também serve como um guia para as principais questões que o doc
 
 4.  Qual o quadro atual das exportações dos municípios do Vale do Lítio? [link](2_Economia.qmd#sec-exportacao)
 
-5.  Qual a importância da indústria extrativa na geração de empregos formais nos municípios do Vale do Lítio? [link](2_Economia.qmd)
+5.  Qual a importância da indústria extrativa na geração de empregos formais nos municípios do Vale do Lítio? [link](2_Economia.qmd#sec-emprego-formal)
 
 6.  Como está a situação social nos municípios do Vale do Lítio de maneira geral? [link](3_Social.qmd#sec-social-geral)
 
 7.  O que revelam os principais indicadores da área da educação, saúde, assistência social, segurança pública e saneamento básico? [link](3_Social.qmd#sec-indicador-educ)
 
-8.  Quais os movimentos migratórios observados nos municípios do Vale do Lítio? É possível inferir sobre a última década sem os dados do Censo Demográfico de 2022? [link](temp1.qmd)
+8.  Quais os movimentos migratórios observados nos municípios do Vale do Lítio? É possível inferir sobre a última década sem os dados do Censo Demográfico de 2022? [link](temp1.qmd#sec-mig-censo)
 
-9.  O que os dados do CadÚnico podem revelar sobre o a população em idade ativa e migração? [link](temp2.qmd)
+9.  O que os dados do CadÚnico podem revelar sobre o a população em idade ativa e migração? [link](temp2.qmd#sec-cad-unico)
 
-10. Quais os fluxos migratórios observados especificamente em Araçuaí? [link](temp3.qmd)
+10. Quais os fluxos migratórios observados especificamente em Araçuaí? [link](temp3.qmd#sec-fluxo-aracuai)
 
-11. Qual a situação desses municípios em termos de equipamentos de saúde e educação? [link](3a_equipamentos_publicos.qmd)
+11. Qual a situação desses municípios em termos de equipamentos de saúde e educação? [link](3a_equipamentos_publicos.qmd#sec-equip-publico)
 
-12. O que dizem os planos de desenvolvimento realizados para a região sobre o lítio e as questões sociais? [link](5_Acoes.qmd)
+12. O que dizem os planos de desenvolvimento realizados para a região sobre o lítio e as questões sociais? [link](5_Acoes.qmd#sec-acoe-desv)

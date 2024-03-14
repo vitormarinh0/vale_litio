@@ -208,7 +208,7 @@ Ao avaliar as informações do comércio exterior fornecidas pela Secretaria de 
 
 Diante desses resultados, as exportações em termos monetários de Araçuaí superaram o total exportado por Teófilo Otoni em 2022 conforme os dados da Secex/MDIC, sendo que Itinga superou em 2023. O máximo que o Vale do Lítio já representou do total das exportações do Estado de Minas Gerais foi de 0,56% em 2001, sendo que entre os anos de 2015 a 2018 a média foi de 0,14% de participação. Elevou-se para 0,19% em 2019, com quedas para 0,08% e 0,07% nos anos da pandemia de Covid19, 2020 e 2021, respectivamente. Alcançou o patamar de 0,24% em 2022 e o mais recente de 0,99% em 2023. Apesar de ainda ser uma fração relativamente pequena, é um quadro completamente novo para a região desde o início desses registros em 1997.
 
-## Qual a importância da indústria extrativa na geração de empregos formais nos municípios do Vale do Lítio?
+## Qual a importância da indústria extrativa na geração de empregos formais nos municípios do Vale do Lítio? {#sec-emprego-formal}
 
 A análise sobre empregos é feita com base nos dados mais recentes da Relação Anual de Informações Sociais (RAIS) de 2021. Os municípios foram classificados em quatro grupos conforme sua população. Observa-se que, na maior parte deles, a indústria extrativa mineral não é o principal empregador.
 

@@ -13,7 +13,7 @@ Sys.setlocale("LC_ALL", "en_US.UTF-8")
 
 \[Em edição\]
 
-## Quais os fluxos migratórios observados especificamente em Araçuaí?
+## Quais os fluxos migratórios observados especificamente em Araçuaí? {#sec-fluxo-aracuai}
 
 ### Estrutura demográfica
 

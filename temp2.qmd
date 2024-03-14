@@ -12,7 +12,7 @@ Sys.setlocale("LC_ALL", "en_US.UTF-8")
 
 \[Em edição\]
 
-# O que os dados do CadÚnico podem revelar sobre a população em idade ativa e migração?
+# O que os dados do CadÚnico podem revelar sobre a população em idade ativa e migração? {#sec-cad-unico}
 
 O Censo Demográfico 2022 é a principal referência para análise do perfil da população e tendências demográficas. A base anual de dados do Cadastro Único do Governo Federal (CadÚnico) abriga a parte da população em situação de vulnerabilidade financeira, sendo referência para os programas sociais. A população cadastrada tem a obrigatoriedade de realizar a atualização dos dados a cada dois anos contados da data de inscrição ou última atualização.  Essa base administrativa é submetida a processos de validação por meio da integração com o Cadastro Nacional de Informações Sociais (CNIS) e outras bases oficiais, qualificando o registro das informações.
 
