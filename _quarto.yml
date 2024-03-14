@@ -41,6 +41,7 @@ bibliography:
 format:
   html:
     theme: Simplex
+    mainfont: Arial
     base: /vale_litio/
   pdf:
     documentclass: scrreprt
