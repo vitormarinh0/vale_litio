@@ -16,7 +16,7 @@ Sys.setlocale("LC_ALL", "en_US.UTF-8")
 
 O Censo Demográfico 2022 é a principal referência para análise do perfil da população e tendências demográficas. A base anual de dados do Cadastro Único do Governo Federal (CadÚnico) abriga a parte da população em situação de vulnerabilidade financeira, sendo referência para os programas sociais. A população cadastrada tem a obrigatoriedade de realizar a atualização dos dados a cada dois anos contados da data de inscrição ou última atualização.  Essa base administrativa é submetida a processos de validação por meio da integração com o Cadastro Nacional de Informações Sociais (CNIS) e outras bases oficiais, qualificando o registro das informações.
 
-Com base em 2022 como ano de referência 2022 para ambas as bases, apurou o percentual do segmento populacional da faixa etária de 14 a 64 anos, ou seja, em idade ativa para o trabalho cadastrada no CadÚnico em relação ao mesmo segmento etário na população dos municípios do Vale do Lítio do Censo Demográfico 2022. No município de Teófilo Otoni, 44,61% de sua população entre 14 e 64 anos encontra-se cadastrada no CadÚnico, seguido de Malacacheta com 53,82%. Os municípios de Coronel Murta e Rubelita possuem o maior percentual da população desse grupo etário inscrito no CadÚnico, com mais de 80% da população em idade ativa para o trabalho cadastrada no Cadastro Único, ou seja, em situação de pobreza monetária.
+Com base em 2022 como ano de referência 2022 para ambas as bases, apurou o percentual do segmento populacional da faixa etária de 14 a 64 anos, ou seja, em idade ativa para o trabalho cadastrada no CadÚnico em relação ao mesmo segmento etário na população dos municípios do Vale do Lítio do Censo Demográfico 2022 . No município de Teófilo Otoni, 44,61% de sua população entre 14 e 64 anos encontra-se cadastrada no CadÚnico, seguido de Malacacheta com 53,82%. Os municípios de Coronel Murta e Rubelita possuem o maior percentual da população desse grupo etário inscrito no CadÚnico, com mais de 80% da população em idade ativa para o trabalho cadastrada no Cadastro Único, ou seja, em situação de pobreza monetária.
 
 ```{r,  echo=FALSE, warning=FALSE, message=FALSE}
 # Criar os vetores com os dados
@@ -51,7 +51,7 @@ ggplot(df, aes(x = X._POP_Cad_x_municipio_Censo_2022, y = reorder(Município, -C
        fill = "Município") +
   theme(axis.text.y = element_text(hjust = 0))
 
-
+#| label: fig-plots
 
 ```
 
@@ -397,17 +397,24 @@ razao_dep %>% select(-Código) %>%
     ),
     locations = cells_title(groups = 'title')
   ) %>%
-  cols_label(X2010_0.a.14 = '0-14 anos (2010)',
-             X2010_15.a.64 = '15-64 anos (2010)',
-             X2010_65.. = '65+ anos (2010)',
-             X2010_Razão.de.Dependência = 'Razão de Dependência (2010)',
-             X2010_Índice.de.Envelhecimento = 'Índice de Envelhecimento (2010)',
-             X2022_0.a.14 = '0-14 anos (2022)',
-             X2022_15.a.64 = '15-64 anos (2022)',
-             X2022_65.. = '65+ anos (2022)',
-             X2022_Razão.de.Dependência = 'Razão de Dependência (2022)',
-             X2022_Índice.de.Envelhecimento = 'Índice de Envelhecimento (2022)'
-  )
+  cols_label(X2010_0.a.14 = '0-14 anos',
+             X2010_15.a.64 = '15-64 anos',
+             X2010_65.. = '65+ anos',
+             X2010_Razão.de.Dependência = 'Razão de Dependência',
+             X2010_Índice.de.Envelhecimento = 'Índice de Envelhecimento',
+             X2022_0.a.14 = '0-14 anos',
+             X2022_15.a.64 = '15-64 anos',
+             X2022_65.. = '65+ anos',
+             X2022_Razão.de.Dependência = 'Razão de Dependência',
+             X2022_Índice.de.Envelhecimento = 'Índice de Envelhecimento'
+  ) %>% 
+  tab_spanner(
+    label = "2010",
+    columns = 2:6) %>% 
+  tab_spanner(
+    label = "2022",
+    columns = 7:12)
+
 
 ####
 ```
