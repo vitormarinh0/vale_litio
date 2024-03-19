@@ -5,7 +5,7 @@ authors:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE,warning=FALSE, message=FALSE)
 Sys.setlocale("LC_ALL", "en_US.UTF-8")
 
 ```
@@ -19,6 +19,8 @@ O Censo Demográfico 2022 é a principal referência para análise do perfil da 
 Com base em 2022 como ano de referência 2022 para ambas as bases, apurou o percentual do segmento populacional da faixa etária de 14 a 64 anos, ou seja, em idade ativa para o trabalho cadastrada no CadÚnico em relação ao mesmo segmento etário na população dos municípios do Vale do Lítio do Censo Demográfico 2022 . No município de Teófilo Otoni, 44,61% de sua população entre 14 e 64 anos encontra-se cadastrada no CadÚnico, seguido de Malacacheta com 53,82%. Os municípios de Coronel Murta e Rubelita possuem o maior percentual da população desse grupo etário inscrito no CadÚnico, com mais de 80% da população em idade ativa para o trabalho cadastrada no Cadastro Único, ou seja, em situação de pobreza monetária.
 
 ```{r,  echo=FALSE, warning=FALSE, message=FALSE}
+library(ggplot2)
+library(gt)
 # Criar os vetores com os dados
 cidades <- c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa")
 censo_2022 <- c(34297, 39626, 8200, 19151, 13745, 17516, 20156, 24405, 24410, 5679, 40178, 137418, 20000, 11804)
@@ -30,32 +32,41 @@ df <- data.frame(CENSO_2022 = censo_2022, `%_POP_Cad_x_municipio_Censo_2022` = p
 
 ```
 
-```{r,  echo=FALSE, warning=FALSE, message=FALSE}
+
+```{r}
 library(ggplot2)
-library(gt)
-# Configuração de cores personalizadas
-custom_colors <- c("#b6186b", "#50c878", "#4d5816", "#8b0000", "#c0c0c0", 
-                   "#084d8c", "#e07a10", "#5d360e", "#296111", "#d51919", 
-                   "#33cccc", "#2676ff", "#FF69B4", "#8A2BE2")
+library(viridis)
 
+# Ordenar os dados pela variável de interesse para assegurar a ordem decrescente
+df <- df[order(-df$X._POP_Cad_x_municipio_Censo_2022), ]
 
-# Criar o gráfico de barras horizontal com cores personalizadas para o preenchimento e valores dentro das barras
-ggplot(df, aes(x = X._POP_Cad_x_municipio_Censo_2022, y = reorder(Município, -CENSO_2022), fill = Município)) +
-  geom_col() +
-  geom_text(aes(label = X._POP_Cad_x_municipio_Censo_2022), hjust = 1.9, size = 3.5, color = "white") +
-  scale_fill_manual(values = custom_colors) +
-  labs(title = paste(" % da população do Cadastro Único em idade ativa em relação à", "\n", "população do município em idade ativa no Censo Demográfico 2022"),
+# Atribuir cores usando a paleta viridis
+df$Município <- factor(df$Município, levels = unique(df$Município))
+
+# Criar o gráfico de barras horizontal com as barras e as cores ordenadas de forma decrescente
+ggplot(df, aes(x = X._POP_Cad_x_municipio_Censo_2022, y = Município, fill = Município)) +
+  geom_col(show.legend = FALSE) +  # Remover a legenda
+  geom_text(aes(label = paste0(X._POP_Cad_x_municipio_Censo_2022, '%')), 
+            position = position_stack(vjust = 0.5), 
+            size = 3.5, 
+            color = "white")+#exto em amarelo para contraste
+  scale_fill_viridis_d() +  # Usar a paleta de cores viridis
+  labs(title = " % da população do Cadastro Único em idade ativa em relação à população do município em idade ativa no Censo Demográfico 2022",
        subtitle = "Municípios do Vale do Lítio - 2022",
        x = "População",
-       y = "Município",
-       fill = "Município") +
-  theme(axis.text.y = element_text(hjust = 0))
+       y = "Município") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(hjust = 1),
+        plot.title = element_text(hjust = 0.5, size = 13),
+        plot.subtitle = element_text(hjust = 0.5, size = 11),
+        axis.title = element_text(size =15))+
+  guides(fill = FALSE)  # Remover a legenda de cores
 
-#| label: fig-plots
+
 
 ```
 
-O CadÚnico é uma ferramenta que direciona o planejamento de políticas públicas baseando-se em informações sociais, demográficas e residenciais de uma parte significativa da população brasileira, sob uma perspectiva longitudinal. Conforme a legislação brasileira em vigor, este estudo considerou a população em idade ativa como sendo o segmento com idade compreendida entre 14 e 64 anos dos municípios do Vale do Lítio no período entre 2012 a 2022, cadastrada no CadÚnico.
+O CadÚnico é uma ferramenta que direciona o planejamento de políticas públicas baseando-se em informações sociais, demográficas e residenciais de uma parte significativa da população brasileira, sob uma perspectiva longitudinal.Conforme a legislação brasileira em vigor, este estudo considerou a população em idade ativa como sendo o segmento com idade compreendida entre 14 e 64 anos dos municípios do Vale do Lítio no período entre 2012 a 2022, cadastrada no CadÚnico.
 
 ### Taxa de Analfabetismo
 
