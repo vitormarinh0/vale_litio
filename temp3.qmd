@@ -11,6 +11,13 @@ Sys.setlocale("LC_ALL", "en_US.UTF-8")
 
 ```
 
+```{css}
+#| echo: false
+p {
+  text-align: justify
+}
+```
+
 \[Em edição\]
 
 ## Quais os fluxos migratórios observados especificamente em Araçuaí? {#sec-fluxo-aracuai}

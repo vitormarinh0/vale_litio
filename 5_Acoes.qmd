@@ -5,6 +5,13 @@ authors:
 - Cláudio Shikida
 ---
 
+```{css}
+#| echo: false
+p {
+  text-align: justify
+}
+```
+
 ## O que dizem os planos de desenvolvimento realizados para a região sobre o lítio e as questões sociais?
 
 <!-- A utilização da matriz insumo-produto (MIP) para a análise regional e o cálculo de índices de ligação enriquecem consideravelmente nossa compreensão do impacto econômico da mineração nos municípios do Norte e Nordeste de Minas Gerais. De acordo com o estudo de Souza, Gonçalves e Franco (2015), que se baseou na MIP de 2008 de Minas Gerais, setores-chave como "indústria extrativa mineral", "alimentos e bebidas", "produtos químicos", "fabricação de aço e derivados" e "serviços de informação" foram identificados. -->

@@ -7,6 +7,13 @@ authors:
 
 \[Em edição\]
 
+```{css}
+#| echo: false
+p {
+  text-align: justify
+}
+```
+
 ## Quais os movimentos migratórios observados nos municípios do Vale do Lítio? É possível inferir sobre a última década sem os dados do Censo Demográfico de 2022? {#sec-mig-censo}
 
 ```{r setup, include=FALSE}

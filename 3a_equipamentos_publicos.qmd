@@ -12,6 +12,12 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
+```{css}
+#| echo: false
+p {
+  text-align: justify
+}
+```
 ## Qual a situação desses municípios em termos de equipamentos de saúde e educação?
 
 Usando os dados do Cadastro Nacional de Estabelecimentos de Saúde (CNES) foi possível verificar o aumento dos estabelecimentos entre os anos de 2010 e 2022. Ressalta-se que nesse total incluem-se hospitais, tanto públicos quanto privados, hospitais gerais e especializados, além de clínicas e consultórios, unidades básicas de saúde, laboratórios, entre outros.

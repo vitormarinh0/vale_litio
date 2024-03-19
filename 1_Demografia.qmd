@@ -5,6 +5,12 @@ authors:
 - Caio Gonçalves 
 - Vitor Marinho
 ---
+```{css}
+#| echo: false
+p {
+  text-align: justify
+}
+```
 
 ## Quantas pessoas residem nos municípios do Vale do Lítio? Qual foi a evolução populacional nos últimos 12 anos? {#sec-residentes}
 

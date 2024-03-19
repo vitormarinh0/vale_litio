@@ -10,7 +10,15 @@ Sys.setlocale("LC_ALL", "en_US.UTF-8")
 
 ```
 
+```{css}
+#| echo: false
+p {
+  text-align: justify
+}
+```
+
 \[Em edição\]
+
 
 # O que os dados do CadÚnico podem revelar sobre a população em idade ativa e migração? {#sec-cad-unico}
 
