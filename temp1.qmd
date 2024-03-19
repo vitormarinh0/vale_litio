@@ -88,7 +88,6 @@ tabela01_fluxo <- vale_litio_data %>%
     taxa_cresc_2000_2010 = 'Taxa de Crescimento 2000/2010 (%)',
     taxa_cresc_2010_2022 = 'Taxa de Crescimento 2010/2022 (%)'
   )
-
 tabela01_fluxo
 
 
