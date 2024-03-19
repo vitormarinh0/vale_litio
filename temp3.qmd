@@ -22,6 +22,8 @@ p {
 
 ## Quais os fluxos migratórios observados especificamente em Araçuaí? {#sec-fluxo-aracuai}
 
+Esta seção padrões migratórios em Araçuaí, uma cidade chave na compreensão dos fluxos demográficos em Minas Gerais, Brasil. Através de uma análise detalhada da estrutura demográfica, imigração, emigração e saldos migratórios líquidos, o estudo busca desvendar as dinâmicas populacionais subjacentes que moldam a região. Utilizando métodos estatísticos avançados e dados demográficos recentes, a pesquisa revela insights significativos sobre as tendências migratórias, suas causas e consequências. Este relatório não apenas fornece uma visão abrangente sobre o perfil demográfico de Araçuaí, mas também contribui para a compreensão mais ampla dos fenômenos migratórios no Brasil.
+
 ### Estrutura demográfica
 
 A estrutura demográfica de uma população e a sua taxa de crescimento revelam a sua tendência demográfica. A pirâmide populacional de Araçuaí apresenta a base reduzida, com predominância da fase jovem adulta. Isto indica uma baixa taxa de natalidade e o boom da força de trabalho nos próximos anos em função da concentração nas faixas etárias entre 10 a 19 anos. O pequeno alargamento da 'cintura' da pirâmide reitera a tendência de redução das taxas de fecundidade de forma mais breve, na geração seguinte.
