@@ -148,7 +148,7 @@ Em 2010, todos os municípios do microterritório apresentaram saldos líquidos 
 
 Municípios do Vale do Lítio: Movimentos Migratórios em relação à data de referência de 31/07/2005 - Total e Saldo
 
-Imigrantes: pessoas moravam nos municípios selecionados e que, na data de referência não moravam
+
 
 ```{r}
 library(tidyverse)
@@ -209,7 +209,8 @@ imigrantes %>% select(-ibge7) %>%
     imig_rgint = "Imigrantes da RGINT",
     imig_out_mg = 'Imigrantes Outros Municipios de MG', 
     imig_resto_br = 'Imigrantes do Resto do Brasil' 
-  )  
+  ) %>%
+  tab_source_note(md("Imigrantes: pessoas moravam nos municípios selecionados e que, na data de referência não moravam")) 
 
 ```
 
@@ -277,7 +278,8 @@ emigrantes %>% select(-ibge7) %>%
     emigrante_rgint = 'Emigrantes da RGINT',
     emigrante_out_mg = 'Emigrantes Outros Municipios de MG', 
     emigrante_resto_br = 'Emigrantes do Resto do Brasil' 
-  )  
+  )  %>%
+  tab_source_note(md("Emigrantes: pessoas que moram em outros municípios e que, na data de referência, moravam nos municípios selecionados")) 
 
 ```
 
@@ -290,8 +292,8 @@ Saldo Migratório
 ibge7 <- c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600, 31, 31)
 municipio <- c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Vale do Lítio", "Minas Gerais")
 total <- c(-1554, -1221, -664, -563, -810, -2138, -1699, -3284, -2215, -717, -2070, -3581, -95, -631, -53872, -2423)
-total_mg <- c(-451, -840, -376, -601, -373, -1399, -841, -1072, -1666, -551, -422, -1102, 12, -68, -32276, NA)
-saldo_migratorio_rgint <- c(129, 537, -84, -190, 0, -235, -161, -343, -280, -546, 475, 1508, 206, 40, 1056, NA)
+total_mg <- c(-451, -840, -376, -601, -373, -1399, -841, -1072, -1666, -551, -422, -1102, 12, -68, -32276, -)
+saldo_migratorio_rgint <- c(129, 537, -84, -190, 0, -235, -161, -343, -280, -546, 475, 1508, 206, 40, 1056, -)
 saldo_migratori_out_mg <- c(-580, -1377, -292, -411, -373, -1164, -680, -729, -1386, -5, -897, -2610, -194, -108, -32276, -2423)
 saldo_migratori_resto_br <- c(-1103, -381, -288, 38, -437, -739, -858, -2212, -549, -166, -1648, -2479, -107, -563, -21596, NA)
 
@@ -344,7 +346,8 @@ df_saldo %>% select(-ibge7) %>%
     saldo_migratorio_rgint = 'Saldo Migratório da RGINT',
     saldo_migratori_out_mg = 'Saldo Migratório Outros Municipios de MG', 
     saldo_migratori_resto_br = 'Saldo Migratório do Resto do Brasil'  # Adicionada vírgula aqui
-  ) 
+  )  %>%
+  tab_source_note(md("Emigrantes: pessoas que moram em outros municípios e que, na data de referência, moravam nos municípios selecionados")) 
 
 
 ```
