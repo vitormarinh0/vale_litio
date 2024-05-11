@@ -1,0 +1,89 @@
+# Introdução {.unnumbered}
+
+A iniciativa "Vale do Lítio" é um projeto concebido pela [Invest Minas](https://www.investminas.mg.gov.br/) com a missão de impulsionar o desenvolvimento das regiões Nordeste e Norte do estado de Minas Gerais em torno da dinâmica e ascendente cadeia produtiva do lítio.
+
+Estão incluídos no projeto um conjunto de 14 municípios que se destacam por possuírem reservas de lítio. São eles: Araçuaí, Capelinha, Coronel Murta, Itaobim, Itinga, Malacacheta, Medina, Minas Novas, Pedra Azul, Virgem da Lapa, Teófilo Otoni e Turmalina, localizados na região Nordeste de Minas, além de Rubelita e Salinas, situados na região Norte do estado. O Mapa 1 localiza esses municípios no território mineiro.
+
+É importante ressaltar que o lítio desempenha um papel essencial em diversas aplicações, como na fabricação de ligas metálicas, dispositivos médicos e na produção de fármacos. No entanto, seu uso mais proeminente é na fabricação de baterias de alta durabilidade, que alimentam veículos elétricos e dispositivos eletroeletrônicos, representando uma peça fundamental na transição para fontes de energia mais limpas e na revolução tecnológica em curso.
+
+Mapa 1: Municípios com potencial de exploração do lítio no Vale do Jequitinhonha
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, include=FALSE}
+# Carregue as bibliotecas necessárias
+library(leaflet)
+library(sf)
+library(dplyr)
+library(geobr)
+library(shiny)
+library(shinythemes)
+library(wordcloud)
+library(dplyr)
+library(igraph)
+library(networkD3)
+library(visNetwork)
+
+municipios <- read_municipality(code_muni = "MG", year = 2010)
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+municipios_ibge <- c(
+  3103405,  # Araçuaí
+  3112307,  # Capelinha
+  3119500,  # Coronel Murta
+  3133303,  # Itaobim
+  3134004,  # Itinga
+  3139201,  # Malacacheta
+  3141405,  # Medina
+  3141801,  # Minas Novas
+  3148707,  # Pedra Azul
+  3168606,  # Teófilo Otoni
+  3169703,  # Turmalina
+  3156502,  # Rubelita
+  3171600,  # Virgem da Lapa
+  3157005  # Salinas
+)
+
+# Criar uma coluna de dummy
+municipios$dummy <- ifelse(municipios$code_muni %in% municipios_ibge, 1, 0)
+
+# Crie um objeto sf com seus dados
+dados_sf <- st_as_sf(municipios, crs = "+proj=longlat +datum=WGS84")
+
+# Filtrar os municípios onde dummy é igual a 1
+dados_sf_filtrados <- dados_sf %>%
+  filter(dummy == 1)
+
+library(leaflet)
+library(sf)
+library(dplyr)
+
+mapa <- leaflet(dados_sf) %>%
+  addTiles() %>%
+  addPolygons(
+    fillColor = ~ifelse(dummy == 1, "#d51b21", "#198c19"),
+    fillOpacity = ~ifelse(dummy == 1, 0.8, 0.4),  # Transparência diferente para municípios selecionados
+    color = "black",
+    stroke = TRUE,
+    weight = ~ifelse(dummy == 1, 2, 1),
+    label = ~name_muni,
+    labelOptions = labelOptions(direction = 'auto')
+  ) %>%
+  addLegend(
+    "bottomright", 
+    colors = c("#d51b21","#198c19"), 
+    labels = c("Municípios - lítio","Outros municípios"),
+    title = "Legenda"
+  ) %>%
+  setView(lng = -42.0286, lat = -18.0856, zoom = 7)
+
+# Visualizar
+mapa
+
+
+
+```
+
+<br>
+
+Destaca-se que a expressão "Vale do Lítio" é empregada especificamente para denominar os municípios abrangidos pelo projeto governamental, sem implicar uma definição geomorfológica, territorial ou de identidade.

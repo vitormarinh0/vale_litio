@@ -1,0 +1,262 @@
+---
+title: "População"
+editor: visual
+authors: 
+- Caio Gonçalves 
+- Vitor Marinho
+---
+
+```{css}
+#| echo: false
+p {
+  text-align: justify
+}
+```
+
+## Quantas pessoas residem nos municípios com potencial para exploração do lítio no Vale do Jequitinhonha? Qual foi a evolução populacional nos últimos 12 anos? {#sec-residentes}
+
+Com base nos dados do Censo Demográfico do IBGE, é possível identificar o tamanho da população nos Municípios do Vale do Jequitinhonha selecionados em 2022. Teófilo Otoni se destaca como o maior município, com mais de 137 mil habitantes, ocupando a 18ª posição no estado de Minas Gerais. Salinas, Capelinha e Araçuaí registraram populações variando de 34 a 40 mil habitantes. Os municípios de Pedra Azul, Minas Novas, Medina, Turmalina, Itaobim e Malacacheta contaram com populações que variaram de 17 a 24 mil habitantes em 2022. Itinga, Virgem da Lapa, Coronel Murta e Rubelita possuem populações inferiores a 15 mil habitantes, sendo Rubelita o município com o menor contingente populacional, com 5.679 residentes em 2022. Portanto, é possível classificar esses municípios em termos de tamanho populacional da seguinte maneira:
+
+-   **Grupo 1**: Teófilo Otoni
+
+-   **Grupo 2**: Salinas, Capelinha e Araçuaí
+
+-   **Grupo 3**: Pedra Azul, Minas Novas, Medina, Turmalina, Itaobim e Malacacheta
+
+-   **Grupo 4**: Itinga, Virgem da Lapa, Coronel Murta e Rubelita
+
+Na análise do crescimento populacional entre 2010 e 2022, destacaram-se os seguintes pontos:
+
+1.  Estabilidade da população de Teófilo Otoni (**Grupo 1**);
+
+2.  Estabilidade da população em Salinas, crescimento em Capelinha e decrescimento populacional em Araçuaí (**Grupo 2**);
+
+3.  Redução populacional em todos os municípios menores (**Grupos 3 e 4**), com exceção de Turmalina e Pedra Azul.
+
+Em um cenário de desaceleração do crescimento populacional experimentado pelo país, é notável que a diminuição da população, antes mais evidente nos municípios menores, está se tornando progressivamente perceptível também nos municípios de maior porte @ibge2023_primeiros.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(gt)
+library(readxl)
+
+# Leia a base de dados mais recente de população com Censo Demográfico 2022
+df_pop <- read_excel("bases/0 - POPULAÇÃO REFERÊNCIA/2023.10.31_A População total e taxas cresc - Munic. 2000, 2010 e 2022.xlsx")
+
+# Crie um DataFrame com as colunas "Municipio" e "IBGE7"
+df_nome <- data.frame(
+  Municipio = c(
+    "Araçuaí",
+    "Capelinha",
+    "Coronel Murta",
+    "Itaobim",
+    "Itinga",
+    "Malacacheta",
+    "Medina",
+    "Minas Novas",
+    "Pedra Azul",
+    "Teófilo Otoni",
+    "Turmalina",
+    "Rubelita",
+    "Virgem da Lapa",
+    "Salinas"
+  ),
+  IBGE7 = c(
+    3103405,
+    3112307,
+    3119500,
+    3133303,
+    3134004,
+    3139201,
+    3141405,
+    3141801,
+    3148707,
+    3168606,
+    3169703,
+    3156502,
+    3171600,
+    3157005
+  ),
+  vale_do_litio = rep(1,14)
+)
+
+tabela01 <- left_join(df_pop, df_nome) %>%  
+  mutate( ranking2000 = rank(-pop_2000),
+          ranking2010 = rank(-pop_2010),
+          ranking2022 = rank(-pop_2022)) %>% 
+  filter(vale_do_litio==1) %>% 
+  select(-IBGE7, -vale_do_litio, - ranking2000, -pop_2000) %>% 
+  arrange(ranking2022)
+
+#criar tabela 
+tabela01 %>%  gt() %>% tab_header(
+    title = "População residente, taxa média geométrica de crescimento anual e ranking populacional",
+    subtitle = md("Municípios do Vale do Jequitinhonha selecionados - 2010 e 2022")
+   ) %>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = md("Region and <br />IAP Type")) %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  )  %>% #rótulo
+  opt_table_font(font = google_font(name = "Karla")) %>%
+  tab_options(data_row.padding = px(6),
+              heading.align = 'left',
+              column_labels.background.color = 'dodgerblue4',
+              heading.title.font.size = px(20)) %>%
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4',
+      weight = 'bold',
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>%
+  tab_style(
+    style = cell_fill(color = 'grey90'),
+    locations = cells_body(rows = seq(1, nrow(tabela01), 2))
+  ) %>%
+  cols_label(Municipio = "Município",
+             # pop_2000 = "População 2000",
+             pop_2010 = "População residente 2010 (pessoas)",
+             pop_2022 = "População residente 2022 (pessoas)",
+             tx_2000_2010 = "Taxa de crescimento 2010/2000 (%)",
+             tx_2010_2022 = "Taxa de crescimento 2022/2010 (%)",
+             # ranking2000 = "Ranking 2000",
+             ranking2010 = "Ranking 2010",
+             ranking2022 = "Ranking 2022")   %>% 
+  fmt_number(
+    columns = 4:5,  # Seleciona todas as colunas
+    decimals = 2)  # Define 2 casas decimais para a coluna "Valor"
+
+```
+
+Fonte: @ibge2023_primeiros. Censo Demográficos 2000-2010-2022. Elaboração: FJP/Diretoria de Estatística e Informações
+
+## Qual é a estrutura etária atual dos municípios com potencial para exploração do lítio no Vale do Jequitinhonha? A população é predominantemente jovem ou envelhecida? {#sec-estrutura-etaria}
+
+A análise da distribuição da população em diferentes faixas etárias proporciona *insights* valiosos sobre as relações demográficas, suas proporções em relação à população total e permite acompanhar a evolução da dinâmica etária ao longo do tempo.
+
+De acordo com os dados do Censo Demográfico de 2022, observou-se uma continuidade do processo de envelhecimento da população brasileira. Isso se manifesta na diminuição das proporções dos grupos mais jovens em relação aos grupos de adultos e idosos. Esse fenômeno é impulsionado principalmente pela significativa redução do número médio de filhos por mulher, uma tendência que vem ocorrendo de forma constante no Brasil desde o final da década de 1960. Em menor escala, contribui para essa dinâmica a redução da mortalidade em todas as faixas etárias, incluindo os idosos [@ibge2023_idade].
+
+Em 2022, o município de Teófilo Otoni apresentou a seguinte estrutura etária: 18,7% da população com idade de 0 a 14 anos, 68,6% entre 15 e 64 anos e 12,7% com 65 anos ou mais. Em comparação, o estado de Minas Gerais registrou 18,1%, 69,6% e 12,4%, respectivamente. Isso indica que, em termos médios, Teófilo Otoni possui uma estrutura semelhante à de Minas Gerais. A razão de dependência total[^populacao-1], que representa a carga de dependência sobre a população em idade ativa, foi de 45,8%, o que significa que existem 45,8 crianças e idosos para cada 100 pessoas em idade ativa. Além disso, o índice de envelhecimento[^populacao-2] atingiu 68%, o que indica que há 68 pessoas com mais de 65 anos para cada 100 pessoas na faixa etária entre 0 e 14 anos. Quanto maior o valor deste indicador, mais envelhecida é a população. Minas Gerais registrou 68,6 idosos para cada 100 crianças.
+
+[^populacao-1]: A razão de dependência total (RD) representa a soma da razão de dependência jovem e da razão de dependência adulta. Ela indica a carga de dependência total sobre a população em idade ativa. Pode ser determinado pela seguinte fórmula:
+
+    $RD = ( P_{0-14} + P_{65+} )/ P_{15-64} \times 100$
+
+    onde $P_{0-14}$ é a população de 0 a 14 anos, $P_{15-64}$ a população de 15 a 64 anos e $P_{65+}$ representando a população de 65 anos ou mais de idade.
+
+[^populacao-2]: O Índice de envelhecimento (IE) representa o número de pessoas com 65 anos e mais de idade em relação a um grupo de 100 crianças de zero a 14 anos. É determinado pela seguinte fórmula:
+
+    $IE = (P_{65+} / P_{0-14}) \times 100$
+
+    onde $P_{0-14}$ é a população de 0 a 14 anos e $P_{65+}$ representando a população de 65 anos ou mais de idade.
+
+Destacaram-se os seguintes pontos:
+
+1.  Capelinha (pertencente ao **Grupo 2**) possui o índice de envelhecimento mais baixo entre os Municípios do Vale do Jequitinhonha selecionados, seguido por Turmalina e Minas Novas (**Grupo 3**);
+
+2.  Todos os municípios menores (pertencentes ao **Grupo 4**) apresentam uma população mais envelhecida do que a média de Minas Gerais, com destaque para Rubelita, onde o número de idosos já superou o número de crianças;
+
+3.  Os municípios de Itaobim, Malacacheta e Medina (também pertencentes ao **Grupo 3**) também possuem uma população mais envelhecida do que a média de Minas Gerais.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Leia a base de dados mais recente de população por faixa de idade do Censo Demográfico 2022
+df_idade <- read_excel("bases/0 - POPULAÇÃO REFERÊNCIA/2023.10.31_População por FAIXAS ETÁRIAS_ Totais - Homens e Mulheres 2022.xlsx")
+colnames(df_idade)[4:24] <- c("pop_00_04",
+                              "pop_05_09",
+                              "pop_10_14",
+                              "pop_15_19",
+                              "pop_20_24",
+                              "pop_25_29",
+                              "pop_30_34",
+                              "pop_35_39",
+                              "pop_40_44",
+                              "pop_45_49",
+                              "pop_50_54",
+                              "pop_55_59",
+                              "pop_60_64",
+                              "pop_65_69",
+                              "pop_70_74",
+                              "pop_75_79",
+                              "pop_80_84",
+                              "pop_85_89",
+                              "pop_90_94",
+                              "pop_95_99",
+                              "pop_100_mais")
+
+tabela02 <- left_join(df_idade, df_nome) %>%  
+  mutate( Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4"),
+          pop_00_14 = pop_00_04 + pop_05_09 + pop_10_14,
+          pop_15_64 = pop_15_19 + pop_20_24 + pop_25_29 + pop_30_34 + 
+                      pop_35_39 + pop_40_44 + pop_45_49 + pop_50_54 + 
+                      pop_55_59 + pop_60_64,
+          pop_65_mais = pop_2022 - pop_00_14 - pop_15_64,
+          p.pop_00_14 = pop_00_14/pop_2022 *100,
+          p.pop_15_64 = pop_15_64/pop_2022 *100,
+          p.pop_65_mais = pop_65_mais/pop_2022 *100,
+          ranking00_14 = rank(-p.pop_00_14),
+          ranking15_64 = rank(-p.pop_15_64),
+          ranking65_mais = rank(-p.pop_65_mais),
+          rd.criancas = pop_00_14/pop_15_64*100,
+          rd.idosos = pop_65_mais/pop_15_64*100,
+          rd.total = (pop_00_14+pop_65_mais)/pop_15_64*100,
+          ind.envelhec = pop_65_mais/pop_00_14*100) %>% 
+  filter(vale_do_litio==1) %>% 
+  select(Grupo, Municipio, p.pop_00_14, p.pop_15_64, p.pop_65_mais, ranking00_14, ranking15_64,ranking65_mais,
+         rd.total, ind.envelhec) %>% 
+  arrange(Grupo)
+ 
+tabela02 %>%  group_by(Grupo) %>% gt() %>% 
+  tab_header(
+    title = "Proporção da população por grupos etários, ranking da proporção, taxa de dependência total e índice de envelhecimento",
+    subtitle = md("Municípios do Vale do Jequitinhonha selecionados - 2010 e 2022")
+  )%>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = md("Region and <br />IAP Type")) %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  )  %>% #rótulo
+  opt_table_font(font = google_font(name = "Karla")) %>% 
+  tab_options(data_row.padding = px(6),
+              heading.align = 'left',
+              column_labels.background.color = 'dodgerblue4',
+              heading.title.font.size = px(20)) %>% 
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>% 
+  tab_style(
+    style = cell_fill(color = 'grey90'),
+    locations = cells_body(rows = seq(1, nrow(tabela02), 2))
+  ) %>%
+  cols_label(Municipio = "Município",
+             p.pop_00_14 = "Proporção população 0 a 14 anos (%)", 
+             p.pop_15_64 = "Proporção população 15 a 64 anos (%)",
+             p.pop_65_mais = "Proporção população 65 anos ou mais (%)",
+             ranking00_14 = "Ranking prop. pop. 0 a 14 anos", 
+             ranking15_64 = "Ranking prop. pop. 15 a 64 anos", 
+             ranking65_mais = "Ranking prop. pop. 65 anos ou mais",
+             rd.total = "RD (%)", 
+             ind.envelhec = "IE (%)") %>% 
+  fmt_number(
+    columns = c(3:5,9:10),  # Seleciona todas as colunas
+    decimals = 1)  # Define 2 casas decimais para a coluna "Valor"
+  
+```
+
+Fonte: @ibge2023_primeiros. Elaboração: FJP/Diretoria de Estatística e Informações. Nota: RD = Razão de Dependência. IE = Índice de Envelhecimento.
+
+<!-- ## Há registros de povos tradicionais nos Municípios do Vale do Jequitinhonha selecionados? -->
