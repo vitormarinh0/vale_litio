@@ -2,8 +2,8 @@ project:
   type: book
 
 book:
-  title: "<img src='img/logo_fjp.png' alt='Logo' style='vertical-align: middle; width:180px'> Vale do Lítio"
-  subtitle: "Características Demográficas e Socioeconômicas dos Municípios"
+  title: "<img src='img/logo_fjp.png' alt='Logo' style='vertical-align: middle; width:180px'> Vale do Jequitinhonha"
+  subtitle: "Características Sociais dos Municípios com Potencial de Exploração do Lítio"
   # author:
     # - name: "[Caio Gonçalves](https://github.com/ccsgonc)"
     #   affiliation: Fundação João Pinheiro
@@ -11,18 +11,19 @@ book:
     # - name: "[Vitor Marinho](https://github.com/vitor-marinho-fjp)"
     #   affiliation: Fundação João Pinheiro
     #   affiliation_url: https://fjp.mg.gov.br/
-  date: "03/11/2023"
+  date: "05/21/2024"
   chapters:
     - index.qmd
     - autoridades.qmd
-    - 0_intro.qmd
-    - 1_Demografia.qmd
+    - introducao.qmd
+    - populacao.qmd
+    - migracao.qmd
+    - temp2.qmd
+    - temp3.qmd
     - 2_Economia.qmd
     - 3_Social.qmd
     #- 7_fluxo_migratorio.qmd
-    - temp1.qmd
-    - temp2.qmd
-    - temp3.qmd
+
 
     #- cad_unico.qmd
     - 3a_equipamentos_publicos.qmd
@@ -47,4 +48,3 @@ format:
     documentclass: scrreprt
 lang: pt
 editor: visual
-

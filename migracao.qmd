@@ -1,0 +1,518 @@
+---
+title: "Migração"
+editor: visual
+authors: 
+- Olinto Nogueira
+---
+
+```{css}
+#| echo: false
+p {
+  text-align: justify
+}
+```
+
+## Quais os movimentos migratórios observados nos municípios com potencial para exploração do lítio no Vale do Jequitinhonha? É possível inferir sobre a última década sem os dados do Censo Demográfico de 2022? {#sec-mig-censo}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+Sys.setlocale("LC_ALL", "en_US.UTF-8")
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(tidyverse)
+library(gt)
+stringsAsFactors = FALSE #converter strings para factor
+
+# criar df
+vale_litio_data <- data.frame(
+  codigo_ibge = c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600,31 ,31 ),
+  Municipio = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Municípios - Lítio", "Minas Gerais"),
+  populacao_2000 = c(35713, 31231, 9134, 21271, 13894, 19250, 21641, 30646, 23608, 10199, 36720, 129424, 15655, 13672, 412058, 17891494),
+  populacao_2010 = c(36041, 34796, 9117, 21001, 14407, 18787, 21037, 30803, 23843, 7777, 39182, 134733, 18046, 13625, 423195, 19595309),
+  populacao_2022 = c(34297, 39626, 8200, 19151, 13745, 17516, 20156, 24405, 24410, 5679, 40178, 137418, 20000, 11804, 416585, 20538718),
+  taxa_cresc_2000_2010 = c(0.09, 1.09, -0.02, -0.13, 0.36, -0.24, -0.28, 0.05, 0.10, -2.67, 0.65, 0.40, 1.43, -0.03, 0.27, 0.91),
+  taxa_cresc_2010_2022 = c(-0.41, 1.09, -0.88, -0.77, -0.39, -0.58, -0.36, -1.92, 0.20, -2.59, 0.21, 0.16, 0.86, -1.19, -0.13, 0.39),
+  stringsAsFactors = FALSE #converter strigs para factor
+) %>% 
+  mutate(Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4",
+    Municipio == "Municípios - Lítio" | Municipio == "Minas Gerais" ~ "Totais"
+    )
+  ) %>% arrange(Grupo)
+
+
+```
+
+A característica comum entre os municípios com potencial de exploração de lítio no Vale do Jequitinhonha é o nítido esvaziamento populacional que têm experimentado ao longo dos anos. A Tabela a seguir revela que desde o início do século esse fenômeno tem sido evidente, com muitos municípios registrando taxas de crescimento negativas, enquanto os poucos que apresentaram aumento o fizeram a taxas muito baixas. No segundo decênio deste século, as previsões se confirmaram. Os resultados do Censo Demográfico de 2022 mostram que a maioria dos municípios da região apresentou decréscimos populacionais com taxas negativas bastante expressivas, como foi o caso de Rubelita (-2,6% ao ano), Minas Novas (-1,9% ao ano), Virgem da Lapa (-1,2% ao ano), entre outros. As maiores taxas positivas foram observadas nos municípios de Capelinha (1,1% ao ano) e Turmalina (0,9% ao ano). Os municípios com crescimento positivo provocaram um aumento total de população na região de 11.032 pessoas, enquanto aqueles com crescimento negativo contribuíram para uma diminuição total da população em 17.642 pessoas. Em 2022, em oito municípios, as populações totais não apenas diminuíram em relação a 2010, mas também em relação ao ano 2000.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Adjust the cols_label function with the correct column names from your data frame
+tabela01_fluxo <- vale_litio_data %>% 
+  select(-codigo_ibge) %>% 
+  mutate(Grupo = factor(Grupo, levels = c("Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Totais"))) %>%
+  group_by(Grupo) %>% 
+  gt() %>%
+  tab_header(
+    title = "População residente e taxas de crescimento anual",
+    subtitle = "municípios do Vale do Jequitinhonha selecionados - 2000, 2010 e 2022",
+  ) %>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = "Municípios") %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  ) %>%
+  opt_table_font(font = "Karla") %>%
+  tab_options(
+    data_row.padding = px(6),
+    heading.align = 'left',
+    column_labels.background.color = 'dodgerblue4',
+    heading.title.font.size = px(20)
+  ) %>%
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = "Merriweather"
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>%
+  cols_label(
+    Municipio = 'Municípios',
+    populacao_2000 = 'População 2000',
+    populacao_2010 = 'População 2010',
+    populacao_2022 = 'População 2022',
+    taxa_cresc_2000_2010 = 'Taxa de Crescimento 2000/2010 (%)',
+    taxa_cresc_2010_2022 = 'Taxa de Crescimento 2010/2022 (%)'
+  )
+tabela01_fluxo
+
+
+```
+
+Fonte: @ibge2023_idade. Censo Demográficos 2000-2010-2022. Elaboração: FJP/Diretoria de Estatística e Informações
+
+Esses resultados estão diretamente relacionados ao fator migratório, que, por sua vez, está associado ao processo de desruralização da região (Ver figura a seguir). O censo de 2022 deve confirmar o processo verificado em 2010, quando todos os municípios apresentaram taxas de crescimento urbano positivas e taxas de crescimento rural negativas. As únicas exceções, com taxas de crescimento urbano negativas, foram Itaobim (-0,2% ao ano) e Rubelita (-0,02% ao ano). Por outro lado, o único município com taxa de crescimento rural positiva foi Itaobim (0,05% ao ano). A tendência verificada em regiões desenvolvidas é que a participação da população rural deixa de exercer pressão sobre o setor urbano quando ela se estabiliza em torno de 15% da população total. Este é o caso do Estado de Minas Gerais, cujos saldos líquidos migratórios negativos, historicamente expressivos, passaram a ser praticamente nulos nos anos 2000 e 2010, quando a participação da população rural foi de, respectivamente, 18% e 15%.
+
+Em 2010, os únicos municípios da região com baixa participação da população rural no total foram Pedra Azul (12%) e Teófilo Otoni (18%). Por outro lado, em quatro municípios, as participações das populações rurais eram iguais ou superiores a 50%: Rubelita (68%), Minas Novas (59%), Itinga (55%) e Virgem da Lapa (50%). Não por coincidência, esses municípios foram os que apresentaram as maiores taxas de crescimento negativas entre 2010 e 2022. Os dados de 2010 indicavam que esses municípios entraram no período de 2010 a 2022 com estoques bastante expressivos de população rural. Mesmo que as taxas de crescimento da população urbana tenham sido consideráveis, elas não foram e não são suficientes para absorver os fluxos migratórios no sentido rural/urbano. Tanto é verdade que as taxas de crescimento total dos municípios, como já mencionado, não refletem o tamanho desses fluxos, sendo muito baixas ou negativas. Isso sugere que os setores urbanos desses municípios não são capazes de absorver a pressão rural e acabam servindo apenas como uma etapa no processo migratório uma vez iniciado.
+
+```{r,  echo=FALSE, warning=FALSE, message=FALSE}
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+
+# criar df
+df <- data.frame(
+  Codigo_do_municipio = c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600),
+  Nome_do_municipio = c('Araçuaí', 'Capelinha', 'Coronel Murta', 'Itaobim', 'Itinga', 'Malacacheta', 'Medina', 'Minas Novas', 'Pedra Azul', 'Rubelita', 'Salinas', 'Teófilo Otoni', 'Turmalina', 'Virgem da Lapa'),
+  Tx_cresc_total = c(0.091465916, 1.086775428, -0.018627386, -0.12766431, 0.363229157, -0.243163073, -0.282668453, 0.051112455, 0.099099427, -2.674767312, 0.65106922, 0.402821212, 1.431486009, -0.034430124),
+  Tx_cresc_urbana = c(1.364187441, 2.119736324, 0.328586304, -0.186301588, 1.338527461, 0.79639783, 0.414456913, 4.998869616, 0.44255029, -0.019851123, 1.573417026, 0.683470148, 2.428755062, 1.521592623),
+  Tx_cresc_rural = c(-1.883449123, -1.049551393, -0.913587185, 0.051851896, -0.377866564, -1.775126879, -1.847433544, -2.270817169, -2.097472014, -3.709815378, -2.078243178, -0.753270432, -0.682780443, -1.373411452)
+) 
+
+# Transform data
+df_long <- df %>%
+  gather(key = "Taxa_de_Crescimento", value = "Valor", -Codigo_do_municipio, -Nome_do_municipio)
+
+
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+colors <- c("#296111","#084d8c", "#e07a10" )
+
+# Gráfico de barras horizontais
+ggplot(df_long, aes(x = Valor, y = Nome_do_municipio, fill = Taxa_de_Crescimento)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = colors, name = "Tipo de Crescimento", 
+                    labels = c("Rural", "Total", "Urbana")) +  # Define as cores manualmente
+  geom_text(aes(label = sprintf("%.1f", Valor)), hjust = -0.2, size = 2.5, color = "black") +  # Formata os valores para dois dígitos
+  labs(title = "Taxa de Crescimento Total, Urbana e Rural",
+       subtitle = "municípios do Vale do Jequitinhonha selecionados - 2000 e 2010",
+       x = "Taxa de Crescimento (%)",
+       y = "Nome do Município",
+       fill = "Tipo de Crescimento") +
+  theme(legend.position = "top",  # Posiciona a legenda no topo
+        legend.title = element_blank())+
+  theme_minimal()
+```
+
+Fonte: @ibge2023_idade. Censo Demográficos 2000-2010. Elaboração: FJP/Diretoria de Estatística e Informações
+
+Em 2010, todos os municípios do microterritório apresentaram saldos líquidos migratórios negativos, ou seja, mais pessoas saíram desses municípios do que entraram. O somatório desses saldos negativos representou um contingente de -53,9 mil pessoas na região, um número maior do que a população de cada um de seus municípios, com exceção de Teófilo Otoni. Todos os municípios apresentaram saldos líquidos migratórios negativos tanto em relação aos outros municípios do estado, fora das Regiões Geográficas Intermediárias (RGInt) a que pertencem[^migracao-1] , quanto em relação aos municípios de fora do estado (com exceção de Itaobim, que possui um saldo positivo interestadual de 38 migrantes). Os municípios do Vale do Jequitinhonha selecionados, que estão na RGInt de Teófilo Otoni, possuem saldos positivos em relação aos municípios do próprio Municípios - Lítio, principalmente devido ao saldo positivo do município de Teófilo Otoni, que exerce uma grande atração sobre os outros municípios da região. No entanto, essa atração não se sustenta, uma vez que o município atua como expulsor de população, com um saldo líquido migratório de -3,6 mil pessoas para os municípios de outras regiões de Minas Gerais, bem como para os de outros estados. Essa dinâmica se repete em todos os outros municípios com saldos positivos em relação à RGInt de Teófilo Otoni (Araçuaí, Capelinha, Turmalina e Virgem da Lapa). No caso da RGInt de Montes Claros, Rubelita apresentou saldos negativos em relação aos outros municípios dessa região, enquanto Salinas registrou saldos positivos. Em ambos os casos, os saldos líquidos migratórios negativos são expressivos, principalmente em relação aos municípios de outros estados. Conclui-se que todos os municípios com potencial de exploração de lítio no Vale do Jequitinhonha que atraem migrantes das próprias RGInt desempenham um papel de etapa migratória, pois recebem correntes migratórias de municípios que estão expulsando população de forma acentuada.
+
+[^migracao-1]: Todos os municípios selecionados do Vale do Jequitinhonha pertencem à RGInt de Teófilo Otoni, exceto Rubelita e Salinas, que fazem parte da RGInt de Montes Claros.
+
+```{r}
+library(tidyverse)
+library(gt)
+#imigrantes
+# Criar o dataframe com os dados fornecidos
+imigrantes <- data.frame(
+  ibge7 = c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600, 31, 31),
+  Municipio = c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Municípios - Lítio", "Minas Gerais"),
+  total = c(1312, 2340, 265, 1079, 522, 744, 796, 765, 540, 235, 2252, 7107, 1076, 668, 58868, 1326235),
+  total_mg = c(897, 2013, 210, 647, 307, 368, 523, 572, 354, 147, 1728, 5266, 851, 412, 39881, 944419),
+  imig_rgint = c(546, 1188, 67, 409, 206, 268, 226, 433, 181, 92, 1243, 3461, 563, 252, 24034, NA),
+  imig_out_mg = c(351, 825, 143, 238, 101, 100, 297, 139, 173, 55, 485, 1805, 288, 160, 15847, NA),
+  imig_resto_br = c(415, 327, 55, 432, 215, 376, 273, 193, 186, 88, 524, 1841, 225, 256, 18987, 381816)
+) %>% 
+  mutate(Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4",
+    Municipio == "Municípios - Lítio" | Municipio == "Minas Gerais" ~ "Totais"
+    )
+  ) %>% arrange(Grupo)
+
+# Exibir o dataframe
+imigrantes %>% select(-ibge7) %>% 
+  mutate(Grupo = factor(Grupo, levels = c("Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Totais"))) %>%
+  group_by(Grupo) %>%   gt %>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = md("Region and <br />IAP Type")) %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  )  %>% #rótulo
+  opt_table_font(font = google_font(name = "Karla")) %>% 
+  tab_options(data_row.padding = px(6),
+              heading.align = 'left',
+              column_labels.background.color = 'dodgerblue4',
+              heading.title.font.size = px(20)) %>% 
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>% 
+  tab_style(
+    style = cell_fill(color = 'grey90'),
+    locations = cells_body(rows = seq(1, nrow(imigrantes), 2))
+  ) %>% tab_header(
+    title = "Total de imigrantes em relação a data de referência de 31/07/2005",
+    subtitle = md("Municípios do Vale do Jequitinhonha selecionados")
+   )%>%
+  cols_label(
+    Municipio = ' Municipio',
+    total = 'Total',
+    total_mg= 'Total Imigrantes de MG',
+    imig_rgint = "Imigrantes da RGINT",
+    imig_out_mg = 'Imigrantes Outros Municipios de MG', 
+    imig_resto_br = 'Imigrantes do Resto do Brasil' 
+  ) %>%
+  tab_source_note(md("Imigrantes: pessoas moravam nos municípios selecionados e que, na data de referência não moravam")) 
+
+```
+
+Fonte: @ibge2023_idade. Censo Demográficos 2000-2010. Elaboração: FJP/Diretoria de Estatística e Informações
+
+```{r}
+# Criando os vetores com os dados
+ibge7 <- c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600, 31, 31)
+Municipio <- c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Municípios - Lítio", "Minas Gerais")
+total <- c(2866, 3561, 929, 1642, 1332, 2882, 2495, 4049, 2755, 952, 4322, 10688, 1171, 1299, 112740, 1328658)
+total_mg <- c(1348, 2853, 586, 1248, 680, 1767, 1364, 1644, 2020, 698, 2150, 6368, 839, 480, 72157, 944419)
+emigrante_rgint <- c(417, 651, 151, 599, 206, 503, 387, 776, 461, 638, 768, 1953, 357, 212, 24034, NA)
+emigrante_out_mg <- c(931, 2202, 435, 649, 474, 1264, 977, 868, 1559, 60, 1382, 4415, 482, 268, 48123, NA)
+emigrante_resto_br <- c(1518, 708, 343, 394, 652, 1115, 1131, 2405, 735, 254, 2172, 4320, 332, 819, 40583, 384239) 
+
+# Criando o dataframe
+emigrantes <- data.frame(ibge7, Municipio, total, total_mg, emigrante_rgint, 
+                         emigrante_out_mg, emigrante_resto_br) %>% 
+  mutate(Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4",
+    Municipio == "Municípios - Lítio" | Municipio == "Minas Gerais" ~ "Totais"
+    )
+  ) %>% arrange(Grupo)
+
+emigrantes %>% select(-ibge7) %>% 
+  mutate(Grupo = factor(Grupo, levels = c("Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Totais"))) %>%
+  group_by(Grupo) %>%   
+  gt() %>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = md("Region and <br />IAP Type")) %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  ) %>% 
+  opt_table_font(font = google_font(name = "Karla")) %>% 
+  tab_options(
+    data_row.padding = px(6),
+    heading.align = 'left',
+    column_labels.background.color = 'dodgerblue4',
+    heading.title.font.size = px(20)
+  ) %>% 
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>% 
+  tab_style(
+    style = cell_fill(color = 'grey90'),
+    locations = cells_body(rows = seq(1, nrow(emigrantes), 2))
+  ) %>% tab_header(
+    title = "Total de emigrantes em relação a data de referência de 31/07/2005",
+    subtitle = md("Municípios do Vale do Jequitinhonha selecionados")
+   )%>%
+  cols_label(
+    Municipio = 'Municipio',
+    total = 'Total',
+    total_mg = 'Total Emigrantes de MG',
+    emigrante_rgint = 'Emigrantes da RGINT',
+    emigrante_out_mg = 'Emigrantes Outros Municipios de MG', 
+    emigrante_resto_br = 'Emigrantes do Resto do Brasil' 
+  )  %>%
+  tab_source_note(md("Emigrantes: pessoas que moram em outros municípios e que, na data de referência, moravam nos municípios selecionados")) 
+
+```
+
+Fonte: @ibge2023_idade. Censo Demográficos 2000-2010. Elaboração: FJP/Diretoria de Estatística e Informações
+
+```{r}
+# Criando os vetores com os dados
+ibge7 <- c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600, 31, 31)
+municipio <- c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Municípios - Lítio", "Minas Gerais")
+total <- c(-1554, -1221, -664, -563, -810, -2138, -1699, -3284, -2215, -717, -2070, -3581, -95, -631, -53872, -2423)
+total_mg <- c(-451, -840, -376, -601, -373, -1399, -841, -1072, -1666, -551, -422, -1102, 12, -68, -32276,NA)
+saldo_migratorio_rgint <- c(129, 537, -84, -190, 0, -235, -161, -343, -280, -546, 475, 1508, 206, 40, 1056, NA)
+saldo_migratori_out_mg <- c(-580, -1377, -292, -411, -373, -1164, -680, -729, -1386, -5, -897, -2610, -194, -108, -32276, -2423)
+saldo_migratori_resto_br <- c(-1103, -381, -288, 38, -437, -739, -858, -2212, -549, -166, -1648, -2479, -107, -563, -21596, NA)
+
+# Criando o dataframe
+df_saldo <- data.frame(ibge7, municipio, total, total_mg, saldo_migratorio_rgint, saldo_migratori_out_mg,
+                       saldo_migratori_resto_br) %>% 
+  mutate(Grupo = case_when(
+    Municipio == "Teófilo Otoni" ~ "Grupo 1",
+    Municipio == "Salinas" | Municipio == "Capelinha" | Municipio == "Araçuaí" ~ "Grupo 2",
+    Municipio == "Pedra Azul" | Municipio == "Minas Novas" | Municipio == "Medina" |
+    Municipio == "Turmalina" | Municipio == "Itaobim" | Municipio == "Malacacheta" ~ "Grupo 3",
+    Municipio == "Itinga" | Municipio == "Virgem da Lapa" | Municipio == "Coronel Murta" |
+    Municipio == "Rubelita" ~ "Grupo 4",
+    Municipio == "Municípios - Lítio" | Municipio == "Minas Gerais" ~ "Totais"
+    )
+  ) %>% arrange(Grupo)
+
+# Mostrando o dataframe
+df_saldo %>% select(-ibge7) %>% 
+  mutate(Grupo = factor(Grupo, levels = c("Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Totais"))) %>%
+  group_by(Grupo) %>%   
+  gt()  %>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = md("Region and <br />IAP Type")) %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  )  %>% #rótulo
+  opt_table_font(font = google_font(name = "Karla")) %>% 
+  tab_options(data_row.padding = px(6),
+              heading.align = 'left',
+              column_labels.background.color = 'dodgerblue4',
+              heading.title.font.size = px(20)) %>% 
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>% 
+  tab_style(
+    style = cell_fill(color = 'grey90'),
+    locations = cells_body(rows = seq(1, nrow(df_saldo), 2))
+  ) %>% tab_header(
+    title = "Saldo migratório em relação a data de referência de 31/07/2005",
+    subtitle = md("Municípios do Vale do Jequitinhonha selecionados")
+   )%>%
+  cols_label(
+    municipio = 'Municipio',
+    total = 'Total',
+    total_mg = 'Saldo Total de MG',
+    saldo_migratorio_rgint = 'Saldo Migratório da RGINT',
+    saldo_migratori_out_mg = 'Saldo Migratório Outros Municipios de MG', 
+    saldo_migratori_resto_br = 'Saldo Migratório do Resto do Brasil'  # Adicionada vírgula aqui
+  )  
+
+
+```
+
+Fonte: @ibge2023_idade. Censo Demográficos 2000-2010. Elaboração: FJP/Diretoria de Estatística e Informações
+
+Como demonstrado na figura anterior, os resultados do Censo Demográfico de 2022 sugerem que todos os processos migratórios observados para o ano de 2010 foram potencializados, resultando no generalizado esvaziamento populacional já mencionado. Evidentemente, todos esses processos resultam em uma reestruturação interna, principalmente no que diz respeito à estrutura etária da população, o que terá implicações em diversos aspectos socioeconômicos e, consequentemente, na redefinição de políticas públicas.
+
+Todo o processo migratório afeta diversos aspectos da dinâmica demográfica. Por exemplo, a menor participação da população rural e o processo de urbanização são alguns dos aspectos que explicam a acentuada queda na taxa de fecundidade (@fig-fecundidade) . Em 2010, o conjunto de municípios com potencial de exploração de lítio no Vale do Jequitinhonha estava com um nível de fecundidade exatamente igual ao nível de reposição (2,1 filhos por mulher em idade reprodutiva), indicando que apenas o número necessário para substituir o casal estava sendo alcançado.
+
+![](taxa_fecundidade.png){#fig-fecundidade}
+
+Fonte: @pnud2020hdr. Elaboração: FJP/Diretoria de Estatística e Informações
+
+A figura @fig-mrt_infantil apresenta mortalidade infantil no Municípios - Lítio, embora em 2010 ainda estivesse em níveis acima da média do estado, apresentou quedas bastante expressivas em relação aos níveis em que se encontravam em 2000. Capelinha e Minas Novas são os municípios da região com os maiores níveis de fecundidade, com 2,4 filhos por mulher em idade reprodutiva, enquanto Salinas e Virgem da Lapa são os municípios com os níveis mais baixos (1,7 filhos). Em 2010, o município de Malacacheta apresentou o maior nível de mortalidade infantil, com 22,2 mortes de crianças de até 1 ano de vida para cada 1000 nascidas vivas, enquanto Teófilo Otoni registrou o menor nível, com 16,2 mortes de crianças para cada 1000 nascidas vivas. Esse padrão de comportamento dos indicadores demográficos está diretamente relacionado ao processo de urbanização desses municípios, em detrimento da população rural.
+
+![](mortalidade_infantil.png){#fig-mrt_infantil}
+
+Fonte: @pnud2020hdr. Elaboração: FJP/Diretoria de Estatística e Informações
+
+A queda nas taxas de fecundidade é um dos principais fatores responsáveis pelo envelhecimento da população. Os resultados do censo de 2022 indicam que esse processo de redução na fecundidade (@fig-esp_vida) deve ter se acentuado bastante na última década. Pela Tabela 5, observa-se que, para cada 100 crianças, o número de pessoas com mais de 65 anos representava 34 em 2010 e subiu para 67 em 2022. Este índice atinge um máximo de 102 idosos para 100 crianças no município de Rubelita e um mínimo de 42 idosos em Capelinha, sendo este o único município com um índice inferior a 50 em 2022.
+
+![](esperanca_vida.png){#fig-esp_vida}
+
+Fonte: @pnud2020hdr. Elaboração: FJP/Diretoria de Estatística e Informações
+
+O grafico indica ainda que, no Municípios - Lítio, a proporção da população com 65 anos ou mais aumentou de 8,8% em 2010 para 12,7% em 2022, enquanto a parcela da população entre 0 e 14 anos diminuiu de 25,6% para 19,0% no mesmo período. Esse cenário teve um impacto direto na razão de dependência, que declinou de 52,4% para 46,5% ao longo desses anos. Em 2022, o município com a maior proporção de crianças de 0 a 14 anos foi Capelinha, com 21,0%, e o município com a menor proporção foi Rubelita, com 17,2%. Quanto às pessoas com 65 anos ou mais, a maior proporção foi observada em Rubelita, com 17,5%, e a menor em Capelinha, com 8,7%. Esses mesmos municípios apresentam a menor e a maior razão de dependência, respectivamente: Capelinha com 42,3% e Rubelita com 53,2%.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Carregando os pacotes necessários
+library(ggplot2)
+library(gridExtra)
+library(RColorBrewer)
+library(reshape2)
+
+# Dados
+data <- data.frame(
+  Município = c("Municípios - Lítio", "Capelinha", "Rubelita"),
+  Ano2010_0a14 = c(25.6, 29.2, 27.2),
+  Ano2022_0a14 = c(19.0, 21.0, 17.2),
+  Ano2010_65mais = c(8.8, 5.8, 10.1),
+  Ano2022_65mais = c(12.7, 8.7, 17.5),
+  Ano2010_RazaoDependencia = c(52.4, 53.9, 59.5),
+  Ano2022_RazaoDependencia = c(46.5, 42.3, 53.2)
+)
+
+# Transformando os dados para um formato longo
+data_long <- melt(data, id.vars = "Município")
+
+# Definindo um conjunto de cores
+cores <- brewer.pal(4, "Set2")
+
+# Gráfico de barras horizontal para a composição etária do Municípios - Lítio
+g1 <- ggplot(data_long[data_long$Município == "Municípios - Lítio" & grepl("0a14|65mais", data_long$variable), ],
+             aes(y = variable, x = value, fill = variable)) +
+  geom_bar(stat = "identity", position = position_dodge(), orientation = "y") +
+  geom_text(aes(label = sprintf("%.1f%%", value)), position = position_dodge(width = 0.5), vjust = 0.5, hjust = 3, linewidth = 4) +
+  scale_fill_manual(values = cores) +
+  labs(title = "Composição Etária do Total dos Municípios - Lítio - 2010 e 2022", x = "Percentual da População", y = "") +
+  theme_minimal()
+
+g1
+
+
+```
+
+Fonte: @pnud2020hdr.
+
+```{r}
+# Criar os vetores com os dados
+codigo <- c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801, 3148707, 3156502, 3157005, 3168606, 3169703, 3171600, "Municípios - Lítio", "Minas Gerais")
+municipios <- c("Araçuaí", "Capelinha", "Coronel Murta", "Itaobim", "Itinga", "Malacacheta", "Medina", "Minas Novas", "Pedra Azul", "Rubelita", "Salinas", "Teófilo Otoni", "Turmalina", "Virgem da Lapa", "Municípios - Lítio", "Minas Gerais")
+x2010_0a14 <- c(25.4, 29.2, 25.1, 26.2, 28.3, 27.2, 26.5, 29.3, 27.7, 27.2, 23.3, 23.5, 25.9, 23.9, 25.6, 22.4)
+x2010_15a64 <- c(65.0, 65.0, 65.0, 63.9, 61.8, 63.3, 63.2, 64.8, 63.7, 62.7, 66.9, 67.4, 67.2, 66.5, 65.6, 69.4)
+x2010_65 <- c(9.5, 5.8, 10.0, 9.9, 9.9, 9.6, 10.3, 5.9, 8.6, 10.1, 9.7, 9.1, 6.9, 9.6, 8.8, 8.1)
+razao_dep_2010 <- c(53.7, 53.9, 53.9, 56.5, 61.9, 58.1, 58.2, 54.3, 57.1, 59.5, 49.4, 48.3, 48.9, 50.4, 52.4, 44.0)
+indice_env_2010 <- c(37.4, 19.9, 39.8, 37.9, 35.1, 35.2, 38.7, 20.3, 31.0, 37.2, 41.8, 38.7, 26.8, 40.2, 34.3, 36.3)
+x2022_0a14 <- c(18.7, 21.0, 18.5, 18.7, 19.2, 19.0, 19.7, 19.6, 19.9, 17.2, 18.1, 18.7, 19.2, 17.3, 19.0, 18.1)
+x2022_15a64 <- c(68.3, 70.3, 67.0, 67.1, 66.9, 67.2, 65.5, 69.4, 67.8, 65.3, 67.7, 68.6, 70.2, 68.0, 68.3, 69.6)
+x2022_65 <- c(13.0, 8.7, 14.5, 14.2, 14.0, 13.9, 14.8, 11.0, 12.3, 17.5, 14.2, 12.7, 10.6, 14.7, 12.7, 12.4)
+razao_dep_2022 <- c(46.4, 42.3, 49.3, 49.1, 49.5, 48.9, 52.7, 44.2, 47.6, 53.2, 47.7, 45.8, 42.5, 47.1, 46.5, 43.7)
+indice_env_2022 <- c(69.1, 41.4, 78.8, 75.8, 73.0, 73.0, 74.8, 56.3, 61.8, 101.9, 78.4, 68.0, 55.5, 84.9, 66.7, 68.6)
+
+# Criar o dataframe
+dados <- data.frame(Código = codigo, Municípios = municipios, 
+                    X2010_0a14 = x2010_0a14, X2010_15a64 = x2010_15a64, X2010_65 = x2010_65, 
+                    Razão_de_Dependência_2010 = razao_dep_2010, Índice_de_Envelhecimento_2010 = indice_env_2010, 
+                    X2022_0a14 = x2022_0a14, X2022_15a64 = x2022_15a64, X2022_65 = x2022_65, 
+                    Razão_de_Dependência_2022 = razao_dep_2022, Índice_de_Envelhecimento_2022 = indice_env_2022)
+
+
+```
+
+```{r}
+# Visualizar o dataframe
+dados <- dados %>%
+  rename(
+    `0 a 14 - 2010` = X2010_0a14,
+    `15 a 64 - 2010` = X2010_15a64,
+    `65+ - 2010` = X2010_65,
+    `Razão de Dependência - 2010` = Razão_de_Dependência_2010,
+    `Índice de Envelhecimento - 2010` = Índice_de_Envelhecimento_2010,
+    `0 a 14 - 2022` = X2022_0a14,
+    `15 a 64 - 2022` = X2022_15a64,
+    `65+ - 2022` = X2022_65,
+    `Razão de Dependência - 2022` = Razão_de_Dependência_2022,
+    `Índice de Envelhecimento - 2022` = Índice_de_Envelhecimento_2022
+  )
+
+dados %>% 
+  select(-Código) %>% 
+  gt() %>%
+  opt_align_table_header(align = "left") %>%
+  tab_stubhead(label = md("Região e <br />Tipo de IAP")) %>%
+  tab_style(
+    style = cell_text(size = "smaller"),
+    locations = cells_body()
+  )  %>% 
+  opt_table_font(font = google_font(name = "Karla")) %>% 
+  tab_options(data_row.padding = px(6),
+              heading.align = 'left',
+              column_labels.background.color = 'dodgerblue4',
+              heading.title.font.size = px(20)) %>% 
+  tab_style(
+    style = cell_text(
+      color = 'dodgerblue4', 
+      weight = 'bold', 
+      font = google_font('Merriweather')
+    ),
+    locations = cells_title(groups = 'title')
+  ) %>% 
+  tab_style(
+    style = cell_fill(color = 'grey90'),
+    locations = cells_body(rows = seq(1, nrow(dados), 2))
+  ) %>%
+  cols_label(
+    `0 a 14 - 2010` = '0 a 14',
+    `15 a 64 - 2010` = '15 a 64',
+    `65+ - 2010` = '65+',
+    `Razão de Dependência - 2010` = 'Razão de Dependência',
+    `Índice de Envelhecimento - 2010` = 'Índice de Envelhecimento',
+    `0 a 14 - 2022` = '0 a 14',
+    `15 a 64 - 2022` = '15 a 64',
+    `65+ - 2022` = '65+',
+    `Razão de Dependência - 2022` = 'Razão de Dependência',
+    `Índice de Envelhecimento - 2022` = 'Índice de Envelhecimento'
+  ) %>% tab_header(
+    title = "Percentual da população por faixas etárias selecionadas, razão de dependência e índice de envelhecimento - 2010 e 2022",
+    subtitle = md("Municípios do Vale do Jequitinhonha selecionados")
+   )%>% 
+  tab_spanner(
+    label = "2010",
+    columns = 2:6) %>% 
+  tab_spanner(
+    label = "2022",
+    columns = 7:11)
+
+
+
+```
+
+A compreensão da dinâmica demográfica de qualquer região envolve a análise dos processos relacionados aos nascimentos, mortes e migração. Os municípios que possuem potencial de exploração de lítio no Vale do Jequitinhonha formam uma região onde todos esses processos estão em curso e são determinados pela realidade socioeconômica local. Como evidenciado, é uma região que enfrenta um claro processo de esvaziamento populacional, com seus municípios experimentando decréscimos populacionais ou crescendo a taxas muito baixas na última década. O Censo de 2022 confirma a tendência observada nos censos anteriores, que apontaram quedas acentuadas nas taxas de fecundidade e crescentes saldos líquidos migratórios negativos. A fecundidade é um componente que dificilmente contribuirá novamente para o crescimento da região, uma vez que suas taxas estão diretamente relacionadas ao intenso processo de urbanização e tendem a se estabilizar em níveis baixos, como observado em outras regiões. Portanto, o crescimento demográfico da região depende cada vez mais do componente migratório, que está diretamente relacionado aos fatores de expulsão atuantes na região, bem como aos fatores de atração oferecidos por outras regiões, dada a realidade local.

@@ -19,7 +19,6 @@ p {
 
 \[Em edição\]
 
-
 # O que os dados do CadÚnico podem revelar sobre a população em idade ativa e migração? {#sec-cad-unico}
 
 O Censo Demográfico 2022 é a principal referência para análise do perfil da população e tendências demográficas. A base anual de dados do Cadastro Único do Governo Federal (CadÚnico) abriga a parte da população em situação de vulnerabilidade financeira, sendo referência para os programas sociais. A população cadastrada tem a obrigatoriedade de realizar a atualização dos dados a cada dois anos contados da data de inscrição ou última atualização.  Essa base administrativa é submetida a processos de validação por meio da integração com o Cadastro Nacional de Informações Sociais (CNIS) e outras bases oficiais, qualificando o registro das informações.
@@ -39,7 +38,6 @@ ibge <- c(3103405, 3112307, 3119500, 3133303, 3134004, 3139201, 3141405, 3141801
 df <- data.frame(CENSO_2022 = censo_2022, `%_POP_Cad_x_municipio_Censo_2022` = percent_pop, Município = cidades, IBGE = ibge)
 
 ```
-
 
 ```{r}
 library(ggplot2)
